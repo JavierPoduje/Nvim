@@ -40,15 +40,16 @@ nnoremap <M-l> :vertical resize +5<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-vnoremap X "_d
+" CTRL+C for esc
 inoremap <C-c> <esc>
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
 
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-inoremap <silent><expr> <C-space> coc#refresh()
+" What are this three ones ?
+"vnoremap X "_d
+"function! s:check_back_space() abort
+"    let col = col('.') - 1
+"    return !col || getline('.')[col - 1]  =~# '\s'
+"endfunction
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 " GoTo code navigation.
 nmap <leader>gd <Plug>(coc-definition)
@@ -61,6 +62,7 @@ nmap <leader>g] <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev)
 nmap <silent> <leader>gn <Plug>(coc-diagnostic-next)
 nnoremap <leader>cr :CocRestart
+inoremap <silent><expr> <C-space> coc#refresh()
 
 " Git management
 nmap <leader>gl :diffget //3<CR>
