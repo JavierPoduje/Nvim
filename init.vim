@@ -47,6 +47,6 @@ call plug#end()
 
 source $HOME/.config/nvim/init/pluggins_settings.vim
 source $HOME/.config/nvim/init/styles.vim
-source $HOME/.config/nvim/init/maps.vim
+source $HOME/.config/nvim/init/mappings.vim
 source $HOME/.config/nvim/init/utils.vim
 source $HOME/.config/nvim/init/pluggins_definitions.vim

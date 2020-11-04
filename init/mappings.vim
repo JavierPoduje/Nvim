@@ -1,32 +1,44 @@
-" After press * on a word or on visual mode, u can replace for another word
-" with the following command
+" After press * on a word or select more or more on visual mode, you can
+" replace for another word the selected for another word o string
 nnoremap <Leader>r :%s///g<Left><Left>
+
+" Window navigation
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>h :wincmd h<CR>
+
+" set wrap mode
 nnoremap <leader>ww :set wrap linebreak<CR>
+
+" create new tab
 nnoremap <leader>tt :tabnew<CR>
+
+" Just more options for pass from normal to insert mode
 nnoremap <leader>O O<ESC>O
 nnoremap <leader>o o<cr>
+
+" Show undo tree
 nnoremap <leader>u :UndotreeShow<CR>
+
+" Files management
 nnoremap <leader>pv :NERDTreeToggle<CR>
 nnoremap <leader>pp :NERDTreeFind<CR>
 nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <Leader>pf :Files<CR>
+
+" source configuration
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
-nnoremap <Leader>* resize +5<CR>
-nnoremap <Leader>] resize -5<CR>
-nnoremap <Leader>+ :vertical resize +5<CR>
-nnoremap <Leader>- :vertical resize -5<CR>
-nnoremap <Leader>ee oif err != nil {<CR>log.Fatalf("%+v\n", err)<CR>}<CR><esc>kkI<esc>
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-"nnoremap <leader>vwm :colorscheme gruvbox<bar>:set background=dark<CR>
-" Git-gutter
-"nmap <buffer> <Leader>]hp <Plug>(GitGutterPreviewHunk)
-"nmap <buffer> <Leader>]hu <Plug>(GitGutterUndoHunk)
-"nmap <buffer> <Leader>]hs <Plug>(GitGutterStageHunk)
+
+" Expand windows
+nnoremap <M-k> :resize -5<CR>
+nnoremap <M-j> :resize +5<CR>
+nnoremap <M-h> :vertical resize -5<CR>
+nnoremap <M-l> :vertical resize +5<CR>
+
+" Better tabbing
+vnoremap < <gv
+vnoremap > >gv
 
 vnoremap X "_d
 inoremap <C-c> <esc>
@@ -50,7 +62,7 @@ nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev)
 nmap <silent> <leader>gn <Plug>(coc-diagnostic-next)
 nnoremap <leader>cr :CocRestart
 
-" Sweet Sweet FuGITive
+" Git management
 nmap <leader>gl :diffget //3<CR>
 nmap <leader>gh :diffget //2<CR>
 nmap <leader>gs :G<CR>

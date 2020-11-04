@@ -8,7 +8,8 @@ set nohlsearch
 set hidden
 set noerrorbells
 set tabstop=2 softtabstop=0 expandtab smarttab
-set shiftwidth=1
+set shiftwidth=2
+set mouse=a
 set smartindent
 set nu
 set nowrap
