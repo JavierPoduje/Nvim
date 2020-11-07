@@ -36,8 +36,20 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
 Plug '/home/mpaulson/personal/vim-be-good'
-" post install (yarn install | npm install) then load plugin only for editing supported files
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': [
+      \ 'javascript',
+      \ 'typescript',
+      \ 'css',
+      \ 'less',
+      \ 'scss',
+      \ 'json',
+      \ 'graphql',
+      \ 'markdown',
+      \ 'vue',
+      \ 'yaml',
+      \ 'html'] }
 
 " Jsx pretty
 Plug 'yuezk/vim-js'
@@ -61,5 +73,4 @@ source $HOME/.config/nvim/init/pluggins_settings.vim
 source $HOME/.config/nvim/init/styles.vim
 source $HOME/.config/nvim/init/mappings.vim
 source $HOME/.config/nvim/init/utils.vim
-source $HOME/.config/nvim/init/pluggins_definitions.vim
 source $HOME/.config/nvim/init/rnvimr.vim

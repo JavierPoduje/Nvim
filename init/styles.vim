@@ -23,9 +23,9 @@ colorscheme gruvbox
 
 " Air
 let g:airline_solarized_bg='dark'
-"let g:airline_theme='minimalist'
+let g:airline_theme='minimalist'
 "let g:airline_theme='base16_gruvbox_dark_hard'
-let g:airline_theme='behelit'
+"let g:airline_theme='behelit'
 
 "let g:airline_theme='gruvbox'
 

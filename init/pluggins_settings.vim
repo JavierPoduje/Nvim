@@ -22,27 +22,20 @@ let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 let g:startify_session_dir = '~/.config/nvim/session'
 let g:startify_session_persistence = 1
 let g:startify_change_to_vcs_root = 1
-" to save sessions :SSave
-" to delete sessions :SDelete
-" to load sessions :SLoad
 
 " background stable
 let &t_ut=''
 
+" I don't know what this things are...
 if executable('rg')
     let g:rg_derive_root='true'
 endif
-
 let loaded_matchparen = 1
 let mapleader = " "
-
 let g:netrw_browse_split = 2
 let g:vrfr_rg = 'true'
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
-let NERDTreeShowHidden = 1
-let NERDTreeHighlightCursorline = 0
-let g:NERDDefaultAlign = 'left'
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -51,4 +44,50 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " Elixir formatter
 let g:mix_format_on_save = 1
+
+" NERD tree
+let NERDTreeShowHidden = 1
+let NERDTreeHighlightCursorline = 0
+let g:NERDDefaultAlign = 'left'
+let g:NERDTreeGitStatusWithFlags = 1
+let g:NERDTreeIgnore = ['^node_modules$']
+let g:DevIconsEnableFoldersOpenClose = 1
+
+
+" NERD commenter
+let g:NERDCustomDelimiters={
+	\ 'javascript': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+  \ 'typescript': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
+  \ 'typescriptreact': { 'left': '//', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+\}
+let g:user_emmet_settings = {
+\  'javascript' : {
+\      'extends' : 'jsx, js',
+\  },
+\}
+
+" Coc extensions
+let g:coc_global_extensions = [
+      \ 'coc-snippets',
+      \ 'coc-pairs',
+      \ 'coc-tsserver',
+      \ 'coc-eslint',
+      \ 'coc-prettier',
+      \ 'coc-json',
+      \ 'coc-emmet',
+      \ 'coc-elixir',
+      \ 'coc-phpls',
+      \ 'coc-python'
+      \]
+
+" Startify
+let g:startify_lists = [
+          \ { 'type': 'files',     'header': ['   Files']            },
+          \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
+          \ { 'type': 'sessions',  'header': ['   Sessions']       },
+          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+          \ ]
+
+" Ignore files in .gitignore when searching
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
