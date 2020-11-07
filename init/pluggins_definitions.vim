@@ -11,8 +11,8 @@ let g:user_emmet_settings = {
 \      'extends' : 'jsx, js',
 \  },
 \}
-let g:user_emmet_expandabbr_key='<Tab>'
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+"let g:user_emmet_expandabbr_key='<Tab>'
+"imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 let g:coc_global_extensions = [
       \ 'coc-snippets',

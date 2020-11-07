@@ -14,13 +14,14 @@ let g:prettier#config#print_width = 80
 let g:prettier#config#semi = 'false'
 
 " UtilSnips
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<C-k>"
 let g:UltiSnipsJumpForwardTrigger="<C-x>"
 let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 
 " Startify
 let g:startify_session_dir = '~/.config/nvim/session'
 let g:startify_session_persistence = 1
+let g:startify_change_to_vcs_root = 1
 " to save sessions :SSave
 " to delete sessions :SDelete
 " to load sessions :SLoad

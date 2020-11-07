@@ -64,6 +64,9 @@ nmap <silent> <leader>gn <Plug>(coc-diagnostic-next)
 nnoremap <leader>cr :CocRestart
 inoremap <silent><expr> <C-space> coc#refresh()
 
+nmap <Tab> :bn<CR>
+nmap <S-Tab> :bp<CR>
+
 " Git management
 nmap <leader>gl :diffget //3<CR>
 nmap <leader>gh :diffget //2<CR>

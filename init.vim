@@ -1,34 +1,37 @@
 source $HOME/.config/nvim/init/settings.vim
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'jiangmiao/auto-pairs'
+
+" Git
 Plug 'tpope/vim-fugitive'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'mbbill/undotree'
-Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'mattn/emmet-vim'
 Plug 'neoclide/jsonc.vim'
 Plug 'preservim/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'jremmen/vim-ripgrep'
-Plug 'nelstrom/vim-visual-star-search'
-Plug 'mhinz/vim-mix-format'
-Plug 'tpope/vim-surround'
 Plug 'mhinz/vim-startify'
 
-" Utils
+" File manager: Ranger
+Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+
+" Editing or something
 Plug 'preservim/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'mattn/emmet-vim'
 
 " Styles
 Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 Plug 'lifepillar/vim-solarized8'
-Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
@@ -41,8 +44,17 @@ Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 
 " Utilsnips
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+
+" Styntax highlight
+Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
+Plug 'sheerun/vim-polyglot'
+
+" I don't know what this things are...
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'mhinz/vim-mix-format'
+Plug 'tpope/vim-surround'
+
 call plug#end()
 
 source $HOME/.config/nvim/init/pluggins_settings.vim
@@ -50,3 +62,4 @@ source $HOME/.config/nvim/init/styles.vim
 source $HOME/.config/nvim/init/mappings.vim
 source $HOME/.config/nvim/init/utils.vim
 source $HOME/.config/nvim/init/pluggins_definitions.vim
+source $HOME/.config/nvim/init/rnvimr.vim
