@@ -14,7 +14,7 @@ nnoremap <leader>ww :set wrap linebreak<CR>
 " create new tab
 nnoremap <leader>tt :tabnew<CR>
 
-" Just more options for pass from normal to insert mode
+" Just more options for transit from normal to insert mode
 nnoremap <leader>O O<ESC>O
 nnoremap <leader>o o<cr>
 
@@ -42,14 +42,6 @@ vnoremap > >gv
 
 " CTRL+C for esc
 inoremap <C-c> <esc>
-
-" What are this three ones ?
-"vnoremap X "_d
-"function! s:check_back_space() abort
-"    let col = col('.') - 1
-"    return !col || getline('.')[col - 1]  =~# '\s'
-"endfunction
-"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 " GoTo code navigation.
 nmap <leader>gd <Plug>(coc-definition)
