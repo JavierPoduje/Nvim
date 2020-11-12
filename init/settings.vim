@@ -35,7 +35,7 @@ set updatetime=50
 set shortmess+=c
 
 " Disable autoformat
-set noautoindent
-set nocindent
-set nosmartindent
+" set noautoindent
+" set nocindent
+" set nosmartindent
 

@@ -6,7 +6,7 @@ set background=dark
 "let g:gruvbox_contrast_dark='hard'
 "
 " ----- Just for gruvbox-material -----
-let g:gruvbox_material_palette='material' " OPTIONS: 'material', 'mix' or 'original'
+let g:gruvbox_material_palette = 'mix' " OPTIONS: 'material', 'mix' or 'original'
 let g:gruvbox_material_background = 'medium' " OPTIONS: 'hard', 'medium'(default), 'soft'
 
 " ----- Just for solarized8 -----
