@@ -24,6 +24,7 @@ set scrolloff=8
 set clipboard=unnamed
 set guifont=Fira\ Code:h12
 set fdm=indent
+set nofoldenable " disable pre-folding
 
 " Give more space for displaying messages.
 set cmdheight=2

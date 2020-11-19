@@ -59,6 +59,7 @@ let g:NERDCustomDelimiters={
 	\ 'javascript': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
   \ 'typescript': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
   \ 'typescriptreact': { 'left': '//', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+  \ 'php': { 'left': '//', 'leftAlt': '<!--', 'rightAlt': '-->' },
 \}
 let g:user_emmet_settings = {
 \  'javascript' : {
