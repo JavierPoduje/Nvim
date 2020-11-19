@@ -14,7 +14,7 @@ let g:prettier#config#print_width = 80
 let g:prettier#config#semi = 'false'
 
 " UtilSnips
-let g:UltiSnipsExpandTrigger="<C-k>"
+let g:UltiSnipsExpandTrigger="<C-l>"
 let g:UltiSnipsJumpForwardTrigger="<C-x>"
 let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 

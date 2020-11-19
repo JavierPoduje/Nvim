@@ -23,6 +23,7 @@ set termguicolors
 set scrolloff=8
 set clipboard=unnamed
 set guifont=Fira\ Code:h12
+set fdm=indent
 
 " Give more space for displaying messages.
 set cmdheight=2
@@ -33,9 +34,4 @@ set updatetime=50
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
-
-" Disable autoformat
-" set noautoindent
-" set nocindent
-" set nosmartindent
 
