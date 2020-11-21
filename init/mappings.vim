@@ -8,15 +8,19 @@ nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>h :wincmd h<CR>
 
-" set wrap mode
-nnoremap <leader>ww :set wrap linebreak<CR>
+" toggle wrap
+nnoremap <leader>ww :set wrap!<CR>
 
 " create new tab
 nnoremap <leader>tt :tabnew<CR>
 
-" Just more options for transit from normal to insert mode
+" More options for transit from normal to insert mode
 nnoremap <leader>O O<ESC>O
 nnoremap <leader>o o<cr>
+
+" More options for paste
+nnoremap <leader>po o<ESC>p
+nnoremap <leader>pO O<ESC>P
 
 " Show undo tree
 nnoremap <leader>u :UndotreeShow<CR>
@@ -53,9 +57,10 @@ nmap <leader>g[ <Plug>(coc-diagnostic-prev)
 nmap <leader>g] <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev)
 nmap <silent> <leader>gn <Plug>(coc-diagnostic-next)
-nnoremap <leader>cr :CocRestart
+nnoremap <leader>cr :CocRestart<CR>
 inoremap <silent><expr> <C-space> coc#refresh()
 
+" Move between buffers
 nmap <Tab> :bn<CR>
 nmap <S-Tab> :bp<CR>
 
