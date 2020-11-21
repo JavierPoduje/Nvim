@@ -24,7 +24,7 @@ nnoremap <leader>u :UndotreeShow<CR>
 " Files management
 nnoremap <leader>pv :NERDTreeToggle<CR>
 nnoremap <leader>pp :NERDTreeFind<CR>
-nnoremap <Leader>ps :Rg<SPACE>
+nnoremap <Leader>ps :Rg --fixed-strings ''<Left>
 nnoremap <Leader>pf :Files<CR>
 
 " source configuration

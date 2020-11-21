@@ -3,6 +3,9 @@ let g:multi_cursor_quit_key='<C-c>'
 nnoremap <C-c> :call multiple_cursors#quit()<CR>
 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+if executable('rg')
+    let g:rg_derive_root='true'
+endif
 let $FZF_DEFAULT_OPTS='--reverse'
 
 " Prettier
@@ -14,7 +17,7 @@ let g:prettier#config#print_width = 80
 let g:prettier#config#semi = 'false'
 
 " UtilSnips
-let g:UltiSnipsExpandTrigger="<C-l>"
+let g:UltiSnipsExpandTrigger="<C-k>"
 let g:UltiSnipsJumpForwardTrigger="<C-x>"
 let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 
@@ -27,9 +30,6 @@ let g:startify_change_to_vcs_root = 1
 let &t_ut=''
 
 " I don't know what this things are...
-if executable('rg')
-    let g:rg_derive_root='true'
-endif
 let loaded_matchparen = 1
 let mapleader = " "
 let g:netrw_browse_split = 2
