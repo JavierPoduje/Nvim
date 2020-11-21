@@ -20,7 +20,7 @@ nnoremap <leader>o o<cr>
 
 " More options for paste
 nnoremap <leader>po o<ESC>p
-nnoremap <leader>pO O<ESC>P
+nnoremap <leader>PO O<ESC>P
 
 " Show undo tree
 nnoremap <leader>u :UndotreeShow<CR>
