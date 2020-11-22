@@ -56,16 +56,16 @@ let g:DevIconsEnableFoldersOpenClose = 1
 
 " NERD commenter
 let g:NERDCustomDelimiters={
-	\ 'javascript': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
-  \ 'typescript': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
-  \ 'typescriptreact': { 'left': '//', 'leftAlt': '{/*', 'rightAlt': '*/}' },
-  \ 'php': { 'left': '//', 'leftAlt': '<!--', 'rightAlt': '-->' },
-\}
+      \ 'javascript': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+      \ 'typescript': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
+      \ 'typescriptreact': { 'left': '//', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+      \ 'php': { 'left': '//', 'leftAlt': '<!--', 'rightAlt': '-->' },
+      \}
 let g:user_emmet_settings = {
-\  'javascript' : {
-\      'extends' : 'jsx, js',
-\  },
-\}
+      \ 'javascript' : {
+      \      'extends' : 'jsx, js',
+      \  },
+      \}
 
 " Coc extensions
 let g:coc_global_extensions = [
@@ -83,11 +83,11 @@ let g:coc_global_extensions = [
 
 " Startify
 let g:startify_lists = [
-          \ { 'type': 'files',     'header': ['   Files']            },
-          \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
-          \ { 'type': 'sessions',  'header': ['   Sessions']       },
-          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-          \ ]
+      \ { 'type': 'files',     'header': ['   Files']            },
+      \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
+      \ { 'type': 'sessions',  'header': ['   Sessions']       },
+      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+      \ ]
 
 " Ignore files in .gitignore when searching
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']

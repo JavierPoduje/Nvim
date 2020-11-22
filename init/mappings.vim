@@ -9,7 +9,7 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>h :wincmd h<CR>
 
 " toggle wrap
-nnoremap <leader>ww :set wrap!<CR>
+nnoremap <leader>ww :set wrap! linebreak<CR>
 
 " create new tab
 nnoremap <leader>tt :tabnew<CR>
