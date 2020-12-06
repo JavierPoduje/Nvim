@@ -70,3 +70,5 @@ nmap <leader>gh :diffget //2<CR>
 nmap <leader>gs :G<CR>
 nnoremap <leader>gb :Git blame<CR>
 
+" Close all buffers except the current one
+nnoremap <leader>bca :w <bar> %bd <bar> e# <bar> bd# <CR>
