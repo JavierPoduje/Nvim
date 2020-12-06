@@ -16,7 +16,7 @@ nnoremap <leader>tt :tabnew<CR>
 
 " More options for transit from normal to insert mode
 nnoremap <leader>O O<ESC>O
-nnoremap <leader>o o<cr>
+nnoremap <leader>o o<CR>
 
 " More options for paste
 nnoremap <leader>po o<ESC>p
@@ -45,7 +45,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " CTRL+C for esc
-inoremap <C-c> <esc>
+inoremap <C-c> <ESC>
 
 " GoTo code navigation.
 nmap <leader>gd <Plug>(coc-definition)

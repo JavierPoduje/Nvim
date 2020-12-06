@@ -6,8 +6,8 @@ set background=dark
 "let g:gruvbox_contrast_dark='hard'
 "
 " ----- Just for gruvbox-material -----
-let g:gruvbox_material_palette = 'mix' " OPTIONS: 'material', 'mix' or 'original'
-let g:gruvbox_material_background = 'medium' " OPTIONS: 'hard', 'medium'(default), 'soft'
+let g:gruvbox_material_palette = 'original' " OPTIONS: 'material', 'mix' or 'original'
+let g:gruvbox_material_background = 'hard' " OPTIONS: 'hard', 'medium'(default), 'soft'
 
 " ----- Just for solarized8 -----
 let g:solarized_bold = 1
@@ -24,9 +24,8 @@ colorscheme gruvbox-material
 " Airline
 let g:airline_solarized_bg='dark'
 
-" ---- Airline theme. I leave here a few nice options of a change sometimes.
-let g:airline_theme='minimalist'
-"let g:airline_theme='base16_gruvbox_dark_hard'
-"let g:airline_theme='behelit'
-"let g:airline_theme='gruvbox'
+" ---- Airline theme. I left a few nice options... just for a change sometimes.
+" let g:airline_theme='minimalist'
+let g:airline_theme='base16_gruvbox_dark_hard'
+" let g:airline_theme='gruvbox'
 

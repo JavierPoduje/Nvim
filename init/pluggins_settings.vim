@@ -1,4 +1,4 @@
-" Multi-cursor exit all cursos by default
+" Multi-cursor exit all cursors by default
 let g:multi_cursor_quit_key='<C-c>'
 nnoremap <C-c> :call multiple_cursors#quit()<CR>
 
@@ -9,7 +9,6 @@ endif
 let $FZF_DEFAULT_OPTS='--reverse'
 
 " Prettier
-" let g:prettier#autoformat = 0
 let g:prettier#config#trailing_comma = 'none'
 let g:prettier#config#single_quote = 'true'
 let g:prettier#config#use_tabs = 'false'
@@ -47,12 +46,12 @@ let g:mix_format_on_save = 1
 
 " NERD tree
 let NERDTreeShowHidden = 1
+let NERDTreeShowLineNumbers=1 " display relative numbers on the folders tree
 let NERDTreeHighlightCursorline = 0
 let g:NERDDefaultAlign = 'left'
 let g:NERDTreeGitStatusWithFlags = 1
 let g:NERDTreeIgnore = ['^node_modules$']
 let g:DevIconsEnableFoldersOpenClose = 1
-
 
 " NERD commenter
 let g:NERDCustomDelimiters={
@@ -83,10 +82,10 @@ let g:coc_global_extensions = [
 
 " Startify
 let g:startify_lists = [
-      \ { 'type': 'files',     'header': ['   Files']            },
-      \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
-      \ { 'type': 'sessions',  'header': ['   Sessions']       },
-      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+      \ { 'type': 'files',     'header': ['   Files: '] },
+      \ { 'type': 'dir',       'header': ['   Current Directory: '. getcwd()] },
+      \ { 'type': 'sessions',  'header': ['   Sessions:']       },
+      \ { 'type': 'bookmarks', 'header': ['   Bookmarks:']      },
       \ ]
 
 " Ignore files in .gitignore when searching
