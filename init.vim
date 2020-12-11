@@ -55,8 +55,9 @@ Plug 'prettier/vim-prettier', {
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 
-" Utilsnips
+" Snippets
 Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 
 " Styntax highlight
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax

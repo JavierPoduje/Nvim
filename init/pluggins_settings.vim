@@ -60,6 +60,7 @@ let g:NERDCustomDelimiters={
       \ 'typescriptreact': { 'left': '//', 'leftAlt': '{/*', 'rightAlt': '*/}' },
       \ 'php': { 'left': '//', 'leftAlt': '<!--', 'rightAlt': '-->' },
       \}
+
 let g:user_emmet_settings = {
       \ 'javascript' : {
       \      'extends' : 'jsx, js',
@@ -90,4 +91,7 @@ let g:startify_lists = [
 
 " Ignore files in .gitignore when searching
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+" Prettier
+let g:prettier#config#arrow_parens = get(g:,'prettier#config#arrow_parens', 'avoid')
 
