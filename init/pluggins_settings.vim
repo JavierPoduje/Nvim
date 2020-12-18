@@ -14,6 +14,7 @@ let g:prettier#config#single_quote = 'true'
 let g:prettier#config#use_tabs = 'false'
 let g:prettier#config#print_width = 80
 let g:prettier#config#semi = 'false'
+let g:prettier#config#arrow_parens = get(g:,'prettier#config#arrow_parens', 'avoid')
 
 " UtilSnips
 let g:UltiSnipsExpandTrigger="<C-k>"
@@ -58,7 +59,7 @@ let g:NERDCustomDelimiters={
       \ 'javascript': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
       \ 'typescript': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
       \ 'typescriptreact': { 'left': '//', 'leftAlt': '{/*', 'rightAlt': '*/}' },
-      \ 'php': { 'left': '//', 'leftAlt': '<!--', 'rightAlt': '-->' },
+      \ 'php': { 'left': '//', 'leftAlt': '<!-- ', 'rightAlt': ' -->' },
       \}
 
 let g:user_emmet_settings = {
@@ -83,15 +84,11 @@ let g:coc_global_extensions = [
 
 " Startify
 let g:startify_lists = [
+      \ { 'type': 'sessions',  'header': ['   Sessions:'] },
       \ { 'type': 'files',     'header': ['   Files: '] },
       \ { 'type': 'dir',       'header': ['   Current Directory: '. getcwd()] },
-      \ { 'type': 'sessions',  'header': ['   Sessions:']       },
-      \ { 'type': 'bookmarks', 'header': ['   Bookmarks:']      },
+      \ { 'type': 'bookmarks', 'header': ['   Bookmarks:'] },
       \ ]
 
 " Ignore files in .gitignore when searching
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-" Prettier
-let g:prettier#config#arrow_parens = get(g:,'prettier#config#arrow_parens', 'avoid')
-

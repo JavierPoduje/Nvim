@@ -2,16 +2,16 @@
 " replace for another word the selected for another word o string
 nnoremap <Leader>r :%s///g<Left><Left>
 
-" Window navigation
+" Better window navigation
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>h :wincmd h<CR>
 
-" toggle wrap
+" Toggle wrap
 nnoremap <leader>ww :set wrap! linebreak<CR>
 
-" create new tab
+" Create new tab
 nnoremap <leader>tt :tabnew<CR>
 
 " More options for transit from normal to insert mode
@@ -28,10 +28,12 @@ nnoremap <leader>u :UndotreeShow<CR>
 " Files management
 nnoremap <leader>pv :NERDTreeToggle<CR>
 nnoremap <leader>pp :NERDTreeFind<CR>
-nnoremap <Leader>ps :Rg --fixed-strings ''<Left>
+
+" Files search
+nnoremap <Leader>ps :Rg --fixed-strings --ignore-case ''<Left>
 nnoremap <Leader>pf :Files<CR>
 
-" source configuration
+" Source configuration
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
 
 " Expand windows
@@ -55,8 +57,8 @@ nmap <leader>gr <Plug>(coc-references)
 nmap <leader>rr <Plug>(coc-rename)
 nmap <leader>g[ <Plug>(coc-diagnostic-prev)
 nmap <leader>g] <Plug>(coc-diagnostic-next)
-nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev)
-nmap <silent> <leader>gn <Plug>(coc-diagnostic-next)
+nmap <silent><leader>gp <Plug>(coc-diagnostic-prev)
+nmap <silent><leader>gn <Plug>(coc-diagnostic-next)
 nnoremap <leader>cr :CocRestart<CR>
 inoremap <silent><expr> <C-space> coc#refresh()
 
@@ -71,4 +73,4 @@ nmap <leader>gs :G<CR>
 nnoremap <leader>gb :Git blame<CR>
 
 " Close all buffers except the current one
-nnoremap <leader>bca :w <bar> %bd <bar> e# <bar> bd# <CR>
+nnoremap <leader>bca :w<bar>%bd<bar>e#<bar>bd#<CR>
