@@ -77,3 +77,4 @@ nnoremap <leader>bca :w<bar>%bd<bar>e#<bar>bd#<CR>
 
 " Float terminal
 nnoremap <leader>ff :FloatermToggle<CR>
+nnoremap <leader>fg :FloatermToggle<CR>lazygit<CR>
