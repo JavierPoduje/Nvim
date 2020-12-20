@@ -5,11 +5,15 @@ call plug#begin('~/.config/nvim/plugged')
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-
 Plug 'airblade/vim-gitgutter'
+
+" Syntax and stuff
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/jsonc.vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'mhinz/vim-mix-format'
 
 " Files manager
 Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
@@ -44,10 +48,6 @@ Plug 'prettier/vim-prettier', {
       \ 'yaml',
       \ 'html'] }
 
-" Jsx pretty
-Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-jsx-pretty'
-
 " Snippets
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
@@ -56,7 +56,7 @@ Plug 'SirVer/ultisnips'
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'sheerun/vim-polyglot'
 
-" Utils: Editing and stuffs
+" Utils: Editing, float terminat and things like that...
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
@@ -64,10 +64,10 @@ Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-startify'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mbbill/undotree'
+Plug 'voldikss/vim-floaterm'
 
 " I don't know what this things are...
 Plug 'nelstrom/vim-visual-star-search'
-Plug 'mhinz/vim-mix-format'
 
 
 call plug#end()

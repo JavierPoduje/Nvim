@@ -74,3 +74,6 @@ nnoremap <leader>gb :Git blame<CR>
 
 " Close all buffers except the current one
 nnoremap <leader>bca :w<bar>%bd<bar>e#<bar>bd#<CR>
+
+" Float terminal
+nnoremap <leader>ff :FloatermToggle<CR>
