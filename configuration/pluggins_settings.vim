@@ -21,6 +21,10 @@ let g:UltiSnipsExpandTrigger="<C-k>"
 let g:UltiSnipsJumpForwardTrigger="<C-x>"
 let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 
+let g:user_emmet_leader_key=','
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
 " Startify
 let g:startify_session_dir = '~/.config/nvim/session'
 let g:startify_session_persistence = 1
@@ -100,3 +104,5 @@ let g:floaterm_width=0.8
 let g:floaterm_height=0.8
 let g:floaterm_wintitle=0
 let g:floaterm_autoclose=1
+
+lua require'colorizer'.setup()

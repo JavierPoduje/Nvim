@@ -1,4 +1,4 @@
-source $HOME/.config/nvim/init/settings.vim
+source $HOME/.config/nvim/configuration/settings.vim
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -55,6 +55,7 @@ Plug 'SirVer/ultisnips'
 " Styntax highlight
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'sheerun/vim-polyglot'
+Plug 'norcalli/nvim-colorizer.lua'
 
 " Utils: Editing, float terminat and things like that...
 Plug 'tpope/vim-surround'
@@ -69,11 +70,14 @@ Plug 'voldikss/vim-floaterm'
 " I don't know what this things are...
 Plug 'nelstrom/vim-visual-star-search'
 
-
 call plug#end()
 
-source $HOME/.config/nvim/init/pluggins_settings.vim
-source $HOME/.config/nvim/init/styles.vim
-source $HOME/.config/nvim/init/mappings.vim
-source $HOME/.config/nvim/init/utils.vim
-source $HOME/.config/nvim/init/rnvimr.vim
+source $HOME/.config/nvim/configuration/pluggins_settings.vim
+source $HOME/.config/nvim/configuration/mappings.vim
+source $HOME/.config/nvim/configuration/utils.vim
+source $HOME/.config/nvim/configuration/rnvimr.vim
+
+" THEMES
+source $HOME/.config/nvim/configuration/themes/index.vim " shared themes definitions. don't comment this
+source $HOME/.config/nvim/configuration/themes/gruvbox.vim
+" source $HOME/.config/nvim/configuration/themes/solarized8.vim
