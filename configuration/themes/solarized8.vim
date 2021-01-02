@@ -1,7 +1,3 @@
-highlight ColorColumn ctermbg=0 guibg=lightgrey
-set colorcolumn=80
-set background=dark
-
 " Background and palette configuration
 let g:solarized_bold = 1
 let g:solarized_undercurl = 1

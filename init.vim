@@ -27,10 +27,16 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep'
 
-" Styles
+" Themes
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 Plug 'lifepillar/vim-solarized8'
+Plug 'balanceiskey/vim-framer-syntax'
+Plug 'safv12/andromeda.vim'
+Plug 'bignimbus/pop-punk.vim'
+Plug 'tomasr/molokai'
+
+" Styles
 Plug 'flazz/vim-colorschemes'
 Plug '/home/mpaulson/personal/vim-be-good'
 Plug 'prettier/vim-prettier', {
@@ -78,6 +84,10 @@ source $HOME/.config/nvim/configuration/utils.vim
 source $HOME/.config/nvim/configuration/rnvimr.vim
 
 " THEMES
-source $HOME/.config/nvim/configuration/themes/index.vim " shared themes definitions. don't comment this
-source $HOME/.config/nvim/configuration/themes/gruvbox.vim
-" source $HOME/.config/nvim/configuration/themes/solarized8.vim
+source $HOME/.config/nvim/configuration/themes/index.vim " DON'T COMMENT THIS. Themes shared definitions
+"source $HOME/.config/nvim/configuration/themes/gruvbox.vim
+"source $HOME/.config/nvim/configuration/themes/solarized8.vim
+"source $HOME/.config/nvim/configuration/themes/framer-syntax.vim
+"source $HOME/.config/nvim/configuration/themes/andromeda.vim
+"source $HOME/.config/nvim/configuration/themes/pop-punk.vim
+source $HOME/.config/nvim/configuration/themes/molokai.vim
