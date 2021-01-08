@@ -2,10 +2,14 @@
   "suggest.echodocSupport": true,
   "coc.preferences.hoverTarget": "echo",
 
-  // python config
+  // Python config
   "python.linting.flake8Enabled": true,
   "python.jediEnabled": false,
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
-  "python.pythonPath": "python3"
+  "python.pythonPath": "python3",
+
+  // JS and Typescript
+  "typescript.suggestionActions.enabled": false,
+  "javascript.suggestionActions.enabled": false
 }

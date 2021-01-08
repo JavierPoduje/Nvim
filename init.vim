@@ -35,6 +35,9 @@ Plug 'balanceiskey/vim-framer-syntax'
 Plug 'safv12/andromeda.vim'
 Plug 'bignimbus/pop-punk.vim'
 Plug 'tomasr/molokai'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'senran101604/neotrix.vim'
+Plug 'joshdick/onedark.vim'
 
 " Styles
 Plug 'flazz/vim-colorschemes'
@@ -85,9 +88,12 @@ source $HOME/.config/nvim/configuration/rnvimr.vim
 
 " THEMES
 source $HOME/.config/nvim/configuration/themes/index.vim " DON'T COMMENT THIS. Themes shared definitions
-"source $HOME/.config/nvim/configuration/themes/gruvbox.vim
-"source $HOME/.config/nvim/configuration/themes/solarized8.vim
-"source $HOME/.config/nvim/configuration/themes/framer-syntax.vim
 "source $HOME/.config/nvim/configuration/themes/andromeda.vim
+"source $HOME/.config/nvim/configuration/themes/gruvbox.vim
+"source $HOME/.config/nvim/configuration/themes/framer-syntax.vim
+"source $HOME/.config/nvim/configuration/themes/neotrix.vim
+"source $HOME/.config/nvim/configuration/themes/molokai.vim
+source $HOME/.config/nvim/configuration/themes/onedark.vim
 "source $HOME/.config/nvim/configuration/themes/pop-punk.vim
-source $HOME/.config/nvim/configuration/themes/molokai.vim
+"source $HOME/.config/nvim/configuration/themes/solarized8.vim
+"source $HOME/.config/nvim/configuration/themes/tokyo.vim
