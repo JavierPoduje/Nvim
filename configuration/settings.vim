@@ -1,17 +1,18 @@
 syntax on
 filetype plugin on
 
+set exrc
 set guicursor=
 set noshowmatch
 set relativenumber
+set nu
 set nohlsearch
-set hidden
+set hidden " hide buffers (I use airline to see them)
 set noerrorbells
 set tabstop=2 softtabstop=0 expandtab smarttab
 set shiftwidth=2
 set mouse=a
 set smartindent
-set nu
 set nowrap
 set smartcase
 set noswapfile

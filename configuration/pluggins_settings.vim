@@ -20,6 +20,7 @@ let g:prettier#config#arrow_parens = get(g:,'prettier#config#arrow_parens', 'avo
 let g:UltiSnipsExpandTrigger="<C-k>"
 let g:UltiSnipsJumpForwardTrigger="<C-x>"
 let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+"let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 
 let g:user_emmet_leader_key=','
 let g:user_emmet_install_global = 0
@@ -83,7 +84,8 @@ let g:coc_global_extensions = [
       \ 'coc-emmet',
       \ 'coc-elixir',
       \ 'coc-phpls',
-      \ 'coc-python'
+      \ 'coc-python',
+      \ 'coc-sql'
       \]
 
 " Startify
@@ -106,3 +108,7 @@ let g:floaterm_wintitle=0
 let g:floaterm_autoclose=1
 
 lua require'colorizer'.setup()
+
+" I don't use this. This remap is just for use '<C-c>' as an 'ESC' in
+" sql files without the delay
+let g:ftplugin_sql_omni_key = '<C-j>'

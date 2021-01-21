@@ -97,3 +97,6 @@ source $HOME/.config/nvim/configuration/themes/onedark.vim
 "source $HOME/.config/nvim/configuration/themes/pop-punk.vim
 "source $HOME/.config/nvim/configuration/themes/solarized8.vim
 "source $HOME/.config/nvim/configuration/themes/tokyo.vim
+
+
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
