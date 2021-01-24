@@ -23,8 +23,8 @@ let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 "let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 
 let g:user_emmet_leader_key=','
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+"let g:user_emmet_install_global = 0
+autocmd FileType html,css,jsx,js,tsx,ctp EmmetInstall
 
 " Startify
 let g:startify_session_dir = '~/.config/nvim/session'

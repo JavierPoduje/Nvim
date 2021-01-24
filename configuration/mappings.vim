@@ -76,5 +76,11 @@ nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>bca :w<bar>%bd<bar>e#<bar>bd#<CR>
 
 " Float terminal
+"   - normal terminal
 nnoremap <leader>ff :FloatermToggle<CR>
+"   - terminal with lazygit opened
 nnoremap <leader>fg :FloatermToggle<CR>lazygit<CR>
+
+" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
