@@ -7,25 +7,27 @@ set noshowmatch
 set relativenumber
 set nu
 set nohlsearch
-set hidden " hide buffers (I use airline to see them)
+set hidden " hide buffers (use ariline instead)
 set noerrorbells
 set tabstop=2 softtabstop=0 expandtab smarttab
 set shiftwidth=2
-set mouse=a
+set mouse=a " mouse support
 set smartindent
 set nowrap
 set smartcase
-set noswapfile
-set nobackup
-set undodir=~/.config/nvim/undodir
-set undofile
 set incsearch
 set termguicolors
 set scrolloff=8
 set clipboard=unnamed
 set guifont=Fira\ Code:h12
-set fdm=indent
+set fdm=indent " folding method
 set nofoldenable " disable pre-folding
+
+" Handle backup files
+set noswapfile
+set nobackup
+set undodir=~/.config/nvim/undodir
+set undofile
 
 " Give more space for displaying messages.
 set cmdheight=2

@@ -1,3 +1,6 @@
+" CTRL+C for esc
+inoremap <C-c> <ESC>
+
 " After press * on a word or select more or more on visual mode, you can
 " replace for another word the selected for another word o string
 nnoremap <Leader>r :%s///g<Left><Left>
@@ -42,13 +45,6 @@ nnoremap <M-j> :resize +5<CR>
 nnoremap <M-h> :vertical resize -5<CR>
 nnoremap <M-l> :vertical resize +5<CR>
 
-" Better tabbing
-vnoremap < <gv
-vnoremap > >gv
-
-" CTRL+C for esc
-inoremap <C-c> <ESC>
-
 " GoTo code navigation.
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gy <Plug>(coc-type-definition)
@@ -81,6 +77,14 @@ nnoremap <leader>ff :FloatermToggle<CR>
 "   - terminal with lazygit opened
 nnoremap <leader>fg :FloatermToggle<CR>lazygit<CR>
 
-" Move visual block
+" --- * --- * --- * --- * --- * ---
+" ---- * --- VISUAL MODE --- * ----
+" --- * --- * --- * --- * --- * ---
+
+" Better tabbing
+vnoremap < <gv
+vnoremap > >gv
+
+" Move visual block up and down
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv

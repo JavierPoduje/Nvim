@@ -5,7 +5,7 @@ fun! TrimWhitespace()
 endfun
 
 " Prettier: file extensions to format on save
-autocmd BufWritePre *.html,*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.jsonc,*.graphql,*.vue PrettierAsync
+" autocmd BufWritePre *.html,*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.jsonc,*.graphql,*.vue PrettierAsync
 
 autocmd BufWritePre * :call TrimWhitespace()
 

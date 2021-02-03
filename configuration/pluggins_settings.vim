@@ -20,7 +20,7 @@ let g:prettier#config#arrow_parens = get(g:,'prettier#config#arrow_parens', 'avo
 let g:UltiSnipsExpandTrigger="<C-k>"
 let g:UltiSnipsJumpForwardTrigger="<C-x>"
 let g:UltiSnipsJumpBackwardTrigger="<C-z>"
-"let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 
 let g:user_emmet_leader_key=','
 "let g:user_emmet_install_global = 0
