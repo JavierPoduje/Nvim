@@ -40,8 +40,8 @@ nnoremap <Leader>pf :Files<CR>
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
 
 " Expand windows
-nnoremap <M-k> :resize -5<CR>
-nnoremap <M-j> :resize +5<CR>
+nnoremap <M-k> :resize +5<CR>
+nnoremap <M-j> :resize -5<CR>
 nnoremap <M-h> :vertical resize -5<CR>
 nnoremap <M-l> :vertical resize +5<CR>
 
@@ -59,8 +59,8 @@ nnoremap <leader>cr :CocRestart<CR>
 inoremap <silent><expr> <C-space> coc#refresh()
 
 " Move between buffers
-nmap <Tab> :bn<CR>
-nmap <S-Tab> :bp<CR>
+nmap < :bn<CR>
+nmap > :bp<CR>
 
 " Git management
 nmap <leader>gl :diffget //3<CR>
@@ -82,8 +82,8 @@ nnoremap <leader>fg :FloatermToggle<CR>lazygit<CR>
 " --- * --- * --- * --- * --- * ---
 
 " Better tabbing
-vnoremap < <gv
-vnoremap > >gv
+vnoremap <S-Tab> <gv
+vnoremap <Tab> >gv
 
 " Move visual block up and down
 vnoremap J :m '>+1<CR>gv=gv

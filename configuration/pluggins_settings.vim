@@ -69,7 +69,7 @@ let g:NERDCustomDelimiters={
 
 let g:user_emmet_settings = {
       \ 'javascript' : {
-      \      'extends' : 'jsx, js',
+      \      'extends' : 'jsx',
       \  },
       \}
 
@@ -85,7 +85,8 @@ let g:coc_global_extensions = [
       \ 'coc-elixir',
       \ 'coc-phpls',
       \ 'coc-python',
-      \ 'coc-sql'
+      \ 'coc-sql',
+      \ 'coc-rls',
       \]
 
 " Startify

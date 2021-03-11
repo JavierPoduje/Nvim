@@ -11,5 +11,8 @@
 
   // JS and Typescript
   "typescript.suggestionActions.enabled": false,
-  "javascript.suggestionActions.enabled": false
+  "javascript.suggestionActions.enabled": false,
+
+  // Prettier
+  "prettier.bracketSpacing": true
 }

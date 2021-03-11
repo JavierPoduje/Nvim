@@ -22,7 +22,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Searching for texts and files
+" Search texts and files
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep'
@@ -44,6 +44,7 @@ Plug 'flazz/vim-colorschemes'
 Plug '/home/mpaulson/personal/vim-be-good'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
+  \ 'branch': 'release/1.x',
   \ 'for': [
       \ 'javascript',
       \ 'typescript',
@@ -56,6 +57,7 @@ Plug 'prettier/vim-prettier', {
       \ 'vue',
       \ 'yaml',
       \ 'html'] }
+Plug 'sbdchd/neoformat'
 
 " Snippets
 Plug 'honza/vim-snippets'
@@ -66,7 +68,7 @@ Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'sheerun/vim-polyglot'
 Plug 'norcalli/nvim-colorizer.lua'
 
-" Utils: Editing, float terminat and things like that...
+" Utils: Editing, float terminal and things like that...
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
@@ -75,6 +77,10 @@ Plug 'mhinz/vim-startify'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mbbill/undotree'
 Plug 'voldikss/vim-floaterm'
+
+" Rust file detection, syntax highlighting, formatting, Syntastic integration, etc
+Plug 'rust-lang/rust.vim'
+Plug 'alx741/vim-rustfmt'
 
 " I don't know what this things are...
 Plug 'nelstrom/vim-visual-star-search'
@@ -85,15 +91,16 @@ source $HOME/.config/nvim/configuration/pluggins_settings.vim
 source $HOME/.config/nvim/configuration/mappings.vim
 source $HOME/.config/nvim/configuration/utils.vim
 source $HOME/.config/nvim/configuration/rnvimr.vim
+source $HOME/.config/nvim/configuration/rust.vim
 
 " THEMES
 source $HOME/.config/nvim/configuration/themes/index.vim " DON'T COMMENT THIS. Themes shared definitions
 "source $HOME/.config/nvim/configuration/themes/andromeda.vim
-"source $HOME/.config/nvim/configuration/themes/gruvbox.vim
+source $HOME/.config/nvim/configuration/themes/gruvbox.vim
 "source $HOME/.config/nvim/configuration/themes/framer-syntax.vim
 "source $HOME/.config/nvim/configuration/themes/neotrix.vim
 "source $HOME/.config/nvim/configuration/themes/molokai.vim
-source $HOME/.config/nvim/configuration/themes/onedark.vim
+"source $HOME/.config/nvim/configuration/themes/onedark.vim
 "source $HOME/.config/nvim/configuration/themes/pop-punk.vim
 "source $HOME/.config/nvim/configuration/themes/solarized8.vim
 "source $HOME/.config/nvim/configuration/themes/tokyo.vim
