@@ -23,7 +23,6 @@ let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 
 let g:user_emmet_leader_key=','
-"let g:user_emmet_install_global = 0
 autocmd FileType html,css,jsx,js,tsx,ctp EmmetInstall
 
 " Startify
@@ -31,7 +30,7 @@ let g:startify_session_dir = '~/.config/nvim/session'
 let g:startify_session_persistence = 1
 let g:startify_change_to_vcs_root = 1
 
-" background stable
+" stable background
 let &t_ut=''
 
 " I don't know what this things are...
@@ -111,5 +110,5 @@ let g:floaterm_autoclose=1
 lua require'colorizer'.setup()
 
 " I don't use this. This remap is just for use '<C-c>' as an 'ESC' in
-" sql files without the delay
+" .sql files without the delay
 let g:ftplugin_sql_omni_key = '<C-j>'
