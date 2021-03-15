@@ -8,6 +8,14 @@ if executable('rg')
 endif
 let $FZF_DEFAULT_OPTS='--reverse'
 
+" Web devicons
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_enable_airline_statusline = 1
+let g:WebDevIconsUnicodeDecorateFileNodes = 0
+let g:webdevicons_conceal_nerdtree_brackets = 1
+
 " Prettier
 let g:prettier#config#trailing_comma = 'none'
 let g:prettier#config#single_quote = 'true'
@@ -42,30 +50,16 @@ let g:netrw_banner = 0
 let g:netrw_winsize = 25
 
 " Airline
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#buffer_min_count = 2
 
 " Elixir formatter
 let g:mix_format_on_save = 1
 
-" NERD tree
-let NERDTreeShowHidden = 1
-let NERDTreeShowLineNumbers=1 " display relative numbers on the folders tree
-let NERDTreeHighlightCursorline = 0
-let g:NERDDefaultAlign = 'left'
-let g:NERDTreeGitStatusWithFlags = 1
-let g:NERDTreeIgnore = ['^node_modules$']
-let g:DevIconsEnableFoldersOpenClose = 1
-
-" NERD commenter
-let g:NERDCustomDelimiters={
-      \ 'javascript': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
-      \ 'typescript': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
-      \ 'typescriptreact': { 'left': '//', 'leftAlt': '{/*', 'rightAlt': '*/}' },
-      \ 'php': { 'left': '//', 'leftAlt': '<!-- ', 'rightAlt': ' -->' },
-      \}
-
+" Emmet
 let g:user_emmet_settings = {
       \ 'javascript' : {
       \      'extends' : 'jsx',
@@ -96,6 +90,23 @@ let g:startify_lists = [
       \ { 'type': 'bookmarks', 'header': ['   Bookmarks:'] },
       \ ]
 
+" NERD tree
+let NERDTreeShowHidden = 1
+let NERDTreeShowLineNumbers=1 " display relative numbers on the folders tree
+let NERDTreeHighlightCursorline = 0
+let g:NERDDefaultAlign = 'left'
+let g:NERDTreeGitStatusWithFlags = 1
+let g:NERDTreeIgnore = ['^node_modules$']
+let g:DevIconsEnableFoldersOpenClose = 1
+
+" NERD commenter
+let g:NERDCustomDelimiters={
+      \ 'javascript': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+      \ 'typescript': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
+      \ 'typescriptreact': { 'left': '//', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+      \ 'php': { 'left': '//', 'leftAlt': '<!-- ', 'rightAlt': ' -->' },
+      \}
+
 " Ignore files in .gitignore when searching
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
@@ -112,3 +123,15 @@ lua require'colorizer'.setup()
 " I don't use this. This remap is just for use '<C-c>' as an 'ESC' in
 " .sql files without the delay
 let g:ftplugin_sql_omni_key = '<C-j>'
+
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction

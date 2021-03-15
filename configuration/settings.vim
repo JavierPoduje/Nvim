@@ -22,6 +22,7 @@ set clipboard=unnamed
 set guifont=Fira\ Code:h12
 set fdm=indent " folding method
 set nofoldenable " disable pre-folding
+set encoding=utf8
 
 " Handle backup files
 set noswapfile
