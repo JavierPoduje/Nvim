@@ -28,6 +28,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep'
 
 " Themes
+Plug 'ayu-theme/ayu-vim'
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 Plug 'lifepillar/vim-solarized8'
@@ -96,10 +97,11 @@ source $HOME/.config/nvim/configuration/rust.vim
 " DON'T COMMENT THIS. Themes shared definitions
 source $HOME/.config/nvim/configuration/themes/index.vim
 
+source $HOME/.config/nvim/configuration/themes/ayu.vim
 "source $HOME/.config/nvim/configuration/themes/gruvbox.vim
 "source $HOME/.config/nvim/configuration/themes/neotrix.vim
 "source $HOME/.config/nvim/configuration/themes/molokai.vim
 "source $HOME/.config/nvim/configuration/themes/onedark.vim
-source $HOME/.config/nvim/configuration/themes/pop-punk.vim
+"source $HOME/.config/nvim/configuration/themes/pop-punk.vim
 "source $HOME/.config/nvim/configuration/themes/solarized8.vim
 "source $HOME/.config/nvim/configuration/themes/tokyo.vim

@@ -30,7 +30,7 @@ let g:UltiSnipsJumpForwardTrigger="<C-x>"
 let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 
-let g:user_emmet_leader_key=','
+"let g:user_emmet_leader_key='<C-y>'
 autocmd FileType html,css,jsx,js,tsx,ctp EmmetInstall
 
 " Startify
@@ -80,6 +80,7 @@ let g:coc_global_extensions = [
       \ 'coc-python',
       \ 'coc-sql',
       \ 'coc-rls',
+      \ 'coc-vetur',
       \]
 
 " Startify
@@ -127,7 +128,6 @@ let g:ftplugin_sql_omni_key = '<C-j>'
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
