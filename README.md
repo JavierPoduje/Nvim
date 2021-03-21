@@ -11,4 +11,10 @@ $ mkdir session/
 $ mkdir undodir/
 ```
 
-...
+2. Instalar vim-plug desde [aquí](https://github.com/junegunn/vim-plug).
+3. Ingresar al archivo `init.vim` e instalar los pluggins
+
+```sh
+:PlugInstall
+```
+4. Check for problems using `:checkhealth`
