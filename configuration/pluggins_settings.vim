@@ -1,3 +1,6 @@
+" set python3 environment
+let g:python3_host_prog="/usr/bin/python3"
+
 " Multi-cursor exit all cursors by default
 let g:multi_cursor_quit_key='<C-c>'
 nnoremap <C-c> :call multiple_cursors#quit()<CR>
