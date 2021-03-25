@@ -3,7 +3,7 @@ let g:solarized_bold = 1
 let g:solarized_undercurl = 1
 let g:solarized_italic = 1
 let s:sp_red = 1
-let g:solarized_termtrans = 1 " transparent terminal
+let g:solarized_termtrans = 0 " transparent terminal
 
 " Airline configuration
 let g:airline_solarized_bg='dark'
