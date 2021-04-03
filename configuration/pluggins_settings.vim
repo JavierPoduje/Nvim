@@ -1,3 +1,6 @@
+" <Space> as leader key
+let mapleader = " "
+
 " set python3 environment
 let g:python3_host_prog="/usr/bin/python3"
 
@@ -46,7 +49,6 @@ let &t_ut=''
 
 " I don't know what this things are...
 let loaded_matchparen = 1
-let mapleader = " "
 let g:netrw_browse_split = 2
 let g:vrfr_rg = 'true'
 let g:netrw_banner = 0
@@ -57,9 +59,10 @@ let g:netrw_winsize = 25
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+" don't display airline if only one buffer is open
 let g:airline#extensions#tabline#buffer_min_count = 2
 
-" Elixir formatter
+" Elixir: format on save
 let g:mix_format_on_save = 1
 
 " Emmet
@@ -124,11 +127,6 @@ let g:floaterm_autoclose=1
 
 lua require'colorizer'.setup()
 
-" I don't use this. This remap is just for use '<C-c>' as an 'ESC' in
-" .sql files without the delay
-let g:ftplugin_sql_omni_key = '<C-j>'
-
-
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
@@ -138,3 +136,7 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+" I don't use this. This remap is just for use '<C-c>' as an 'ESC' in
+" .sql files without the delay
+let g:ftplugin_sql_omni_key = '<C-j>'

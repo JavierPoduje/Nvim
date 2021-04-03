@@ -9,5 +9,5 @@ colorscheme material
 let g:lightline = { 'colorscheme': 'material_vim' }
 let g:airline_theme = 'material'
 
-" Options: ocean=#1a1c25, palenight=#333747, darker=#2b2b2b
+" Options: default=#303c41, ocean=#1a1c25, palenight=#333747, darker=#2b2b2b
 highlight ColorColumn ctermbg=0 guibg=#2b2b2b
