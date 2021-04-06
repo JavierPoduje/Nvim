@@ -31,10 +31,10 @@ let g:prettier#config#semi = 'false'
 let g:prettier#config#arrow_parens = get(g:,'prettier#config#arrow_parens', 'avoid')
 
 " UtilSnips
-let g:UltiSnipsExpandTrigger="<C-k>"
-let g:UltiSnipsJumpForwardTrigger="<C-x>"
-let g:UltiSnipsJumpBackwardTrigger="<C-z>"
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
+let g:UltiSnipsExpandTrigger = "<C-k>"
+let g:UltiSnipsJumpForwardTrigger = "<C-x>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-z>"
+let g:UltiSnipsSnippetDirectories = ["UltiSnips", "my_snippets"]
 
 "let g:user_emmet_leader_key='<C-y>'
 autocmd FileType html,css,jsx,js,tsx,ctp EmmetInstall
@@ -136,6 +136,7 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
 
 " I don't use this. This remap is just for use '<C-c>' as an 'ESC' in
 " .sql files without the delay
