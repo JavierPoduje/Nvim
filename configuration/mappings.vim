@@ -88,3 +88,11 @@ vnoremap <Tab> >gv
 " Move visual block up and down
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+
+" --- * --- * --- * --- * --- * ---
+" --- * --- * COMMANDS  * --- * ---
+" --- * --- * --- * --- * --- * ---
+
+" set filetype to markdown
+command! MD :set filetype=markdown
