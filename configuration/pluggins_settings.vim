@@ -8,6 +8,7 @@ let g:python3_host_prog="/usr/bin/python3"
 let g:multi_cursor_quit_key='<C-c>'
 nnoremap <C-c> :call multiple_cursors#quit()<CR>
 
+" FZF
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 if executable('rg')
     let g:rg_derive_root='true'
@@ -51,11 +52,20 @@ let &t_ut=''
 let loaded_matchparen = 1
 let g:netrw_browse_split = 2
 let g:vrfr_rg = 'true'
-let g:netrw_banner = 0
-let g:netrw_winsize = 25
+let g:netrw_banner = 1
+let g:netrw_winsize = 15
+
+" NERD tree
+let NERDTreeShowHidden = 1
+let NERDTreeShowLineNumbers=1 " display relative numbers on the folders tree
+let NERDTreeHighlightCursorline = 0
+let g:NERDDefaultAlign = 'left'
+let g:NERDTreeGitStatusWithFlags = 1
+let g:NERDTreeIgnore = ['^node_modules$']
+let g:DevIconsEnableFoldersOpenClose = 1
 
 " Airline
-"let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
@@ -96,15 +106,6 @@ let g:startify_lists = [
       \ { 'type': 'dir',       'header': ['   Current Directory: '. getcwd()] },
       \ { 'type': 'bookmarks', 'header': ['   Bookmarks:'] },
       \ ]
-
-" NERD tree
-let NERDTreeShowHidden = 1
-let NERDTreeShowLineNumbers=1 " display relative numbers on the folders tree
-let NERDTreeHighlightCursorline = 0
-let g:NERDDefaultAlign = 'left'
-let g:NERDTreeGitStatusWithFlags = 1
-let g:NERDTreeIgnore = ['^node_modules$']
-let g:DevIconsEnableFoldersOpenClose = 1
 
 " NERD commenter
 let g:NERDCustomDelimiters={

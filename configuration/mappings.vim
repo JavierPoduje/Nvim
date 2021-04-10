@@ -95,4 +95,9 @@ vnoremap K :m '<-2<CR>gv=gv
 " --- * --- * --- * --- * --- * ---
 
 " set filetype to markdown
-command! MD :set filetype=markdown
+command! MD :set filetype=markdown<CR>
+
+" Open next buffer in right vertical split
+command! VS :vs | :wincmd l | :bn
+" Open prev buffer in right vertical split
+command! Vs :vs | :wincmd l | :bp
