@@ -15,11 +15,13 @@ Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mhinz/vim-mix-format'
 
+" Beautification
+Plug 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline-themes'
+
 " Files manager
 Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 " Search texts and files
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -37,6 +39,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'cj/vim-webdevicons'
+
 
 " Styles
 Plug 'flazz/vim-colorschemes'
@@ -67,7 +70,7 @@ Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'sheerun/vim-polyglot'
 Plug 'norcalli/nvim-colorizer.lua'
 
-" Utils: Editing, float terminal and things like that...
+" Utils
 Plug 'tpope/vim-surround'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'preservim/nerdcommenter'
@@ -78,7 +81,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'mbbill/undotree'
 Plug 'voldikss/vim-floaterm'
 
-" Rust file detection, syntax highlighting, formatting, Syntastic integration, etc
+" Rust stuffs
 Plug 'rust-lang/rust.vim'
 Plug 'alx741/vim-rustfmt'
 
@@ -97,8 +100,8 @@ source $HOME/.config/nvim/configuration/rust.vim
 source $HOME/.config/nvim/configuration/themes/index.vim
 
 "source $HOME/.config/nvim/configuration/themes/ayu.vim
-"source $HOME/.config/nvim/configuration/themes/gruvbox.vim
-source $HOME/.config/nvim/configuration/themes/material.vim
+source $HOME/.config/nvim/configuration/themes/gruvbox.vim
+"source $HOME/.config/nvim/configuration/themes/material.vim
 "source $HOME/.config/nvim/configuration/themes/onedark.vim
 "source $HOME/.config/nvim/configuration/themes/spaceduck.vim
 "source $HOME/.config/nvim/configuration/themes/solarized8.vim

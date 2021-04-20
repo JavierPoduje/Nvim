@@ -11,7 +11,7 @@ set hidden " hide buffers (use ariline instead)
 set noerrorbells
 set tabstop=2 softtabstop=0 expandtab smarttab
 set shiftwidth=2
-"set mouse=a " mouse support
+set mouse=a " mouse support
 set smartindent
 set nowrap
 set smartcase

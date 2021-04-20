@@ -59,8 +59,8 @@ nnoremap <leader>cr :CocRestart<CR>
 inoremap <silent><expr> <C-space> coc#refresh()
 
 " Move between buffers
-nmap < :bn<CR>
-nmap > :bp<CR>
+nmap > :bn<CR>
+nmap < :bp<CR>
 
 " Git management
 nmap <leader>gl :diffget //3<CR>
@@ -95,7 +95,7 @@ vnoremap K :m '<-2<CR>gv=gv
 " --- * --- * --- * --- * --- * ---
 
 " set filetype to markdown
-command! MD :set filetype=markdown<CR>
+command! MD :set filetype=markdown
 
 " Open next buffer in right vertical split
 command! VS :vs | :wincmd l | :bn
