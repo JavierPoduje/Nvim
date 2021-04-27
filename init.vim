@@ -36,8 +36,8 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'tomasr/molokai'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'joshdick/onedark.vim'
-Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+Plug 'haishanh/night-owl.vim'
 Plug 'cj/vim-webdevicons'
 
 
@@ -99,10 +99,10 @@ source $HOME/.config/nvim/configuration/rust.vim
 " DON'T COMMENT THIS. Themes shared definitions
 source $HOME/.config/nvim/configuration/themes/index.vim
 
-"source $HOME/.config/nvim/configuration/themes/ayu.vim
-source $HOME/.config/nvim/configuration/themes/gruvbox.vim
+source $HOME/.config/nvim/configuration/themes/ayu.vim
+"source $HOME/.config/nvim/configuration/themes/gruvbox.vim
 "source $HOME/.config/nvim/configuration/themes/material.vim
+"source $HOME/.config/nvim/configuration/themes/night-owl.vim
 "source $HOME/.config/nvim/configuration/themes/onedark.vim
-"source $HOME/.config/nvim/configuration/themes/spaceduck.vim
 "source $HOME/.config/nvim/configuration/themes/solarized8.vim
 "source $HOME/.config/nvim/configuration/themes/tokyo.vim

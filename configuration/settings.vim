@@ -7,7 +7,7 @@ set noshowmatch
 set relativenumber
 set nu
 set nohlsearch
-set hidden " hide buffers (use ariline instead)
+set hidden " hide buffers (use airiline instead)
 set noerrorbells
 set tabstop=2 softtabstop=0 expandtab smarttab
 set shiftwidth=2
@@ -24,16 +24,19 @@ set fdm=indent " folding method
 set nofoldenable " disable pre-folding
 set encoding=utf8
 
+" Spelling for English and Spanish
+set spelllang=en_us,es " not active at start
+
 " Handle backup files
 set noswapfile
 set nobackup
 set undodir=~/.config/nvim/undodir
 set undofile
 
-" Give more space for displaying messages.
+" More space for displaying messages.
 set cmdheight=2
 
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" Having longer update time (default is 4000 ms = 4 sec) leads to noticeable
 " delays and poor user experience.
 set updatetime=50
 
