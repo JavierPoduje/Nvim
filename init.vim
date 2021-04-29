@@ -80,6 +80,7 @@ Plug 'mhinz/vim-startify'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mbbill/undotree'
 Plug 'voldikss/vim-floaterm'
+Plug 'vuciv/vim-bujo'
 
 " Rust stuffs
 Plug 'rust-lang/rust.vim'

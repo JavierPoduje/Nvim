@@ -58,6 +58,10 @@ nmap <silent><leader>gn <Plug>(coc-diagnostic-next)
 nnoremap <leader>cr :CocRestart<CR>
 inoremap <silent><expr> <C-space> coc#refresh()
 
+" Todo lists mappings
+nmap <leader>td <Plug>BujoAddnormal
+nmap <leader>tc <Plug>BujoChecknormal
+
 " Move between buffers
 nmap > :bn<CR>
 nmap < :bp<CR>
