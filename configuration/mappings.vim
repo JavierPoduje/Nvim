@@ -1,6 +1,12 @@
 " CTRL+C for esc
 inoremap <C-c> <ESC>
 
+" By default, this calls the fzf windows method. I just want to save my file...
+command! W  write
+
+" Delete front word in insert mode with CTRL+d
+imap <C-D> X<Esc>ce
+
 " After press * on a word or select more or more on visual mode, you can
 " replace for another word the selected for another word o string
 nnoremap <Leader>r :%s///g<Left><Left>
