@@ -81,13 +81,11 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'mbbill/undotree'
 Plug 'voldikss/vim-floaterm'
 Plug 'vuciv/vim-bujo'
+Plug 'nelstrom/vim-visual-star-search'
 
-" Rust stuffs
+" Rust stuff
 Plug 'rust-lang/rust.vim'
 Plug 'alx741/vim-rustfmt'
-
-" I don't know what this things are...
-Plug 'nelstrom/vim-visual-star-search'
 
 call plug#end()
 

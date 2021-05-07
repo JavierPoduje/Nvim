@@ -1,6 +1,5 @@
 {
   "suggest.echodocSupport": true,
-  "coc.preferences.hoverTarget": "echo",
 
   // Python config
   "python.linting.flake8Enabled": true,
@@ -14,5 +13,12 @@
   "javascript.suggestionActions.enabled": false,
 
   // Prettier
-  "prettier.bracketSpacing": true
+  "prettier.bracketSpacing": true,
+
+  // SQL
+  "sql.formatOptions": {
+    "language": "mysql",
+    "indent": "    ",
+    "linesBetweenQueries": 2
+  }
 }
