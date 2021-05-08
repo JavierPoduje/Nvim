@@ -1,12 +1,23 @@
-" <Space> as leader key
-let mapleader = " "
-
 " set python3 environment
 let g:python3_host_prog="/usr/bin/python3"
 
 " Multi-cursor exit all cursors by default
 let g:multi_cursor_quit_key='<C-c>'
 nnoremap <C-c> :call multiple_cursors#quit()<CR>
+
+" auto-pair
+" The `{}`, `()`, `[]` are disabled for jump to next line
+let g:AutoPairs = {
+      \ '(':')//s',
+      \ '[':']//s',
+      \ '{':'}//s',
+      \ "'":"'",
+      \ '"':'"',
+      \ '```':'```',
+      \ '"""':'"""',
+      \ "'''":"'''",
+      \ "`":"`"
+\ }
 
 " FZF
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
@@ -105,15 +116,15 @@ let g:startify_lists = [
       \ { 'type': 'files',     'header': ['   Files: '] },
       \ { 'type': 'dir',       'header': ['   Current Directory: '. getcwd()] },
       \ { 'type': 'bookmarks', 'header': ['   Bookmarks:'] },
-      \ ]
+\]
 
 " NERD commenter
-let g:NERDCustomDelimiters={
+let g:NERDCustomDelimiters = {
       \ 'javascript': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
       \ 'typescript': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
       \ 'typescriptreact': { 'left': '//', 'leftAlt': '{/*', 'rightAlt': '*/}' },
       \ 'php': { 'left': '//', 'leftAlt': '<!-- ', 'rightAlt': ' -->' },
-      \}
+\}
 
 " Ignore files in .gitignore when searching
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']

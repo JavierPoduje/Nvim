@@ -43,3 +43,5 @@ set updatetime=50
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
+" <Space> as leader key
+let mapleader = " "
