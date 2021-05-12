@@ -151,6 +151,7 @@ endfunction
 
 " Set todo lists caché file
 let g:bujo#todo_file_path = $HOME . "/.config/nvim/cache/bujo"
+let g:bujo#window_width = 100
 
 " I don't use this. This remap is just for use '<C-c>' as an 'ESC' in
 " .sql files without the delay
