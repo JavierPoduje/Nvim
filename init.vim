@@ -39,7 +39,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'haishanh/night-owl.vim'
 Plug 'cj/vim-webdevicons'
-
+Plug 'sainnhe/edge'
 
 " Styles
 Plug 'flazz/vim-colorschemes'
@@ -98,7 +98,8 @@ source $HOME/.config/nvim/configuration/rust.vim
 " DON'T COMMENT THIS. Themes shared definitions
 source $HOME/.config/nvim/configuration/themes/index.vim
 
-source $HOME/.config/nvim/configuration/themes/ayu.vim
+"source $HOME/.config/nvim/configuration/themes/ayu.vim
+source $HOME/.config/nvim/configuration/themes/edge.vim
 "source $HOME/.config/nvim/configuration/themes/gruvbox.vim
 "source $HOME/.config/nvim/configuration/themes/material.vim
 "source $HOME/.config/nvim/configuration/themes/night-owl.vim
