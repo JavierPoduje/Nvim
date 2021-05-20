@@ -41,6 +41,7 @@ let g:prettier#config#use_tabs = 'false'
 let g:prettier#config#print_width = 80
 let g:prettier#config#semi = 'false'
 let g:prettier#config#arrow_parens = get(g:,'prettier#config#arrow_parens', 'avoid')
+let g:prettier#config#tab_width = 2
 
 " UtilSnips
 let g:UltiSnipsExpandTrigger = "<C-k>"
@@ -85,6 +86,15 @@ let g:airline#extensions#tabline#buffer_min_count = 2
 
 " Elixir: format on save
 let g:mix_format_on_save = 1
+
+" Haskell
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
 
 " Emmet
 let g:user_emmet_settings = {

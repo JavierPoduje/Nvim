@@ -69,6 +69,7 @@ Plug 'SirVer/ultisnips'
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'sheerun/vim-polyglot'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'neovimhaskell/haskell-vim'
 
 " Utils
 Plug 'tpope/vim-surround'

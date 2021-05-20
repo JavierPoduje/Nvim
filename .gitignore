@@ -3,4 +3,5 @@
 /undodir
 /bundle
 /cache
+/node_modules
 .netrwhist
