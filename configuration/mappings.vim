@@ -11,6 +11,9 @@ imap <C-D> X<Esc>ce
 " replace for another word the selected for another word o string
 nnoremap <Leader>r :%s///g<Left><Left>
 
+" Format one long line into multiple short lines
+nnoremap Q gq<CR>
+
 " Better window navigation
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>

@@ -5,7 +5,7 @@ let g:airline_section_y = ''
 
 " Theme for preview window
 " For check possible themes run `bat --list-themes`
-let $BAT_THEME='Monokai Extended Origin'
+let $BAT_THEME='ansi'
 
 set colorcolumn=80
 set background=dark
