@@ -1,3 +1,4 @@
+" Remove blank spaces on save
 fun! TrimWhitespace()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e

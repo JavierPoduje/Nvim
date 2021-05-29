@@ -5,7 +5,7 @@ let g:python3_host_prog="/usr/bin/python3"
 let g:multi_cursor_quit_key='<C-c>'
 nnoremap <C-c> :call multiple_cursors#quit()<CR>
 
-" auto-pair
+" Auto-Pair
 " The `{}`, `()`, `[]` are disabled for jump to next line
 let g:AutoPairs = {
       \ '(':')//s',
