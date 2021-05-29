@@ -1,7 +1,7 @@
 /plugged
-/session
-/undodir
+/session/*
+/undodir/*
 /bundle
-/cache
+/cache/bujo/*
 /node_modules
 .netrwhist
