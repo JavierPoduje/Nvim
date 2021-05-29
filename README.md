@@ -1,20 +1,37 @@
-# Configuración para Neovim
+# Description
 
-Para instalar hay que crear la carpeta .config/nvim/, y dentro agregar este repo.
+My NeoVim configuration for software development.
 
-## Pasos para instalar
+## Dependencies
 
-1. Dentro del `root` del proyecto, crear las carpetas `session` para el manejo de sesiones desde startify y `undodir` para el manejor del árbol de 'undos'.
+1. [Node (>= 12)](https://nodejs.org/en/download/)
+2. [Yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable)
+3. [Lazygit](https://github.com/jesseduffield/lazygit)
+4. [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
+5. [Vim-Plug](https://github.com/junegunn/vim-plug)
+
+## Install
+
+Create folder to handle sessions:
 
 ```sh
 $ mkdir session/
+```
+
+Create folder to handle undos:
+
+```sh
 $ mkdir undodir/
 ```
 
-2. Instalar vim-plug desde [aquí](https://github.com/junegunn/vim-plug).
-3. Ingresar al archivo `init.vim` e instalar los pluggins
+Install pluggins running the following command inside vim:
 
 ```sh
 :PlugInstall
 ```
-4. Check for problems using `:checkhealth`
+
+Check for health problems with the following command and solve them if necessary:
+
+```sh
+:checkhealth
+```
