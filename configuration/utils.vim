@@ -30,6 +30,10 @@ fun! DefineAirlineSeparations(airline_separation_type)
   endif
 endfunction
 
+fun! SetTheme(theme)
+  exec "source $HOME/.config/nvim/configuration/themes/" . a:theme . ".vim"
+endfunction
+
 " Prettier: file extensions to format on save
 fun! PrettierFormatOnSave(prettier_format_on_save)
   if a:prettier_format_on_save == 1

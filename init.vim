@@ -20,20 +20,5 @@ source $HOME/.config/nvim/configuration/rust.vim
 " Haskell language configuration
 source $HOME/.config/nvim/configuration/haskell.vim
 
-" --- * --- * --- * --- * --- * ---
-" -- * --- *    THEMES   * --- * ---
-" --- * --- * --- * --- * --- * ---
-
-" Themes shared definitions
+" Theme definition
 source $HOME/.config/nvim/configuration/themes/index.vim
-
-" --- * --- * Theme individual definitions * --- * ---
-
-"source $HOME/.config/nvim/configuration/themes/ayu.vim
-source $HOME/.config/nvim/configuration/themes/edge.vim
-"source $HOME/.config/nvim/configuration/themes/gruvbox.vim
-"source $HOME/.config/nvim/configuration/themes/material.vim
-"source $HOME/.config/nvim/configuration/themes/night-owl.vim
-"source $HOME/.config/nvim/configuration/themes/onedark.vim
-"source $HOME/.config/nvim/configuration/themes/solarized8.vim
-"source $HOME/.config/nvim/configuration/themes/tokyo.vim

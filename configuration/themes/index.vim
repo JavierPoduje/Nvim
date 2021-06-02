@@ -12,3 +12,6 @@ let $BAT_THEME='ansi'
 set colorcolumn=80
 set background=dark
 
+" Options: ayu, edge, gruvbox, material, night-owl, onedark, solarized8, tokyo
+call SetTheme("edge")
+
