@@ -1,3 +1,7 @@
+" Util methods and some practical definitions. This need to be defined at the
+" beginning of the sourcing because some methods are used on the below files
+source $HOME/.config/nvim/configuration/utils.vim
+
 " Vim settings
 source $HOME/.config/nvim/configuration/settings.vim
 
@@ -9,9 +13,6 @@ source $HOME/.config/nvim/configuration/pluggins_settings.vim
 
 " Mappings definition
 source $HOME/.config/nvim/configuration/mappings.vim
-
-" Util methods and 'format on save' definitions
-source $HOME/.config/nvim/configuration/utils.vim
 
 " Rust language configuration
 source $HOME/.config/nvim/configuration/rust.vim

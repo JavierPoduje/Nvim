@@ -42,6 +42,7 @@ let g:prettier#config#print_width = 80
 let g:prettier#config#semi = 'false'
 let g:prettier#config#arrow_parens = get(g:,'prettier#config#arrow_parens', 'avoid')
 let g:prettier#config#tab_width = 2
+call PrettierFormatOnSave(0) " Options: 0 | 1
 
 " UtilSnips
 let g:UltiSnipsExpandTrigger = "<C-k>"
@@ -69,7 +70,7 @@ let g:netrw_winsize = 15
 
 " NERD tree
 let NERDTreeShowHidden = 1
-let NERDTreeShowLineNumbers=1 " display relative numbers on the folders tree
+let NERDTreeShowLineNumbers = 1 " display relative numbers on the folders tree
 let NERDTreeHighlightCursorline = 0
 let g:NERDDefaultAlign = 'left'
 let g:NERDTreeGitStatusWithFlags = 1
@@ -86,15 +87,6 @@ let g:airline#extensions#tabline#buffer_min_count = 2
 
 " Elixir: format on save
 let g:mix_format_on_save = 1
-
-" Haskell
-let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
-let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
-let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
-let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
-let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
-let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
-let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
 
 " Emmet
 let g:user_emmet_settings = {
@@ -118,6 +110,7 @@ let g:coc_global_extensions = [
       \ 'coc-sql',
       \ 'coc-rls',
       \ 'coc-vetur',
+      \ 'coc-vimlsp',
       \]
 
 " Startify
@@ -151,15 +144,8 @@ lua require'colorizer'.setup()
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
 
-" Set todo lists caché file
+" Set todo lists cache file
 let g:bujo#todo_file_path = $HOME . "/.config/nvim/cache/bujo"
 let g:bujo#window_width = 100
 

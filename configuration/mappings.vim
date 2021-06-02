@@ -48,7 +48,7 @@ nnoremap <Leader>pf :Files<CR>
 " Source configuration
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
 
-" Expand windows
+" Resize windows
 nnoremap <M-k> :resize +5<CR>
 nnoremap <M-j> :resize -5<CR>
 nnoremap <M-h> :vertical resize -5<CR>
@@ -109,7 +109,7 @@ vnoremap K :m '<-2<CR>gv=gv
 " set filetype to markdown
 command! MD :set filetype=markdown
 
-" Open next buffer in right vertical split
+" Open next buffer on the right using vertical split
 command! VS :vs | :wincmd l | :bn
-" Open prev buffer in right vertical split
+" Open previous buffer on the right using vertical split
 command! Vs :vs | :wincmd l | :bp
