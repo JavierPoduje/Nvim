@@ -25,6 +25,21 @@ if executable('rg')
     let g:rg_derive_root='true'
 endif
 let $FZF_DEFAULT_OPTS='--reverse'
+" Match my colorscheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 " Web devicons
 let g:webdevicons_enable = 1
@@ -152,3 +167,7 @@ let g:bujo#window_width = 100
 " I don't use this. This remap is just for use '<C-c>' as an 'ESC' in
 " .sql files without the delay
 let g:ftplugin_sql_omni_key = '<C-j>'
+
+" Deactive GitGutter commands to avoid slow <leader>+h execution
+let g:gitgutter_map_keys = 0
+

@@ -20,6 +20,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Files manager
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-rooter' " search files on the all project
 
 " Search texts and files
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
