@@ -2,10 +2,9 @@
   "suggest.echodocSupport": true,
 
   // Python config
+  "pyright.enable": true,
   "python.linting.flake8Enabled": true,
-  "python.jediEnabled": false,
   "python.linting.enabled": true,
-  "python.linting.pylintEnabled": true,
   "python.pythonPath": "python3",
 
   // JS and Typescript

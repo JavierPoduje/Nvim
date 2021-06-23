@@ -111,5 +111,9 @@ command! MD :set filetype=markdown
 
 " Open next buffer on the right using vertical split
 command! VS :vs | :wincmd l | :bn
+
 " Open previous buffer on the right using vertical split
 command! Vs :vs | :wincmd l | :bp
+
+" Display window with my open buffers
+command! B :Buffers
