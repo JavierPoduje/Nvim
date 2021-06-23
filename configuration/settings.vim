@@ -14,6 +14,7 @@ set shiftwidth=2
 set mouse=a " mouse support
 set smartindent
 set nowrap
+set ignorecase
 set smartcase
 set incsearch
 set termguicolors
@@ -23,6 +24,7 @@ set guifont=Fira\ Code:h12
 set fdm=indent " folding method
 set nofoldenable " disable pre-folding
 set encoding=utf8
+set colorcolumn=80
 
 " Spelling for English and Spanish
 set spelllang=en_us,es " not active at start
