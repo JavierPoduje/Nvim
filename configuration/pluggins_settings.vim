@@ -24,7 +24,9 @@ let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 if executable('rg')
     let g:rg_derive_root='true'
 endif
-let $FZF_DEFAULT_OPTS='--reverse'
+let $FZF_DEFAULT_OPTS = '--reverse'
+let $FZF_DEFAULT_COMMAND = 'rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*}"'
+
 " Match my colorscheme
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
@@ -40,6 +42,16 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+" Ripgrep
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --hidden --column --line-number --no-heading --color=always --smart-case %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 " Web devicons
 let g:webdevicons_enable = 1

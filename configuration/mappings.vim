@@ -42,7 +42,8 @@ nnoremap <leader>pv :NERDTreeToggle<CR>
 nnoremap <leader>pp :NERDTreeFind<CR>
 
 " Files search
-nnoremap <Leader>ps :Rg --fixed-strings --ignore-case ''<Left>
+nnoremap <Leader>pS :Rg --fixed-strings --ignore-case '' **/*.<Left><Left><Left><Left><Left><Left><Left>
+nnoremap <leader>ps :RG<CR>
 nnoremap <Leader>pf :Files<CR>
 
 " Source configuration
@@ -72,8 +73,9 @@ nmap <leader>td <Plug>BujoAddnormal
 nmap <leader>tc <Plug>BujoChecknormal
 
 " Move between buffers
-nmap > :bn<CR>
-nmap < :bp<CR>
+nnoremap > :bn<CR>
+nnoremap < :bp<CR>
+nnoremap <leader>^ :e#<CR>
 
 " Git management
 nmap <leader>gl :diffget //3<CR>
