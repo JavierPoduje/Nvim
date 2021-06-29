@@ -86,10 +86,5 @@ Plug 'nelstrom/vim-visual-star-search'
 Plug 'rust-lang/rust.vim'
 Plug 'alx741/vim-rustfmt'
 
-" Haskell stuff
-Plug 'neovimhaskell/haskell-vim'
-Plug 'alx741/vim-hindent'
-Plug 'haskell/stylish-haskell'
-
 call plug#end()
 

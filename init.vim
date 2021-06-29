@@ -17,11 +17,5 @@ source $HOME/.config/nvim/configuration/mappings.vim
 " Rust language configuration
 source $HOME/.config/nvim/configuration/rust.vim
 
-" Haskell language configuration
-source $HOME/.config/nvim/configuration/haskell.vim
-
 " Theme definition
 source $HOME/.config/nvim/configuration/themes/index.vim
-
-" Settings for neovide
-"source $HOME/.config/nvim/configuration/neovide.vim
