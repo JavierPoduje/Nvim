@@ -1,4 +1,4 @@
-" CTRL+C for esc
+"sigeca_docencia_simple CTRL+C for esc
 inoremap <C-c> <ESC>
 
 " By default, this calls the fzf windows method. I just want to save my file...
@@ -75,7 +75,7 @@ nmap <leader>tc <Plug>BujoChecknormal
 " Move between buffers
 nnoremap > :bn<CR>
 nnoremap < :bp<CR>
-nnoremap <leader>^ :e#<CR>
+nnoremap <leader># :e#<CR>
 
 " Git management
 nmap <leader>gl :diffget //3<CR>
