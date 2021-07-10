@@ -16,11 +16,11 @@ Plug 'mhinz/vim-mix-format'
 " Beautification
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
 
 " Files manager
 Plug 'preservim/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'airblade/vim-rooter' " search files on the all project
+Plug 'airblade/vim-rooter'
 
 " Search texts and files
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -29,7 +29,6 @@ Plug 'jremmen/vim-ripgrep'
 
 " Themes
 Plug 'ayu-theme/ayu-vim'
-Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 Plug 'lifepillar/vim-solarized8'
 Plug 'tomasr/molokai'
@@ -37,12 +36,11 @@ Plug 'ghifarit53/tokyonight-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'haishanh/night-owl.vim'
-Plug 'cj/vim-webdevicons'
 Plug 'sainnhe/edge'
 
 " Styles
+Plug 'cj/vim-webdevicons'
 Plug 'flazz/vim-colorschemes'
-Plug '/home/mpaulson/personal/vim-be-good'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'branch': 'release/1.x',
@@ -78,9 +76,9 @@ Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-startify'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mbbill/undotree'
-Plug 'voldikss/vim-floaterm'
 Plug 'vuciv/vim-bujo'
 Plug 'nelstrom/vim-visual-star-search'
+Plug 'kdheepak/lazygit.nvim'
 
 " Rust stuff
 Plug 'rust-lang/rust.vim'

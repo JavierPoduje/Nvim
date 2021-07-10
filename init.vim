@@ -18,4 +18,4 @@ source $HOME/.config/nvim/configuration/mappings.vim
 source $HOME/.config/nvim/configuration/rust.vim
 
 " Theme definition
-source $HOME/.config/nvim/configuration/themes/index.vim
+source $HOME/.config/nvim/configuration/theme_configuration.vim

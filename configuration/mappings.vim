@@ -4,93 +4,87 @@ inoremap <C-c> <ESC>
 " By default, this calls the fzf windows method. I just want to save my file...
 command! W  write
 
-" Delete front word in insert mode with CTRL+d
-imap <C-D> X<Esc>ce
-
 " After press * on a word or select more or more on visual mode, you can
 " replace for another word the selected for another word o string
-nnoremap <Leader>r :%s///g<Left><Left>
+nnoremap <leader>r :%s///g<Left><Left>
 
 " Format one long line into multiple short lines
 nnoremap Q gq<CR>
 
 " Better window navigation
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>h :wincmd h<CR>
+nnoremap <silent><leader>k :wincmd k<CR>
+nnoremap <silent><leader>l :wincmd l<CR>
+nnoremap <silent><leader>j :wincmd j<CR>
+nnoremap <silent><leader>h :wincmd h<CR>
 
 " Toggle wrap
-nnoremap <leader>ww :set wrap! linebreak<CR>
+nnoremap <silent><leader>ww :set wrap! linebreak<CR>
 
 " Create new tab
-nnoremap <leader>tt :tabnew<CR>
+nnoremap <silent><leader>tt :tabnew<CR>
 
 " More options for transit from normal to insert mode
-nnoremap <leader>O O<ESC>O
-nnoremap <leader>o o<CR>
+nnoremap <silent><leader>O O<ESC>O
+nnoremap <silent><leader>o o<CR>
 
 " More options for paste
-nnoremap <leader>po o<ESC>p
-nnoremap <leader>PO O<ESC>P
+nnoremap <silent><leader>po o<ESC>p
+nnoremap <silent><leader>PO O<ESC>P
 
 " Show undo tree
-nnoremap <leader>u :UndotreeShow<CR>
+nnoremap <silent><leader>u :UndotreeShow<CR>
 
 " Files management
-nnoremap <leader>pv :NERDTreeToggle<CR>
-nnoremap <leader>pp :NERDTreeFind<CR>
+nnoremap <silent><leader>pv :NERDTreeToggle<CR>
+nnoremap <silent><leader>pp :NERDTreeFind<CR>
 
 " Files search
-nnoremap <Leader>pS :Rg --fixed-strings --ignore-case '' **/*.<Left><Left><Left><Left><Left><Left><Left>
-nnoremap <leader>ps :RG<CR>
-nnoremap <Leader>pf :Files<CR>
+nnoremap <silent><Leader>pS :Rg --fixed-strings --ignore-case '' **/*.<Left><Left><Left><Left><Left><Left><Left>
+nnoremap <silent><leader>ps :RG<CR>
+nnoremap <silent><leader>pf :Files<CR>
 
 " Source configuration
-nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
+nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 
 " Resize windows
-nnoremap <M-k> :resize +5<CR>
-nnoremap <M-j> :resize -5<CR>
-nnoremap <M-h> :vertical resize -5<CR>
-nnoremap <M-l> :vertical resize +5<CR>
+nnoremap <silent><M-k> :resize +5<CR>
+nnoremap <silent><M-j> :resize -5<CR>
+nnoremap <silent><M-h> :vertical resize -5<CR>
+nnoremap <silent><M-l> :vertical resize +5<CR>
 
 " GoTo code navigation.
-nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gy <Plug>(coc-type-definition)
-nmap <leader>gi <Plug>(coc-implementation)
-nmap <leader>gr <Plug>(coc-references)
-nmap <leader>rr <Plug>(coc-rename)
-nmap <leader>g[ <Plug>(coc-diagnostic-prev)
-nmap <leader>g] <Plug>(coc-diagnostic-next)
+nmap <silent><leader>gd <Plug>(coc-definition)
+nmap <silent><leader>gy <Plug>(coc-type-definition)
+nmap <silent><leader>gi <Plug>(coc-implementation)
+nmap <silent><leader>gr <Plug>(coc-references)
+nmap <silent><leader>rr <Plug>(coc-rename)
+nmap <silent><leader>g[ <Plug>(coc-diagnostic-prev)
+nmap <silent><leader>g] <Plug>(coc-diagnostic-next)
 nmap <silent><leader>gp <Plug>(coc-diagnostic-prev)
 nmap <silent><leader>gn <Plug>(coc-diagnostic-next)
-nnoremap <leader>cr :CocRestart<CR>
+nnoremap <silent><leader>cr :CocRestart<CR>
 inoremap <silent><expr> <C-space> coc#refresh()
 
 " Todo lists mappings
-nmap <leader>td <Plug>BujoAddnormal
-nmap <leader>tc <Plug>BujoChecknormal
+nmap <silent><leader>td <Plug>BujoAddnormal
+nmap <silent><leader>tc <Plug>BujoChecknormal
 
 " Move between buffers
 nnoremap > :bn<CR>
 nnoremap < :bp<CR>
-nnoremap <leader># :e#<CR>
+nnoremap <silent><leader># :e#<CR>
 
 " Git management
-nmap <leader>gl :diffget //3<CR>
-nmap <leader>gh :diffget //2<CR>
-nmap <leader>gs :G<CR>
-nnoremap <leader>gb :Git blame<CR>
+nmap <silent><leader>gl :diffget //3<CR>
+nmap <silent><leader>gh :diffget //2<CR>
+nmap <silent><leader>gs :G<CR>
+nnoremap <silent><leader>gb :Git blame<CR>
 
 " Close all buffers except the current one
-nnoremap <leader>bca :w<bar>%bd<bar>e#<bar>bd#<CR>
+nnoremap <silent><leader>bca :w<bar>%bd<bar>e#<bar>bd#<CR>
 
-" Float terminal
-"   - normal terminal
-nnoremap <leader>ff :FloatermToggle<CR>
-"   - terminal with lazygit opened
-nnoremap <leader>fg :FloatermToggle<CR>lazygit<CR>
+" Open LazyGit preview
+nnoremap <silent><leader>fg :LazyGit<CR>
 
 " --- * --- * --- * --- * --- * ---
 " ---- * --- VISUAL MODE --- * ----

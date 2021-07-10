@@ -56,8 +56,8 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 " Web devicons
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_nerdtree = 1
-let g:webdevicons_enable_airline_tabline = 1
-let g:webdevicons_enable_airline_statusline = 1
+"let g:webdevicons_enable_airline_tabline = 1
+"let g:webdevicons_enable_airline_statusline = 1
 let g:WebDevIconsUnicodeDecorateFileNodes = 0
 let g:webdevicons_conceal_nerdtree_brackets = 1
 

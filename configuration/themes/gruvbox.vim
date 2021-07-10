@@ -6,10 +6,6 @@ let g:gruvbox_material_transparent_background = 1
 
 " Airline configuration
 let g:airline_theme='base16_gruvbox_dark_hard'
-let g:lightline = { 'colorscheme': 'gruvbox' }
 
 " Finally set the color scheme
 colorscheme gruvbox-material
-
-
-
