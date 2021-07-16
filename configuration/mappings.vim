@@ -1,8 +1,5 @@
-"sigeca_docencia_simple CTRL+C for esc
+"CTRL+C for esc
 inoremap <C-c> <ESC>
-
-" By default, this calls the fzf windows method. I just want to save my file...
-command! W  write
 
 " After press * on a word or select more or more on visual mode, you can
 " replace for another word the selected for another word o string
@@ -39,7 +36,7 @@ nnoremap <silent><leader>pv :NERDTreeToggle<CR>
 nnoremap <silent><leader>pp :NERDTreeFind<CR>
 
 " Files search
-nnoremap <silent><Leader>pS :Rg --fixed-strings --ignore-case '' **/*.<Left><Left><Left><Left><Left><Left><Left>
+nnoremap <Leader>pS :Rg --fixed-strings --ignore-case '' **/*.<Left><Left><Left><Left><Left><Left><Left>
 nnoremap <silent><leader>ps :RG<CR>
 nnoremap <silent><leader>pf :Files<CR>
 
@@ -102,8 +99,9 @@ vnoremap K :m '<-2<CR>gv=gv
 " --- * --- * COMMANDS  * --- * ---
 " --- * --- * --- * --- * --- * ---
 
-" set filetype to markdown
+" set filetype
 command! MD :set filetype=markdown
+command! SQL :set filetype=sql
 
 " Open next buffer on the right using vertical split
 command! VS :vs | :wincmd l | :bn
@@ -113,3 +111,6 @@ command! Vs :vs | :wincmd l | :bp
 
 " Display window with my open buffers
 command! B :Buffers
+
+" By default, this calls the fzf windows method. I just want to save my file...
+command! W  write

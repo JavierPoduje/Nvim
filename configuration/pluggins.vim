@@ -37,6 +37,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'haishanh/night-owl.vim'
 Plug 'sainnhe/edge'
+Plug 'patstockwell/vim-monokai-tasty'
 
 " Styles
 Plug 'cj/vim-webdevicons'

@@ -2,7 +2,7 @@ syntax on
 filetype plugin on
 
 set exrc
-set guicursor=
+"set guicursor=
 set noshowmatch
 set relativenumber
 set nu
@@ -20,7 +20,6 @@ set incsearch
 set termguicolors
 set scrolloff=8
 set clipboard=unnamed
-"set guifont=Fira\ Code:h12
 set fdm=indent " folding method
 set nofoldenable " disable pre-folding
 set encoding=utf8
@@ -37,7 +36,6 @@ set undofile
 
 " More space for displaying messages.
 set cmdheight=2
-
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c

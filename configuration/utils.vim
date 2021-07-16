@@ -49,3 +49,9 @@ fun! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+fun! SetTransparentBackground(set_transparent_background)
+  if a:set_transparent_background == 1
+    hi Normal ctermbg=NONE guibg=NONE
+  endif
+endfunction

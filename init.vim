@@ -19,3 +19,5 @@ source $HOME/.config/nvim/configuration/rust.vim
 
 " Theme definition
 source $HOME/.config/nvim/configuration/theme_configuration.vim
+
+" 16

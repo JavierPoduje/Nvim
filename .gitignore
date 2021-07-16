@@ -1,5 +1,6 @@
 plugged
 session/*
+autoload/*
 undodir/*
 bundle
 cache/bujo/*
