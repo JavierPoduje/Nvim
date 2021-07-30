@@ -1,8 +1,10 @@
 plugged
-session/*
-autoload/*
-undodir/*
+session
+autoload
+undodir
+lua/undodir
+lua-language-server
 bundle
-cache/bujo/*
+cache/bujo
 node_modules
 .netrwhist
