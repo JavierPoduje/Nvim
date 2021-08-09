@@ -1,4 +1,5 @@
 local opts = { noremap = true, silent = true }
+local noisy_opts = { noremap = true, silent = false }
 
 -- set python3 environment
 vim.g.python3_host_prog = "/usr/bin/python3"
@@ -12,29 +13,6 @@ vim.api.nvim_set_keymap('i', '<C-c>', '<ESC>', opts)
 -- The `{}`, `()`, `[]` are disabled for jump to next line
 vim.api.nvim_command([[let g:AutoPairs = {'(':')//s','[':']//s','{':'}//s',"'":"'",'"':'"','```':'```','"""':'"""',"'''":"'''","`":"`"}]])
 
-vim.api.nvim_command([[
-if executable('rg')
-    let g:rg_derive_root='true'
-endif
-]])
-
-vim.g.fzf_layout = { window = { width = 0.8, height = 0.8 } }
-vim.g.fzf_colors = {
-  fg = { 'fg','Normal' },
-  bg = { 'bg','Normal' },
-  hl = { 'fg','Comment' },
-  info = { 'fg', 'PreProc' },
-  border = { 'fg','Ignore' },
-  prompt = { 'fg','Conditional' },
-  pointer = { 'fg','Exception' },
-  marker = { 'fg','Keyword' },
-  spinner = { 'fg','Label' },
-  header = { 'fg','Comment' }
-}
-vim.g.fzf_colors["fg+"] = { 'fg','CursorLine' }
-vim.g.fzf_colors["bg+"] = { 'bg','CursorLine', 'CursorColumn' }
-vim.g.fzf_colors["hl+"] = { 'fg','Statement' }
-
 -- Set space as leader key
 vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', opts)
 vim.g.mapleader = " "
@@ -47,7 +25,7 @@ vim.api.nvim_set_keymap('i', '<C-D>', 'X<Esc>ce', opts)
 
 -- After press * on a word or select more or more on visual mode, you can
 -- replace for another word the selected for another word o string
-vim.api.nvim_set_keymap('n', '<Leader>r', ':%s///g<Left><Left>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap('n', '<Leader>r', ':%s///g<Left><Left>', noisy_opts)
 
 -- Format one long line into multiple short lines
 vim.api.nvim_set_keymap('n', 'Q', 'gq<CR>', opts)
@@ -72,25 +50,8 @@ vim.api.nvim_set_keymap('n', '<Leader>PO', 'O<Esc>P', opts)
 -- Show undo tree
 vim.api.nvim_set_keymap('n', '<Leader>u', ':UndotreeShow<CR>', opts)
 
--- Files search
-vim.api.nvim_command("let $FZF_DEFAULT_OPTS = '--reverse'")
-vim.api.nvim_command("let $FZF_DEFAULT_COMMAND = 'rg --files --follow --no-ignore-vcs --hidden -g \"!{node_modules/*,.git/*}\"'")
-
-vim.api.nvim_command([[
-function! RipgrepFzf(query, fullscreen)
-  let command_fmt = 'rg --hidden --column --line-number --no-heading --color=always --smart-case %s || true'
-  let initial_command = printf(command_fmt, shellescape(a:query))
-  let reload_command = printf(command_fmt, '{q}')
-  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
-endfunction
-command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
-]])
-vim.api.nvim_set_keymap('n', '<Leader>pS', ":Rg --fixed-strings --ignore-case '' **/*.<Left><Left><Left><Left><Left><Left><Left>", { noremap = true, silent = false })
-vim.api.nvim_set_keymap('n', '<leader>ps', ':RG<CR>', opts)
-
 -- Source configuration
-vim.api.nvim_set_keymap('n', '<Leader><CR>', ':so ~/.config/nvim/init.lua<CR>', { noremap = true, silent = false })
+vim.api.nvim_set_keymap('n', '<Leader><CR>', ':so ~/.config/nvim/init.lua<CR>', noisy_opts)
 
 -- Resize windows
 vim.api.nvim_set_keymap('n', '<M-k>', ':resize +5<CR>', opts)
@@ -108,12 +69,11 @@ vim.api.nvim_set_keymap('n', '<Leader>gl', ':diffget //3<CR>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>gh', ':diffget //2<CR>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>gs', ':G<CR>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>gb', ':Git blame<CR>', opts)
+-- LazyGit
+vim.api.nvim_set_keymap('n', '<Leader>fg', ':LazyGit<CR>', opts)
 
 -- Close all buffers except the current one
 vim.api.nvim_set_keymap('n', '<Leader>bca', ':w<bar>%bd<bar>e#<bar>bd#<CR>', opts)
-
--- LazyGit
-vim.api.nvim_set_keymap('n', '<Leader>fg', ':LazyGit<CR>', opts)
 
 -- Better tabbing
 vim.api.nvim_set_keymap('v', '<S-Tab>', '<gv', opts)

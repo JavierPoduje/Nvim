@@ -1,6 +1,6 @@
-local finders = {}
+local M = {}
 
-finders.browse_utils = function()
+M.browse_utils = function()
   local opts = {
     results_title = '~ Utils ~',
     cwd = '~/Documents/.utils/',
@@ -15,7 +15,4 @@ finders.browse_utils = function()
   require'telescope.builtin'.file_browser(opts)
 end
 
--- TODO: add function to delete branches from telescope
--- finders.delete_branch
-
-return finders
+return M
