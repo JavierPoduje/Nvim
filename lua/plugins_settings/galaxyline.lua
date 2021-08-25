@@ -16,26 +16,25 @@ gl.short_line_list = {
 -- VistaPlugin = extension.vista_nearest
 
 local colors = {
-    bg       = '#5C687A',
-    line_bg  = '#202733',
-    fg       = '#8FBCBB',
-    fg_green = '#65a380',
-
-    yellow   = '#E5C07B',
-    cyan     = '#70C0BA',
-    darkblue = '#83A598',
-    green    = '#98C379',
-    orange   = '#FF8800',
-    purple   = '#C678DD',
-    magenta  = '#C858E9',
-    blue     = '#73BA9F',
-    red      = '#D54E53',
+    bg = '#32302F',
+    blue = '#83A598',
+    fg = '#EBDBB2',
+    fg_green = '#689D6A',
+    gray = '#928374',
+    green = '#98971A',
+    -- line_bg  = '#1D2021',
+    line_bg = '#32302F',
+    magenta = '#D3869B',
+    orange = '#FE8019',
+    purple = '#B16286',
+    red = '#FB4934',
+    yellow = '#FABD2F'
 }
 
 local function lsp_status(status)
-    shorter_stat = ''
+    local shorter_stat = ''
     for match in string.gmatch(status, "[^%s]+")  do
-        err_warn = string.find(match, "^[WE]%d+", 0)
+        local err_warn = string.find(match, "^[WE]%d+", 0)
         if not err_warn then
             shorter_stat = shorter_stat .. ' ' .. match
         end
@@ -187,8 +186,8 @@ insert_left{
                           c = colors.magenta,no = colors.red,s = colors.orange,
                           S=colors.orange,[''] = colors.orange,
                           ic = colors.yellow,R = colors.violet,Rv = colors.violet,
-                          cv = colors.red,ce=colors.red, r = colors.cyan,
-                          rm = colors.cyan, ['r?'] = colors.cyan,
+                          cv = colors.red,ce=colors.red, r = colors.blue ,
+                          rm = colors.blue, ['r?'] = colors.blue,
                           ['!']  = colors.red,t = colors.red}
 
       local vim_mode = vim.fn.mode()
@@ -248,7 +247,8 @@ insert_left {
   GitBranch = {
     provider = 'GitBranch',
     condition = require('galaxyline.provider_vcs').check_git_workspace,
-    highlight = {'#8FBCBB',colors.line_bg,'bold'},
+    -- highlight = {'#8FBCBB',colors.line_bg,'bold'},
+    highlight = {colors.blue,colors.line_bg,'bold'},
   }
 }
 
@@ -369,7 +369,7 @@ insert_right{
     provider = 'LinePercent',
     separator = '  ',
     separator_highlight = {colors.blue,colors.line_bg},
-    highlight = {colors.cyan, colors.line_bg,'bold'},
+    highlight = {colors.blue, colors.line_bg,'bold'},
   }
 }
 
@@ -380,7 +380,7 @@ insert_right{
     provider = 'FileEncode',
     separator = '  ',
     separator_highlight = {colors.blue,colors.line_bg},
-    highlight = {colors.cyan, colors.line_bg,'bold'},
+    highlight = {colors.blue, colors.line_bg,'bold'},
   }
 }
 

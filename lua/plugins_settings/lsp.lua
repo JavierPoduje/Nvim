@@ -1,11 +1,10 @@
-require('plugins_settings.lsp.sqlls')
 require('plugins_settings.lsp.lua')
 
 local nvim_lsp = require('lspconfig')
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
   -- local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -13,7 +12,7 @@ local on_attach = function(client, bufnr)
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 end
 
-local servers = { "pyright", "tsserver", "html", "graphql", "vls" , "jsonls", "cssls"}
+local servers = { "pyright", "html", "graphql", "vls" , "jsonls", "cssls"}
 	for _, lsp in ipairs(servers) do
 		nvim_lsp[lsp].setup {
 		on_attach = on_attach,
@@ -38,6 +37,3 @@ vim.api.nvim_set_keymap('n', '<leader>gt', ':lua vim.lsp.buf.type_definition()<C
 vim.api.nvim_set_keymap('n', '<leader>e', ':lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>[', ':lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>]', ':lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-
-vim.api.nvim_set_keymap('n', '<leader>ff', ':LspDocumentFormat<CR>', opts)
-vim.api.nvim_set_keymap('v', '<leader>ff', ':LspDocumentRangeFormat<CR>', opts)

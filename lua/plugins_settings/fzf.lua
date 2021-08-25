@@ -1,5 +1,4 @@
 local opts = { noremap = true, silent = true }
---
 
 vim.api.nvim_command([[
 if executable('rg')

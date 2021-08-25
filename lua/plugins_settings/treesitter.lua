@@ -3,7 +3,6 @@ require 'nvim-treesitter.configs'.setup {
   highlight = { enable = true },
   indent = { enable = true },
   ensure_installed = {
-    "tsx", "toml", "fish", "php", "json", "yaml", "swift", "html", "scss",
-    "css", "python"
+    "tsx", "php", "json", "yaml", "html", "scss", "css", "python", "javascript"
   }
 }
