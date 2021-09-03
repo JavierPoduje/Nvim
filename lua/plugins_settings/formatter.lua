@@ -7,7 +7,8 @@ local prettier = function ()
       "--prose-wrap", "always",
       "--single-quote",
       "--tab-width", 2,
-      "--parser", "typescript"
+      "--parser", "typescript",
+      "--trailing-comma", "none"
     },
     stdin = true
   }
@@ -47,7 +48,9 @@ require('formatter').setup({
       end
     },
     javascript = { prettier },
-    typescript = { prettier }
+    typescriptreact = { prettier },
+    typescript = { prettier },
+    html = { prettier }
   }
 })
 

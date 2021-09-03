@@ -57,8 +57,8 @@ return require('packer').startup(function()
   use 'nvim-telescope/telescope-fzy-native.nvim'
 
   -- Themes
-  use 'ayu-theme/ayu-vim'
-  use 'sainnhe/edge'
+  -- use 'ayu-theme/ayu-vim'
+  -- use 'sainnhe/edge'
   use 'sainnhe/gruvbox-material'
 
   -- Styles

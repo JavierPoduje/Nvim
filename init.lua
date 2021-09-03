@@ -1,5 +1,4 @@
--- Util methods and some definitions. This need to be defined at the
--- beginning of the sourcing because some methods are used on the below files
+-- Util functions and some definitions. This need to be defined at the beggining.
 require('utils')
 
 -- Native neovim settings

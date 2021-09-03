@@ -73,14 +73,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/puje/.local/share/nvim/site/pack/packer/start/auto-pairs"
   },
-  ["ayu-vim"] = {
-    loaded = true,
-    path = "/home/puje/.local/share/nvim/site/pack/packer/start/ayu-vim"
-  },
-  edge = {
-    loaded = true,
-    path = "/home/puje/.local/share/nvim/site/pack/packer/start/edge"
-  },
   ["emmet-vim"] = {
     loaded = true,
     path = "/home/puje/.local/share/nvim/site/pack/packer/start/emmet-vim"
