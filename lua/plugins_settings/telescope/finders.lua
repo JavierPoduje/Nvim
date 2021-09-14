@@ -1,6 +1,6 @@
-local M = {}
+local finders = {}
 
-M.browse_utils = function()
+finders.browse_utils = function()
   local opts = {
     results_title = '~ Utils ~',
     cwd = '~/Documents/.utils/',
@@ -15,4 +15,4 @@ M.browse_utils = function()
   require'telescope.builtin'.file_browser(opts)
 end
 
-return M
+return finders

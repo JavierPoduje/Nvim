@@ -23,17 +23,8 @@ local servers = { "pyright", "html", "graphql", "vls" , "jsonls", "cssls"}
 	}
 end
 
--- Just don't...
-vim.g.lsp_document_highlight_enabled = 0
-
--- disabled because it changes the styles of the diagnostics
-vim.g.lsp_diagnostics_enabled = 0
-
 local opts = { noremap = true, silent = true }
 
 vim.api.nvim_set_keymap('n', '<leader>gd', ':lua vim.lsp.buf.definition()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>gi', ':lua vim.lsp.buf.implementation()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>gt', ':lua vim.lsp.buf.type_definition()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>e', ':lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>[', ':lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>]', ':lua vim.lsp.diagnostic.goto_next()<CR>', opts)

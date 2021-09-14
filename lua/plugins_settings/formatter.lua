@@ -1,56 +1,44 @@
-local prettier = function ()
+local current_file = vim.api.nvim_buf_get_name(0)
+
+local prettier_args = function(parser)
   return {
-    exe = "prettier",
-    args = {
-      "--stdin-filepath", vim.api.nvim_buf_get_name(0),
-      "--arrow-parens", "avoid",
-      "--prose-wrap", "always",
-      "--single-quote",
-      "--tab-width", 2,
-      "--parser", "typescript",
-      "--trailing-comma", "none"
-    },
-    stdin = true
+    "--stdin-filepath", current_file,
+    -- Descomentar para usar el .prettierrc* del proyecto
+    "--parser", parser,
+    "--config", "~/.config/nvim/.prettierrc.js" -- Personal preferences
   }
+end
+
+local sql_args = function()
+  return {
+    "-u",
+    "-i", 4,
+    "--lines-between-queries", 2,
+    "-l", "mysql",
+    current_file
+  }
+end
+
+local formatter = function(formatter, args, stdin)
+  return function ()
+    return {
+      exe = formatter,
+      args = args,
+      stdin = stdin
+    }
+  end
 end
 
 require('formatter').setup({
   logging = false,
   filetype = {
-    sql = {
-      function ()
-        return {
-          exe = "sql-formatter",
-          args = {
-            "-u",
-            "-i", 4,
-            "--lines-between-queries", 2,
-            "-l", "mysql",
-            vim.api.nvim_buf_get_name(0)
-          },
-          stdin = true
-        }
-      end
-    },
-    json = {
-      function ()
-        return {
-          exe = "prettier",
-          args = {
-            "--stdin-filepath", vim.api.nvim_buf_get_name(0),
-            "--single-quote",
-            "--trailing-comma", "es5",
-            "--tab-width", 2,
-            "--parser", "json"
-          },
-          stdin = true
-        }
-      end
-    },
-    javascript = { prettier },
-    typescriptreact = { prettier },
-    typescript = { prettier },
-    html = { prettier }
+    elixir =            { formatter("mix format", { current_file }, false) },
+    html =              { formatter("prettier", prettier_args("html"), true) },
+    javascript =        { formatter("prettier", prettier_args("typescript"), true) },
+    json =              { formatter("prettier", prettier_args("json"), true) },
+    sql =               { formatter("sql-formatter", sql_args(), true) },
+    typescript =        { formatter("prettier", prettier_args("typescript"), true) },
+    typescriptreact =   { formatter("prettier", prettier_args("typescript"), true) },
   }
 })
 

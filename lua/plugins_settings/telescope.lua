@@ -21,7 +21,15 @@ require('telescope').setup{
       vertical = { width = 0.5, mirror = false },
     },
     file_sorter =  require'telescope.sorters'.get_fuzzy_file,
-    file_ignore_patterns = { "node_modules", "*.pyc" },
+    file_ignore_patterns = {
+      "node_modules",
+      "*.pyc",
+      "app/webroot/bower_components",
+      "app/webroot/build",
+      "app/webroot/img",
+      "app/webroot/legacy-tables",
+      "app/webroot/tmp"
+    },
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
     winblend = 0,
     border = {},
