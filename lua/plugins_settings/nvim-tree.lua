@@ -1,8 +1,6 @@
-local opts = { noremap = true, silent = true }
-
-vim.api.nvim_set_keymap('n', '<leader>pv', ':NvimTreeToggle<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>R', ':NvimTreeRefresh<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>pp', ':NvimTreeFindFile<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>pv', ':NvimTreeToggle<CR>', Opts)
+vim.api.nvim_set_keymap('n', '<leader>R', ':NvimTreeRefresh<CR>', Opts)
+vim.api.nvim_set_keymap('n', '<leader>pp', ':NvimTreeFindFile<CR>', Opts)
 
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
     -- default mappings

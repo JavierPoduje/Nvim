@@ -1,3 +1,6 @@
+-- Variables
+require('_variables')
+
 -- Util functions and some definitions. This need to be defined at the beggining.
 require('utils')
 

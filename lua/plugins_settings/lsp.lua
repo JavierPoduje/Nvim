@@ -1,5 +1,3 @@
-require('plugins_settings.lsp.lua')
-
 local nvim_lsp = require('lspconfig')
 
 -- Use an on_attach function to only map the following keys
@@ -23,8 +21,6 @@ local servers = { "pyright", "html", "graphql", "vls" , "jsonls", "cssls"}
 	}
 end
 
-local opts = { noremap = true, silent = true }
-
-vim.api.nvim_set_keymap('n', '<leader>gd', ':lua vim.lsp.buf.definition()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>gi', ':lua vim.lsp.buf.implementation()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>gt', ':lua vim.lsp.buf.type_definition()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>gd', ':lua vim.lsp.buf.definition()<CR>', Opts)
+vim.api.nvim_set_keymap('n', '<leader>gi', ':lua vim.lsp.buf.implementation()<CR>', Opts)
+vim.api.nvim_set_keymap('n', '<leader>gt', ':lua vim.lsp.buf.type_definition()<CR>', Opts)

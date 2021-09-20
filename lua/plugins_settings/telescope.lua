@@ -56,11 +56,9 @@ require('telescope').setup{
 -- Set fuzzy native for hyper speed...
 require('telescope').load_extension('fzy_native')
 
-local opts = { noremap = true, silent = true }
-
 -- Telescope
-vim.api.nvim_set_keymap('n', '<Leader>pf', ':Telescope find_files<CR>', opts)
-vim.api.nvim_set_keymap('n', '<Leader>pb', ':Telescope buffers<CR>', opts)
+vim.api.nvim_set_keymap('n', '<Leader>pf', ':Telescope find_files<CR>', Opts)
+vim.api.nvim_set_keymap('n', '<Leader>pb', ':Telescope buffers<CR>', Opts)
 
 -- Browse util files
-vim.api.nvim_set_keymap('n', '<Leader>pu', ":lua require'plugins_settings.telescope.finders'.browse_utils()<CR>", opts)
+vim.api.nvim_set_keymap('n', '<Leader>pu', ":lua require'plugins_settings.telescope.finders'.browse_utils()<CR>", Opts)

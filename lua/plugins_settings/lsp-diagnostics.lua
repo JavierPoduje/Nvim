@@ -1,11 +1,4 @@
-local opts = { noremap = true, silent = true }
 local nvim_lsp = require('lspconfig')
-
---local custom_attach = function(client)
---  print("'" .. client.name .. "' language server started" );
-
---  -- key bindings ommitted
---end
 
 nvim_lsp.diagnosticls.setup{
   -- on_attach = custom_attach,
@@ -63,26 +56,6 @@ nvim_lsp.diagnosticls.setup{
       markdown = 'markdownlint',
       pandoc = 'markdownlint'
     },
-    formatters = {
-      prettierEslint = {
-        command = 'prettier-eslint',
-        args = { '--stdin' },
-        rootPatterns = { '.git' },
-      },
-      prettier = {
-        command = 'prettier',
-        args = { '--stdin-filepath', '%filename' }
-      }
-    },
-    formatFiletypes = {
-       css = 'prettier',
-       javascript = 'prettierEslint',
-       javascriptreact = 'prettierEslint',
-       json = 'prettier',
-       scss = 'prettier',
-       typescript = 'prettierEslint',
-       typescriptreact = 'prettierEslint'
-    }
   }
 }
 
@@ -92,6 +65,6 @@ vim.g.lsp_document_highlight_enabled = 0
 -- disabled because it changes the styles of the diagnostics
 vim.g.lsp_diagnostics_enabled = 0
 
-vim.api.nvim_set_keymap('n', '<leader>e', ':lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>[', ':lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>]', ':lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>e', ':lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', Opts)
+vim.api.nvim_set_keymap('n', '<leader>[', ':lua vim.lsp.diagnostic.goto_prev()<CR>', Opts)
+vim.api.nvim_set_keymap('n', '<leader>]', ':lua vim.lsp.diagnostic.goto_next()<CR>', Opts)

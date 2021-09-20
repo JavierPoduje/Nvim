@@ -1,7 +1,7 @@
 local finders = {}
 
 finders.browse_utils = function()
-  local opts = {
+  local config = {
     results_title = '~ Utils ~',
     cwd = '~/Documents/.utils/',
     previewer = false,
@@ -12,7 +12,7 @@ finders.browse_utils = function()
       height = 0.3
     }
   }
-  require'telescope.builtin'.file_browser(opts)
+  require'telescope.builtin'.file_browser(config)
 end
 
 return finders

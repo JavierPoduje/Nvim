@@ -15,7 +15,5 @@ saga.init_lsp_saga {
   }
 }
 
-local opts = { noremap = true, silent = true }
-
-vim.api.nvim_set_keymap('n', 'K', ":lua require('lspsaga.hover').render_hover_doc()<CR>", opts)
-vim.api.nvim_set_keymap('n', '<leader>ga', ":lua require('lspsaga.codeaction').code_action()<CR>", opts)
+vim.api.nvim_set_keymap('n', 'K', ":lua require('lspsaga.hover').render_hover_doc()<CR>", Opts)
+vim.api.nvim_set_keymap('n', '<leader>ga', ":lua require('lspsaga.codeaction').code_action()<CR>", Opts)

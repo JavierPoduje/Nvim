@@ -3,9 +3,10 @@ local current_file = vim.api.nvim_buf_get_name(0)
 local prettier_args = function(parser)
   return {
     "--stdin-filepath", current_file,
-    -- Descomentar para usar el .prettierrc* del proyecto
+
+    -- Descomentar para usar el `.prettierrc` del proyecto
     "--parser", parser,
-    "--config", "~/.config/nvim/.prettierrc.js" -- Personal preferences
+    --"--config", "~/.config/nvim/.prettierrc.js" -- Personal preferences
   }
 end
 
@@ -35,11 +36,13 @@ require('formatter').setup({
     elixir =            { formatter("mix format", { current_file }, false) },
     html =              { formatter("prettier", prettier_args("html"), true) },
     javascript =        { formatter("prettier", prettier_args("typescript"), true) },
+    javascriptreact =   { formatter("prettier", prettier_args("typescript"), true) },
     json =              { formatter("prettier", prettier_args("json"), true) },
+    scss =              { formatter("prettier", prettier_args("scss"), true) },
     sql =               { formatter("sql-formatter", sql_args(), true) },
     typescript =        { formatter("prettier", prettier_args("typescript"), true) },
     typescriptreact =   { formatter("prettier", prettier_args("typescript"), true) },
   }
 })
 
-vim.api.nvim_set_keymap('n', '<leader>ff', ':Format<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ff', ':Format<CR>', Opts)
