@@ -1,20 +1,20 @@
 -- Variables
-require('_variables')
+require("_variables")
 
 -- Util functions and some definitions. This need to be defined at the beggining.
-require('utils')
+require("utils")
 
 -- Native neovim settings
-require('settings')
+require("settings")
 
 -- Where the pluggins are called
-require('plugins')
+require("plugins")
 
 -- Pluggins configuration
-require('plugins_settings')
+require("plugins_settings")
 
 -- Keymaps definitions
-require('keymaps')
+require("keymaps")
 
 -- Theme definitions
-require('theme')
+require("theme")

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@appguru/luafmt": "^1.5.0",
+    "lua-fmt": "^2.6.0"
+  }
+}

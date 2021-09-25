@@ -14,19 +14,19 @@ autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 ]])
 
 function SetTheme(theme)
-  if theme == 'gruvbox' then
-    require('themes.gruvbox')
-  elseif theme == 'ayu' then
-    require('themes.ayu')
-  elseif theme == 'edge' then
-    require('themes.edge')
-  else
-    print("No colorscheme was sourced...")
-  end
+	if theme == "gruvbox" then
+		require("themes.gruvbox")
+	elseif theme == "ayu" then
+		require("themes.ayu")
+	elseif theme == "edge" then
+		require("themes.edge")
+	else
+		print("No colorscheme was sourced...")
+	end
 end
 
 function SetTransparentBackground(set_transparent_background)
-  if set_transparent_background == 1 then
-    vim.api.nvim_command([[ hi Normal ctermbg=NONE guibg=NONE ]])
-  end
+	if set_transparent_background == 1 then
+		vim.api.nvim_command([[ hi Normal ctermbg=NONE guibg=NONE ]])
+	end
 end

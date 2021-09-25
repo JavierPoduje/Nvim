@@ -1,5 +1,3 @@
-local opts = { noremap = true, silent = true }
-
 vim.api.nvim_command([[
 if executable('rg')
     let g:rg_derive_root='true'
@@ -8,20 +6,20 @@ endif
 
 vim.g.fzf_layout = { window = { width = 0.8, height = 0.8 } }
 vim.g.fzf_colors = {
-  fg = { 'fg','Normal' },
-  bg = { 'bg','Normal' },
-  hl = { 'fg','Comment' },
-  info = { 'fg', 'PreProc' },
-  border = { 'fg','Ignore' },
-  prompt = { 'fg','Conditional' },
-  pointer = { 'fg','Exception' },
-  marker = { 'fg','Keyword' },
-  spinner = { 'fg','Label' },
-  header = { 'fg','Comment' }
+	fg = { "fg", "Normal" },
+	bg = { "bg", "Normal" },
+	hl = { "fg", "Comment" },
+	info = { "fg", "PreProc" },
+	border = { "fg", "Ignore" },
+	prompt = { "fg", "Conditional" },
+	pointer = { "fg", "Exception" },
+	marker = { "fg", "Keyword" },
+	spinner = { "fg", "Label" },
+	header = { "fg", "Comment" },
 }
-vim.g.fzf_colors["fg+"] = { 'fg','CursorLine' }
-vim.g.fzf_colors["bg+"] = { 'bg','CursorLine', 'CursorColumn' }
-vim.g.fzf_colors["hl+"] = { 'fg','Statement' }
+vim.g.fzf_colors["fg+"] = { "fg", "CursorLine" }
+vim.g.fzf_colors["bg+"] = { "bg", "CursorLine", "CursorColumn" }
+vim.g.fzf_colors["hl+"] = { "fg", "Statement" }
 
 vim.api.nvim_command([[
 function! RipgrepFzf(query, fullscreen)
@@ -33,8 +31,13 @@ function! RipgrepFzf(query, fullscreen)
 endfunction
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 ]])
-vim.api.nvim_set_keymap('n', '<Leader>pS', ":Rg --fixed-strings --ignore-case '' **/*.<Left><Left><Left><Left><Left><Left><Left>", { noremap = true, silent = false })
-vim.api.nvim_set_keymap('n', '<leader>ps', ':RG<CR>', opts)
+vim.api.nvim_set_keymap(
+	"n",
+	"<Leader>pS",
+	":Rg --fixed-strings --ignore-case '' **/*.<Left><Left><Left><Left><Left><Left><Left>",
+	NoisyOpts
+)
+vim.api.nvim_set_keymap("n", "<leader>ps", ":RG<CR>", Opts)
 
 -- Files search
 vim.api.nvim_command("let $FZF_DEFAULT_OPTS='--reverse'")
