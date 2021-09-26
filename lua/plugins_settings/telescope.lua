@@ -62,3 +62,4 @@ vim.api.nvim_set_keymap("n", "<Leader>pb", ":Telescope buffers<CR>", Opts)
 
 -- Browse util files
 vim.api.nvim_set_keymap("n", "<Leader>pu", ":lua require'plugins_settings.telescope.finders'.browse_utils()<CR>", Opts)
+vim.api.nvim_set_keymap("n", "<Leader>pn", ":lua require'plugins_settings.telescope.finders'.browse_nvim()<CR>", Opts)

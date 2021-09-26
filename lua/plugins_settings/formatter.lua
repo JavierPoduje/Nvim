@@ -44,15 +44,16 @@ require("formatter").setup({
 	logging = false,
 	filetype = {
 		elixir = { formatter("mix format", { current_file }, false) },
+		graphql = { formatter("prettier", prettier_args("graphql"), true) },
 		html = { formatter("prettier", prettier_args("html"), true) },
 		javascript = { formatter("prettier", prettier_args("typescript"), true) },
 		javascriptreact = { formatter("prettier", prettier_args("typescript"), true) },
 		json = { formatter("prettier", prettier_args("json"), true) },
+		lua = { formatter("stylua", lua_args, false) },
 		scss = { formatter("prettier", prettier_args("scss"), true) },
 		sql = { formatter("sql-formatter", sql_args, true) },
 		typescript = { formatter("prettier", prettier_args("typescript"), true) },
 		typescriptreact = { formatter("prettier", prettier_args("typescript"), true) },
-		lua = { formatter("stylua", lua_args, false) },
 	},
 })
 
