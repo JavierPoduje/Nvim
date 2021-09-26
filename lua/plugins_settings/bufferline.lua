@@ -1,21 +1,24 @@
 require("bufferline").setup({
 	options = {
 		numbers = function(opts)
-			return string.format("%s", opts.raise(opts.id))
+      --return string.format("%s", opts.raise(opts.id))
+
+      -- TEST: use ordinal instead of id. When doing it, handle the commands
+      -- that use the buffer id like :b[id], :bd[id], etc...
+      return string.format("%s", opts.raise(opts.ordinal))
 		end,
 		BufferLineGoToBuffer = false, -- true | false,
 		indicator_icon = "▎",
 		modified_icon = "●",
 		left_trunc_marker = "",
 		right_trunc_marker = "",
-		-- buf contains a "name", "path" and "bufnr"
 		name_formatter = function(buf)
 			if buf.name:match("%.md") then
 				return vim.fn.fnamemodify(buf.name, ":t:r")
 			end
 		end,
 		max_name_length = 18,
-		max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
+		max_prefix_length = 15,
 		tab_size = 18,
 		diagnostics = "nvim_lsp",
 		diagnostics_indicator = function(count, level, diagnostics_dict, context)
@@ -37,16 +40,33 @@ require("bufferline").setup({
 				return true
 			end
 		end,
-		offsets = { { filetype = "NvimTree", text = "File Explorer", text_align = "center" } },
+		offsets = {
+			{
+				filetype = "NvimTree",
+				text = "File Explorer",
+				text_align = "center",
+			},
+		},
 		show_buffer_icons = true,
 		show_buffer_close_icons = false,
 		show_close_icon = false,
 		show_tab_indicators = true,
 		persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
-		-- can also be a table containing 2 custom separators
 		separator_style = "thin", -- "slant" | "thick" | "thin" | { 'any', 'any' },
 		enforce_regular_tabs = false, -- false | true,
 		always_show_bufferline = true,
 		sort_by = "id",
 	},
 })
+
+-- Move buffers tabs
+vim.api.nvim_set_keymap("n", "<Leader>bn", ":BufferLineMoveNext<CR>", Opts)
+vim.api.nvim_set_keymap("n", "<Leader>bp", ":BufferLineMovePrev<CR>", Opts)
+
+-- Move between buffers
+vim.api.nvim_set_keymap("n", ">", ":BufferLineCycleNext<CR>", Opts)
+vim.api.nvim_set_keymap("n", "<", ":BufferLineCyclePrev<CR>", Opts)
+
+for num = 1,9 do
+  vim.api.nvim_command("command! B".. num .." :BufferLineGoToBuffer " .. num)
+end

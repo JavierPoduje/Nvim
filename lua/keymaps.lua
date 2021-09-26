@@ -58,9 +58,7 @@ vim.api.nvim_set_keymap("n", "<M-j>", ":resize -5<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<M-h>", ":vertical resize -5<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<M-l>", ":vertical resize +5<CR>", Opts)
 
--- Move between buffers
-vim.api.nvim_set_keymap("n", ">", ":bn<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<", ":bp<CR>", Opts)
+-- Move to last buffer
 vim.api.nvim_set_keymap("n", "<Leader>#", ":e#<CR>", Opts)
 
 -- Git management
