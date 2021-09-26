@@ -32,10 +32,6 @@ return require("packer").startup(function(use)
 	-- Files manager
 	use("airblade/vim-rooter")
 	use({
-		"hoob3rt/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
-	})
-	use({
 		"glepnir/galaxyline.nvim",
 		branch = "main",
 		requires = { "ryanoasis/vim-devicons", opt = true },

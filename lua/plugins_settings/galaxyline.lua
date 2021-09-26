@@ -13,8 +13,6 @@ gl.short_line_list = {
 	"plug",
 }
 
--- VistaPlugin = extension.vista_nearest
-
 local colors = {
 	bg = "#32302F",
 	blue = "#83A598",
@@ -22,55 +20,12 @@ local colors = {
 	fg_green = "#689D6A",
 	gray = "#928374",
 	green = "#98971A",
-	-- line_bg  = '#1D2021',
-	line_bg = "#32302F",
 	magenta = "#D3869B",
 	orange = "#FE8019",
 	purple = "#B16286",
 	red = "#FB4934",
 	yellow = "#FABD2F",
 }
-
-local function lsp_status(status)
-	local shorter_stat = ""
-	for match in string.gmatch(status, "[^%s]+") do
-		local err_warn = string.find(match, "^[WE]%d+", 0)
-		if not err_warn then
-			shorter_stat = shorter_stat .. " " .. match
-		end
-	end
-	return shorter_stat
-end
-
-local function get_coc_lsp()
-	local status = vim.fn["coc#status"]()
-	if not status or status == "" then
-		return ""
-	end
-	return lsp_status(status)
-end
-
-function get_diagnostic_info()
-	if vim.fn.exists("*coc#rpc#start_server") == 1 then
-		return get_coc_lsp()
-	end
-	return ""
-end
-
-local function get_current_func()
-	local has_func, func_name = pcall(vim.fn.nvim_buf_get_var, 0, "coc_current_function")
-	if not has_func then
-		return
-	end
-	return func_name
-end
-
-function get_function_info()
-	if vim.fn.exists("*coc#rpc#start_server") == 1 then
-		return get_current_func()
-	end
-	return ""
-end
 
 local function trailing_whitespace()
 	local trail = vim.fn.search("\\s$", "nw")
@@ -81,8 +36,41 @@ local function trailing_whitespace()
 	end
 end
 
-CocStatus = get_diagnostic_info
-CocFunc = get_current_func
+local semi_circle = function(is_left)
+	if is_left then
+		return " "
+	else
+		return " "
+	end
+end
+
+local transparent_border = {
+	provider = function()
+		return "  "
+	end,
+}
+
+local left_border = {
+	provider = function()
+		return semi_circle(true)
+	end,
+	highlight = { colors.yellow },
+}
+
+local right_border = {
+	provider = function()
+		return semi_circle(false)
+	end,
+	highlight = { colors.blue },
+}
+
+local space = {
+	provider = function()
+		return " "
+	end,
+	highlight = { colors.bg, colors.bg },
+}
+
 TrailingWhiteSpace = trailing_whitespace
 
 function has_file_type()
@@ -106,16 +94,9 @@ local function insert_left(element)
 end
 
 -- insert_blank_line_at_left insert blank line with
--- line_bg color.
+-- bg color.
 local function insert_blank_line_at_left()
-	insert_left({
-		Space = {
-			provider = function()
-				return " "
-			end,
-			highlight = { colors.line_bg, colors.line_bg },
-		},
-	})
+	insert_left({ Space = space })
 end
 
 -- insert_right insert given item into galaxyline.right
@@ -124,31 +105,25 @@ local function insert_right(element)
 end
 
 -- insert_blank_line_at_left insert blank line with
--- line_bg color.
+-- bg color.
 local function insert_blank_line_at_right()
-	insert_right({
-		Space = {
-			provider = function()
-				return " "
-			end,
-			highlight = { colors.line_bg, colors.line_bg },
-		},
-	})
+	insert_right({ Space = space })
+end
+
+local checkwidth = function()
+	local squeeze_width = vim.fn.winwidth(0) / 2
+	if squeeze_width > 40 then
+		return true
+	end
+	return false
 end
 
 -----------------------------------------------------
------------------ start insert ----------------------
+----------------- build panels ----------------------
 -----------------------------------------------------
 
---{ mode panel start
-insert_left({
-	Start = {
-		provider = function()
-			return " "
-		end,
-		highlight = { colors.line_bg },
-	},
-})
+-- Mode Panel
+insert_left({ Start = transparent_border })
 
 insert_blank_line_at_left()
 
@@ -216,38 +191,22 @@ insert_left({
 			vim.api.nvim_command("hi GalaxyViMode guifg=" .. mode_color[vim_mode])
 			return alias[vim_mode]
 		end,
-		highlight = { colors.line_bg, colors.line_bg },
+		highlight = { colors.bg, colors.bg },
 	},
 })
 
 insert_blank_line_at_left()
 
-insert_left({
-	Separa = {
-		provider = function()
-			return " "
-		end,
-		highlight = { colors.line_bg },
-	},
-})
+insert_left({ Separa = transparent_border })
 
---mode panel end}
-
--- {information panel start
-insert_left({
-	Start = {
-		provider = function()
-			return " "
-		end,
-		highlight = { colors.line_bg },
-	},
-})
+-- Information panel
+insert_left({ Start = transparent_border })
 
 insert_left({
 	FileIcon = {
 		provider = "FileIcon",
 		condition = buffer_not_empty,
-		highlight = { require("galaxyline.provider_fileinfo").get_file_icon_color, colors.line_bg },
+		highlight = { require("galaxyline.provider_fileinfo").get_file_icon_color, colors.bg },
 	},
 })
 
@@ -255,7 +214,7 @@ insert_left({
 	BufferType = {
 		provider = "FileTypeName",
 		condition = has_file_type,
-		highlight = { colors.fg, colors.line_bg },
+		highlight = { colors.fg, colors.bg },
 	},
 })
 
@@ -267,7 +226,7 @@ insert_left({
 			return "  "
 		end,
 		condition = require("galaxyline.provider_vcs").check_git_workspace,
-		highlight = { colors.orange, colors.line_bg },
+		highlight = { colors.orange, colors.bg },
 	},
 })
 
@@ -275,27 +234,18 @@ insert_left({
 	GitBranch = {
 		provider = "GitBranch",
 		condition = require("galaxyline.provider_vcs").check_git_workspace,
-		-- highlight = {'#8FBCBB',colors.line_bg,'bold'},
-		highlight = { colors.blue, colors.line_bg, "bold" },
+		highlight = { colors.blue, colors.bg, "bold" },
 	},
 })
 
 insert_blank_line_at_left()
-
-local checkwidth = function()
-	local squeeze_width = vim.fn.winwidth(0) / 2
-	if squeeze_width > 40 then
-		return true
-	end
-	return false
-end
 
 insert_left({
 	DiffAdd = {
 		provider = "DiffAdd",
 		condition = checkwidth,
 		icon = "  ",
-		highlight = { colors.green, colors.line_bg },
+		highlight = { colors.green, colors.bg },
 	},
 })
 
@@ -304,7 +254,7 @@ insert_left({
 		provider = "DiffModified",
 		condition = checkwidth,
 		icon = "  ",
-		highlight = { colors.orange, colors.line_bg },
+		highlight = { colors.orange, colors.bg },
 	},
 })
 
@@ -313,7 +263,7 @@ insert_left({
 		provider = "DiffRemove",
 		condition = checkwidth,
 		icon = "  ",
-		highlight = { colors.red, colors.line_bg },
+		highlight = { colors.red, colors.bg },
 	},
 })
 
@@ -321,7 +271,7 @@ insert_left({
 	TrailingWhiteSpace = {
 		provider = TrailingWhiteSpace,
 		icon = "  ",
-		highlight = { colors.yellow, colors.line_bg },
+		highlight = { colors.yellow, colors.bg },
 	},
 })
 
@@ -329,7 +279,7 @@ insert_left({
 	DiagnosticError = {
 		provider = "DiagnosticError",
 		icon = "  ",
-		highlight = { colors.red, colors.line_bg },
+		highlight = { colors.red, colors.bg },
 	},
 })
 
@@ -337,51 +287,21 @@ insert_left({
 	DiagnosticWarn = {
 		provider = "DiagnosticWarn",
 		icon = "  ",
-		highlight = { colors.yellow, colors.line_bg },
+		highlight = { colors.yellow, colors.bg },
 	},
 })
 
-insert_left({
-	CocStatus = {
-		provider = CocStatus,
-		highlight = { colors.green, colors.line_bg },
-		icon = "  ",
-	},
-})
+insert_left({ Separa = transparent_border })
 
-insert_left({
-	CocFunc = {
-		provider = CocFunc,
-		icon = " λ ",
-		highlight = { colors.yellow, colors.line_bg },
-	},
-})
-
-insert_left({
-	Separa = {
-		provider = function()
-			return " "
-		end,
-		highlight = { colors.line_bg },
-	},
-})
--- left information panel end}
-
-insert_right({
-	Start = {
-		provider = function()
-			return " "
-		end,
-		highlight = { colors.line_bg },
-	},
-})
+-- Last Panel (?)
+insert_right({ Start = transparent_border })
 
 insert_blank_line_at_right()
 
 insert_right({
 	FileFormat = {
 		provider = "FileFormat",
-		highlight = { colors.fg, colors.line_bg, "bold" },
+		highlight = { colors.fg, colors.bg, "bold" },
 	},
 })
 
@@ -391,8 +311,8 @@ insert_right({
 	LineInfo = {
 		provider = "LineColumn",
 		separator = "  ",
-		separator_highlight = { colors.green, colors.line_bg },
-		highlight = { colors.fg, colors.line_bg },
+		separator_highlight = { colors.green, colors.bg },
+		highlight = { colors.fg, colors.bg },
 	},
 })
 
@@ -400,8 +320,8 @@ insert_right({
 	PerCent = {
 		provider = "LinePercent",
 		separator = "  ",
-		separator_highlight = { colors.blue, colors.line_bg },
-		highlight = { colors.blue, colors.line_bg, "bold" },
+		separator_highlight = { colors.blue, colors.bg },
+		highlight = { colors.blue, colors.bg, "bold" },
 	},
 })
 
@@ -411,19 +331,13 @@ insert_right({
 	Encode = {
 		provider = "FileEncode",
 		separator = "  ",
-		separator_highlight = { colors.blue, colors.line_bg },
-		highlight = { colors.blue, colors.line_bg, "bold" },
+		separator_highlight = { colors.blue, colors.bg },
+		highlight = { colors.blue, colors.bg, "bold" },
 	},
 })
 
 insert_blank_line_at_right()
 
-insert_right({
-	Separa = {
-		provider = function()
-			return " "
-		end,
-		highlight = { colors.line_bg },
-	},
-})
+insert_right({ Separa = transparent_border })
+
 -- {"mode":"full","isActive":false}
