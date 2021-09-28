@@ -109,10 +109,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/puje/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
   },
-  ["lualine.nvim"] = {
-    loaded = true,
-    path = "/home/puje/.local/share/nvim/site/pack/packer/start/lualine.nvim"
-  },
   nerdcommenter = {
     loaded = true,
     path = "/home/puje/.local/share/nvim/site/pack/packer/start/nerdcommenter"

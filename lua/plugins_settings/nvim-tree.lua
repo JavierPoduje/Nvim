@@ -1,8 +1,5 @@
-vim.api.nvim_set_keymap("n", "<leader>pv", ":NvimTreeToggle<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<leader>R", ":NvimTreeRefresh<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<leader>pp", ":NvimTreeFindFile<CR>", Opts)
-
 local tree_cb = require("nvim-tree.config").nvim_tree_callback
+
 -- default mappings
 vim.g.nvim_tree_bindings = {
 	{ key = { "<CR>", "o", "<2-LeftMouse>" }, cb = tree_cb("edit") },
@@ -26,3 +23,7 @@ vim.g.nvim_tree_bindings = {
 }
 
 vim.g.nvim_tree_ignore = { "*.pyc" }
+
+vim.api.nvim_set_keymap("n", "<leader>pv", ":NvimTreeToggle<CR>", Opts)
+vim.api.nvim_set_keymap("n", "<leader>R", ":NvimTreeRefresh<CR>", Opts)
+vim.api.nvim_set_keymap("n", "<leader>pp", ":NvimTreeFindFile<CR>", Opts)

@@ -6,10 +6,8 @@ nvim_lsp.diagnosticls.setup({
 		"javascriptreact",
 		"typescript",
 		"typescriptreact",
-		"css",
-		"scss",
-		"markdown",
-		"pandoc",
+		--"css",
+		--"scss",
 	},
 	init_options = {
 		linters = {
@@ -33,36 +31,12 @@ nvim_lsp.diagnosticls.setup({
 					[1] = "warning",
 				},
 			},
-			markdownlint = {
-				command = "markdownlint",
-				rootPatterns = { ".git" },
-				isStderr = true,
-				debounce = 100,
-				args = { "--stdin" },
-				offsetLine = 0,
-				offsetColumn = 0,
-				sourceName = "markdownlint",
-				securities = {
-					undefined = "hint",
-				},
-				formatLines = 1,
-				formatPattern = {
-					"^.*:(\\d+)\\s+(.*)$",
-					{
-						line = 1,
-						column = -1,
-						message = 2,
-					},
-				},
-			},
 		},
 		filetypes = {
 			javascript = "eslint",
 			javascriptreact = "eslint",
 			typescript = "eslint",
 			typescriptreact = "eslint",
-			markdown = "markdownlint",
-			pandoc = "markdownlint",
 		},
 	},
 })

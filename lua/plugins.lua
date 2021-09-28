@@ -47,7 +47,12 @@ return require("packer").startup(function(use)
 	use("junegunn/fzf.vim")
 	use("jremmen/vim-ripgrep")
 	use("kyazdani42/nvim-web-devicons")
-	use("kyazdani42/nvim-tree.lua")
+	use({
+		"kyazdani42/nvim-tree.lua",
+		branch = "master",
+		-- Wait until they fix the issue
+		commit = "b1c447946b1d0afa8f0bbd92f5a6bad0b54a3f3c",
+	})
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = {

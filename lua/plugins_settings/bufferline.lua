@@ -5,9 +5,9 @@ require("bufferline").setup({
 
       -- TEST: use ordinal instead of id. When doing it, handle the commands
       -- that use the buffer id like :b[id], :bd[id], etc...
-      return string.format("%s", opts.raise(opts.ordinal))
+      return string.format("%s·%s", opts.raise(opts.ordinal), opts.lower(opts.id))
 		end,
-		BufferLineGoToBuffer = false, -- true | false,
+		BufferLineGoToBuffer = false,
 		indicator_icon = "▎",
 		modified_icon = "●",
 		left_trunc_marker = "",
@@ -66,6 +66,13 @@ vim.api.nvim_set_keymap("n", "<Leader>bp", ":BufferLineMovePrev<CR>", Opts)
 -- Move between buffers
 vim.api.nvim_set_keymap("n", ">", ":BufferLineCycleNext<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<", ":BufferLineCyclePrev<CR>", Opts)
+
+-- Pick and close
+vim.api.nvim_set_keymap("n", "<Leader>bd", ":BufferLinePickClose<CR>", Opts)
+
+-- Close to sides
+vim.api.nvim_set_keymap("n", "<Leader>br", ":BufferLineCloseRight<CR>", Opts)
+vim.api.nvim_set_keymap("n", "<Leader>bl", ":BufferLineCloseLeft<CR>", Opts)
 
 for num = 1,9 do
   vim.api.nvim_command("command! B".. num .." :BufferLineGoToBuffer " .. num)
