@@ -35,7 +35,7 @@ M.insert_left({
 		provider = "DiffModified",
 		condition = M.checkwidth,
 		icon = "  ",
-		highlight = { M.colors.orange, M.colors.bg },
+		highlight = { M.colors.deep_blue, M.colors.bg },
 	},
 })
 
@@ -45,30 +45,6 @@ M.insert_left({
 		condition = M.checkwidth,
 		icon = "  ",
 		highlight = { M.colors.red, M.colors.bg },
-	},
-})
-
-M.insert_left({
-	TrailingWhiteSpace = {
-		provider = M.trailing_whitespace,
-		icon = "  ",
-		highlight = { M.colors.yellow, M.colors.bg },
-	},
-})
-
-M.insert_left({
-	DiagnosticError = {
-		provider = "DiagnosticError",
-		icon = "  ",
-		highlight = { M.colors.red, M.colors.bg },
-	},
-})
-
-M.insert_left({
-	DiagnosticWarn = {
-		provider = "DiagnosticWarn",
-		icon = "  ",
-		highlight = { M.colors.yellow, M.colors.bg },
 	},
 })
 

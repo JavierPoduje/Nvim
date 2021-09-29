@@ -6,6 +6,7 @@ local M = {}
 M.colors = {
 	bg = "#32302F",
 	blue = "#83A598",
+	deep_blue = "#458588",
 	fg = "#EBDBB2",
 	fg_green = "#689D6A",
 	gray = "#928374",
@@ -72,14 +73,14 @@ M.mode_color = {
 	t = M.colors.red,
 }
 
-M.trailing_whitespace = function()
-	local trail = vim.fn.search("\\s$", "nw")
-	if trail ~= 0 then
-		return " "
-	else
-		return nil
-	end
-end
+--M.trailing_whitespace = function()
+--  local trail = vim.fn.search("\\s$", "nw")
+--  if trail ~= 0 then
+--    return " "
+--  else
+--    return nil
+--  end
+--end
 
 M.semi_circle = function(is_left)
 	if is_left then
@@ -99,14 +100,14 @@ M.left_border = {
 	provider = function()
 		return M.semi_circle(true)
 	end,
-	highlight = { M.colors.yellow },
+	highlight = { M.colors.bg, M.colors.bg },
 }
 
 M.right_border = {
 	provider = function()
 		return M.semi_circle(false)
 	end,
-	highlight = { M.colors.blue },
+	highlight = { M.colors.bg, M.colors.bg },
 }
 
 M.space = {
@@ -137,6 +138,14 @@ end
 
 M.insert_blank_line_at_left = function()
 	M.insert_left({ Space = M.space })
+end
+
+M.insert_mid = function(element)
+	table.insert(gls.mid, element)
+end
+
+M.insert_blank_line_at_mid = function()
+	M.insert_mid({ Space = M.space })
 end
 
 M.insert_right = function(element)
