@@ -80,14 +80,8 @@ vim.api.nvim_set_keymap("v", "<Tab>", ">gv", Opts)
 vim.api.nvim_set_keymap("v", "J", ":m '>+1<CR>gv=gv", Opts)
 vim.api.nvim_set_keymap("v", "K", ":m '<-2<CR>gv=gv", Opts)
 
--- set filetype
-vim.api.nvim_command("command! MD :set filetype=markdown")
-vim.api.nvim_command("command! SQL :set filetype=sql")
-
--- Open next buffer on the right using vertical split
+-- Open next/previous buffer on the right using vertical split
 vim.api.nvim_command("command! VS :vs | :wincmd l | :bn")
-
--- Open previous buffer on the right using vertical split
 vim.api.nvim_command("command! Vs :vs | :wincmd l | :bp")
 
 -- Display window with my open buffers

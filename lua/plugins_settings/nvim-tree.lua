@@ -1,6 +1,5 @@
 local tree_cb = require("nvim-tree.config").nvim_tree_callback
 
--- default mappings
 vim.g.nvim_tree_bindings = {
 	{ key = { "<CR>", "o", "<2-LeftMouse>" }, cb = tree_cb("edit") },
 	{ key = { "<2-RightMouse>", "<C-]>" }, cb = tree_cb("cd") },
@@ -23,6 +22,7 @@ vim.g.nvim_tree_bindings = {
 }
 
 vim.g.nvim_tree_ignore = { "*.pyc" }
+vim.g.nvim_tree_quit_on_open = 1
 
 vim.api.nvim_set_keymap("n", "<leader>pv", ":NvimTreeToggle<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<leader>R", ":NvimTreeRefresh<CR>", Opts)
