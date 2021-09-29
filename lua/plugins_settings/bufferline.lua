@@ -71,8 +71,8 @@ vim.api.nvim_set_keymap("n", "<", ":BufferLineCyclePrev<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<Leader>bd", ":BufferLinePickClose<CR>", Opts)
 
 -- Close to sides
-vim.api.nvim_set_keymap("n", "<Leader>br", ":BufferLineCloseRight<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<Leader>bl", ":BufferLineCloseLeft<CR>", Opts)
+vim.api.nvim_set_keymap("n", "<Leader>bl", ":BufferLineCloseRight<CR>", Opts)
+vim.api.nvim_set_keymap("n", "<Leader>bh", ":BufferLineCloseLeft<CR>", Opts)
 
 for num = 1,9 do
   vim.api.nvim_command("command! B".. num .." :BufferLineGoToBuffer " .. num)

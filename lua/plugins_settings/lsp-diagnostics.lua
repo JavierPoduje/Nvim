@@ -6,8 +6,6 @@ nvim_lsp.diagnosticls.setup({
 		"javascriptreact",
 		"typescript",
 		"typescriptreact",
-		--"css",
-		--"scss",
 	},
 	init_options = {
 		linters = {
@@ -40,13 +38,3 @@ nvim_lsp.diagnosticls.setup({
 		},
 	},
 })
-
--- Just don't...
-vim.g.lsp_document_highlight_enabled = 0
-
--- disabled because it changes the styles of the diagnostics
-vim.g.lsp_diagnostics_enabled = 0
-
-vim.api.nvim_set_keymap("n", "<leader>e", ":lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<leader>[", ":lua vim.lsp.diagnostic.goto_prev()<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<leader>]", ":lua vim.lsp.diagnostic.goto_next()<CR>", Opts)
