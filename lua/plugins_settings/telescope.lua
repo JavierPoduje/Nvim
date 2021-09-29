@@ -9,16 +9,16 @@ require("telescope").setup({
 			"--column",
 			"--smart-case",
 		},
-		prompt_prefix = "> ",
-		selection_caret = "> ",
+		prompt_prefix = "  ",
+		selection_caret = " ",
 		entry_prefix = "  ",
 		initial_mode = "insert",
 		selection_strategy = "reset",
 		sorting_strategy = "descending",
-		layout_strategy = "horizontal",
+		layout_strategy = "vertical",
 		layout_config = {
-			horizontal = { mirror = false },
-			vertical = { width = 0.5, mirror = false },
+			horizontal = { width = 0.8, mirror = false, preview_width = 0.5 },
+			vertical = { width = 0.6, mirror = true, preview_height = 0.5 },
 		},
 		file_sorter = require("telescope.sorters").get_fuzzy_file,
 		file_ignore_patterns = {
@@ -53,13 +53,13 @@ require("telescope").setup({
 	},
 })
 
--- Set fuzzy native for hyper speed...
+-- Set fuzzy native for hyper speed
 require("telescope").load_extension("fzy_native")
 
 -- Telescope
 vim.api.nvim_set_keymap("n", "<Leader>pf", ":Telescope find_files<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<Leader>pb", ":Telescope buffers<CR>", Opts)
 
--- Browse util files
+-- Customs
 vim.api.nvim_set_keymap("n", "<Leader>pu", ":lua require'plugins_settings.telescope.finders'.browse_utils()<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<Leader>pn", ":lua require'plugins_settings.telescope.finders'.browse_nvim()<CR>", Opts)

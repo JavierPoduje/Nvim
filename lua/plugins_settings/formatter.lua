@@ -25,18 +25,26 @@ end
 
 local sql_args = {
 	"-u",
-	"-i", 4,
-	"--lines-between-queries", 2,
-	"-l", "mysql",
+	"-i",
+	4,
+	"--lines-between-queries",
+	2,
+	"-l",
+	"mysql",
 	current_file,
 }
 
 local lua_args = {
-	"--column-width", 120,
-	"--line-endings", "Unix",
-	"--indent-type", "Tabs",
-	"--indent-width", 2,
-	"--quote-style", "AutoPreferDouble",
+	"--column-width",
+	120,
+	"--line-endings",
+	"Unix",
+	"--indent-type",
+	"Tabs",
+	"--indent-width",
+	2,
+	"--quote-style",
+	"AutoPreferDouble",
 }
 
 -- Actual formatter definition

@@ -24,6 +24,10 @@ vim.g.nvim_tree_bindings = {
 vim.g.nvim_tree_ignore = { "*.pyc" }
 vim.g.nvim_tree_quit_on_open = 1
 
+-- TODO: Make the PR of this when they solve the issue on the repo
+vim.g.nvim_tree_relativenumber = true
+vim.g.nvim_tree_number = true
+
 vim.api.nvim_set_keymap("n", "<leader>pv", ":NvimTreeToggle<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<leader>R", ":NvimTreeRefresh<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<leader>pp", ":NvimTreeFindFile<CR>", Opts)

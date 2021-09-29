@@ -61,6 +61,9 @@ vim.api.nvim_set_keymap("n", "<M-l>", ":vertical resize +5<CR>", Opts)
 -- Move to last buffer
 vim.api.nvim_set_keymap("n", "<Leader>#", ":e#<CR>", Opts)
 
+-- Better saving
+vim.api.nvim_set_keymap("n", "<Leader>s", ":silent! write<CR>", Opts)
+
 -- Git management
 vim.api.nvim_set_keymap("n", "<Leader>gl", ":diffget //3<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<Leader>gh", ":diffget //2<CR>", Opts)
