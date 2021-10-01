@@ -30,4 +30,9 @@ finders.browse_nvim = function()
 	require("telescope.builtin").file_browser(config)
 end
 
+finders.curr_buffer_find = function()
+  local ivy_theme = require("telescope.themes").get_ivy()
+  require("telescope.builtin").current_buffer_fuzzy_find(ivy_theme)
+end
+
 return finders

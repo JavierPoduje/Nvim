@@ -1,5 +1,5 @@
 -- Variables
-require("_variables")
+require("_globals")
 
 -- Util functions and some definitions. This need to be defined at the beggining.
 require("utils")

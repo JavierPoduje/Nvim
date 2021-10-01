@@ -14,11 +14,20 @@ require("telescope").setup({
 		entry_prefix = "  ",
 		initial_mode = "insert",
 		selection_strategy = "reset",
-		sorting_strategy = "descending",
-		layout_strategy = "vertical",
+		sorting_strategy = "ascending",
+		layout_strategy = "horizontal",
 		layout_config = {
-			horizontal = { width = 0.8, mirror = false, preview_width = 0.5 },
-			vertical = { width = 0.6, mirror = true, preview_height = 0.5 },
+			horizontal = {
+				width = 0.8,
+				mirror = false,
+				preview_width = 0.5,
+				prompt_position = "top",
+			},
+			vertical = {
+				width = 0.6,
+				mirror = true,
+				preview_height = 0.5,
+			},
 		},
 		file_sorter = require("telescope.sorters").get_fuzzy_file,
 		file_ignore_patterns = {
@@ -29,6 +38,8 @@ require("telescope").setup({
 			"app/webroot/img",
 			"app/webroot/legacy-tables",
 			"app/webroot/tmp",
+			"aws/dist",
+			"aws/",
 		},
 		generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
 		winblend = 0,
@@ -63,3 +74,4 @@ vim.api.nvim_set_keymap("n", "<Leader>pb", ":Telescope buffers<CR>", Opts)
 -- Customs
 vim.api.nvim_set_keymap("n", "<Leader>pu", ":lua require'plugins_settings.telescope.finders'.browse_utils()<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<Leader>pn", ":lua require'plugins_settings.telescope.finders'.browse_nvim()<CR>", Opts)
+vim.api.nvim_set_keymap("n", "/", ":lua require'plugins_settings.telescope.finders'.curr_buffer_find()<CR>", Opts)

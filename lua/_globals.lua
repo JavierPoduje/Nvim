@@ -7,5 +7,5 @@ P = function(something)
 	return something
 end
 
--- avoid lsp annoying message...
+-- avoid lsp annoying warning message...
 vim = vim
