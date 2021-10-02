@@ -69,11 +69,17 @@ vim.api.nvim_set_keymap("n", "<Leader>gl", ":diffget //3<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<Leader>gh", ":diffget //2<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<Leader>gs", ":G<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<Leader>gb", ":Git blame<CR>", Opts)
+vim.api.nvim_set_keymap("n", "<Leader>gp", ":GitGutterPreviewHunk<CR>", Opts)
+
 -- LazyGit
 vim.api.nvim_set_keymap("n", "<Leader>fg", ":LazyGit<CR>", Opts)
 
 -- Close all buffers except the current one
-vim.api.nvim_set_keymap("n", "<Leader>bca", ":w<bar>%bd<bar>e#<bar>bd#<CR>", Opts)
+SweepBuffers = function()
+  vim.api.nvim_exec(":BufferLineCloseRight", true)
+  vim.api.nvim_exec(":BufferLineCloseLeft", true)
+end
+vim.api.nvim_set_keymap("n", "<Leader>bd", ":lua SweepBuffers()<CR>", Opts)
 
 -- Better tabbing
 vim.api.nvim_set_keymap("v", "<S-Tab>", "<gv", Opts)
@@ -84,8 +90,8 @@ vim.api.nvim_set_keymap("v", "J", ":m '>+1<CR>gv=gv", Opts)
 vim.api.nvim_set_keymap("v", "K", ":m '<-2<CR>gv=gv", Opts)
 
 -- Open next/previous buffer on the right using vertical split
-vim.api.nvim_command("command! VS :vs | :wincmd l | :bn")
-vim.api.nvim_command("command! Vs :vs | :wincmd l | :bp")
+vim.api.nvim_command("command! Vs :vs | :wincmd l | :BufferLineCycleNext")
+vim.api.nvim_command("command! VS :vs | :wincmd l | :BufferLineCyclePrev")
 
 -- Display window with my open buffers
 vim.api.nvim_command("command! B :Buffers")

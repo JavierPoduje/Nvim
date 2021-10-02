@@ -74,6 +74,6 @@ vim.api.nvim_set_keymap("n", "<Leader>bd", ":BufferLinePickClose<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<Leader>bl", ":BufferLineCloseRight<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<Leader>bh", ":BufferLineCloseLeft<CR>", Opts)
 
-for num = 1,9 do
-  vim.api.nvim_command("command! B".. num .." :BufferLineGoToBuffer " .. num)
+for buff_idx = 1,9 do
+  vim.api.nvim_command("command! B".. buff_idx .." :BufferLineGoToBuffer " .. buff_idx)
 end

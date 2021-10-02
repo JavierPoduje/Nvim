@@ -1,16 +1,18 @@
-TODO: update this
-
 # Description
 
-My NeoVim configuration for software development.
+My Nvim configurations.
 
 ## Dependencies
 
 1. [Node (>= 12)](https://nodejs.org/en/download/)
-2. [Yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable)
 3. [Lazygit](https://github.com/jesseduffield/lazygit)
-4. [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
-5. [Vim-Plug](https://github.com/junegunn/vim-plug)
+4. [Neovim Nightly](https://github.com/neovim/neovim/releases)
+5. [Packer](https://github.com/wbthomason/packer.nvim)
+6. [Bat](https://github.com/sharkdp/bat)
+
+### Recommended
+
+6. [Kitty Terminal](https://sw.kovidgoyal.net/kitty/)
 
 ## Install
 
@@ -29,11 +31,5 @@ $ mkdir undodir/
 Install pluggins running the following command inside vim:
 
 ```sh
-:PlugInstall
-```
-
-Check for health problems with the following command and solve them if necessary:
-
-```sh
-:checkhealth
+:PackerInstall
 ```

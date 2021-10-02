@@ -42,10 +42,8 @@ vim.api.nvim_command("set shortmess+=c")
 -- <Space> as leader key
 vim.api.nvim_command('let mapleader = " "')
 
--- Testing this configuraitons
-vim.api.nvim_command("set t_Co=256")
--- " Having longer update time (default is 4000 ms = 4 sec) leads to noticeable
--- " delays and poor user experience.
+-- Having longer update time (default is 4000 ms = 4 sec) leads to noticeable
+-- delays and poor user experience.
 vim.api.nvim_command("set updatetime=300")
 
 -- Always show tabs on top
@@ -55,14 +53,12 @@ vim.api.nvim_command("set showtabline=2")
 vim.api.nvim_command("let &t_ut=''")
 
 -- I don't know what this things are...
+vim.api.nvim_command("set t_Co=256")
 vim.g.loaded_matchparen = 1
 vim.g.netrw_browse_split = 2
 vim.g.vrfr_rg = "true"
 vim.g.netrw_banner = 1
 vim.g.netrw_winsize = 15
-
--- Bujo
-vim.api.nvim_command("let g:bujo#window_width = 100")
 
 -- Set indentation for .php, .sql, and .mysql files
 vim.api.nvim_command([[
