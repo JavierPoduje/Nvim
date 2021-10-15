@@ -21,6 +21,7 @@ end
 
 -- Just don't...
 vim.g.lsp_document_highlight_enabled = 0
+vim.g.lsp_document_code_action_signs_enabled = 0
 
 -- disabled because it changes the styles of the diagnostics
 vim.g.lsp_diagnostics_enabled = 0
