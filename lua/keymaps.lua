@@ -75,10 +75,6 @@ vim.api.nvim_set_keymap("n", "<Leader>gp", ":GitGutterPreviewHunk<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<Leader>fg", ":LazyGit<CR>", Opts)
 
 -- Close all buffers except the current one
-SweepBuffers = function()
-  vim.api.nvim_exec(":BufferLineCloseRight", true)
-  vim.api.nvim_exec(":BufferLineCloseLeft", true)
-end
 vim.api.nvim_set_keymap("n", "<Leader>bd", ":lua SweepBuffers()<CR>", Opts)
 
 -- Better tabbing
@@ -90,11 +86,11 @@ vim.api.nvim_set_keymap("v", "J", ":m '>+1<CR>gv=gv", Opts)
 vim.api.nvim_set_keymap("v", "K", ":m '<-2<CR>gv=gv", Opts)
 
 -- Open next/previous buffer on the right using vertical split
-vim.api.nvim_command("command! Vs :vs | :wincmd l | :BufferLineCycleNext")
-vim.api.nvim_command("command! VS :vs | :wincmd l | :BufferLineCyclePrev")
+vim.api.nvim_command("command! Vs :lua SplitAndMoveToNextBuffer()<CR>")
+vim.api.nvim_command("command! VS :lua SplitAndMoveToPrevBuffer()<CR>")
 
 -- Display window with my open buffers
 vim.api.nvim_command("command! B :Buffers")
 
--- By default, this calls the fzf windows method. I just want to save my file...
+-- By default `W` this calls the fzf's windows preview. I just want to save my file...
 vim.api.nvim_command("command! W  write")
