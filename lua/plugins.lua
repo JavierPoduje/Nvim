@@ -19,7 +19,11 @@ return require("packer").startup(function(use)
 	-- Syntax and stuff
 	use("neoclide/jsonc.vim")
 	use("hrsh7th/nvim-compe")
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		requires = "nvim-treesitter/playground",
+		run = ":TSUpdate",
+	})
 	use({
 		"akinsho/nvim-bufferline.lua",
 		requires = "kyazdani42/nvim-web-devicons",

@@ -18,7 +18,7 @@ vim.api.nvim_command("set ignorecase")
 vim.api.nvim_command("set smartcase")
 vim.api.nvim_command("set incsearch")
 vim.api.nvim_command("set termguicolors")
-vim.api.nvim_command("set scrolloff=8")
+vim.api.nvim_command("set scrolloff=6")
 vim.api.nvim_command("set clipboard=unnamed")
 vim.api.nvim_command("set fdm=indent") -- folding method
 vim.api.nvim_command("set nofoldenable") -- disable pre-folding

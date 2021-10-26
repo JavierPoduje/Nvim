@@ -1,7 +1,7 @@
 local tree_cb = require("nvim-tree.config").nvim_tree_callback
 
 vim.g.nvim_tree_bindings = {
-	{ key = { "<CR>", "o", "<2-LeftMouse>" }, cb = tree_cb("edit") },
+	{ key = { "<CR>" }, cb = tree_cb("edit") },
 	{ key = { "<2-RightMouse>", "<C-]>" }, cb = tree_cb("cd") },
 	{ key = "s", cb = tree_cb("vsplit") },
 	{ key = "v", cb = tree_cb("split") },
@@ -23,10 +23,6 @@ vim.g.nvim_tree_bindings = {
 
 vim.g.nvim_tree_ignore = { "*.pyc" }
 vim.g.nvim_tree_quit_on_open = 1
-
--- TODO: Make the PR of this when they solve the issue on the repo
-vim.g.nvim_tree_relativenumber = true
-vim.g.nvim_tree_number = true
 
 vim.api.nvim_set_keymap("n", "<leader>pv", ":NvimTreeToggle<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<leader>R", ":NvimTreeRefresh<CR>", Opts)
