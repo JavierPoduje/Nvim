@@ -2,7 +2,6 @@ vim.api.nvim_command("syntax on")
 vim.api.nvim_command("filetype plugin on")
 
 vim.api.nvim_command("set exrc")
--- "set guicursor=
 vim.api.nvim_command("set noshowmatch")
 vim.api.nvim_command("set relativenumber")
 vim.api.nvim_command("set nu")
@@ -11,7 +10,7 @@ vim.api.nvim_command("set hidden")
 vim.api.nvim_command("set noerrorbells")
 vim.api.nvim_command("set tabstop=2 softtabstop=0 expandtab smarttab")
 vim.api.nvim_command("set shiftwidth=2")
-vim.api.nvim_command("set mouse=a") -- mouse support
+vim.api.nvim_command("set mouse=a")
 vim.api.nvim_command("set smartindent")
 vim.api.nvim_command("set nowrap")
 vim.api.nvim_command("set ignorecase")
