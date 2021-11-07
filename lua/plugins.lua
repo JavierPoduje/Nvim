@@ -54,16 +54,15 @@ return require("packer").startup(function(use)
 	use({
 		"kyazdani42/nvim-tree.lua",
 		branch = "master",
-		--commit = "b1c447946b1d0afa8f0bbd92f5a6bad0b54a3f3c",
 	})
-  use({
-    "nvim-telescope/telescope.nvim",
-    commit = "782d802d44077e07f80189560f91c86370f11e39",
-    requires = {
-      { "nvim-lua/popup.nvim" },
-      { "nvim-lua/plenary.nvim" },
-    },
-  })
+	use({
+		"nvim-telescope/telescope.nvim",
+		commit = "782d802d44077e07f80189560f91c86370f11e39",
+		requires = {
+			{ "nvim-lua/popup.nvim" },
+			{ "nvim-lua/plenary.nvim" },
+		},
+	})
 	use("nvim-telescope/telescope-fzy-native.nvim")
 
 	-- Themes

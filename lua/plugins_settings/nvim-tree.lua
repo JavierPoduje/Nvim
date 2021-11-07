@@ -1,32 +1,26 @@
 local tree_cb = require("nvim-tree.config").nvim_tree_callback
 
 require("nvim-tree").setup({
-	nvim_tree_bindings = {
-		{ key = { "<CR>" }, cb = tree_cb("edit") },
-		{ key = { "<2-RightMouse>", "<C-]>" }, cb = tree_cb("cd") },
-		{ key = "s", cb = tree_cb("vsplit") },
-		{ key = "v", cb = tree_cb("split") },
-		{ key = "P", cb = tree_cb("parent_node") },
-		{ key = "H", cb = tree_cb("toggle_dotfiles") },
-		{ key = "a", cb = tree_cb("create") },
-		{ key = "d", cb = tree_cb("remove") },
-		{ key = "r", cb = tree_cb("rename") },
-		{ key = "x", cb = tree_cb("cut") },
-		{ key = "c", cb = tree_cb("copy") },
-		{ key = "p", cb = tree_cb("paste") },
-		{ key = "y", cb = tree_cb("copy_name") },
-		{ key = "Y", cb = tree_cb("copy_path") },
-		{ key = "gy", cb = tree_cb("copy_absolute_path") },
-		{ key = "-", cb = tree_cb("dir_up") },
-		{ key = "q", cb = tree_cb("close") },
-		{ key = "g?", cb = tree_cb("toggle_help") },
+	system_open = {},
+	nvim_tree_ignore = {
+		"*.pyc",
 	},
-  nvim_tree_ignore = {
-    "*.pyc"
-  }
+	view = {
+		number = true,
+		relativenumber = true,
+    hide_root_folder = false,
+		mappings = {
+			list = {
+				{ key = "s", cb = tree_cb("vsplit") },
+				{ key = "v", cb = tree_cb("split") },
+				{ key = "<C-S>", cb = tree_cb("system_open") },
+			},
+		},
+	},
 })
 
 vim.g.nvim_tree_quit_on_open = 1
+vim.g.nvim_tree_indent_markers = 1
 
 vim.api.nvim_set_keymap("n", "<leader>pv", ":NvimTreeToggle<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<leader>R", ":NvimTreeRefresh<CR>", Opts)
