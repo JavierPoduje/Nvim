@@ -23,6 +23,7 @@ vim.api.nvim_command("set fdm=indent") -- folding method
 vim.api.nvim_command("set nofoldenable") -- disable pre-folding
 vim.api.nvim_command("set encoding=utf8")
 vim.api.nvim_command("set colorcolumn=80")
+vim.api.nvim_command("set cursorline")
 
 -- Spelling for English and Spanish. Not active at start
 vim.api.nvim_command("set spelllang=en_us,es")
