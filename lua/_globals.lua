@@ -7,24 +7,6 @@ P = function(something)
 	return something
 end
 
--- Delete all buffers but the one on focus
-SweepBuffers = function()
-	vim.api.nvim_exec(":BufferLineCloseRight", true)
-	vim.api.nvim_exec(":BufferLineCloseLeft", true)
-end
-
--- Split and move to buffers
-SplitAndMoveToNextBuffer = function()
-	vim.api.nvim_exec(":vs", true)
-	vim.api.nvim_exec(":wincmd l", true)
-	vim.api.nvim_exec(":BufferLineCycleNext", true)
-end
-SplitAndMoveToPrevBuffer = function()
-	vim.api.nvim_exec(":vs", true)
-	vim.api.nvim_exec(":wincmd l", true)
-	vim.api.nvim_exec(":BufferLineCyclePrev", true)
-end
-
 -- Convert json to php array
 JsonToPhp = function()
 	vim.api.nvim_command([[ :%s/\%V":\s*\"/" => "/ge ]])

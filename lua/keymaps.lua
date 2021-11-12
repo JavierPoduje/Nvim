@@ -35,7 +35,6 @@ vim.api.nvim_set_keymap("n", "<Leader>k", ":wincmd k<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<Leader>l", ":wincmd l<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<Leader>j", ":wincmd j<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<Leader>h", ":wincmd h<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<Leader>d", ":bd!<CR>", Opts)
 
 -- More options for paste
 vim.api.nvim_set_keymap("n", "<Leader>po", "o<Esc>p", Opts)
@@ -53,9 +52,6 @@ vim.api.nvim_set_keymap("n", "<M-j>", ":resize -5<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<M-h>", ":vertical resize -5<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<M-l>", ":vertical resize +5<CR>", Opts)
 
--- Move to last buffer
-vim.api.nvim_set_keymap("n", "<Leader>#", ":e#<CR>", Opts)
-
 -- Better saving
 vim.api.nvim_set_keymap("n", "<Leader>s", ":silent! write<CR>", Opts)
 
@@ -69,9 +65,6 @@ vim.api.nvim_set_keymap("n", "<Leader>gp", ":GitGutterPreviewHunk<CR>", Opts)
 -- LazyGit
 vim.api.nvim_set_keymap("n", "<Leader>fg", ":LazyGit<CR>", Opts)
 
--- Close all buffers except the current one
-vim.api.nvim_set_keymap("n", "<Leader>bd", ":lua SweepBuffers()<CR>", Opts)
-
 -- Better tabbing
 vim.api.nvim_set_keymap("v", "<S-Tab>", "<gv", Opts)
 vim.api.nvim_set_keymap("v", "<Tab>", ">gv", Opts)
@@ -79,10 +72,6 @@ vim.api.nvim_set_keymap("v", "<Tab>", ">gv", Opts)
 -- Move visual block up and down
 vim.api.nvim_set_keymap("v", "J", ":m '>+1<CR>gv=gv", Opts)
 vim.api.nvim_set_keymap("v", "K", ":m '<-2<CR>gv=gv", Opts)
-
--- Open next/previous buffer on the right using vertical split
-vim.api.nvim_command("command! Vs :lua SplitAndMoveToNextBuffer()<CR>")
-vim.api.nvim_command("command! VS :lua SplitAndMoveToPrevBuffer()<CR>")
 
 -- By default `W` this calls the fzf's windows preview. I just want to save my file...
 vim.api.nvim_command("command! W  write")

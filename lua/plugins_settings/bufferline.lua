@@ -1,11 +1,21 @@
-require("bufferline").setup({
+local b = "require'plugins_settings.bufferline.buffero'"
+
+local char_to_num = {
+	m = 1,
+	[","] = 2,
+	["."] = 3,
+	j = 4,
+	k = 5,
+	l = 6,
+	u = 7,
+	i = 8,
+	o = 9,
+}
+
+local config = {
 	options = {
 		numbers = function(opts)
-      --return string.format("%s", opts.raise(opts.id))
-
-      -- TEST: use ordinal instead of id. When doing it, handle the commands
-      -- that use the buffer id like :b[id], :bd[id], etc...
-      return string.format("%s·%s", opts.raise(opts.ordinal), opts.lower(opts.id))
+			return string.format("%s", opts.raise(opts.ordinal))
 		end,
 		BufferLineGoToBuffer = false,
 		indicator_icon = "▎",
@@ -57,7 +67,8 @@ require("bufferline").setup({
 		always_show_bufferline = true,
 		sort_by = "id",
 	},
-})
+}
+require("bufferline").setup(config)
 
 -- Move buffers tabs
 vim.api.nvim_set_keymap("n", "<Leader>bn", ":BufferLineMoveNext<CR>", Opts)
@@ -67,13 +78,30 @@ vim.api.nvim_set_keymap("n", "<Leader>bp", ":BufferLineMovePrev<CR>", Opts)
 vim.api.nvim_set_keymap("n", ">", ":BufferLineCycleNext<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<", ":BufferLineCyclePrev<CR>", Opts)
 
--- Pick and close
-vim.api.nvim_set_keymap("n", "<Leader>bd", ":BufferLinePickClose<CR>", Opts)
-
 -- Close to sides
 vim.api.nvim_set_keymap("n", "<Leader>bl", ":BufferLineCloseRight<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<Leader>bh", ":BufferLineCloseLeft<CR>", Opts)
 
-for buff_idx = 1,9 do
-  vim.api.nvim_command("command! B".. buff_idx .." :BufferLineGoToBuffer " .. buff_idx)
+-- Move to last buffer
+vim.api.nvim_set_keymap("n", "<Leader>#", ":e#<CR>", Opts)
+
+-- Open next/previous buffer on the right using vertical split
+vim.api.nvim_command("command! Vs :lua " .. b .. ".split_and_move('next')<CR>")
+vim.api.nvim_command("command! VS :lua " .. b .. "('prev')<CR>")
+
+-- Open last closed buffer
+vim.api.nvim_set_keymap("n", "<Leader>bo", ":lua " .. b .. ".open_last_closed_buffer()<CR>", Opts)
+
+-- Close current buffer
+vim.api.nvim_set_keymap("n", "<Leader>dx", ":lua " .. b .. ".close_and_remember()<CR>", Opts)
+
+-- Close all buffers except the current one
+vim.api.nvim_set_keymap("n", "<Leader>bd", ":lua " .. b .. ".sweep()<CR>", Opts)
+
+for char, buff_num in pairs(char_to_num) do
+	-- go to specific buffer
+	vim.api.nvim_set_keymap("n", "<Leader>x" .. char, ":BufferLineGoToBuffer " .. buff_num .. "<CR>", Opts)
+
+	-- close specific buffer
+	vim.api.nvim_set_keymap("n", "<Leader>d" .. char, ":lua " .. b .. ".close_buff_by_num(" .. buff_num .. ")<CR>", Opts)
 end

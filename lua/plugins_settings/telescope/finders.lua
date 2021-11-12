@@ -1,8 +1,8 @@
-local finders = {}
+local F = {}
 
-finders.browse_utils = function()
+F.browse_utils = function()
 	require("telescope.builtin").file_browser({
-		results_title = "~ Utils ~",
+		results_title = "~  Utils ~",
 		cwd = "~/Documents/.utils/",
 		previewer = false,
 		prompt_title = false,
@@ -14,9 +14,9 @@ finders.browse_utils = function()
 	})
 end
 
-finders.browse_nvim = function()
+F.browse_nvim = function()
 	require("telescope.builtin").file_browser({
-		results_title = "~ Nvim ~",
+		results_title = "~ Vim ~",
 		cwd = "~/.config/nvim/",
 		previewer = false,
 		prompt_title = false,
@@ -28,9 +28,9 @@ finders.browse_nvim = function()
 	})
 end
 
-finders.browse_snippets = function ()
+F.browse_snippets = function ()
 	require("telescope.builtin").file_browser({
-		results_title = "~ Snippets ~",
+		results_title = "~ 異Snippets ~",
 		cwd = "~/.local/share/nvim/site/pack/packer/start/vim-snippets/UltiSnips/",
 		previewer = false,
 		prompt_title = false,
@@ -42,4 +42,4 @@ finders.browse_snippets = function ()
 	})
 end
 
-return finders
+return F
