@@ -1,38 +1,45 @@
 local finders = {}
 
 finders.browse_utils = function()
-	local config = {
+	require("telescope.builtin").file_browser({
 		results_title = "~ Utils ~",
 		cwd = "~/Documents/.utils/",
 		previewer = false,
 		prompt_title = false,
-		layout_strategy = "vertical",
+		layout_strategy = "horizontal",
 		layout_config = {
-			width = 0.6,
+			width = 0.4,
 			height = 0.4,
 		},
-	}
-	require("telescope.builtin").file_browser(config)
+	})
 end
 
 finders.browse_nvim = function()
-	local config = {
+	require("telescope.builtin").file_browser({
 		results_title = "~ Nvim ~",
-		cwd = "~/.config/nvim",
+		cwd = "~/.config/nvim/",
 		previewer = false,
 		prompt_title = false,
 		layout_strategy = "vertical",
 		layout_config = {
-			width = 0.6,
+			width = 0.4,
 			height = 0.4,
 		},
-	}
-	require("telescope.builtin").file_browser(config)
+	})
 end
 
-finders.curr_buffer_find = function()
-  local ivy_theme = require("telescope.themes").get_ivy()
-  require("telescope.builtin").current_buffer_fuzzy_find(ivy_theme)
+finders.browse_snippets = function ()
+	require("telescope.builtin").file_browser({
+		results_title = "~ Snippets ~",
+		cwd = "~/.local/share/nvim/site/pack/packer/start/vim-snippets/UltiSnips/",
+		previewer = false,
+		prompt_title = false,
+		layout_strategy = "vertical",
+		layout_config = {
+			width = 0.4,
+			height = 0.4,
+		},
+	})
 end
 
 return finders

@@ -27,6 +27,7 @@ require("telescope").setup({
 				width = 0.6,
 				mirror = true,
 				preview_height = 0.5,
+				prompt_position = "top",
 			},
 		},
 		file_sorter = require("telescope.sorters").get_fuzzy_file,
@@ -74,4 +75,4 @@ vim.api.nvim_set_keymap("n", "<Leader>pb", ":Telescope buffers<CR>", Opts)
 -- Customs
 vim.api.nvim_set_keymap("n", "<Leader>pu", ":lua require'plugins_settings.telescope.finders'.browse_utils()<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<Leader>pn", ":lua require'plugins_settings.telescope.finders'.browse_nvim()<CR>", Opts)
---vim.api.nvim_set_keymap("n", "/", ":lua require'plugins_settings.telescope.finders'.curr_buffer_find()<CR>", Opts)
+vim.api.nvim_set_keymap("n", "<Leader>pm", ":lua require'plugins_settings.telescope.finders'.browse_snippets()<CR>", Opts)

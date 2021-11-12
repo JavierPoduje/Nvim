@@ -4,13 +4,7 @@ vim.g.python3_host_prog = "/usr/bin/python3"
 -- Multi-cursor exit all cursors by default
 vim.g.multi_cursor_quit_key = "<C-c>"
 vim.api.nvim_set_keymap("n", "<C-c>", ":call multiple_cursors#quit()<CR>", Opts)
-vim.api.nvim_set_keymap("i", "<C-c>", "<ESC>", Opts)
-
--- Auto-pair
--- The `{}`, `()`, `[]` are disabled for jump to next line
-vim.api.nvim_command(
-	[[let g:AutoPairs = {'(':')//s','[':']//s','{':'}//s',"'":"'",'"':'"','```':'```','"""':'"""',"'''":"'''","`":"`"}]]
-)
+vim.api.nvim_set_keymap("i", "<C-c>", "<ESC><ESC>", Opts)
 
 -- Set space as leader key
 vim.api.nvim_set_keymap("n", "<Space>", "<NOP>", Opts)
@@ -41,6 +35,7 @@ vim.api.nvim_set_keymap("n", "<Leader>k", ":wincmd k<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<Leader>l", ":wincmd l<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<Leader>j", ":wincmd j<CR>", Opts)
 vim.api.nvim_set_keymap("n", "<Leader>h", ":wincmd h<CR>", Opts)
+vim.api.nvim_set_keymap("n", "<Leader>d", ":bd!<CR>", Opts)
 
 -- More options for paste
 vim.api.nvim_set_keymap("n", "<Leader>po", "o<Esc>p", Opts)
