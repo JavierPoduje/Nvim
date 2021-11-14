@@ -51,13 +51,13 @@ end
 -- method.
 -- @return void
 M.open_last_closed_buffer = function()
-	if #M.closed == 0 then
-		print("no buffer to open...")
-		return
-	end
+  if #M.closed == 0 then
+    print("no buffer to open...")
+    return
+  end
 
-	local last_closed_buf = table.remove(M.closed, #M.closed)
-	vim.api.nvim_exec(":e " .. last_closed_buf, true)
+  local last_closed_buf = table.remove(M.closed, #M.closed)
+  vim.api.nvim_exec(":e " .. last_closed_buf, true)
 end
 
 -- HELPERS
@@ -66,7 +66,7 @@ end
 -- @param buf table: the buffer with its `id` and `path` -> { id: number, path: string }
 M.save_and_close_ = function(buf)
 	table.insert(M.closed, buf.path)
-	vim.cmd("bd" .. buf.id)
+	vim.cmd("bd!" .. buf.id)
 end
 
 return M

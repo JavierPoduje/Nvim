@@ -1,4 +1,6 @@
-local b = "require'plugins_settings.bufferline.buffero'"
+local g = require("g")
+local B = "require'plugins_settings.bufferline.buffero'"
+local v = vim.api
 
 local char_to_num = {
 	m = 1,
@@ -18,7 +20,7 @@ local config = {
 			return string.format("%s", opts.raise(opts.ordinal))
 		end,
 		BufferLineGoToBuffer = false,
-		indicator_icon = "▎",
+		indicator_icon = " ",
 		modified_icon = "●",
 		left_trunc_marker = "",
 		right_trunc_marker = "",
@@ -31,24 +33,8 @@ local config = {
 		max_prefix_length = 15,
 		tab_size = 18,
 		diagnostics = "nvim_lsp",
-		diagnostics_indicator = function(count, level, diagnostics_dict, context)
+		diagnostics_indicator = function(count)
 			return " (" .. count .. ")"
-		end,
-		-- NOTE: this will be called a lot so don't do any heavy processing here
-		custom_filter = function(buf_number)
-			-- filter out filetypes you don't want to see
-			if vim.bo[buf_number].filetype ~= "<i-dont-want-to-see-this>" then
-				return true
-			end
-			-- filter out by buffer name
-			if vim.fn.bufname(buf_number) ~= "<buffer-name-I-dont-want>" then
-				return true
-			end
-			-- filter out based on arbitrary rules
-			-- e.g. filter out vim wiki buffer from tabline in your work repo
-			if vim.fn.getcwd() == "<work-repo>" and vim.bo[buf_number].filetype ~= "wiki" then
-				return true
-			end
 		end,
 		offsets = {
 			{
@@ -61,7 +47,7 @@ local config = {
 		show_buffer_close_icons = false,
 		show_close_icon = false,
 		show_tab_indicators = true,
-		persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
+		persist_buffer_sort = false,
 		separator_style = "thin", -- "slant" | "thick" | "thin" | { 'any', 'any' },
 		enforce_regular_tabs = false, -- false | true,
 		always_show_bufferline = true,
@@ -71,37 +57,36 @@ local config = {
 require("bufferline").setup(config)
 
 -- Move buffers tabs
-vim.api.nvim_set_keymap("n", "<Leader>bn", ":BufferLineMoveNext<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<Leader>bp", ":BufferLineMovePrev<CR>", Opts)
+g.silent_map("<Leader>bn", ":BufferLineMoveNext<CR>")
+g.silent_map("<Leader>bp", ":BufferLineMovePrev<CR>")
 
 -- Move between buffers
-vim.api.nvim_set_keymap("n", ">", ":BufferLineCycleNext<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<", ":BufferLineCyclePrev<CR>", Opts)
+g.silent_map(">", ":BufferLineCycleNext<CR>")
+g.silent_map("<", ":BufferLineCyclePrev<CR>")
 
 -- Close to sides
-vim.api.nvim_set_keymap("n", "<Leader>bl", ":BufferLineCloseRight<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<Leader>bh", ":BufferLineCloseLeft<CR>", Opts)
+g.silent_map("<Leader>bl", ":BufferLineCloseRight<CR>")
+g.silent_map("<Leader>bh", ":BufferLineCloseLeft<CR>")
 
 -- Move to last buffer
-vim.api.nvim_set_keymap("n", "<Leader>#", ":e#<CR>", Opts)
+g.silent_map("<Leader>#", ":e#<CR>")
 
 -- Open next/previous buffer on the right using vertical split
-vim.api.nvim_command("command! Vs :lua " .. b .. ".split_and_move('next')<CR>")
-vim.api.nvim_command("command! VS :lua " .. b .. "('prev')<CR>")
+v.nvim_command("command! Vs :lua " .. B .. ".split_and_move('next')<CR>")
+v.nvim_command("command! VS :lua " .. B .. ".split_and_move('prev')<CR>")
 
 -- Open last closed buffer
-vim.api.nvim_set_keymap("n", "<Leader>bo", ":lua " .. b .. ".open_last_closed_buffer()<CR>", Opts)
+g.silent_map("<Leader>xo", ":lua " .. B .. ".open_last_closed_buffer()<CR>")
 
 -- Close current buffer
-vim.api.nvim_set_keymap("n", "<Leader>dx", ":lua " .. b .. ".close_and_remember()<CR>", Opts)
+g.silent_map("<Leader>dx", ":lua " .. B .. ".close_and_remember()<CR>")
 
 -- Close all buffers except the current one
-vim.api.nvim_set_keymap("n", "<Leader>bd", ":lua " .. b .. ".sweep()<CR>", Opts)
+g.silent_map("<Leader>bd", ":lua " .. B .. ".sweep()<CR>")
 
 for char, buff_num in pairs(char_to_num) do
 	-- go to specific buffer
-	vim.api.nvim_set_keymap("n", "<Leader>x" .. char, ":BufferLineGoToBuffer " .. buff_num .. "<CR>", Opts)
-
+  g.silent_map("<Leader>b" .. char, ":BufferLineGoToBuffer " .. buff_num .. "<CR>")
 	-- close specific buffer
-	vim.api.nvim_set_keymap("n", "<Leader>d" .. char, ":lua " .. b .. ".close_buff_by_num(" .. buff_num .. ")<CR>", Opts)
+  g.silent_map("<Leader>d" .. char, ":lua " .. B .. ".close_buff_by_num(" .. buff_num .. ")<CR>")
 end
