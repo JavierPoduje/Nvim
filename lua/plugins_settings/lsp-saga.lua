@@ -1,4 +1,5 @@
 local saga = require("lspsaga")
+local g = require('g')
 
 saga.init_lsp_saga({
 	error_sign = "",
@@ -15,5 +16,5 @@ saga.init_lsp_saga({
 	},
 })
 
-vim.api.nvim_set_keymap("n", "K", ":lua require('lspsaga.hover').render_hover_doc()<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<leader>ga", ":lua require('lspsaga.codeaction').code_action()<CR>", Opts)
+g.n_silent_map("K", ":lua require('lspsaga.hover').render_hover_doc()<CR>")
+g.n_silent_map("<leader>ga", ":lua require('lspsaga.codeaction').code_action()<CR>")

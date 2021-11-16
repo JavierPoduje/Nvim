@@ -1,4 +1,6 @@
-vim.api.nvim_command([[
+local g = require('g')
+
+v.nvim_command([[
 if executable('rg')
     let g:rg_derive_root='true'
 endif
@@ -21,7 +23,7 @@ vim.g.fzf_colors["fg+"] = { "fg", "CursorLine" }
 vim.g.fzf_colors["bg+"] = { "bg", "CursorLine", "CursorColumn" }
 vim.g.fzf_colors["hl+"] = { "fg", "Statement" }
 
-vim.api.nvim_command([[
+v.nvim_command([[
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --hidden --column --line-number --no-heading --color=always --smart-case %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
@@ -31,16 +33,14 @@ function! RipgrepFzf(query, fullscreen)
 endfunction
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 ]])
-vim.api.nvim_set_keymap(
-	"n",
+g.n_noisy_map(
 	"<Leader>pS",
-	":Rg --fixed-strings --ignore-case '' **/*.<Left><Left><Left><Left><Left><Left><Left>",
-	NoisyOpts
+	":Rg --fixed-strings --ignore-case '' **/*.<Left><Left><Left><Left><Left><Left><Left>"
 )
-vim.api.nvim_set_keymap("n", "<leader>ps", ":RG<CR>", Opts)
+g.n_silent_map("<leader>ps", ":RG<CR>")
 
 -- Files search
-vim.api.nvim_command("let $FZF_DEFAULT_OPTS='--reverse'")
-vim.api.nvim_command([[
+v.nvim_command("let $FZF_DEFAULT_OPTS='--reverse'")
+v.nvim_command([[
 let $FZF_DEFAULT_COMMAND = 'rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*}"'
 ]])

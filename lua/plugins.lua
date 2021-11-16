@@ -24,21 +24,18 @@ return require("packer").startup(function(use)
 		requires = "nvim-treesitter/playground",
 		run = ":TSUpdate",
 	})
-	use({
-		"akinsho/nvim-bufferline.lua",
-		requires = "kyazdani42/nvim-web-devicons",
-	})
+	use("akinsho/nvim-bufferline.lua")
 	use("norcalli/nvim-colorizer.lua")
 
 	-- Beautification
 	use("ryanoasis/vim-devicons")
+	use("kyazdani42/nvim-web-devicons")
 
 	-- Files manager
 	use("airblade/vim-rooter")
 	use({
 		"glepnir/galaxyline.nvim",
 		branch = "main",
-		requires = { "ryanoasis/vim-devicons", opt = true },
 	})
 
 	-- Search texts and files
@@ -50,7 +47,6 @@ return require("packer").startup(function(use)
 	})
 	use("junegunn/fzf.vim")
 	use("jremmen/vim-ripgrep")
-	use("kyazdani42/nvim-web-devicons")
 	use({
 		"kyazdani42/nvim-tree.lua",
 		branch = "master",
@@ -66,8 +62,8 @@ return require("packer").startup(function(use)
 	use("nvim-telescope/telescope-fzy-native.nvim")
 
 	-- Themes
-	-- use 'ayu-theme/ayu-vim'
-	-- use 'sainnhe/edge'
+	--use("ayu-theme/ayu-vim")
+	--use("sainnhe/edge")
 	use("sainnhe/gruvbox-material")
 
 	-- Styles

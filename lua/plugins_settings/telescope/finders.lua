@@ -1,7 +1,7 @@
 local F = {}
 
 F.browse_utils = function()
-	require("telescope.builtin").file_browser({
+	require("telescope.builtin").find_files({
 		results_title = "~  Utils ~",
 		cwd = "~/Documents/.utils/",
 		previewer = false,
@@ -15,7 +15,7 @@ F.browse_utils = function()
 end
 
 F.browse_nvim = function()
-	require("telescope.builtin").file_browser({
+	require("telescope.builtin").find_files({
 		results_title = "~ Vim ~",
 		cwd = "~/.config/nvim/",
 		previewer = false,

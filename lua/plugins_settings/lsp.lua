@@ -1,10 +1,11 @@
 local nvim_lsp = require("lspconfig")
+local g = require('g')
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(_, bufnr)
 	local function buf_set_option(...)
-		vim.api.nvim_buf_set_option(bufnr, ...)
+		v.nvim_buf_set_option(bufnr, ...)
 	end
 
 	--Enable completion triggered by <c-x><c-o>
@@ -22,6 +23,6 @@ for _, lsp in ipairs(servers) do
 	})
 end
 
-vim.api.nvim_set_keymap("n", "<leader>gd", ":lua vim.lsp.buf.definition()<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<leader>gi", ":lua vim.lsp.buf.implementation()<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<leader>gt", ":lua vim.lsp.buf.type_definition()<CR>", Opts)
+g.n_silent_map("<leader>gd", ":lua vim.lsp.buf.definition()<CR>")
+g.n_silent_map("<leader>gi", ":lua vim.lsp.buf.implementation()<CR>")
+g.n_silent_map("<leader>gt", ":lua vim.lsp.buf.type_definition()<CR>")

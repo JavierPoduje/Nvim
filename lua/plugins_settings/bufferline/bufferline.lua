@@ -1,6 +1,5 @@
 local g = require("g")
 local B = "require'plugins_settings.bufferline.buffero'"
-local v = vim.api
 
 local char_to_num = {
 	m = 1,
@@ -48,7 +47,7 @@ local config = {
 		show_close_icon = false,
 		show_tab_indicators = true,
 		persist_buffer_sort = false,
-		separator_style = "thin", -- "slant" | "thick" | "thin" | { 'any', 'any' },
+		separator_style = "thick", -- "slant" | "thick" | "thin"
 		enforce_regular_tabs = false, -- false | true,
 		always_show_bufferline = true,
 		sort_by = "id",
@@ -57,36 +56,32 @@ local config = {
 require("bufferline").setup(config)
 
 -- Move buffers tabs
-g.silent_map("<Leader>bn", ":BufferLineMoveNext<CR>")
-g.silent_map("<Leader>bp", ":BufferLineMovePrev<CR>")
+g.n_silent_map("<Leader>bn", ":BufferLineMoveNext<CR>")
+g.n_silent_map("<Leader>bp", ":BufferLineMovePrev<CR>")
 
 -- Move between buffers
-g.silent_map(">", ":BufferLineCycleNext<CR>")
-g.silent_map("<", ":BufferLineCyclePrev<CR>")
-
--- Close to sides
-g.silent_map("<Leader>bl", ":BufferLineCloseRight<CR>")
-g.silent_map("<Leader>bh", ":BufferLineCloseLeft<CR>")
+g.n_silent_map(">", ":BufferLineCycleNext<CR>")
+g.n_silent_map("<", ":BufferLineCyclePrev<CR>")
 
 -- Move to last buffer
-g.silent_map("<Leader>#", ":e#<CR>")
+g.n_silent_map("<Leader>#", ":e#<CR>")
 
 -- Open next/previous buffer on the right using vertical split
-v.nvim_command("command! Vs :lua " .. B .. ".split_and_move('next')<CR>")
-v.nvim_command("command! VS :lua " .. B .. ".split_and_move('prev')<CR>")
+v.nvim_command("command! Vs :lua " .. B .. ".split_and_move('next')")
+v.nvim_command("command! VS :lua " .. B .. ".split_and_move('prev')")
 
 -- Open last closed buffer
-g.silent_map("<Leader>xo", ":lua " .. B .. ".open_last_closed_buffer()<CR>")
+g.n_silent_map("<Leader>bñ", ":lua " .. B .. ".open_last_closed_buffer()<CR>")
 
 -- Close current buffer
-g.silent_map("<Leader>dx", ":lua " .. B .. ".close_and_remember()<CR>")
+g.n_silent_map("<Leader>xd", ":lua " .. B .. ".close_and_remember()<CR>")
 
 -- Close all buffers except the current one
-g.silent_map("<Leader>bd", ":lua " .. B .. ".sweep()<CR>")
+g.n_silent_map("<Leader>bd", ":lua " .. B .. ".sweep()<CR>")
 
 for char, buff_num in pairs(char_to_num) do
 	-- go to specific buffer
-  g.silent_map("<Leader>b" .. char, ":BufferLineGoToBuffer " .. buff_num .. "<CR>")
+  g.n_silent_map("<Leader>b" .. char, ":BufferLineGoToBuffer " .. buff_num .. "<CR>")
 	-- close specific buffer
-  g.silent_map("<Leader>d" .. char, ":lua " .. B .. ".close_buff_by_num(" .. buff_num .. ")<CR>")
+  g.n_silent_map("<Leader>x" .. char, ":lua " .. B .. ".close_buff_by_num(" .. buff_num .. ")<CR>")
 end

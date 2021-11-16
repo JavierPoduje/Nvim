@@ -1,77 +1,79 @@
+local g = require('g')
+
 -- set python3 environment
 vim.g.python3_host_prog = "/usr/bin/python3"
 
 -- Multi-cursor exit all cursors by default
 vim.g.multi_cursor_quit_key = "<C-c>"
-vim.api.nvim_set_keymap("n", "<C-c>", ":call multiple_cursors#quit()<CR>", Opts)
-vim.api.nvim_set_keymap("i", "<C-c>", "<ESC><ESC>", Opts)
+g.n_silent_map("<C-c>", ":call multiple_cursors#quit()<CR>")
+g.i_silent_map("<C-c>", "<ESC><ESC>")
 
 -- Set space as leader key
-vim.api.nvim_set_keymap("n", "<Space>", "<NOP>", Opts)
+g.n_silent_map("<Space>", "<NOP><CR>")
 vim.g.mapleader = " "
 
 -- CTRL+C for esc
-vim.api.nvim_set_keymap("i", "<C-c>", "<Esc>", Opts)
+g.i_silent_map("<C-c>", "<Esc>")
 
 -- Delete front word in insert mode with CTRL+d
-vim.api.nvim_set_keymap("i", "<C-D>", "X<Esc>ce", Opts)
+g.i_silent_map("<C-D>", "X<Esc>ce")
 
 -- After press * on a word or select more or more on visual mode, you can
 -- replace for another word the selected for another word o string
-vim.api.nvim_set_keymap("n", "<Leader>r", ":%s///g<Left><Left>", NoisyOpts)
+g.n_noisy_map("<Leader>r", ":%s///g<Left><Left>")
 
 -- Format one long line into multiple short lines
-vim.api.nvim_set_keymap("n", "Q", "gq<CR>", Opts)
+g.n_silent_map("Q", "gq<CR>")
 
 -- Toggle wrap
-vim.api.nvim_set_keymap("n", "<Leader>ww", ":set wrap! linebreak<CR>", Opts)
+g.n_silent_map("<Leader>ww", ":set wrap! linebreak<CR>")
 
 -- More options for transit from normal to insert mode
-vim.api.nvim_set_keymap("n", "<Leader>O", "O<Esc>O", Opts)
-vim.api.nvim_set_keymap("n", "<Leader>o", "o<CR>", Opts)
+g.n_silent_map("<Leader>O", "O<Esc>O")
+g.n_silent_map("<Leader>o", "o<CR>")
 
 -- Better window navigation
-vim.api.nvim_set_keymap("n", "<Leader>k", ":wincmd k<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<Leader>l", ":wincmd l<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<Leader>j", ":wincmd j<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<Leader>h", ":wincmd h<CR>", Opts)
+g.n_silent_map("<Leader>k", ":wincmd k<CR>")
+g.n_silent_map("<Leader>l", ":wincmd l<CR>")
+g.n_silent_map("<Leader>j", ":wincmd j<CR>")
+g.n_silent_map("<Leader>h", ":wincmd h<CR>")
 
 -- More options for paste
-vim.api.nvim_set_keymap("n", "<Leader>po", "o<Esc>p", Opts)
-vim.api.nvim_set_keymap("n", "<Leader>PO", "O<Esc>P", Opts)
+g.n_silent_map("<Leader>po", "o<Esc>p")
+g.n_silent_map("<Leader>PO", "O<Esc>P")
 
 -- Show undo tree
-vim.api.nvim_set_keymap("n", "<Leader>u", ":UndotreeShow<CR>", Opts)
+g.n_silent_map("<Leader>u", ":UndotreeShow<CR>")
 
 -- Source configuration
-vim.api.nvim_set_keymap("n", "<Leader><CR>", ":so %<CR>", NoisyOpts)
+g.n_noisy_map("<Leader><CR>", ":so %<CR>")
 
 -- Resize windows
-vim.api.nvim_set_keymap("n", "<M-k>", ":resize +5<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<M-j>", ":resize -5<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<M-h>", ":vertical resize -5<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<M-l>", ":vertical resize +5<CR>", Opts)
+g.n_silent_map("<M-k>", ":resize +5<CR>")
+g.n_silent_map("<M-j>", ":resize -5<CR>")
+g.n_silent_map("<M-h>", ":vertical resize -5<CR>")
+g.n_silent_map("<M-l>", ":vertical resize +5<CR>")
 
 -- Better saving
-vim.api.nvim_set_keymap("n", "<Leader>s", ":silent! write<CR>", Opts)
+g.n_silent_map("<Leader>s", ":silent! write<CR>")
 
 -- Git management
-vim.api.nvim_set_keymap("n", "<Leader>gl", ":diffget //3<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<Leader>gh", ":diffget //2<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<Leader>gs", ":G<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<Leader>gb", ":Git blame<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<Leader>gp", ":GitGutterPreviewHunk<CR>", Opts)
+g.n_silent_map("<Leader>gl", ":diffget //3<CR>")
+g.n_silent_map("<Leader>gh", ":diffget //2<CR>")
+g.n_silent_map("<Leader>gs", ":G<CR>")
+g.n_silent_map("<Leader>gb", ":Git blame<CR>")
+g.n_silent_map("<Leader>gp", ":GitGutterPreviewHunk<CR>")
 
 -- LazyGit
-vim.api.nvim_set_keymap("n", "<Leader>fg", ":LazyGit<CR>", Opts)
+g.n_silent_map("<Leader>fg", ":LazyGit<CR>")
 
 -- Better tabbing
-vim.api.nvim_set_keymap("v", "<S-Tab>", "<gv", Opts)
-vim.api.nvim_set_keymap("v", "<Tab>", ">gv", Opts)
+g.v_silent_map("<S-Tab>", "<gv")
+g.v_silent_map("<Tab>", ">gv")
 
 -- Move visual block up and down
-vim.api.nvim_set_keymap("v", "J", ":m '>+1<CR>gv=gv", Opts)
-vim.api.nvim_set_keymap("v", "K", ":m '<-2<CR>gv=gv", Opts)
+g.v_silent_map("J", ":m '>+1<CR>gv=gv")
+g.v_silent_map("K", ":m '<-2<CR>gv=gv")
 
 -- By default `W` this calls the fzf's windows preview. I just want to save my file...
 vim.api.nvim_command("command! W  write")

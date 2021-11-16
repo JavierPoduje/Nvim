@@ -1,4 +1,5 @@
 local tree_cb = require("nvim-tree.config").nvim_tree_callback
+local g = require('g')
 
 require("nvim-tree").setup({
 	system_open = {},
@@ -22,6 +23,6 @@ require("nvim-tree").setup({
 vim.g.nvim_tree_quit_on_open = 1
 vim.g.nvim_tree_indent_markers = 1
 
-vim.api.nvim_set_keymap("n", "<leader>pv", ":NvimTreeToggle<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<leader>R", ":NvimTreeRefresh<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<leader>pp", ":NvimTreeFindFile<CR>", Opts)
+g.n_silent_map("<leader>pv", ":NvimTreeToggle<CR>")
+g.n_silent_map("<leader>R", ":NvimTreeRefresh<CR>")
+g.n_silent_map("<leader>pp", ":NvimTreeFindFile<CR>")

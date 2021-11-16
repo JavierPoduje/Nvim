@@ -5,7 +5,7 @@ vim.g.gruvbox_material_palette = "material"
 vim.g.gruvbox_material_background = "soft"
 
 -- Set transparent background
-vim.g.gruvbox_material_transparent_background = 1
+vim.g.gruvbox_material_transparent_background = 0
 
 -- Finally set the color scheme
-vim.api.nvim_command("colorscheme gruvbox-material")
+v.nvim_command("colorscheme gruvbox-material")

@@ -3,6 +3,7 @@ local gls = gl.section
 
 local M = {}
 
+-- gruvbox theme
 M.colors = {
 	bg = "#32302F",
 	blue = "#83A598",
@@ -137,7 +138,7 @@ M.insert_left = function(element)
 end
 
 M.insert_blank_line_at_left = function()
-	M.insert_left({ Space = M.space })
+  M.insert_left({ Space = M.space })
 end
 
 M.insert_mid = function(element)
@@ -153,7 +154,7 @@ M.insert_right = function(element)
 end
 
 M.insert_blank_line_at_right = function()
-	M.insert_right({ Space = M.space })
+  M.insert_right({ Space = M.space })
 end
 
 M.checkwidth = function()

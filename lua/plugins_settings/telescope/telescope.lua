@@ -1,3 +1,6 @@
+local F = "require'plugins_settings.telescope.finders'"
+local g = require('g')
+
 require("telescope").setup({
 	defaults = {
 		vimgrep_arguments = {
@@ -43,9 +46,6 @@ require("telescope").setup({
 			"node_modules",
 		},
 		generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-		winblend = 0,
-		border = {},
-		borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 		color_devicons = true,
 		use_less = true,
 		path_display = {},
@@ -69,10 +69,10 @@ require("telescope").setup({
 require("telescope").load_extension("fzy_native")
 
 -- Telescope
-vim.api.nvim_set_keymap("n", "<Leader>pf", ":Telescope find_files<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<Leader>pb", ":Telescope buffers<CR>", Opts)
+g.n_silent_map("<Leader>pf", ":Telescope find_files<CR>")
+g.n_silent_map("<Leader>pb", ":Telescope buffers<CR>")
 
 -- Customs
-vim.api.nvim_set_keymap("n", "<Leader>pu", ":lua require'plugins_settings.telescope.finders'.browse_utils()<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<Leader>pn", ":lua require'plugins_settings.telescope.finders'.browse_nvim()<CR>", Opts)
-vim.api.nvim_set_keymap("n", "<Leader>pm", ":lua require'plugins_settings.telescope.finders'.browse_snippets()<CR>", Opts)
+g.n_silent_map("<Leader>pu", ":lua " .. F .. ".browse_utils()<CR>")
+g.n_silent_map("<Leader>pn", ":lua " .. F .. ".browse_nvim()<CR>")
+g.n_silent_map("<Leader>pm", ":lua " .. F .. ".browse_snippets()<CR>")
