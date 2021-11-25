@@ -76,4 +76,4 @@ g.v_silent_map("J", ":m '>+1<CR>gv=gv")
 g.v_silent_map("K", ":m '<-2<CR>gv=gv")
 
 -- By default `W` this calls the fzf's windows preview. I just want to save my file...
-vim.api.nvim_command("command! W  write")
+v.nvim_command("command! W  write")

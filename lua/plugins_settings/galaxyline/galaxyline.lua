@@ -14,6 +14,6 @@ gl.short_line_list = {
 
 require("plugins_settings.galaxyline.1_mode_panel")
 require("plugins_settings.galaxyline.2_git_panel")
-require("plugins_settings.galaxyline.3_lsp_panel")
-require("plugins_settings.galaxyline.4_filetype_panel")
+require("plugins_settings.galaxyline.3_filetype_panel")
+require("plugins_settings.galaxyline.4_lsp_panel")
 require("plugins_settings.galaxyline.5_text_info_panel")

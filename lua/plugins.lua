@@ -18,7 +18,7 @@ return require("packer").startup(function(use)
 
 	-- Syntax and stuff
 	use("neoclide/jsonc.vim")
-	use("hrsh7th/nvim-compe")
+	use("hrsh7th/nvim-compe") -- TODO: change this library to `nvim-cmp`
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		requires = "nvim-treesitter/playground",

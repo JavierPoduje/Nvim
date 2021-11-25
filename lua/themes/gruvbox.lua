@@ -1,8 +1,6 @@
--- OPTIONS: 'material', 'mix' or 'original'
-vim.g.gruvbox_material_palette = "material"
+vim.g.gruvbox_material_palette = "material" -- 'material' | 'mix' | 'original'
 
--- OPTIONS: 'hard', 'medium' (default), 'soft'
-vim.g.gruvbox_material_background = "soft"
+vim.g.gruvbox_material_background = "soft" -- 'hard' | 'medium' (default) | 'soft'
 
 -- Set transparent background
 vim.g.gruvbox_material_transparent_background = 0

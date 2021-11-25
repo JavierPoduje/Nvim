@@ -23,7 +23,13 @@ v.nvim_command("set fdm=indent") -- folding method
 v.nvim_command("set nofoldenable") -- disable pre-folding
 v.nvim_command("set encoding=utf8")
 v.nvim_command("set colorcolumn=80")
-v.nvim_command("set cursorline")
+
+-- cursorline only in focused buffer
+v.nvim_command([[
+set cursorline
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+]])
 
 -- Spelling for English and Spanish. Not active at start
 v.nvim_command("set spelllang=en_us,es")
