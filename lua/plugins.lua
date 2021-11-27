@@ -16,6 +16,11 @@ return require("packer").startup(function(use)
 	use("glepnir/lspsaga.nvim")
 	use("mattn/vim-lsp-settings")
 
+	-- SQL
+	-- TODO: learn how to use this things...
+	use("tpope/vim-dadbod")
+	use("kristijanhusak/vim-dadbod-ui")
+
 	-- Syntax and stuff
 	use("neoclide/jsonc.vim")
 	use({
@@ -28,6 +33,7 @@ return require("packer").startup(function(use)
 			"hrsh7th/cmp-cmdline",
 			"onsails/lspkind-nvim",
 			"quangnguyen30192/cmp-nvim-ultisnips",
+			"kristijanhusak/vim-dadbod-completion",
 		},
 	})
 	use({
@@ -73,8 +79,6 @@ return require("packer").startup(function(use)
 	use("nvim-telescope/telescope-fzy-native.nvim")
 
 	-- Themes
-	--use("ayu-theme/ayu-vim")
-	--use("sainnhe/edge")
 	use("sainnhe/gruvbox-material")
 
 	-- Styles

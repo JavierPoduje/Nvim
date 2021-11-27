@@ -1,7 +1,7 @@
-local lspkind = require("lspkind")
-lspkind.init()
-
 local cmp = require("cmp")
+local cmp_lsp = require("cmp_nvim_lsp")
+local lsp = require("lspconfig")
+local lspkind = require("lspkind")
 
 cmp.setup({
 	mapping = {
@@ -20,11 +20,14 @@ cmp.setup({
 		["<c-space>"] = cmp.mapping.complete(),
 	},
 
+	documentation = {
+		border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+	},
+
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "ultisnips" },
-		{ name = "gh_issues" },
 		{ name = "path" },
 		{ name = "buffer" },
 	},
@@ -40,24 +43,42 @@ cmp.setup({
 			with_text = true,
 			menu = {
 				buffer = "[buf]",
-				nvim_lsp = "[LSP]",
+				nvim_lsp = "[lsp]",
 				nvim_lua = "[api]",
 				path = "[path]",
 				ultisnips = "[snips]",
-				gh_issues = "[issues]",
 			},
 		}),
 	},
 
-
-  experimental = {
-    native_menu = false,
-    ghost_text = true,
-  },
+	experimental = {
+		native_menu = false,
+		ghost_text = true,
+	},
 })
 
-local lsp = require('lspconfig')
-local cmp_lsp = require('cmp_nvim_lsp')
 lsp.vimls.setup({
-  capabilities = cmp_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+	capabilities = cmp_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
 })
+
+-- completion for command line
+cmp.setup.cmdline("/", {
+	sources = {
+		{ name = "buffer" },
+	},
+})
+cmp.setup.cmdline(":", {
+	sources = cmp.config.sources({
+		{ name = "path", keyword_length = 2 },
+	}, {
+		{ name = "cmdline", keyword_length = 2 },
+	}),
+})
+
+-- completion for sql files. not working just yet...
+vim.cmd([[
+augroup DadbodSql
+  au!
+  autocmd FileType sql,mysql,psql lua require('cmp').setup.buffer { sources = { { name = 'vim-dadbod-completion' } } }
+augroup end
+]])
