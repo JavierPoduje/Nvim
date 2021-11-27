@@ -11,14 +11,25 @@ return require("packer").startup(function(use)
 
 	-- LSP
 	use("prabirshrestha/vim-lsp")
-	use("neovim/nvim-lspconfig")
+	use({ "neovim/nvim-lspconfig", commit = "a2863027c809127aca44e7519ec63a23ec0f1655" })
 	use("kabouzeid/nvim-lspinstall")
 	use("glepnir/lspsaga.nvim")
 	use("mattn/vim-lsp-settings")
 
 	-- Syntax and stuff
 	use("neoclide/jsonc.vim")
-	use("hrsh7th/nvim-compe") -- TODO: change this library to `nvim-cmp`
+	use({
+		"hrsh7th/nvim-cmp",
+		requires = {
+			"neovim/nvim-lspconfig",
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-cmdline",
+			"onsails/lspkind-nvim",
+			"quangnguyen30192/cmp-nvim-ultisnips",
+		},
+	})
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		requires = "nvim-treesitter/playground",
