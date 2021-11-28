@@ -69,7 +69,7 @@ g.n_silent_map("<Leader>bd", ":lua " .. B .. ".sweep()<CR>")
 
 for char, buff_num in pairs(g.num_by_char) do
 	-- go to specific buffer
-  g.n_silent_map("<Leader>b" .. char, ":BufferLineGoToBuffer " .. buff_num .. "<CR>")
+	g.n_silent_map("<Leader>b" .. char, ":BufferLineGoToBuffer " .. buff_num .. "<CR>")
 	-- close specific buffer
-  g.n_silent_map("<Leader>x" .. char, ":lua " .. B .. ".close_buff_by_num(" .. buff_num .. ")<CR>")
+	g.n_silent_map("<Leader>x" .. char, ":lua " .. B .. ".close_buff_by_num(" .. buff_num .. ")<CR>")
 end
