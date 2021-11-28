@@ -41,7 +41,6 @@ return require("packer").startup(function(use)
 		requires = "nvim-treesitter/playground",
 		run = ":TSUpdate",
 	})
-	use("akinsho/nvim-bufferline.lua")
 	use("norcalli/nvim-colorizer.lua")
 
 	-- Beautification
@@ -49,6 +48,7 @@ return require("packer").startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 
 	-- Files manager
+  use("akinsho/nvim-bufferline.lua")
 	use("airblade/vim-rooter")
 	use({
 		"glepnir/galaxyline.nvim",
@@ -74,6 +74,7 @@ return require("packer").startup(function(use)
 		requires = {
 			{ "nvim-lua/popup.nvim" },
 			{ "nvim-lua/plenary.nvim" },
+			{ "TC72/telescope-tele-tabby.nvim" },
 		},
 	})
 	use("nvim-telescope/telescope-fzy-native.nvim")

@@ -1,4 +1,4 @@
-local g = require('g')
+local g = require("g")
 
 -- set python3 environment
 vim.g.python3_host_prog = "/usr/bin/python3"
@@ -32,11 +32,20 @@ g.n_silent_map("<Leader>ww", ":set wrap! linebreak<CR>")
 g.n_silent_map("<Leader>O", "O<Esc>O")
 g.n_silent_map("<Leader>o", "o<CR>")
 
--- Better window navigation
+-- Better navigation
 g.n_silent_map("<Leader>k", ":wincmd k<CR>")
 g.n_silent_map("<Leader>l", ":wincmd l<CR>")
 g.n_silent_map("<Leader>j", ":wincmd j<CR>")
 g.n_silent_map("<Leader>h", ":wincmd h<CR>")
+
+-- Tab handlers
+g.n_silent_map("<Leader>tt", ":tabnew<CR>")
+g.n_silent_map("<Leader>tx", ":tabclose<CR>")
+g.n_silent_map("<Leader>tn", ":tabn<CR>")
+g.n_silent_map("<Leader>tp", ":tabp<CR>")
+for char, buff_num in pairs(g.num_by_char) do
+  g.n_silent_map("<Leader>t" .. char, ":tabn" .. buff_num .. "<CR>")
+end
 
 -- More options for paste
 g.n_silent_map("<Leader>po", "o<Esc>p")

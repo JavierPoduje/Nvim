@@ -1,5 +1,5 @@
 local F = "require'plugins_settings.telescope.finders'"
-local g = require('g')
+local g = require("g")
 
 require("telescope").setup({
 	defaults = {
@@ -62,6 +62,9 @@ require("telescope").setup({
 			override_generic_sorter = false,
 			override_file_sorter = true,
 		},
+    tele_tabby = {
+      use_highlighter = true,
+    }
 	},
 })
 
@@ -76,3 +79,7 @@ g.n_silent_map("<Leader>pb", ":Telescope buffers<CR>")
 g.n_silent_map("<Leader>pu", ":lua " .. F .. ".browse_utils()<CR>")
 g.n_silent_map("<Leader>pn", ":lua " .. F .. ".browse_nvim()<CR>")
 g.n_silent_map("<Leader>pm", ":lua " .. F .. ".browse_snippets()<CR>")
+
+-- Extensions
+--g.n_silent_map("<Leader>pt", ":Telescope tele_tabby list<CR>")
+g.n_silent_map("<Leader>pt", ":lua " .. F ..".list_tabs()<CR>")

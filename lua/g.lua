@@ -1,7 +1,19 @@
 M = {}
 
+M.num_by_char = {
+	m = 1,
+	[","] = 2,
+	["."] = 3,
+	j = 4,
+	k = 5,
+	l = 6,
+	u = 7,
+	i = 8,
+	o = 9,
+}
+
 M.set_theme = function(theme)
-  if theme == "gruvbox" or theme == "ayu" or theme == "edge" then
+	if theme == "gruvbox" or theme == "ayu" or theme == "edge" then
 		require("themes." .. theme)
 	else
 		print("No colorscheme was sourced...")

@@ -24,6 +24,10 @@ v.nvim_command("set nofoldenable") -- disable pre-folding
 v.nvim_command("set encoding=utf8")
 v.nvim_command("set colorcolumn=80")
 
+v.nvim_command("set list")
+v.nvim_command([[ set showbreak=↪\ ]])
+v.nvim_command([[ set listchars=eol:⏎,tab:→\ ,trail:␠,nbsp:⎵,space:·,extends:⟩,precedes:⟨ ]])
+
 -- cursorline only in focused buffer
 v.nvim_command([[
 set cursorline
@@ -74,14 +78,14 @@ autocmd FileType mysql setlocal shiftwidth=4 softtabstop=4 expandtab
 ]])
 
 -- Remove white spaces on save
-v.nvim_command([[
-fun! TrimWhitespace()
-  let l:save = winsaveview()
-  keeppatterns %s/\s\+$//e
-  call winrestview(l:save)
-endfun
-autocmd BufWritePre * :call TrimWhitespace()
-]])
+--v.nvim_command([[
+--fun! TrimWhitespace()
+--  let l:save = winsaveview()
+--  keeppatterns %s/\s\+$//e
+--  call winrestview(l:save)
+--endfun
+--autocmd BufWritePre * :call TrimWhitespace()
+--]])
 
 -- tsconfig.json is actually jsonc, help TypeScript set the correct filetype
 v.nvim_command([[

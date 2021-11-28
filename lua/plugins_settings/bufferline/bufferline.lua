@@ -1,18 +1,6 @@
 local g = require("g")
 local B = "require'plugins_settings.bufferline.buffero'"
 
-local char_to_num = {
-	m = 1,
-	[","] = 2,
-	["."] = 3,
-	j = 4,
-	k = 5,
-	l = 6,
-	u = 7,
-	i = 8,
-	o = 9,
-}
-
 local config = {
 	options = {
 		numbers = function(opts)
@@ -79,7 +67,7 @@ g.n_silent_map("<Leader>xd", ":lua " .. B .. ".close_and_remember()<CR>")
 -- Close all buffers except the current one
 g.n_silent_map("<Leader>bd", ":lua " .. B .. ".sweep()<CR>")
 
-for char, buff_num in pairs(char_to_num) do
+for char, buff_num in pairs(g.num_by_char) do
 	-- go to specific buffer
   g.n_silent_map("<Leader>b" .. char, ":BufferLineGoToBuffer " .. buff_num .. "<CR>")
 	-- close specific buffer

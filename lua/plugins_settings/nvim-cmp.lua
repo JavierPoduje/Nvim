@@ -1,7 +1,4 @@
 local cmp = require("cmp")
-local cmp_lsp = require("cmp_nvim_lsp")
-local lsp = require("lspconfig")
-local lspkind = require("lspkind")
 
 cmp.setup({
 	mapping = {
@@ -39,7 +36,7 @@ cmp.setup({
 	},
 
 	formatting = {
-		format = lspkind.cmp_format({
+		format = require("lspkind").cmp_format({
 			with_text = true,
 			menu = {
 				buffer = "[buf]",
@@ -57,8 +54,8 @@ cmp.setup({
 	},
 })
 
-lsp.vimls.setup({
-	capabilities = cmp_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+require("lspconfig").vimls.setup({
+	capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
 })
 
 -- completion for command line
