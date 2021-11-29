@@ -81,5 +81,4 @@ g.n_silent_map("<Leader>pn", ":lua " .. F .. ".browse_nvim()<CR>")
 g.n_silent_map("<Leader>pm", ":lua " .. F .. ".browse_snippets()<CR>")
 
 -- Extensions
---g.n_silent_map("<Leader>pt", ":Telescope tele_tabby list<CR>")
 g.n_silent_map("<Leader>pt", ":lua " .. F ..".list_tabs()<CR>")

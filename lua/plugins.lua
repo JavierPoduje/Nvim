@@ -48,7 +48,7 @@ return require("packer").startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 
 	-- Files manager
-  use("akinsho/nvim-bufferline.lua")
+	use("akinsho/nvim-bufferline.lua")
 	use("airblade/vim-rooter")
 	use({
 		"glepnir/galaxyline.nvim",
@@ -102,4 +102,5 @@ return require("packer").startup(function(use)
 	use("terryma/vim-multiple-cursors")
 	use("tpope/vim-surround")
 	use("vuciv/vim-bujo")
+	use("ThePrimeagen/harpoon")
 end)

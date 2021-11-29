@@ -28,7 +28,7 @@ F.browse_nvim = function()
 	})
 end
 
-F.browse_snippets = function ()
+F.browse_snippets = function()
 	require("telescope.builtin").file_browser({
 		results_title = "~ 異Snippets ~",
 		cwd = "~/.local/share/nvim/site/pack/packer/start/vim-snippets/UltiSnips/",
@@ -43,16 +43,16 @@ F.browse_snippets = function ()
 end
 
 F.list_tabs = function()
-  require('telescope').extensions.tele_tabby.list({
-    results_title = "~ 裡Tabs ~",
-    previewer = false,
-    prompt_title = false,
-    layout_strategy = "vertical",
+	require("telescope").extensions.tele_tabby.list({
+		results_title = "~ 裡Tabs ~",
+		previewer = false,
+		prompt_title = false,
+		layout_strategy = "vertical",
 		layout_config = {
 			width = 0.4,
 			height = 0.4,
 		},
-  })
+	})
 end
 
 return F

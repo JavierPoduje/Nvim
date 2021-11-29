@@ -1,6 +1,7 @@
 -- Source plugins confugurations
 require("plugins_settings.bufferline.bufferline")
 require("plugins_settings.bujo")
+require("plugins_settings.harpoon")
 require("plugins_settings.colorizer")
 require("plugins_settings.emmet")
 require("plugins_settings.nvim-cmp")
