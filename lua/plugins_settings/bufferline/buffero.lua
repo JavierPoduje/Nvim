@@ -38,9 +38,9 @@ M.close_and_remember = function()
 end
 
 -- Receive the buffer's number and execute the function `save_and_close_` over it
--- @param buf_num number: buffer's number
-M.close_buff_by_num = function(buf_num)
-	require("bufferline").buf_exec(buf_num, function(buf)
+-- @param bufnr number: buffer's number
+M.close_buff_by_num = function(bufnr)
+	require("bufferline").buf_exec(bufnr, function(buf)
 		M.save_and_close_(buf)
 	end)
 end

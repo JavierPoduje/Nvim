@@ -1,6 +1,7 @@
 v.nvim_command("syntax on")
 v.nvim_command("filetype plugin on")
 
+v.nvim_command("set nocompatible")
 v.nvim_command("set exrc")
 v.nvim_command("set noshowmatch")
 v.nvim_command("set relativenumber")
@@ -78,14 +79,14 @@ autocmd FileType mysql setlocal shiftwidth=4 softtabstop=4 expandtab
 ]])
 
 -- Remove white spaces on save
---v.nvim_command([[
---fun! TrimWhitespace()
---  let l:save = winsaveview()
---  keeppatterns %s/\s\+$//e
---  call winrestview(l:save)
---endfun
---autocmd BufWritePre * :call TrimWhitespace()
---]])
+v.nvim_command([[
+fun! TrimWhitespace()
+  let l:save = winsaveview()
+  keeppatterns %s/\s\+$//e
+  call winrestview(l:save)
+endfun
+autocmd BufWritePre * :call TrimWhitespace()
+]])
 
 -- tsconfig.json is actually jsonc, help TypeScript set the correct filetype
 v.nvim_command([[

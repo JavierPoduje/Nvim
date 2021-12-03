@@ -1,5 +1,5 @@
 local tree_cb = require("nvim-tree.config").nvim_tree_callback
-local g = require('g')
+local g = require("g")
 
 require("nvim-tree").setup({
 	system_open = {},
@@ -9,7 +9,7 @@ require("nvim-tree").setup({
 	view = {
 		number = true,
 		relativenumber = true,
-    hide_root_folder = false,
+		hide_root_folder = false,
 		mappings = {
 			list = {
 				{ key = "s", cb = tree_cb("vsplit") },
