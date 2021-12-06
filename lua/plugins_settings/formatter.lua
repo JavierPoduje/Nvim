@@ -23,6 +23,18 @@ local prettier_args = function(parser)
 	}
 end
 
+local php_args = {
+	"--stdin-filepath",
+	current_file,
+	"--single-quote",
+	"--parser",
+	"php",
+	"--php-version",
+	"7.1",
+	"--tab-width",
+	"4",
+}
+
 local sql_args = {
 	"-u",
 	"-i",
@@ -58,6 +70,7 @@ require("formatter").setup({
 		javascriptreact = { formatter("prettier", prettier_args("typescript"), true) },
 		json = { formatter("prettier", prettier_args("json"), true) },
 		lua = { formatter("stylua", lua_args, false) },
+		php = { formatter("prettier", php_args, true) },
 		scss = { formatter("prettier", prettier_args("scss"), true) },
 		sql = { formatter("sql-formatter", sql_args, true) },
 		typescript = { formatter("prettier", prettier_args("typescript"), true) },
