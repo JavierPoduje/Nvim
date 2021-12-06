@@ -44,7 +44,12 @@ g.n_silent_map("<Leader>tx", ":tabclose<CR>")
 g.n_silent_map("<Leader>tn", ":tabn<CR>")
 g.n_silent_map("<Leader>tp", ":tabp<CR>")
 for char, buff_num in pairs(g.num_by_char) do
-  g.n_silent_map("<Leader>t" .. char, ":tabn" .. buff_num .. "<CR>")
+	g.n_silent_map("<Leader>t" .. char, ":tabn" .. buff_num .. "<CR>")
+end
+
+-- Better mark goto commands
+for char, _ in pairs(g.left_num_by_char) do
+	g.n_silent_map("<Leader>m" .. char, "`" .. char .. "<CR>")
 end
 
 -- More options for paste
@@ -72,9 +77,6 @@ g.n_silent_map("<Leader>gh", ":diffget //2<CR>")
 g.n_silent_map("<Leader>gs", ":G<CR>")
 g.n_silent_map("<Leader>gb", ":Git blame<CR>")
 g.n_silent_map("<Leader>gp", ":GitGutterPreviewHunk<CR>")
-
--- LazyGit
-g.n_silent_map("<Leader>fg", ":LazyGit<CR>")
 
 -- Better tabbing
 g.v_silent_map("<S-Tab>", "<gv")

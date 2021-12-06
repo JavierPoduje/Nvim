@@ -12,6 +12,18 @@ M.num_by_char = {
 	o = 9,
 }
 
+M.left_num_by_char = {
+	v = 1,
+	c = 2,
+	x = 3,
+	f = 4,
+	d = 5,
+	s = 6,
+	r = 7,
+	e = 8,
+	w = 9,
+}
+
 M.set_theme = function(theme)
 	if theme == "gruvbox" or theme == "ayu" or theme == "edge" then
 		require("themes." .. theme)

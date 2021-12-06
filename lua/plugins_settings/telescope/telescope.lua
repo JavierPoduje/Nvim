@@ -19,6 +19,7 @@ require("telescope").setup({
 		selection_strategy = "reset",
 		sorting_strategy = "ascending",
 		layout_strategy = "horizontal",
+		winblend = 10,
 		layout_config = {
 			horizontal = {
 				width = 0.8,
@@ -62,9 +63,9 @@ require("telescope").setup({
 			override_generic_sorter = false,
 			override_file_sorter = true,
 		},
-    tele_tabby = {
-      use_highlighter = true,
-    }
+		tele_tabby = {
+			use_highlighter = true,
+		},
 	},
 })
 
@@ -81,4 +82,4 @@ g.n_silent_map("<Leader>pn", ":lua " .. F .. ".browse_nvim()<CR>")
 g.n_silent_map("<Leader>pm", ":lua " .. F .. ".browse_snippets()<CR>")
 
 -- Extensions
-g.n_silent_map("<Leader>pt", ":lua " .. F ..".list_tabs()<CR>")
+g.n_silent_map("<Leader>pt", ":lua " .. F .. ".list_tabs()<CR>")
