@@ -35,7 +35,7 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 ]])
 g.n_noisy_map(
 	"<Leader>pS",
-	":Rg --fixed-strings --ignore-case '' **/*.<Left><Left><Left><Left><Left><Left><Left>"
+	":Rg --fixed-strings --ignore-case '' **/*." .. string.rep('<Left>', 7)
 )
 g.n_silent_map("<leader>ps", ":RG<CR>")
 

@@ -27,12 +27,14 @@ local php_args = {
 	"--stdin-filepath",
 	current_file,
 	"--single-quote",
+	"--print-width",
+	80,
 	"--parser",
 	"php",
 	"--php-version",
 	"7.1",
 	"--tab-width",
-	"4",
+	4,
 }
 
 local sql_args = {

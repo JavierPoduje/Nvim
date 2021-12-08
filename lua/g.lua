@@ -25,7 +25,7 @@ M.left_num_by_char = {
 }
 
 M.set_theme = function(theme)
-	if theme == "gruvbox" or theme == "ayu" or theme == "edge" then
+	if theme == "gruvbox" then
 		require("themes." .. theme)
 	else
 		print("No colorscheme was sourced...")

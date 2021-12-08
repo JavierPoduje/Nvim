@@ -12,6 +12,7 @@ require("telescope").setup({
 			"--column",
 			"--smart-case",
 		},
+    borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
 		prompt_prefix = "  ",
 		selection_caret = " ",
 		entry_prefix = "  ",
@@ -19,7 +20,6 @@ require("telescope").setup({
 		selection_strategy = "reset",
 		sorting_strategy = "ascending",
 		layout_strategy = "horizontal",
-		winblend = 10,
 		layout_config = {
 			horizontal = {
 				width = 0.8,
@@ -54,9 +54,6 @@ require("telescope").setup({
 		file_previewer = require("telescope.previewers").vim_buffer_cat.new,
 		grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
 		qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-
-		-- Developer configurations: Not meant for general override
-		buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
 	},
 	extensions = {
 		fzy_native = {
@@ -72,7 +69,7 @@ require("telescope").setup({
 -- Set fuzzy native for hyper speed
 require("telescope").load_extension("fzy_native")
 
--- Telescope
+-- Native
 g.n_silent_map("<Leader>pf", ":Telescope find_files<CR>")
 g.n_silent_map("<Leader>pb", ":Telescope buffers<CR>")
 

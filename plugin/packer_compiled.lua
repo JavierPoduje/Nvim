@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/puje/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
+  ["fzy-lua-native"] = {
+    loaded = true,
+    path = "/home/puje/.local/share/nvim/site/pack/packer/start/fzy-lua-native",
+    url = "https://github.com/romgrk/fzy-lua-native"
+  },
   ["galaxyline.nvim"] = {
     loaded = true,
     path = "/home/puje/.local/share/nvim/site/pack/packer/start/galaxyline.nvim",
@@ -152,7 +157,7 @@ _G.packer_plugins = {
   ["lspsaga.nvim"] = {
     loaded = true,
     path = "/home/puje/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
-    url = "https://github.com/glepnir/lspsaga.nvim"
+    url = "https://github.com/tami5/lspsaga.nvim"
   },
   nerdcommenter = {
     loaded = true,
@@ -248,21 +253,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/puje/.local/share/nvim/site/pack/packer/start/vim-bujo",
     url = "https://github.com/vuciv/vim-bujo"
-  },
-  ["vim-dadbod"] = {
-    loaded = true,
-    path = "/home/puje/.local/share/nvim/site/pack/packer/start/vim-dadbod",
-    url = "https://github.com/tpope/vim-dadbod"
-  },
-  ["vim-dadbod-completion"] = {
-    loaded = true,
-    path = "/home/puje/.local/share/nvim/site/pack/packer/start/vim-dadbod-completion",
-    url = "https://github.com/kristijanhusak/vim-dadbod-completion"
-  },
-  ["vim-dadbod-ui"] = {
-    loaded = true,
-    path = "/home/puje/.local/share/nvim/site/pack/packer/start/vim-dadbod-ui",
-    url = "https://github.com/kristijanhusak/vim-dadbod-ui"
   },
   ["vim-devicons"] = {
     loaded = true,

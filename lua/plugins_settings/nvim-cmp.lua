@@ -50,7 +50,7 @@ cmp.setup({
 
 	experimental = {
 		native_menu = false,
-		ghost_text = true,
+		ghost_text = false,
 	},
 })
 
@@ -71,11 +71,3 @@ cmp.setup.cmdline(":", {
 		{ name = "cmdline", keyword_length = 2 },
 	}),
 })
-
--- completion for sql files. not working just yet...
-vim.cmd([[
-augroup DadbodSql
-  au!
-  autocmd FileType sql,mysql,psql lua require('cmp').setup.buffer { sources = { { name = 'vim-dadbod-completion' } } }
-augroup end
-]])

@@ -16,7 +16,6 @@ g.n_silent_map("<Leader>ya", ":lua require('harpoon.mark').add_file()<CR>")
 g.n_silent_map("<Leader>yt", ":lua require('harpoon.ui').toggle_quick_menu()<CR>")
 
 -- set goto's
---
 -- Six files should be more than enough...
 local chars_to_nums = {
 	v = 1,
