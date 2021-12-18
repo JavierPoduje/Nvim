@@ -25,8 +25,8 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "ultisnips" },
-		{ name = "path" },
 		{ name = "buffer", keyword_length = 2 },
+		{ name = "path" },
 	},
 
 	snippet = {
