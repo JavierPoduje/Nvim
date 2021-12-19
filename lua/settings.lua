@@ -22,6 +22,7 @@ v.nvim_command("set scrolloff=6")
 v.nvim_command("set clipboard=unnamed")
 v.nvim_command("set fdm=indent") -- folding method
 v.nvim_command("set nofoldenable") -- disable pre-folding
+v.nvim_command("set foldlevel=10")
 v.nvim_command("set encoding=utf8")
 v.nvim_command("set colorcolumn=80")
 
