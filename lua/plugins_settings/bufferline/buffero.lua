@@ -11,7 +11,7 @@ end
 
 -- Split the window vertically, focus on the new one and move to `next` or
 -- `prev` buffer.
--- @param direction string: `next` or `prev`, determining where to move.
+-- @param direction string: `next` or `prev`, determine where to move.
 -- @return void
 M.split_and_move = function(direction)
 	v.nvim_exec(":vs", true)
@@ -31,17 +31,17 @@ M.close_and_remember = function()
 	local buf_id = vim.fn.bufnr("%")
 
 	if buf_path ~= "" then
-		M.save_and_close_({ id = buf_id, path = buf_path })
+		M._save_and_close({ id = buf_id, path = buf_path })
 	else
 		vim.cmd("bd!" .. buf_id)
 	end
 end
 
--- Receive the buffer's number and execute the function `save_and_close_` over it
+-- Receive the buffer's number and execute the function `_save_and_close` over it
 -- @param bufnr number: buffer's number
 M.close_buff_by_num = function(bufnr)
 	require("bufferline").buf_exec(bufnr, function(buf)
-		M.save_and_close_(buf)
+		M._save_and_close(buf)
 	end)
 end
 
@@ -64,7 +64,7 @@ end
 
 -- Saves the given buffer in the `closed` attr and closes it.
 -- @param buf table: the buffer with its `id` and `path` -> { id: number, path: string }
-M.save_and_close_ = function(buf)
+M._save_and_close = function(buf)
 	table.insert(M.closed, buf.path)
 	vim.cmd("bd!" .. buf.id)
 end

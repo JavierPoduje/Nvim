@@ -22,7 +22,7 @@ v.nvim_command("set scrolloff=6")
 v.nvim_command("set clipboard=unnamed")
 v.nvim_command("set fdm=indent") -- folding method
 v.nvim_command("set nofoldenable") -- disable pre-folding
-v.nvim_command("set foldlevel=10")
+v.nvim_command("set foldlevel=10") -- fix initial folding
 v.nvim_command("set encoding=utf8")
 v.nvim_command("set colorcolumn=80")
 
@@ -92,4 +92,9 @@ autocmd BufWritePre * :call TrimWhitespace()
 -- tsconfig.json is actually jsonc, help TypeScript set the correct filetype
 v.nvim_command([[
 autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
+]])
+
+-- open :help menu in a vertical split
+v.nvim_command([[
+autocmd FileType help wincmd L
 ]])

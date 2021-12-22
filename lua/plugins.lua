@@ -11,7 +11,7 @@ return require("packer").startup(function(use)
 
 	-- LSP
 	use("prabirshrestha/vim-lsp")
-  use({ "neovim/nvim-lspconfig", commit = "a2863027c809127aca44e7519ec63a23ec0f1655" })
+	use({ "neovim/nvim-lspconfig", commit = "a2863027c809127aca44e7519ec63a23ec0f1655" })
 	use("kabouzeid/nvim-lspinstall")
 	use("tami5/lspsaga.nvim")
 	use("mattn/vim-lsp-settings")
@@ -39,11 +39,11 @@ return require("packer").startup(function(use)
 	use("mbbill/undotree")
 	use("mhinz/vim-startify")
 
-  -- Text management
+	-- Text management
 	use({
 		"hrsh7th/nvim-cmp",
 		requires = {
-      "neovim/nvim-lspconfig",
+			"neovim/nvim-lspconfig",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
