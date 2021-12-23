@@ -73,7 +73,7 @@ g.n_silent_map("<M-h>", ":vertical resize -5<CR>")
 g.n_silent_map("<M-l>", ":vertical resize +5<CR>")
 
 -- Better saving
-g.n_silent_map("<Leader>s", ":silent! write<CR>")
+g.n_silent_map("<Leader>s", ":write<CR>")
 
 -- Git management
 g.n_silent_map("<Leader>gl", ":diffget //3<CR>")

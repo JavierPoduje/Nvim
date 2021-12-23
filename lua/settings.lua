@@ -95,6 +95,4 @@ autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 ]])
 
 -- open :help menu in a vertical split
-v.nvim_command([[
-autocmd FileType help wincmd L
-]])
+v.nvim_command("autocmd FileType help wincmd L")
