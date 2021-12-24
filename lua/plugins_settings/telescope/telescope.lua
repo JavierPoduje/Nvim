@@ -12,7 +12,7 @@ require("telescope").setup({
 			"--column",
 			"--smart-case",
 		},
-    borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
+		borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 		prompt_prefix = "  ",
 		selection_caret = " ",
 		entry_prefix = "  ",
