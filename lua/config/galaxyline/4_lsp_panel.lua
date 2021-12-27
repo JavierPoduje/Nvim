@@ -1,4 +1,4 @@
-local M = require("plugins_settings.galaxyline.definitions")
+local M = require("config.galaxyline.definitions")
 
 -- Lsp panel
 M.insert_mid({ Start = M.transparent_border })

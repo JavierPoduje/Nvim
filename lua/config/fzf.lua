@@ -42,5 +42,5 @@ g.n_silent_map("<leader>ps", ":RG<CR>")
 -- Files search
 v.nvim_command("let $FZF_DEFAULT_OPTS='--reverse'")
 v.nvim_command([[
-let $FZF_DEFAULT_COMMAND = 'rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*}"'
+let $FZF_DEFAULT_COMMAND = 'rg --files --follow --no-ignore-vcs --hidden -g "!{.git/*}"'
 ]])

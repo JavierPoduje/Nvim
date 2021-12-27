@@ -1,5 +1,5 @@
 local g = require("g")
-local B = "require'plugins_settings.bufferline.buffero'"
+local B = "require'config.bufferline.buffero'"
 
 local config = {
 	options = {

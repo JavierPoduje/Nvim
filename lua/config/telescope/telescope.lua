@@ -1,4 +1,4 @@
-local F = "require'plugins_settings.telescope.finders'"
+local F = "require'config.telescope.finders'"
 local g = require("g")
 
 require("telescope").setup({
@@ -44,7 +44,6 @@ require("telescope").setup({
 			"app/webroot/tmp",
 			"aws/",
 			"aws/dist",
-			"node_modules",
 		},
 		generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
 		color_devicons = true,
