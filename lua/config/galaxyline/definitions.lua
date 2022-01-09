@@ -6,6 +6,7 @@ local M = {}
 -- gruvbox-material theme
 M.colors = {
 	aqua = "#89B482",
+	bg0 = "#1D2021",
 	bg = "#32302F",
 	bg2 = "#3c3836",
 	blue = "#7DAEA3",
@@ -85,28 +86,28 @@ M.transparent_border = {
 	provider = function()
 		return "  "
 	end,
-	highlight = { M.colors.bg2, M.colors.bg2 },
+	highlight = { M.colors.bg0, M.colors.bg0 },
 }
 
 M.left_border = {
 	provider = function()
 		return M.semi_circle(true)
 	end,
-	highlight = { M.colors.bg2, M.colors.bg2 },
+	highlight = { M.colors.bg0, M.colors.bg0 },
 }
 
 M.right_border = {
 	provider = function()
 		return M.semi_circle(false)
 	end,
-	highlight = { M.colors.bg2, M.colors.bg2 },
+	highlight = { M.colors.bg0, M.colors.bg0 },
 }
 
 M.space = {
 	provider = function()
 		return " "
 	end,
-	highlight = { M.colors.bg2, M.colors.bg2 },
+	highlight = { M.colors.bg0, M.colors.bg0 },
 }
 
 M.has_file_type = function()

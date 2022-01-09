@@ -9,7 +9,7 @@ M.insert_mid({
 	DiagnosticError = {
 		provider = "DiagnosticError",
 		icon = "  ",
-		highlight = { M.colors.red, M.colors.bg2 },
+		highlight = { M.colors.red, M.colors.bg0 },
 	},
 })
 
@@ -17,7 +17,7 @@ M.insert_mid({
 	DiagnosticHint = {
 		provider = "DiagnosticHint",
 		icon = "  ",
-		highlight = { M.colors.green, M.colors.bg2 },
+		highlight = { M.colors.green, M.colors.bg0 },
 	},
 })
 
@@ -25,7 +25,7 @@ M.insert_mid({
 	DiagnosticWarn = {
 		provider = "DiagnosticWarn",
 		icon = "  ",
-		highlight = { M.colors.yellow, M.colors.bg2 },
+		highlight = { M.colors.yellow, M.colors.bg0 },
 	},
 })
 

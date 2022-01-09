@@ -14,7 +14,7 @@ M.insert_left({
 			vim.api.nvim_command("hi GalaxyViMode guifg=" .. M.mode_color[vim_mode])
 			return M.alias[vim_mode]
 		end,
-		highlight = { M.colors.bg2, M.colors.bg2 },
+		highlight = { M.colors.bg0, M.colors.bg0 },
 	},
 })
 

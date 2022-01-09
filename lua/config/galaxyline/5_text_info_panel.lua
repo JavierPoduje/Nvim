@@ -6,8 +6,8 @@ M.insert_right({
 	LineInfo = {
 		provider = "LineColumn",
 		separator = "  ",
-		separator_highlight = { M.colors.green, M.colors.bg2 },
-		highlight = { M.colors.fg, M.colors.bg2 },
+		separator_highlight = { M.colors.green, M.colors.bg0 },
+		highlight = { M.colors.fg, M.colors.bg0 },
 	},
 })
 
@@ -15,8 +15,8 @@ M.insert_right({
 	PerCent = {
 		provider = "LinePercent",
 		separator = "  ",
-		separator_highlight = { M.colors.blue, M.colors.bg2 },
-		highlight = { M.colors.blue, M.colors.bg2, "bold" },
+		separator_highlight = { M.colors.blue, M.colors.bg0 },
+		highlight = { M.colors.blue, M.colors.bg0, "bold" },
 	},
 })
 
@@ -26,8 +26,8 @@ M.insert_right({
 	Encode = {
 		provider = "FileEncode",
 		separator = "",
-		separator_highlight = { M.colors.blue, M.colors.bg2 },
-		highlight = { M.colors.blue, M.colors.bg2, "bold" },
+		separator_highlight = { M.colors.blue, M.colors.bg0 },
+		highlight = { M.colors.blue, M.colors.bg0, "bold" },
 	},
 })
 

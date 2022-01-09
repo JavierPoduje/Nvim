@@ -6,7 +6,7 @@ vim.o.background = "dark"
 g.set_theme("gruvbox")
 
 -- Statusline transparent
---vim.api.nvim_command([[
---hi StatusLine ctermbg=0 cterm=NONE guibg=None
---hi StatusLineNC ctermbg=0 cterm=NONE guibg=None
---]])
+vim.api.nvim_command([[
+  hi StatusLine ctermbg=0 cterm=NONE guibg=#1D2021
+  hi StatusLineNC ctermbg=0 cterm=NONE guibg=#1D2021
+]])
