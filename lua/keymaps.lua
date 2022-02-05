@@ -11,7 +11,6 @@ g.i_silent_map("<C-c>", "<ESC><ESC>")
 
 -- move forward in insert mode
 g.i_silent_map("<C-l>", "<Right>")
--- FIX: this should be `h`, instead of `j`
 g.i_silent_map("<C-j>", "<C-o>h")
 
 -- Set space as leader key

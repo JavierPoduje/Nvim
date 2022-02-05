@@ -4,6 +4,7 @@ require("nvim-treesitter.configs").setup({
 	indent = { enable = true },
 	ensure_installed = {
 		"css",
+		"elixir",
 		"html",
 		"javascript",
 		"json",
@@ -11,8 +12,8 @@ require("nvim-treesitter.configs").setup({
 		"python",
 		"scss",
 		"tsx",
+		"typescript",
 		"vue",
 		"yaml",
-		"elixir",
 	},
 })

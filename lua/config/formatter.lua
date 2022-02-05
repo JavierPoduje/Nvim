@@ -15,11 +15,11 @@ local prettier_args = function(parser)
 	return {
 		"--stdin-filepath",
 		current_file,
-
-		-- Descomentar para usar el `.prettierrc` del proyecto
 		"--parser",
 		parser,
-		--"--config", "~/.config/nvim/.prettierrc.js" -- Personal preferences
+		-- Personal preferences
+		--"--config", "~/Documents/Foris/EDH/.prettierrc"
+		--"--config", "~/.config/nvim/.prettierrc.js"
 	}
 end
 

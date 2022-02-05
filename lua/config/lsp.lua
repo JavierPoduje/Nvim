@@ -1,5 +1,5 @@
 local nvim_lsp = require("lspconfig")
-local g = require('g')
+local g = require("g")
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -12,7 +12,7 @@ local on_attach = function(_, bufnr)
 	buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 end
 
-local servers = { "pyright", "html", "graphql", "vls", "jsonls", "cssls" }
+local servers = { "html", "graphql", "vls", "jsonls", "cssls" }
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup({
 		on_attach = on_attach,
