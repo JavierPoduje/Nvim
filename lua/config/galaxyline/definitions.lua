@@ -1,54 +1,39 @@
+local colors = require("config.galaxyline.colors")
 local gl = require("galaxyline")
 local gls = gl.section
 
-local M = {}
-
--- gruvbox-material theme
-M.colors = {
-	aqua = "#89B482",
-	bg0 = "#1D2021",
-	bg = "#32302F",
-	bg2 = "#3c3836",
-	blue = "#7DAEA3",
-	fg = "#D4BE98",
-	gray = "#928374",
-	green = "#89B482",
-	orange = "#E78A4E",
-	purple = "#D3869B",
-	red = "#EA6962",
-	yellow = "#D8A657",
-}
-
-M.icons = {
-	n = " ",
-	i = " ",
-	c = "ﲵ ",
-	V = " ",
-	[""] = " ",
-	v = " ",
-	C = "ﲵ ",
-	R = "﯒ ",
-	t = " ",
-}
-
-M.alias = {
-	n = "N",
-	i = "I",
-	c = "C",
-	V = "VL",
-	[""] = "V",
-	v = "V",
-	C = "C",
-	["r?"] = ":CONFIRM",
-	rm = "--MORE",
-	R = "R",
-	Rv = "R&V",
-	s = "S",
-	S = "S",
-	["r"] = "HIT-ENTER",
-	[""] = "SELECT",
-	t = "T",
-	["!"] = "SH",
+local M = {
+	alias = {
+		n = "N",
+		i = "I",
+		c = "C",
+		V = "VL",
+		[""] = "V",
+		v = "V",
+		C = "C",
+		["r?"] = ":CONFIRM",
+		rm = "--MORE",
+		R = "R",
+		Rv = "R&V",
+		s = "S",
+		S = "S",
+		["r"] = "HIT-ENTER",
+		[""] = "SELECT",
+		t = "T",
+		["!"] = "SH",
+	},
+  colors = colors.theme_palette("nightfox"),
+	icons = {
+		n = " ",
+		i = " ",
+		c = "ﲵ ",
+		V = " ",
+		[""] = " ",
+		v = " ",
+		C = "ﲵ ",
+		R = "﯒ ",
+		t = " ",
+	},
 }
 
 M.mode_color = {

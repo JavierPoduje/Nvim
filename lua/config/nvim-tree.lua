@@ -20,7 +20,6 @@ require("nvim-tree").setup({
 	},
 })
 
-vim.g.nvim_tree_quit_on_open = 1
 vim.g.nvim_tree_indent_markers = 1
 
 g.n_silent_map("<leader>pv", ":NvimTreeToggle<CR>")

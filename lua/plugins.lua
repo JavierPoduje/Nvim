@@ -84,12 +84,15 @@ return require("packer").startup(function(use)
 			{ "nvim-lua/plenary.nvim" },
 			{ "TC72/telescope-tele-tabby.nvim" },
 			{ "romgrk/fzy-lua-native" },
-      { "nvim-telescope/telescope-fzy-native.nvim" }, },
+			{ "nvim-telescope/telescope-fzy-native.nvim" },
+		},
 	})
 	use("ThePrimeagen/harpoon")
 
 	-- Themes
 	use("sainnhe/gruvbox-material")
+	use("arcticicestudio/nord-vim")
+	use("EdenEast/nightfox.nvim")
 
 	-- Others
 	use("michaeljsmith/vim-indent-object")

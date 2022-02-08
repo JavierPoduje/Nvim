@@ -1,31 +1,34 @@
-M = {}
-
-M.num_by_char = {
-	m = 1,
-	[","] = 2,
-	["."] = 3,
-	j = 4,
-	k = 5,
-	l = 6,
-	u = 7,
-	i = 8,
-	o = 9,
-}
-
-M.left_num_by_char = {
-	v = 1,
-	c = 2,
-	x = 3,
-	f = 4,
-	d = 5,
-	s = 6,
-	r = 7,
-	e = 8,
-	w = 9,
+M = {
+	num_by_char = {
+		m = 1,
+		[","] = 2,
+		["."] = 3,
+		j = 4,
+		k = 5,
+		l = 6,
+		u = 7,
+		i = 8,
+		o = 9,
+	},
+	left_num_by_char = {
+		v = 1,
+		c = 2,
+		x = 3,
+		f = 4,
+		d = 5,
+		s = 6,
+		r = 7,
+		e = 8,
+		w = 9,
+	},
 }
 
 M.set_theme = function(theme)
 	if theme == "gruvbox" then
+		require("themes." .. theme)
+	elseif theme == "nord" then
+		require("themes." .. theme)
+	elseif theme == "nightfox" then
 		require("themes." .. theme)
 	else
 		print("No colorscheme was sourced...")
@@ -50,8 +53,8 @@ M._set_mapping = function(mode, silent_or_noisy)
 		v.nvim_set_keymap(mode, keys, action, silent_or_noisy)
 	end
 end
-for _, mode in ipairs({ "n", "v", "i" }) do
-	for _, opt in ipairs({ "silent", "noisy" }) do
+for _, mode in pairs({ "n", "v", "i" }) do
+	for _, opt in pairs({ "silent", "noisy" }) do
 		local opts = {
 			silent = { noremap = true, silent = true },
 			noisy = { noremap = true, silent = false },

@@ -1,12 +1,5 @@
-local g = require('g')
+local g = require("g")
 
 v.nvim_command("highlight ColorColumn ctermbg=0 guibg=lightgrey")
 vim.o.background = "dark"
-
-g.set_theme("gruvbox")
-
--- Statusline transparent
-vim.api.nvim_command([[
-  hi StatusLine ctermbg=0 cterm=NONE guibg=#1D2021
-  hi StatusLineNC ctermbg=0 cterm=NONE guibg=#1D2021
-]])
+g.set_theme("nightfox")
