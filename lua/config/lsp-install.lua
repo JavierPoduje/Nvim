@@ -27,6 +27,6 @@ vim.g.lsp_document_code_action_signs_enabled = 0
 -- disabled because it changes the styles of the diagnostics
 vim.g.lsp_diagnostics_enabled = 0
 
-g.n_silent_map("<leader>e", ":lua vim.lsp.diagnostic.show_line_diagnostics()<CR>")
-g.n_silent_map("<leader>[", ":lua vim.lsp.diagnostic.goto_prev()<CR>")
-g.n_silent_map("<leader>]", ":lua vim.lsp.diagnostic.goto_next()<CR>")
+g.n_silent_map("<leader>e", ":lua vim.diagnostic.open_float()<CR>")
+g.n_silent_map("<leader>[", ":lua vim.diagnostic.goto_prev()<CR>")
+g.n_silent_map("<leader>]", ":lua vim.diagnostic.goto_next()<CR>")

@@ -1,7 +1,7 @@
 local g = require("g")
 local B = "require'config.bufferline.buffero'"
 
-local config = {
+require("bufferline").setup({
 	options = {
 		numbers = function(opts)
 			return string.format("%s", opts.raise(opts.ordinal))
@@ -40,8 +40,7 @@ local config = {
 		always_show_bufferline = true,
 		sort_by = "id",
 	},
-}
-require("bufferline").setup(config)
+})
 
 -- Move buffers tabs
 g.n_silent_map("<Leader>bn", ":BufferLineMoveNext<CR>")
