@@ -16,7 +16,7 @@ require("config.nvim-tree")
 require("config.startify")
 require("config.telescope.telescope")
 require("config.treesitter")
-require("config.utilsnips")
+require("config.ultisnips")
 
 -- Deactive GitGutter commands to avoid slow <leader>+h execution
 vim.g.gitgutter_map_keys = 0
