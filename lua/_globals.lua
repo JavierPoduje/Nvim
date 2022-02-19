@@ -31,4 +31,4 @@ end
 v = vim.api
 
 -- avoid lsp annoying warning message...
-vim = vim
+--vim = vim
