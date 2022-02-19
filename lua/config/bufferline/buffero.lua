@@ -1,3 +1,5 @@
+local bufferline = require('bufferline')
+
 local M = {
 	closed = {},
 }
@@ -40,7 +42,7 @@ end
 -- Receive the buffer's number and execute the function `_save_and_close` over it
 -- @param bufnr number: buffer's number
 M.close_buff_by_num = function(bufnr)
-	require("bufferline").buf_exec(bufnr, function(buf)
+	bufferline.buf_exec(bufnr, function(buf)
 		M._save_and_close(buf)
 	end)
 end

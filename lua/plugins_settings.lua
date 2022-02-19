@@ -14,7 +14,7 @@ require("config.nerd-commenter")
 require("config.nvim-cmp")
 require("config.nvim-tree")
 require("config.startify")
-require("config.telescope.telescope")
+require("config.telescope")
 require("config.treesitter")
 require("config.ultisnips")
 

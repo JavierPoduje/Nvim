@@ -1,7 +1,10 @@
-local F = "require'config.telescope.finders'"
 local g = require("g")
 
-require("telescope").setup({
+local telescope = require("telescope")
+local sorters = require("telescope.sorters")
+local previewers = require("telescope.previewers")
+
+telescope.setup({
 	defaults = {
 		vimgrep_arguments = {
 			"rg",
@@ -34,7 +37,7 @@ require("telescope").setup({
 				prompt_position = "top",
 			},
 		},
-		file_sorter = require("telescope.sorters").get_fuzzy_file,
+		file_sorter = sorters.get_fuzzy_file,
 		file_ignore_patterns = {
 			"*.pyc",
 			"app/webroot/bower_components",
@@ -45,14 +48,14 @@ require("telescope").setup({
 			"aws/",
 			"aws/dist",
 		},
-		generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
+		generic_sorter = sorters.get_generic_fuzzy_sorter,
 		color_devicons = true,
 		use_less = true,
 		path_display = {},
 		set_env = { ["COLORTERM"] = "truecolor" },
-		file_previewer = require("telescope.previewers").vim_buffer_cat.new,
-		grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
-		qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
+		file_previewer = previewers.vim_buffer_cat.new,
+		grep_previewer = previewers.vim_buffer_vimgrep.new,
+		qflist_previewer = previewers.vim_buffer_qflist.new,
 	},
 	extensions = {
 		fzy_native = {
@@ -66,16 +69,15 @@ require("telescope").setup({
 })
 
 -- Set fuzzy native for hyper speed
-require("telescope").load_extension("fzy_native")
+telescope.load_extension("fzy_native")
 
 -- Native
 g.n_silent_map("<Leader>pf", ":Telescope find_files<CR>")
 g.n_silent_map("<Leader>pb", ":Telescope buffers<CR>")
 
 -- Customs
+local F = "require'config.telescope.finders'"
 g.n_silent_map("<Leader>pu", ":lua " .. F .. ".browse_utils()<CR>")
 g.n_silent_map("<Leader>pn", ":lua " .. F .. ".browse_nvim()<CR>")
 g.n_silent_map("<Leader>pm", ":lua " .. F .. ".browse_snippets()<CR>")
-
--- Extensions
 g.n_silent_map("<Leader>pt", ":lua " .. F .. ".list_tabs()<CR>")

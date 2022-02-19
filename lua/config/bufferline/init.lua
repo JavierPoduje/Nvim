@@ -1,7 +1,8 @@
 local g = require("g")
+local bufferline = require("bufferline")
 local B = "require'config.bufferline.buffero'"
 
-require("bufferline").setup({
+bufferline.setup({
 	options = {
 		numbers = function(opts)
 			return string.format("%s", opts.raise(opts.ordinal))
