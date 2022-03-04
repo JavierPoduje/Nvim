@@ -13,6 +13,7 @@ return require("packer").startup(function(use)
 	use("neovim/nvim-lspconfig")
 	use("williamboman/nvim-lsp-installer")
 	use("tamago324/nlsp-settings.nvim")
+	use("jose-elias-alvarez/null-ls.nvim")
 
 	-- Syntax highlight
 	use("neoclide/jsonc.vim")

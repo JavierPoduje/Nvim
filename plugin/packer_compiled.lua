@@ -25,7 +25,7 @@ local no_errors, error_msg = pcall(function()
   else
     time = function(chunk, start) end
   end
-
+  
 local function save_profiles(threshold)
   local sorted_times = {}
   for chunk_name, time_taken in pairs(profile_info) do
@@ -173,6 +173,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/puje/.local/share/nvim/site/pack/packer/start/nord-vim",
     url = "https://github.com/arcticicestudio/nord-vim"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/puje/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-bufferline.lua"] = {
     loaded = true,
