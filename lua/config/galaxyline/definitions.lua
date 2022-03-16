@@ -22,7 +22,7 @@ local M = {
 		t = "T",
 		["!"] = "SH",
 	},
-  colors = colors.theme_palette("nightfox"),
+  colors = colors.theme_palette("gruvbox"),
 	icons = {
 		n = " ",
 		i = " ",

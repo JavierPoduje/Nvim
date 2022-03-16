@@ -24,15 +24,7 @@ M = {
 }
 
 M.set_theme = function(theme)
-	if theme == "gruvbox" then
-		require("themes." .. theme)
-	elseif theme == "nord" then
-		require("themes." .. theme)
-	elseif theme == "nightfox" then
-		require("themes." .. theme)
-	else
-		print("No colorscheme was sourced...")
-	end
+	require("themes." .. theme)
 end
 
 M.set_transparent_background = function(is_transparent)
