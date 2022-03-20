@@ -42,17 +42,4 @@ F.browse_snippets = function()
 	})
 end
 
-F.list_tabs = function()
-	require("telescope").extensions.tele_tabby.list({
-		results_title = "~ 裡Tabs ~",
-		previewer = false,
-		prompt_title = false,
-		layout_strategy = "vertical",
-		layout_config = {
-			width = 0.4,
-			height = 0.4,
-		},
-	})
-end
-
 return F

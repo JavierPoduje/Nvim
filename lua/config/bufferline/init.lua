@@ -54,12 +54,14 @@ g.n_silent_map("<", ":BufferLineCyclePrev<CR>")
 g.n_silent_map("<Leader>#", ":e#<CR>")
 
 -- Open next/previous buffer on the right using vertical split
-local B = "require'config.bufferline.buffero'"
+local B = "require'config.bufferline.customization'"
+
 v.nvim_command("command! Vs :lua " .. B .. ".split_and_move('next')")
 v.nvim_command("command! VS :lua " .. B .. ".split_and_move('prev')")
-g.n_silent_map("<Leader>bñ", ":lua " .. B .. ".open_last_closed_buffer()<CR>")
-g.n_silent_map("<Leader>xd", ":lua " .. B .. ".close_and_remember()<CR>")
+
+g.n_silent_map("<Leader>xd", ":bd!<CR>")
 g.n_silent_map("<Leader>bd", ":lua " .. B .. ".sweep()<CR>")
+
 for char, buff_num in pairs(g.num_by_char) do
 	-- go to specific buffer
 	g.n_silent_map("<Leader>b" .. char, ":BufferLineGoToBuffer " .. buff_num .. "<CR>")

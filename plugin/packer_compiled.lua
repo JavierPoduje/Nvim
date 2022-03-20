@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/home/puje/.local/share/nvim/site/pack/packer/start/auto-pairs",
     url = "https://github.com/jiangmiao/auto-pairs"
   },
+  buffero = {
+    loaded = true,
+    path = "/home/puje/.local/share/nvim/site/pack/packer/start/buffero",
+    url = "https://github.com/JavierPoduje/buffero"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/puje/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -243,11 +248,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/puje/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim",
     url = "https://github.com/nvim-telescope/telescope-fzy-native.nvim"
-  },
-  ["telescope-tele-tabby.nvim"] = {
-    loaded = true,
-    path = "/home/puje/.local/share/nvim/site/pack/packer/start/telescope-tele-tabby.nvim",
-    url = "https://github.com/TC72/telescope-tele-tabby.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,

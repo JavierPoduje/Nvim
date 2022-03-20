@@ -1,5 +1,6 @@
 -- Source plugins confugurations
 require("config.autopair")
+require("config.buffero")
 require("config.bufferline")
 require("config.bujo")
 require("config.colorizer")

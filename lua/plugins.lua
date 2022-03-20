@@ -29,7 +29,8 @@ return require("packer").startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 
 	-- Files management
-	use("akinsho/nvim-bufferline.lua")
+	use({ "akinsho/nvim-bufferline.lua", commit = "d5904e8a3434acb151a4948b1b3d4760a2a12bb1" })
+	use("JavierPoduje/buffero")
 	use("airblade/vim-rooter")
 	use({
 		"glepnir/galaxyline.nvim",
@@ -80,7 +81,6 @@ return require("packer").startup(function(use)
 		requires = {
 			{ "nvim-lua/popup.nvim" },
 			{ "nvim-lua/plenary.nvim" },
-			{ "TC72/telescope-tele-tabby.nvim" },
 			{ "romgrk/fzy-lua-native" },
 			{ "nvim-telescope/telescope-fzy-native.nvim" },
 		},
