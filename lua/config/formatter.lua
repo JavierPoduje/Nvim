@@ -61,6 +61,11 @@ local lua_args = {
 	"AutoPreferDouble",
 }
 
+local rust_args = {
+	"--emit=stdout",
+	"--edition=2021",
+}
+
 -- Actual formatter definition
 require("formatter").setup({
 	logging = false,
@@ -73,6 +78,7 @@ require("formatter").setup({
 		json = { formatter("prettier", prettier_args("json"), true) },
 		lua = { formatter("stylua", lua_args, false) },
 		php = { formatter("prettier", php_args, true) },
+		rust = { formatter("rustfmt", rust_args, true) },
 		scss = { formatter("prettier", prettier_args("scss"), true) },
 		sql = { formatter("sql-formatter", sql_args, true) },
 		typescript = { formatter("prettier", prettier_args("typescript"), true) },
