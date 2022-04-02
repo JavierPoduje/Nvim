@@ -8,8 +8,7 @@ telescope.setup({
 	defaults = {
 		vimgrep_arguments = {
 			"rg",
-			"--color=always",
-			"--no-heading",
+      "--no-heading",
 			"--with-filename",
 			"--line-number",
 			"--column",
@@ -74,6 +73,8 @@ telescope.load_extension("fzy_native")
 -- Native
 g.n_silent_map("<Leader>pf", ":Telescope find_files<CR>")
 g.n_silent_map("<Leader>pb", ":Telescope buffers<CR>")
+g.n_silent_map("<Leader>ps", ":Telescope live_grep<CR>")
+g.n_silent_map("<Leader>pa", ":Telescope grep_string<CR>")
 
 -- Customs
 local F = "require'config.telescope.finders'"

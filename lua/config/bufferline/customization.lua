@@ -1,3 +1,5 @@
+local bufferline = require("bufferline")
+
 local M = {}
 
 -- Delete all buffers but the focus one
@@ -22,7 +24,7 @@ M.split_and_move = function(direction)
 end
 
 M.close_buff_by_num = function(bufnr)
-	require("bufferline").buf_exec(bufnr, function(buf)
+	bufferline.buf_exec(bufnr, function(buf)
 		vim.cmd("bd!" .. buf.id)
 	end)
 end

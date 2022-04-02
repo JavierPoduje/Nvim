@@ -37,7 +37,8 @@ g.n_noisy_map(
 	"<Leader>pS",
 	":Rg --fixed-strings --ignore-case '' **/*." .. string.rep('<Left>', 7)
 )
-g.n_silent_map("<leader>ps", ":RG<CR>")
+-- NOTE: this 'ps' command is use with telescope
+--g.n_silent_map("<leader>ps", ":RG<CR>")
 
 -- Files search
 v.nvim_command("let $FZF_DEFAULT_OPTS='--reverse'")
