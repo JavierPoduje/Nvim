@@ -75,13 +75,6 @@ g.n_silent_map("<M-l>", ":vertical resize +5<CR>")
 -- Better saving
 g.n_silent_map("<Leader>s", ":write<CR>")
 
--- Git management
-g.n_silent_map("<Leader>gl", ":diffget //3<CR>")
-g.n_silent_map("<Leader>gh", ":diffget //2<CR>")
-g.n_silent_map("<Leader>gs", ":G<CR>")
-g.n_silent_map("<Leader>gb", ":Git blame<CR>")
-g.n_silent_map("<Leader>gp", ":GitGutterPreviewHunk<CR>")
-
 -- Better tabbing
 g.v_silent_map("<S-Tab>", "<gv")
 g.v_silent_map("<Tab>", ">gv")
