@@ -1,4 +1,3 @@
-local g = require("g")
 local M = {}
 
 M.setup = function()
