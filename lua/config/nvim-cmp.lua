@@ -17,8 +17,9 @@ cmp.setup({
 		["<c-space>"] = cmp.mapping.complete(),
 	},
 
-	documentation = {
-		border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+	window = {
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
 	},
 
 	sources = {
@@ -46,11 +47,6 @@ cmp.setup({
 				ultisnips = "[snips]",
 			},
 		}),
-	},
-
-	experimental = {
-		native_menu = false,
-		ghost_text = false,
 	},
 })
 
