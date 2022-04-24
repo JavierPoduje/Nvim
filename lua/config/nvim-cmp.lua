@@ -2,8 +2,8 @@ local cmp = require("cmp")
 
 cmp.setup({
 	mapping = {
-		["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-		["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+		["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
+		["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
 		["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
 		["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
 		["<C-u>"] = cmp.mapping.scroll_docs(-4),
@@ -14,7 +14,7 @@ cmp.setup({
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,
 		}),
-		["<c-space>"] = cmp.mapping.complete(),
+		["<C-space>"] = cmp.mapping.complete(),
 	},
 
 	window = {
