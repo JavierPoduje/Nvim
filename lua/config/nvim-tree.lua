@@ -3,8 +3,10 @@ local g = require("g")
 
 require("nvim-tree").setup({
 	system_open = {},
-	nvim_tree_ignore = {
-		"*.pyc",
+	update_focused_file = {
+		enable = false,
+		update_cwd = false,
+		ignore_list = { "*.pyc" },
 	},
 	view = {
 		number = true,
