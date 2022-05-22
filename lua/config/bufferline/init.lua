@@ -49,6 +49,8 @@ g.n_silent_map("<Leader>bp", ":BufferLineMovePrev<CR>")
 -- Move between buffers
 g.n_silent_map(">", ":BufferLineCycleNext<CR>")
 g.n_silent_map("<", ":BufferLineCyclePrev<CR>")
+g.n_silent_map("<C-PageDown>", ":BufferLineCycleNext<CR>")
+g.n_silent_map("<C-PageUp>", ":BufferLineCyclePrev<CR>")
 
 -- Move to last buffer
 g.n_silent_map("<Leader>#", ":e#<CR>")
