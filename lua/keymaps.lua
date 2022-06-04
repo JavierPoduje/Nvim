@@ -20,9 +20,8 @@ vim.g.mapleader = " "
 -- Delete front word in insert mode with CTRL+d
 g.i_silent_map("<C-D>", "X<Esc>ce")
 
--- After press * on a word or select more or more on visual mode, you can
--- replace for another word the selected for another word o string
-g.n_noisy_map("<Leader>r", ":%s///g" .. string.rep("<Left>", 2))
+-- Replace all instances of the word under cursor
+g.n_noisy_map("<Leader>r", ":%s/\\<<C-r><C-w>\\>/")
 
 -- Format one long line into multiple short lines
 g.n_silent_map("Q", "gq<CR>")

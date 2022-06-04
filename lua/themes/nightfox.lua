@@ -1,8 +1,9 @@
 local nightfox = require("nightfox")
 
-require("nightfox").setup({
-	fox = "nightfox",
-	transparent = false,
+nightfox.setup({
+  options = {
+    transparent = true,
+  }
 })
 
 vim.api.nvim_command([[
@@ -10,4 +11,4 @@ vim.api.nvim_command([[
   hi StatusLineNC ctermbg=0 cterm=NONE guibg=#181c24
 ]])
 
-nightfox.load()
+v.nvim_command("colorscheme nightfox")
