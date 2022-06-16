@@ -42,4 +42,10 @@ F.browse_snippets = function()
 	})
 end
 
+F.browse_marks = function ()
+  require("telescope.builtin").marks({
+		layout_strategy = "vertical",
+  })
+end
+
 return F

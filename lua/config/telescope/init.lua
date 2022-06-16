@@ -81,4 +81,5 @@ local F = "require'config.telescope.finders'"
 g.n_silent_map("<Leader>pu", ":lua " .. F .. ".browse_utils()<CR>")
 g.n_silent_map("<Leader>pn", ":lua " .. F .. ".browse_nvim()<CR>")
 g.n_silent_map("<Leader>pm", ":lua " .. F .. ".browse_snippets()<CR>")
+g.n_silent_map("<Leader>ph", ":lua " .. F .. ".browse_marks()<CR>")
 g.n_silent_map("<Leader>pt", ":tabs<CR>")
