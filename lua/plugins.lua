@@ -29,7 +29,7 @@ return require("packer").startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 
 	-- Files management
-	use({ "akinsho/nvim-bufferline.lua", commit = "d5904e8a3434acb151a4948b1b3d4760a2a12bb1" })
+	use("akinsho/nvim-bufferline.lua")
 	use("JavierPoduje/buffero")
 	use("airblade/vim-rooter")
 	use({
