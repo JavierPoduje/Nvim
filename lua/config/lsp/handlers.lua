@@ -16,7 +16,7 @@ M.setup = function()
 
 	vim.diagnostic.config({
 		virtual_text = true,
-		signs = { active = signs, },
+		signs = { active = signs },
 		update_in_insert = false,
 		underline = true,
 		severity_sort = true,
@@ -34,25 +34,25 @@ M.setup = function()
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 end
 
-local function lsp_keymaps(bufnr)
-	local opts = { noremap = true, silent = true }
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>gd", ":lua vim.lsp.buf.definition()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-	vim.api.nvim_buf_set_keymap( bufnr, "n", "<leader>[", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
-	vim.api.nvim_buf_set_keymap( bufnr, "n", "<leader>]", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>gq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-end
-
 M.on_attach = function(client, bufnr)
 	if client.name == "tsserver" then
 		client.resolved_capabilities.document_formatting = false
 	end
-  lsp_keymaps(bufnr)
+
+	local set = function(key, map)
+		vim.api.nvim_buf_set_keymap(bufnr, "n", key, map, { noremap = true, silent = true })
+	end
+
+	set("<leader>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
+	set("<leader>gd", ":lua vim.lsp.buf.definition()<CR>")
+	set("<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
+	set("<leader>gr", "<cmd>lua vim.lsp.buf.references()<CR>")
+	set("<leader>ga", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+	set("K", "<cmd>lua vim.lsp.buf.hover()<CR>")
+	set("<C-k>", "<cmd>lua vim.diagnostic.open_float()<CR>")
+	set("<leader>[", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
+	set("<leader>]", "<cmd>lua vim.diagnostic.goto_next()<CR>")
+	set("<leader>gq", "<cmd>lua vim.diagnostic.setloclist()<CR>")
 end
 
 M.capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())

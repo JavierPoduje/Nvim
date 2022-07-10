@@ -32,10 +32,7 @@ return require("packer").startup(function(use)
 	use("akinsho/nvim-bufferline.lua")
 	use("JavierPoduje/buffero")
 	use("airblade/vim-rooter")
-	use({
-		"glepnir/galaxyline.nvim",
-		branch = "main",
-	})
+	use({ "glepnir/galaxyline.nvim", branch = "main" })
 	use("mbbill/undotree")
 	use("mhinz/vim-startify")
 
@@ -56,10 +53,7 @@ return require("packer").startup(function(use)
 	use("terryma/vim-multiple-cursors")
 	use("nelstrom/vim-visual-star-search")
 	use("preservim/nerdcommenter")
-	use({
-		"SirVer/ultisnips",
-		requires = { "honza/vim-snippets" },
-	})
+	use({ "SirVer/ultisnips", requires = { "honza/vim-snippets" } })
 	use("mattn/emmet-vim")
 	use("mhartington/formatter.nvim")
 
@@ -72,10 +66,7 @@ return require("packer").startup(function(use)
 	})
 	use("junegunn/fzf.vim")
 	use("jremmen/vim-ripgrep")
-	use({
-		"kyazdani42/nvim-tree.lua",
-		branch = "master",
-	})
+	use({ "kyazdani42/nvim-tree.lua", branch = "master" })
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = {
