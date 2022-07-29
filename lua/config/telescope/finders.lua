@@ -28,6 +28,7 @@ F.browse_nvim = function()
 	})
 end
 
+-- FIX: this isn't working...
 F.browse_snippets = function()
 	require("telescope.builtin").file_browser({
 		results_title = "~ 異Snippets ~",

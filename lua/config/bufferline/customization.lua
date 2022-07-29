@@ -24,7 +24,7 @@ M.split_and_move = function(direction)
 end
 
 M.close_buff_by_num = function(bufnr)
-	bufferline.buf_exec(bufnr, function(buf)
+	bufferline.exec(bufnr, function(buf)
 		vim.cmd("bd!" .. buf.id)
 	end)
 end
