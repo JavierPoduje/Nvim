@@ -8,6 +8,10 @@ snippet debe "debug();exit;"
 debug(${1});exit;
 endsnippet
 
+snippet dd "dd();exit;"
+dd(${1});exit;
+endsnippet
+
 snippet debq "eloquent query debug"
 $sql = str_replace_array('?', $${1}->getBindings(), $${2}->toSql());
 debug($sql);exit;

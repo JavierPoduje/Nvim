@@ -1,4 +1,5 @@
 require("colorizer").setup({
+  'lua',
 	css = { rgb_fn = true },
 	html = { names = false },
 })

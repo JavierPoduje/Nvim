@@ -86,4 +86,9 @@ require("formatter").setup({
 	},
 })
 
+-- TODO: all formats should use the same command, the file type shouldn't matter...
+-- format `deno` files
+vim.api.nvim_set_keymap("n", "<leader>fd", ":! deno fmt % -q<CR>", Opts)
+
+-- format every other file
 vim.api.nvim_set_keymap("n", "<leader>ff", ":Format<CR>", Opts)

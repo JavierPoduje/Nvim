@@ -81,6 +81,7 @@ return require("packer").startup(function(use)
 	-- Themes
 	use("sainnhe/gruvbox-material")
 	use("arcticicestudio/nord-vim")
+	use({ "mcchrish/zenbones.nvim", requires = "rktjmp/lush.nvim" })
 	use("EdenEast/nightfox.nvim")
 
 	-- Others

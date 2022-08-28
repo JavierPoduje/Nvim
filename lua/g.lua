@@ -23,6 +23,10 @@ M = {
 	},
 }
 
+M.on_deno = function ()
+  return io.open("deno.json", "r") ~= nil or io.open("deno.jsonc") ~= nil
+end
+
 M.set_theme = function(theme)
 	require("themes." .. theme)
 end
