@@ -23,8 +23,8 @@ M = {
 	},
 }
 
-M.on_deno = function ()
-  return io.open("deno.json", "r") ~= nil or io.open("deno.jsonc") ~= nil
+M.on_deno = function()
+	return io.open("deno.json", "r") ~= nil or io.open("deno.jsonc") ~= nil
 end
 
 M.set_theme = function(theme)
@@ -37,27 +37,23 @@ M.set_transparent_background = function(is_transparent)
 	end
 end
 
--- Define functions for each mode and "opts volume" with the following names:
---    - i_noisy_map(keys, action)
---    - i_silent_map(keys, action)
---    - n_noisy_map(keys, action)
---    - n_silent_map(keys, action)
---    - v_noisy_map(keys, action)
---    - v_silent_map(keys, action)
-M._set_mapping = function(mode, silent_or_noisy)
-	return function(keys, action)
-		v.nvim_set_keymap(mode, keys, action, silent_or_noisy)
-	end
+M.i_noisy_map = function(key, action)
+	v.nvim_set_keymap("i", key, action, { noremap = true, silent = false })
 end
-for _, mode in pairs({ "n", "v", "i" }) do
-	for _, opt in pairs({ "silent", "noisy" }) do
-		local opts = {
-			silent = { noremap = true, silent = true },
-			noisy = { noremap = true, silent = false },
-		}
-		local function_name = tostring(mode) .. "_" .. tostring(opt) .. "_map"
-		M[function_name] = M._set_mapping(mode, opts[opt])
-	end
+M.i_silent_map = function(key, action)
+	v.nvim_set_keymap("i", key, action, { noremap = true, silent = true })
+end
+M.n_noisy_map = function(key, action)
+	v.nvim_set_keymap("n", key, action, { noremap = true, silent = false })
+end
+M.n_silent_map = function(key, action)
+	v.nvim_set_keymap("n", key, action, { noremap = true, silent = true })
+end
+M.v_noisy_map = function(key, action)
+	v.nvim_set_keymap("v", key, action, { noremap = true, silent = false })
+end
+M.v_silent_map = function(key, action)
+	v.nvim_set_keymap("v", key, action, { noremap = true, silent = true })
 end
 
 return M

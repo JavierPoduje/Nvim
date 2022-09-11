@@ -1,4 +1,5 @@
 local current_file = vim.api.nvim_buf_get_name(0)
+local g = require("g")
 
 local formatter = function(formatter, args, stdin)
 	return function()
@@ -88,7 +89,7 @@ require("formatter").setup({
 
 -- TODO: all formats should use the same command, the file type shouldn't matter...
 -- format `deno` files
-vim.api.nvim_set_keymap("n", "<leader>fd", ":! deno fmt % -q<CR>", Opts)
+g.n_silent_map("<Leader>fd", ":! deno fmt % -q<CR>")
 
 -- format every other file
-vim.api.nvim_set_keymap("n", "<leader>ff", ":Format<CR>", Opts)
+g.n_silent_map("<leader>ff", ":Format<CR>")

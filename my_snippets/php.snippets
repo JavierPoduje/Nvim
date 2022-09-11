@@ -9,10 +9,10 @@ debug(${1});exit;
 endsnippet
 
 snippet dd "dd();exit;"
-dd(${1});exit;
+dd(${1});
 endsnippet
 
 snippet debq "eloquent query debug"
-$sql = str_replace_array('?', $${1}->getBindings(), $${2}->toSql());
+$sql = str_replace_array('?', $${1}->getBindings(), $$1->toSql());
 debug($sql);exit;
 endsnippet
