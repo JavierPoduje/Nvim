@@ -23,6 +23,9 @@ g.i_silent_map("<C-D>", "X<Esc>ce")
 -- Replace all instances of the word under cursor
 g.n_noisy_map("<Leader>r", ":%s/\\<<C-r><C-w>\\>/")
 
+-- Paste but remember
+g.v_silent_map("<Leader>p", "\"_dP")
+
 -- Format one long line into multiple short lines
 g.n_silent_map("Q", "gq<CR>")
 
