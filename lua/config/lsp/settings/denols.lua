@@ -1,6 +1,7 @@
 local g = require("g")
 
-local filetypes = {}
+-- if an empty table is given, the server triggers anyway.
+local filetypes = { "dummy" }
 if g.on_deno() then
 	filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
 end

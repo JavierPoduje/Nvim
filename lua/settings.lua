@@ -74,10 +74,12 @@ vim.g.netrw_banner = 1
 vim.g.netrw_winsize = 15
 
 -- Set indentation for .php, .sql, and .mysql files
+-- and tsconfig.json is actually jsonc, help TypeScript set the correct filetype
 v.nvim_command([[
 autocmd FileType php setlocal shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType sql setlocal shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType mysql setlocal shiftwidth=4 softtabstop=4 expandtab
+autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 ]])
 
 -- Remove white spaces on save
@@ -88,11 +90,6 @@ fun! TrimWhitespace()
   call winrestview(l:save)
 endfun
 autocmd BufWritePre * :call TrimWhitespace()
-]])
-
--- tsconfig.json is actually jsonc, help TypeScript set the correct filetype
-v.nvim_command([[
-autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 ]])
 
 -- open :help menu in a vertical split

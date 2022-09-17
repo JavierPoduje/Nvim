@@ -36,11 +36,6 @@ local schemas = {
 		url = "https://json.schemastore.org/eslintrc.json",
 	},
 	{
-		description = "Bucklescript config",
-		fileMatch = { "bsconfig.json" },
-		url = "https://raw.githubusercontent.com/rescript-lang/rescript-compiler/8.2.0/docs/docson/build-schema.json",
-	},
-	{
 		description = "Prettier config",
 		fileMatch = {
 			".prettierrc",
@@ -55,26 +50,9 @@ local schemas = {
 		url = "https://json.schemastore.org/now",
 	},
 	{
-		description = "Stylelint config",
-		fileMatch = {
-			".stylelintrc",
-			".stylelintrc.json",
-			"stylelint.config.json",
-		},
-		url = "https://json.schemastore.org/stylelintrc",
-	},
-	{
 		description = "A JSON schema for the ASP.NET LaunchSettings.json files",
 		fileMatch = { "launchsettings.json" },
 		url = "https://json.schemastore.org/launchsettings.json",
-	},
-	{
-		description = "Schema for CMake Presets",
-		fileMatch = {
-			"CMakePresets.json",
-			"CMakeUserPresets.json",
-		},
-		url = "https://raw.githubusercontent.com/Kitware/CMake/master/Help/manual/presets/schema.json",
 	},
 	{
 		description = "Configuration file as an alternative for configuring your repository in the settings page.",
@@ -84,13 +62,6 @@ local schemas = {
 		url = "https://json.schemastore.org/codeclimate.json",
 	},
 	{
-		description = "LLVM compilation database",
-		fileMatch = {
-			"compile_commands.json",
-		},
-		url = "https://json.schemastore.org/compile-commands.json",
-	},
-	{
 		description = "Config file for Command Task Runner",
 		fileMatch = {
 			"commands.json",
@@ -98,36 +69,11 @@ local schemas = {
 		url = "https://json.schemastore.org/commands.json",
 	},
 	{
-		description = "AWS CloudFormation provides a common language for you to describe and provision all the infrastructure resources in your cloud environment.",
-		fileMatch = {
-			"*.cf.json",
-			"cloudformation.json",
-		},
-		url = "https://raw.githubusercontent.com/awslabs/goformation/v5.2.9/schema/cloudformation.schema.json",
-	},
-	{
-		description = "The AWS Serverless Application Model (AWS SAM, previously known as Project Flourish) extends AWS CloudFormation to provide a simplified way of defining the Amazon API Gateway APIs, AWS Lambda functions, and Amazon DynamoDB tables needed by your serverless application.",
-		fileMatch = {
-			"serverless.template",
-			"*.sam.json",
-			"sam.json",
-		},
-		url = "https://raw.githubusercontent.com/awslabs/goformation/v5.2.9/schema/sam.schema.json",
-	},
-	{
 		description = "Json schema for properties json file for a GitHub Workflow template",
 		fileMatch = {
 			".github/workflow-templates/**.properties.json",
 		},
 		url = "https://json.schemastore.org/github-workflow-template-properties.json",
-	},
-	{
-		description = "golangci-lint configuration file",
-		fileMatch = {
-			".golangci.toml",
-			".golangci.json",
-		},
-		url = "https://json.schemastore.org/golangci-lint.json",
 	},
 	{
 		description = "JSON schema for the JSON Feed format",
