@@ -22,6 +22,7 @@ return require("packer").startup(function(use)
 		requires = "nvim-treesitter/playground",
 		run = ":TSUpdate",
 	})
+	use("nvim-treesitter/nvim-treesitter-context")
 	use("norcalli/nvim-colorizer.lua")
 
 	-- Beautification
