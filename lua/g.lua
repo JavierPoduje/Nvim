@@ -32,9 +32,9 @@ M.set_theme = function(theme)
 end
 
 M.set_transparent_background = function(is_transparent)
-	if is_transparent == 1 then
-		v.nvim_command([[ hi Normal ctermbg=NONE guibg=NONE ]])
-	end
+  if is_transparent == 1 then
+    v.nvim_command([[ hi Normal ctermbg=NONE guibg=NONE ]])
+  end
 end
 
 M.i_noisy_map = function(key, action)

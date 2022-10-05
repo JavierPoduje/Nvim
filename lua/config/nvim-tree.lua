@@ -1,8 +1,8 @@
 local tree_cb = require("nvim-tree.config").nvim_tree_callback
 local g = require("g")
 
-local float_window_width = math.floor(vim.o.columns / 4)
-local float_window_height = math.floor(vim.o.lines / 2)
+local float_window_width = math.floor(vim.o.columns / 2)
+local float_window_height = math.floor(vim.o.lines / 1.5)
 
 require("nvim-tree").setup({
 	system_open = {},

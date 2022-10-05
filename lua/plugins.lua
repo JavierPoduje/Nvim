@@ -84,6 +84,7 @@ return require("packer").startup(function(use)
 	use("arcticicestudio/nord-vim")
 	use({ "mcchrish/zenbones.nvim", requires = "rktjmp/lush.nvim" })
 	use("EdenEast/nightfox.nvim")
+	use({ "catppuccin/nvim", as = "catppuccin", run = ":CatppuccinCompile" })
 
 	-- Others
 	use("michaeljsmith/vim-indent-object")

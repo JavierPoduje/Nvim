@@ -20,7 +20,7 @@ v.nvim_command("set smartcase")
 v.nvim_command("set incsearch")
 v.nvim_command("set termguicolors")
 v.nvim_command("set scrolloff=6")
-v.nvim_command("set clipboard=unnamed")
+v.nvim_command("set clipboard=unnamedplus")
 v.nvim_command("set fdm=indent") -- folding method
 v.nvim_command("set nofoldenable") -- disable pre-folding
 v.nvim_command("set foldlevel=10") -- fix initial folding
@@ -48,7 +48,7 @@ v.nvim_command("set undodir=~/.config/nvim/undodir")
 v.nvim_command("set undofile")
 
 -- More space for displaying messages.
-v.nvim_command("set cmdheight=2")
+v.nvim_command("set cmdheight=1")
 
 -- Don't pass messages to |ins-completion-menu|.
 v.nvim_command("set shortmess+=c")
