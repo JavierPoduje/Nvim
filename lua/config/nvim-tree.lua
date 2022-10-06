@@ -22,6 +22,7 @@ require("nvim-tree").setup({
 				{ key = "s", cb = tree_cb("vsplit") },
 				{ key = "v", cb = tree_cb("split") },
 				{ key = "<C-S>", cb = tree_cb("system_open") },
+				{ key = "<esc>", cb = tree_cb("close") },
 			},
 		},
 		float = {

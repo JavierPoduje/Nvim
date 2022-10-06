@@ -3,9 +3,15 @@ local g = require("g")
 local telescope = require("telescope")
 local sorters = require("telescope.sorters")
 local previewers = require("telescope.previewers")
+local actions = require("telescope.actions")
 
 telescope.setup({
 	defaults = {
+		mappings = {
+			i = {
+				["<esc>"] = actions.close,
+			},
+		},
 		vimgrep_arguments = {
 			"rg",
 			"--no-heading",
