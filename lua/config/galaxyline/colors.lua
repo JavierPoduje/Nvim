@@ -1,5 +1,7 @@
 local M = {}
 
+local catppuccin_colors = require("catppuccin.palettes").get_palette()
+
 M.theme_palette = function(theme)
 	if theme == "gruvbox" then
 		return {
@@ -30,6 +32,21 @@ M.theme_palette = function(theme)
 			purple = "#B48EAD",
 			red = "#BF616A",
 			yellow = "#EBCB8B",
+		}
+	elseif theme == "catppuccin" then
+		return {
+			aqua = catppuccin_colors.sky,
+			bg0 = catppuccin_colors.mantle,
+			bg = catppuccin_colors.crust,
+			bg2 = catppuccin_colors.mantle,
+			blue = catppuccin_colors.blue,
+			fg = catppuccin_colors.text,
+			gray = catppuccin_colors.overlay0,
+			green = catppuccin_colors.green,
+			orange = catppuccin_colors.orange,
+			purple = catppuccin_colors.mauve,
+			red = catppuccin_colors.red,
+			yellow = catppuccin_colors.yellow,
 		}
 	else -- nightfox by default
 		return {
