@@ -33,7 +33,7 @@ return require("packer").startup(function(use)
 	use("akinsho/nvim-bufferline.lua")
 	use("JavierPoduje/buffero")
 	use("airblade/vim-rooter")
-	use({ "glepnir/galaxyline.nvim", branch = "main" })
+	use("glepnir/galaxyline.nvim")
 	use("mbbill/undotree")
 	use("mhinz/vim-startify")
 

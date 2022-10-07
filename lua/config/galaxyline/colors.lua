@@ -36,9 +36,9 @@ M.theme_palette = function(theme)
 	elseif theme == "catppuccin" then
 		return {
 			aqua = catppuccin_colors.sky,
-			bg0 = catppuccin_colors.mantle,
-			bg = catppuccin_colors.crust,
-			bg2 = catppuccin_colors.mantle,
+			bg0 = catppuccin_colors.base,
+			bg = catppuccin_colors.base,
+			bg2 = catppuccin_colors.base,
 			blue = catppuccin_colors.blue,
 			fg = catppuccin_colors.text,
 			gray = catppuccin_colors.overlay0,
