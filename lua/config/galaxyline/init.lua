@@ -12,8 +12,7 @@ gl.short_line_list = {
 	"plug",
 }
 
-require("config.galaxyline.1_mode_panel")
-require("config.galaxyline.2_git_panel")
-require("config.galaxyline.3_filetype_panel")
-require("config.galaxyline.4_lsp_panel")
-require("config.galaxyline.5_text_info_panel")
+require("config.galaxyline.1_git_panel")
+require("config.galaxyline.2_filetype_panel")
+require("config.galaxyline.3_lsp_panel")
+require("config.galaxyline.4_text_info_panel")
