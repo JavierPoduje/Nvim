@@ -139,11 +139,6 @@ _G.packer_plugins = {
     path = "/home/puje/.local/share/nvim/site/pack/packer/start/fzy-lua-native",
     url = "https://github.com/romgrk/fzy-lua-native"
   },
-  ["galaxyline.nvim"] = {
-    loaded = true,
-    path = "/home/puje/.local/share/nvim/site/pack/packer/start/galaxyline.nvim",
-    url = "https://github.com/glepnir/galaxyline.nvim"
-  },
   ["gruvbox-material"] = {
     loaded = true,
     path = "/home/puje/.local/share/nvim/site/pack/packer/start/gruvbox-material",
@@ -169,6 +164,11 @@ _G.packer_plugins = {
     path = "/home/puje/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
     url = "https://github.com/onsails/lspkind-nvim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/puje/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["lush.nvim"] = {
     loaded = true,
     path = "/home/puje/.local/share/nvim/site/pack/packer/start/lush.nvim",
@@ -188,11 +188,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/puje/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
     url = "https://github.com/tamago324/nlsp-settings.nvim"
-  },
-  ["nord-vim"] = {
-    loaded = true,
-    path = "/home/puje/.local/share/nvim/site/pack/packer/start/nord-vim",
-    url = "https://github.com/arcticicestudio/nord-vim"
   },
   ["null-ls.nvim"] = {
     loaded = true,

@@ -33,7 +33,7 @@ return require("packer").startup(function(use)
 	use("akinsho/nvim-bufferline.lua")
 	use("JavierPoduje/buffero")
 	use("airblade/vim-rooter")
-	use("glepnir/galaxyline.nvim")
+	use("nvim-lualine/lualine.nvim")
 	use("mbbill/undotree")
 	use("mhinz/vim-startify")
 
@@ -81,7 +81,6 @@ return require("packer").startup(function(use)
 
 	-- Themes
 	use("sainnhe/gruvbox-material")
-	use("arcticicestudio/nord-vim")
 	use({ "mcchrish/zenbones.nvim", requires = "rktjmp/lush.nvim" })
 	use("EdenEast/nightfox.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin", run = ":CatppuccinCompile" })
