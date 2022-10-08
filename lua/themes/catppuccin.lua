@@ -7,3 +7,9 @@ require("catppuccin").setup({
 })
 
 v.nvim_command("colorscheme catppuccin")
+
+--catppuccin_colors.mantle = #181926
+vim.api.nvim_command([[
+  hi StatusLine ctermbg=0 cterm=NONE guibg=#181926
+  hi StatusLineNC ctermbg=0 cterm=NONE guibg=#181926
+]])
