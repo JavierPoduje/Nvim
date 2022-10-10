@@ -5,7 +5,7 @@ local sources = {
 	null_ls.builtins.diagnostics.flake8,
 }
 
--- Only use `eslint` if isn't a `deno` proyect
+-- Only use `eslint` if isn't a `deno` project
 if not g.on_deno() then
 	table.insert(sources, null_ls.builtins.diagnostics.eslint)
 end
