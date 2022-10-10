@@ -1,6 +1,8 @@
-# Description
+# My Neovim
 
-My Nvim configurations.
+## Description
+
+My personal neovim config files.
 
 ## Dependencies
 
