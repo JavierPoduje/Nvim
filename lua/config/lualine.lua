@@ -1,16 +1,11 @@
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
-    theme = "catppuccin", -- gruvbox-material
+		theme = "catppuccin", -- gruvbox-material
 		component_separators = "",
 		section_separators = "",
-		disabled_filetypes = {
-			statusline = {},
-			winbar = {},
-		},
-		ignore_focus = {},
 		always_divide_middle = true,
-		globalstatus = false,
+		globalstatus = true,
 		refresh = {
 			statusline = 1000,
 			tabline = 1000,
@@ -25,19 +20,5 @@ require("lualine").setup({
 		lualine_y = { "progress" },
 		lualine_z = { "location" },
 	},
-	inactive_sections = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = { "filename" },
-		lualine_x = { "location" },
-		lualine_y = {},
-		lualine_z = {},
-	},
-	tabline = {},
-	winbar = {},
-	inactive_winbar = {},
-  extensions = {
-    'nvim-tree'
-  },
+	extensions = { "nvim-tree" },
 })
-

@@ -4,11 +4,18 @@ vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 
 require("catppuccin").setup({
 	styles = { comments = { "italic" }, conditionals = { "italic" } },
-	integrations = { treesitter = true, cmp = true, gitsigns = true, telescope = true, nvimtree = true },
+	integrations = {
+		cmp = true,
+		gitsigns = true,
+		nvimtree = true,
+		telescope = true,
+		treesitter = true,
+		treesitter_context = true,
+	},
 	transparent_background = true,
 	custom_highlights = {
 		Comment = { fg = colors.overlay1 },
-		--LineNr = { fg = colors.overlay1 },
+		TreesitterContextLineNumber = { fg = colors.sky },
 	},
 })
 
