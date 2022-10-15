@@ -2,8 +2,8 @@ local cmp = require("cmp")
 
 cmp.setup({
 	mapping = {
-		["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
-		["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
+		["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
+		["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
 		["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
 		["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
 		["<C-u>"] = cmp.mapping.scroll_docs(-4),
@@ -52,7 +52,7 @@ cmp.setup({
 
 -- setup `vimls`
 require("lspconfig").vimls.setup({
-	capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+	capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
 })
 
 -- completion for command line

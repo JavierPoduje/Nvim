@@ -10,6 +10,7 @@ require("nvim-treesitter.configs").setup({
 		"json",
 		"php",
 		"python",
+		"rust",
 		"scss",
 		"tsx",
 		"typescript",

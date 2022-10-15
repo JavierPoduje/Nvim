@@ -76,6 +76,10 @@ telescope.setup({
 -- Set fuzzy native for hyper speed
 telescope.load_extension("fzy_native")
 
+-- checking telescope's harpoon...
+telescope.load_extension("harpoon")
+g.n_silent_map("<Leader>py", ":Telescope harpoon marks<CR>")
+
 -- Native
 g.n_silent_map("<Leader>pf", ":Telescope find_files<CR>")
 g.n_silent_map("<Leader>pb", ":Telescope buffers<CR>")

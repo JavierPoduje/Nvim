@@ -55,6 +55,6 @@ M.on_attach = function(client, bufnr)
 	set("<leader>gq", "<cmd>lua vim.diagnostic.setloclist()<CR>")
 end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+M.capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 return M
