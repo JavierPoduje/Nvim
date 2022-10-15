@@ -37,7 +37,7 @@ bufferline.setup({
 		show_close_icon = false,
 		show_tab_indicators = true,
 		persist_buffer_sort = true,
-		separator_style = { "|", " " }, -- "slant" | "thick" | "thin"
+		separator_style = { " ", " " }, -- "slant" | "thick" | "thin"
 		enforce_regular_tabs = false, -- false | true,
 		always_show_bufferline = true,
 		sort_by = "id",

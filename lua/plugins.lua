@@ -31,7 +31,7 @@ return require("packer").startup(function(use)
 
 	-- Files management
 	use("akinsho/nvim-bufferline.lua")
-	use("JavierPoduje/buffero")
+	use("javierpoduje/buffero")
 	use("airblade/vim-rooter")
 	use("nvim-lualine/lualine.nvim")
 	use("mbbill/undotree")

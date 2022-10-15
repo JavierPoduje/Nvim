@@ -28,25 +28,10 @@ F.browse_nvim = function()
 	})
 end
 
--- FIX: this isn't working...
-F.browse_snippets = function()
-	require("telescope.builtin").file_browser({
-		results_title = "~ 異Snippets ~",
-		cwd = "~/.local/share/nvim/site/pack/packer/start/vim-snippets/UltiSnips/",
-		previewer = false,
-		prompt_title = false,
+F.browse_marks = function()
+	require("telescope.builtin").marks({
 		layout_strategy = "vertical",
-		layout_config = {
-			width = 0.4,
-			height = 0.4,
-		},
 	})
-end
-
-F.browse_marks = function ()
-  require("telescope.builtin").marks({
-		layout_strategy = "vertical",
-  })
 end
 
 return F

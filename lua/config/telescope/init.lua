@@ -4,12 +4,28 @@ local telescope = require("telescope")
 local sorters = require("telescope.sorters")
 local previewers = require("telescope.previewers")
 local actions = require("telescope.actions")
+local action_state = require("telescope.actions.state")
+
+local custom_actions = {}
+
+function custom_actions.fzf_multi_select(prompt_bufnr)
+	local picker = action_state.get_current_picker(prompt_bufnr)
+	local num_selections = #picker:get_multi_selection()
+
+	if num_selections > 1 then
+		actions.send_selected_to_qflist(prompt_bufnr)
+		actions.open_qflist()
+	else
+		actions.file_edit(prompt_bufnr)
+	end
+end
 
 telescope.setup({
 	defaults = {
 		mappings = {
 			i = {
-				["<esc>"] = actions.close,
+				["<ESC>"] = actions.close,
+				["<CR>"] = custom_actions.fzf_multi_select,
 			},
 		},
 		vimgrep_arguments = {
@@ -73,12 +89,7 @@ telescope.setup({
 	},
 })
 
--- Set fuzzy native for hyper speed
 telescope.load_extension("fzy_native")
-
--- checking telescope's harpoon...
-telescope.load_extension("harpoon")
-g.n_silent_map("<Leader>py", ":Telescope harpoon marks<CR>")
 
 -- Native
 g.n_silent_map("<Leader>pf", ":Telescope find_files<CR>")
