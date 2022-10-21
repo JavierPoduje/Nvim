@@ -25,6 +25,7 @@ telescope.setup({
 		mappings = {
 			i = {
 				["<ESC>"] = actions.close,
+				["<C-q>"] = actions.delete_buffer,
 				["<CR>"] = custom_actions.fzf_multi_select,
 			},
 		},

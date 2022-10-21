@@ -82,7 +82,7 @@ _G.packer_plugins = {
   buffero = {
     loaded = true,
     path = "/home/puje/.local/share/nvim/site/pack/packer/start/buffero",
-    url = "https://github.com/JavierPoduje/buffero"
+    url = "https://github.com/javierpoduje/buffero"
   },
   catppuccin = {
     loaded = true,

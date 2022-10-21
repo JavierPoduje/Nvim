@@ -1,7 +1,0 @@
-Una pequeña corrección.
-
-Creo que la complejidad de 3^n corresponde a una sola ejecución del algoritmo `dfs` o depth first search. Entonces, si tenemos que ejecutar una vez este algoritmo por cada columna de nuestra matriz, la complejidad de la solución completa sería 3^n * n.
-
-Tengan eso en cuenta para el resto de la explicación.
-
-
