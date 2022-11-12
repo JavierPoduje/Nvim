@@ -8,7 +8,7 @@ local sources = {
 
 -- Only use `eslint` if isn't a `deno` project
 if not g.on_deno() then
-	table.insert(sources, null_ls.builtins.diagnostics.eslint_d)
+	table.insert(sources, null_ls.builtins.diagnostics.eslint)
 end
 
 null_ls.setup({
