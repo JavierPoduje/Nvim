@@ -45,6 +45,10 @@ g.n_silent_map("<Leader>l", ":wincmd l<CR>")
 g.n_silent_map("<Leader>j", ":wincmd j<CR>")
 g.n_silent_map("<Leader>h", ":wincmd h<CR>")
 
+-- Keep it centered
+g.n_silent_map("<C-u>", "<C-u>zz")
+g.n_silent_map("<C-d>", "<C-d>zz")
+
 -- Tab handlers
 g.n_silent_map("<Leader>tt", ":tabnew<CR>")
 g.n_silent_map("<Leader>tx", ":tabclose<CR>")

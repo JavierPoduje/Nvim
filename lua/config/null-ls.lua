@@ -3,7 +3,8 @@ local g = require("g")
 
 -- Initialize null_ls setup
 local sources = {
-	null_ls.builtins.diagnostics.flake8,
+	null_ls.builtins.diagnostics.flake8, -- python
+	null_ls.builtins.diagnostics.proselint, -- markdown
 }
 
 -- Only use `eslint` if isn't a `deno` project

@@ -16,6 +16,8 @@ require("catppuccin").setup({
 	custom_highlights = {
 		Comment = { fg = colors.overlay1 },
 		TreesitterContextLineNumber = { fg = colors.sky },
+		LineNr = { fg = colors.lavender },
+		CursorLineNr = { fg = colors.sky, style = { "bold" } },
 	},
 })
 
