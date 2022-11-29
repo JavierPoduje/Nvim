@@ -5,11 +5,15 @@ for (let ${1:i} = 0; $1 < ${2:something}.length; $1++) {
 endsnippet
 
 snippet cll "import"
-console.log("${1:`!v vim_snippets#Filename('$1', 'title')`}#${1}: ", $1);
+console.log("${1}: ", $1);
 endsnippet
 
 snippet cl "import"
-console.log("${1:`!v vim_snippets#Filename('$1', 'title')`}#${1}");
+console.log("${1}");
+endsnippet
+
+snippet cl- "import"
+console.log("----------------------");
 endsnippet
 
 snippet imp "import"
@@ -18,4 +22,12 @@ endsnippet
 
 snippet impp "import with {}"
 import { ${1} } from '${2}';
+endsnippet
+
+snippet rh "initialize"
+const ${1:`!v vim_snippets#Filename('$1', 'title')`} = () => {
+
+}
+
+export default ${1:`!v vim_snippets#Filename('$1', 'title')`};
 endsnippet

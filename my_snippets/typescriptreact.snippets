@@ -3,11 +3,7 @@ extends typescript
 snippet rh "initialize typescript-react"
 import React from 'react';
 
-interface I${1:`!v vim_snippets#Filename('$1', 'title')`}Props {
-
-}
-
-const ${1:`!v vim_snippets#Filename('$1', 'title')`}: React.FC<I${1:`!v vim_snippets#Filename('$1', 'title')`}Props> = ({}) => {
+const ${1:`!v vim_snippets#Filename('$1', 'title')`} = () => {
 	return (
 		<div>Happy coding, Puje</div>
 	);

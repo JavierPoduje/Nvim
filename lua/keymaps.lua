@@ -36,7 +36,7 @@ g.n_silent_map("<Leader>ww", ":set wrap! linebreak<CR>")
 g.n_silent_map("<Leader>O", "O<Esc>O")
 g.n_silent_map("<Leader>o", "o<CR>")
 
--- for JS/Typescrips, set all "." to "?." in VISUAL MODE
+-- for JS/Typescript, set all "." to "?." in VISUAL MODE
 g.v_silent_map("<Leader>?", "<ESC><cmd>'<,'>substitute/\\./?./g<CR>")
 
 -- Better navigation

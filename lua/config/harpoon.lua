@@ -7,6 +7,9 @@ require("harpoon").setup({
 		enter_on_sendcmd = false,
 		excluded_filetypes = { "harpoon" },
 	},
+	menu = {
+		width = 150,
+	},
 })
 
 -- add file
