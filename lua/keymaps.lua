@@ -15,7 +15,6 @@ g.i_silent_map("<C-j>", "<C-o>h")
 
 -- Set space as leader key
 g.n_silent_map("<Space>", "<NOP><CR>")
-vim.g.mapleader = " "
 
 -- Delete front word in insert mode with CTRL+d
 g.i_silent_map("<C-D>", "X<Esc>ce")
@@ -24,10 +23,12 @@ g.i_silent_map("<C-D>", "X<Esc>ce")
 g.n_noisy_map("<Leader>r", ":%s/\\<<C-r><C-w>\\>/")
 
 -- Paste but remember
-g.v_silent_map("<Leader>fp", "\"_dP")
+vim.keymap.set("x", "<Leader>fp", '"_dP')
 
 -- Format one long line into multiple short lines
 g.n_silent_map("Q", "gq<CR>")
+
+vim.keymap.set("n", "J", "mzJ`z")
 
 -- Toggle wrap
 g.n_silent_map("<Leader>ww", ":set wrap! linebreak<CR>")
@@ -61,7 +62,7 @@ end
 
 -- Better marks
 for char, _ in pairs(g.left_num_by_char) do
-  g.n_silent_map("m" .. char, "m" .. char:upper())
+	g.n_silent_map("m" .. char, "m" .. char:upper())
 	g.n_silent_map("<Leader>m" .. char, "`" .. char:upper() .. "<CR>")
 end
 

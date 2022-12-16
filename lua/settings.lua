@@ -3,30 +3,31 @@ v.nvim_command("filetype plugin on")
 
 v.nvim_command("set nocompatible")
 v.nvim_command("set exrc")
-v.nvim_command("set noshowmatch")
-v.nvim_command("set relativenumber")
-v.nvim_command("set nu")
-v.nvim_command("set nohlsearch")
+
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.smartindent = true
+vim.opt.showmatch = false
+vim.opt.relativenumber = true
+vim.opt.nu = true
+vim.opt.termguicolors = true
+vim.opt.colorcolumn = "80"
+vim.opt.scrolloff = 6
+vim.opt.wrap = false
+vim.opt.mouse = "a"
+vim.opt.clipboard = "unnamedplus"
+vim.opt.smartcase = true
+vim.opt.fdm = "indent" -- folding method
+vim.opt.foldenable = false -- disable pre-folding
+vim.opt.foldlevel = 10 -- fix initial folding
+
 v.nvim_command("set hidden")
 v.nvim_command("set noerrorbells")
 v.nvim_command("set tabstop=2 softtabstop=0 expandtab smarttab")
 v.nvim_command("set laststatus=3")
 v.nvim_command("set shiftwidth=2")
-v.nvim_command("set mouse=a")
-v.nvim_command("set smartindent")
-v.nvim_command("set nowrap")
 v.nvim_command("set ignorecase")
-v.nvim_command("set smartcase")
-v.nvim_command("set incsearch")
-v.nvim_command("set termguicolors")
-v.nvim_command("set scrolloff=6")
-v.nvim_command("set clipboard=unnamedplus")
-v.nvim_command("set fdm=indent") -- folding method
-v.nvim_command("set nofoldenable") -- disable pre-folding
-v.nvim_command("set foldlevel=10") -- fix initial folding
 v.nvim_command("set encoding=utf8")
-v.nvim_command("set colorcolumn=80")
-
 v.nvim_command("set list")
 v.nvim_command([[ set showbreak=↪\ ]])
 v.nvim_command([[ set listchars=eol:⏎,tab:→\ ,trail:␠,nbsp:⎵,space:·,extends:⟩,precedes:⟨ ]])
@@ -53,11 +54,13 @@ v.nvim_command("set cmdheight=1")
 -- Don't pass messages to |ins-completion-menu|.
 v.nvim_command("set shortmess+=c")
 -- <Space> as leader key
-v.nvim_command('let mapleader = " "')
+vim.g.mapleader = " "
+--v.nvim_command('let mapleader = " "')
 
 -- Having longer update time (default is 4000 ms = 4 sec) leads to noticeable
 -- delays and poor user experience.
-v.nvim_command("set updatetime=300")
+vim.opt.updatetime = 50
+--v.nvim_command("set updatetime=300")
 
 -- Always show tabs on top
 v.nvim_command("set showtabline=2")
