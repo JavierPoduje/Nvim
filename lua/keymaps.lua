@@ -25,6 +25,9 @@ g.n_noisy_map("<Leader>r", ":%s/\\<<C-r><C-w>\\>/")
 -- Paste but remember
 vim.keymap.set("x", "<Leader>fp", '"_dP')
 
+-- less typing
+g.i_noisy_map("<A-l>", "<Esc>A")
+
 -- Format one long line into multiple short lines
 g.n_silent_map("Q", "gq<CR>")
 

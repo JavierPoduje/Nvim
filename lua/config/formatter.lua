@@ -39,13 +39,8 @@ local php_args = {
 }
 
 local sql_args = {
-	"-u",
-	"-i",
-	4,
-	"--lines-between-queries",
-	2,
-	"-l",
-	"mysql",
+  "--config",
+  "~/.config/nvim/sql-formatter.json",
 	current_file,
 }
 

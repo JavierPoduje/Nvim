@@ -57,7 +57,6 @@ return require("packer").startup(function(use)
 	use({ "SirVer/ultisnips", requires = { "honza/vim-snippets" } })
 	use("mattn/emmet-vim")
 	use("mhartington/formatter.nvim")
-
 	-- Searchers
 	use({
 		"junegunn/fzf",

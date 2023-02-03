@@ -7,6 +7,8 @@ require("nvim-treesitter.configs").setup({
 		"elixir",
 		"html",
 		"javascript",
+		"git_rebase",
+		"lua",
 		"json",
 		"php",
 		"python",
