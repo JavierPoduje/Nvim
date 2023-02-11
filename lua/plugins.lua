@@ -60,11 +60,11 @@ return require("packer").startup(function(use)
 	-- Searchers
 	use({
 		"junegunn/fzf",
+		requires = { "junegunn/fzf.vim" },
 		run = function()
 			vim.fn["fzf#install()"](0)
 		end,
 	})
-	use("junegunn/fzf.vim")
 	use("jremmen/vim-ripgrep")
 	use({ "kyazdani42/nvim-tree.lua", branch = "master" })
 	use({

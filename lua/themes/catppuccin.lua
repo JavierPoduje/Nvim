@@ -1,9 +1,10 @@
-local flavour = "mocha"
+local flavour = "mocha" -- macchiato
 local colors = require("catppuccin.palettes").get_palette(flavour)
 
 require("catppuccin").setup({
 	flavour = flavour,
 	styles = { comments = { "italic" }, conditionals = { "italic" } },
+  term_colors = false,
 	integrations = {
 		cmp = true,
 		gitsigns = true,
@@ -12,7 +13,7 @@ require("catppuccin").setup({
 		treesitter = true,
 		treesitter_context = true,
 	},
-	transparent_background = true,
+  transparent_background = true,
 	custom_highlights = {
 		Comment = { fg = colors.overlay1 },
 		TreesitterContextLineNumber = { fg = colors.sky },
@@ -21,4 +22,4 @@ require("catppuccin").setup({
 	},
 })
 
-v.nvim_command("colorscheme catppuccin")
+vim.cmd.colorscheme "catppuccin"

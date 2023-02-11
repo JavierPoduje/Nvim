@@ -39,8 +39,8 @@ local php_args = {
 }
 
 local sql_args = {
-  "--config",
-  "~/.config/nvim/sql-formatter.json",
+	"--config",
+	"~/.config/nvim/sql-formatter.json",
 	current_file,
 }
 
