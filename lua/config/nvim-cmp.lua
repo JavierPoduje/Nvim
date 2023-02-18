@@ -6,7 +6,7 @@ cmp.setup({
 		["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
 		["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
 		["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-		["<C-u>"] = cmp.mapping.scroll_docs(-4),
+		["<C-u>"] = cmp.mapping.scroll_docs( -4),
 		["<C-d>"] = cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.close(),
@@ -16,26 +16,21 @@ cmp.setup({
 		}),
 		["<C-space>"] = cmp.mapping.complete(),
 	},
-
 	window = {
 		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
 	},
-
 	sources = {
 		{ name = "nvim_lsp" },
-		{ name = "nvim_lua" },
 		{ name = "ultisnips" },
-		{ name = "buffer", keyword_length = 2 },
+		{ name = "buffer",   keyword_length = 2 },
 		{ name = "path" },
 	},
-
 	snippet = {
 		expand = function(args)
 			vim.fn["UltiSnips#Anon"](args.body)
 		end,
 	},
-
 	formatting = {
 		format = require("lspkind").cmp_format({
 			with_text = true,
@@ -50,8 +45,10 @@ cmp.setup({
 	},
 })
 
--- setup `vimls`
 require("lspconfig").vimls.setup({
+	capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+})
+require("lspconfig").rust_analyzer.setup({
 	capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
 })
 

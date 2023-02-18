@@ -14,6 +14,7 @@ return require("packer").startup(function(use)
 	use("tamago324/nlsp-settings.nvim")
 	use({ "williamboman/mason.nvim", requires = { "williamboman/mason-lspconfig.nvim" }, })
 	use("neovim/nvim-lspconfig")
+	use("neovim/nvim-lspconfig")
 
 	-- Syntax highlight
 	use("neoclide/jsonc.vim")

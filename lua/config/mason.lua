@@ -6,6 +6,10 @@ require("mason").setup({
 			package_uninstalled = "✗",
 		},
 	},
+	lspconfig = {
+		rust = "rust_analyzer",
+		lua = "lua",
+	}
 })
 
 require("mason-lspconfig").setup({

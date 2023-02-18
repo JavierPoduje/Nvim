@@ -1,5 +1,3 @@
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
@@ -57,31 +55,36 @@ local lsp_flags = {
 	debounce_text_changes = 150,
 }
 
-require("lspconfig")["pyright"].setup({
+require("lspconfig").pyright.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 })
-require("lspconfig")["intelephense"].setup({
+require("lspconfig").intelephense.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 })
-require("lspconfig")["cssls"].setup({
+require("lspconfig").cssls.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 })
-require("lspconfig")["tsserver"].setup({
+require("lspconfig").tsserver.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 })
 
-require("lspconfig")["lua_ls"].setup({
+require("lspconfig").lua_ls.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 })
-require("lspconfig")["rust_analyzer"].setup({
+require("lspconfig").rust_analyzer.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	settings = {
-		["rust-analyzer"] = {},
+		["rust-analyzer"] = {
+			assist = {
+				importMergeBehavior = 'last',
+				importPrefix = 'by_self',
+			}
+		},
 	},
 })
