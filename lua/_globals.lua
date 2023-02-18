@@ -28,4 +28,5 @@ WipeRegisters = function()
   vim.api.nvim_command([[ :wshada! ]])
 end
 
+vim = vim
 v = vim.api
