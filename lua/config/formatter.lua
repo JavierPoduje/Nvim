@@ -87,4 +87,4 @@ require("formatter").setup({
 g.n_silent_map("<Leader>fd", ":! deno fmt % -q<CR>")
 
 -- format every other file
-g.n_silent_map("<leader>gf", ":Format<CR>")
+g.n_silent_map("<leader>ff", ":Format<CR>")

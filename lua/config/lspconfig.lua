@@ -1,3 +1,5 @@
+local lspconfig = require("lspconfig")
+
 local opts = { noremap = true, silent = true }
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
@@ -46,7 +48,7 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "<leader>R", vim.lsp.buf.rename, bufopts)
 	vim.keymap.set("n", "<leader>ga", vim.lsp.buf.code_action, bufopts)
 	vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, bufopts)
-	vim.keymap.set("n", "<leader>ff", function()
+	vim.keymap.set("n", "<leader>gf", function()
 		vim.lsp.buf.format({ async = true })
 	end, bufopts)
 end
@@ -55,28 +57,28 @@ local lsp_flags = {
 	debounce_text_changes = 150,
 }
 
-require("lspconfig").pyright.setup({
+lspconfig.pyright.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 })
-require("lspconfig").intelephense.setup({
+lspconfig.intelephense.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 })
-require("lspconfig").cssls.setup({
+lspconfig.cssls.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 })
-require("lspconfig").tsserver.setup({
+lspconfig.tsserver.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 })
 
-require("lspconfig").lua_ls.setup({
+lspconfig.lua_ls.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 })
-require("lspconfig").rust_analyzer.setup({
+lspconfig.rust_analyzer.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	settings = {
