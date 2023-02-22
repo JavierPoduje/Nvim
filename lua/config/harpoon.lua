@@ -8,7 +8,7 @@ require("harpoon").setup({
 		excluded_filetypes = { "harpoon" },
 	},
 	menu = {
-		width = 150,
+		width = vim.api.nvim_win_get_width(0) - 20,
 	},
 })
 
