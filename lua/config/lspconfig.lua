@@ -1,4 +1,5 @@
-local lspconfig = require("lspconfig")
+local config = require("lspconfig")
+local cmp = require("cmp_nvim_lsp")
 
 local opts = { noremap = true, silent = true }
 
@@ -53,40 +54,19 @@ local on_attach = function(client, bufnr)
 	end, bufopts)
 end
 
-local lsp_flags = {
-	debounce_text_changes = 150,
-}
-
-lspconfig.pyright.setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-})
-lspconfig.intelephense.setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-})
-lspconfig.cssls.setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-})
-lspconfig.tsserver.setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-})
-
-lspconfig.lua_ls.setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-})
-lspconfig.rust_analyzer.setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	settings = {
-		["rust-analyzer"] = {
-			assist = {
-				importMergeBehavior = 'last',
-				importPrefix = 'by_self',
-			}
-		},
-	},
-})
+-- iterate over the lsp protocols attaching the commands and the completions
+for _, protocol in ipairs({
+	"cssls",
+	"intelephense",
+	"lua_ls",
+	"pyright",
+	"rust_analyzer",
+	"tsserver",
+	"vimls",
+}) do
+	config[protocol].setup({
+		on_attach = on_attach,
+		flags = { debounce_text_changes = 150 },
+		capabilities = cmp.default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+	})
+end

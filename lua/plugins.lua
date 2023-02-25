@@ -13,7 +13,9 @@ return require("packer").startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim")
 	use({
 		"williamboman/mason.nvim",
-		requires = { "williamboman/mason-lspconfig.nvim" },
+		requires = {
+			"williamboman/mason-lspconfig.nvim",
+		},
 	})
 	use("neovim/nvim-lspconfig")
 
