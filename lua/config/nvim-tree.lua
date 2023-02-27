@@ -1,4 +1,3 @@
-local tree_cb = require("nvim-tree.config").nvim_tree_callback
 local g = require("g")
 
 local COLS = vim.o.columns
@@ -22,10 +21,10 @@ require("nvim-tree").setup({
 		hide_root_folder = false,
 		mappings = {
 			list = {
-				{ key = "s", cb = tree_cb("vsplit") },
-				{ key = "v", cb = tree_cb("split") },
-				{ key = "<C-S>", cb = tree_cb("system_open") },
-				{ key = "<ESC>", cb = tree_cb("close") },
+				{ key = "s", action = "vsplit" },
+				{ key = "v", action = "split" },
+				{ key = "<C-S>", action = "system_open" },
+				{ key = "<ESC>", action = "close" },
 			},
 		},
 		float = {
