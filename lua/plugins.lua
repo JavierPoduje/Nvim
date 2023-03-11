@@ -40,6 +40,7 @@ return require("packer").startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 	use("mbbill/undotree")
 	use("mhinz/vim-startify")
+	use("javierpoduje/taboo")
 
 	-- Text management
 	use({
@@ -75,7 +76,6 @@ return require("packer").startup(function(use)
 		"nvim-telescope/telescope.nvim",
 		requires = {
 			{ "nvim-lua/popup.nvim" },
-			{ "nvim-lua/plenary.nvim" },
 			{ "romgrk/fzy-lua-native" },
 			{ "nvim-telescope/telescope-fzy-native.nvim" },
 		},
@@ -84,10 +84,12 @@ return require("packer").startup(function(use)
 
 	-- Themes
 	use("sainnhe/gruvbox-material")
-	use({ "catppuccin/nvim", as = "catppuccin", run = ":CatppuccinCompile" })
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- Others
 	use("michaeljsmith/vim-indent-object")
 	use("vuciv/vim-bujo")
 	use("dstein64/vim-startuptime")
+
+	use("nvim-lua/plenary.nvim")
 end)

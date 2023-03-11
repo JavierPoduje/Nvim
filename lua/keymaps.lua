@@ -54,7 +54,6 @@ g.n_silent_map("<C-u>", "<C-u>zz")
 g.n_silent_map("<C-d>", "<C-d>zz")
 
 -- Tab handlers
-g.n_silent_map("<Leader>tt", ":tabnew<CR>")
 g.n_silent_map("<Leader>tx", ":tabclose<CR>")
 g.n_silent_map("<Leader>tn", ":tabn<CR>")
 g.n_silent_map("<Leader>tp", ":tabp<CR>")

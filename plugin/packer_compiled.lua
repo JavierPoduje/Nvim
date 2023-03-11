@@ -249,6 +249,11 @@ _G.packer_plugins = {
     path = "/home/puje/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  taboo = {
+    loaded = true,
+    path = "/home/puje/.local/share/nvim/site/pack/packer/start/taboo",
+    url = "https://github.com/javierpoduje/taboo"
+  },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,
     path = "/home/puje/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim",
