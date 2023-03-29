@@ -45,4 +45,4 @@ vim.g.nvim_tree_indent_markers = 1
 
 g.n_silent_map("<leader>pv", ":NvimTreeToggle<CR>")
 g.n_silent_map("<leader>R", ":NvimTreeRefresh<CR>")
-g.n_silent_map("<leader>pp", ":NvimTreeFindFile<CR>")
+g.n_silent_map("<leader>pp", ":NvimTreeFindFileToggle<CR>")

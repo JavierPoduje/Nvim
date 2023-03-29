@@ -14,12 +14,15 @@ end
 -- Args definitions
 local prettier_args = function(parser)
 	return {
-		"--stdin-filepath",
+		--"--stdin-filepath",
+		"--write",
 		current_file,
 		"--parser",
 		parser,
 		-- Personal preferences
-		--"--config", "~/Documents/Foris/EDH/.prettierrc"
+		"--config",
+		"~/Documents/Foris/EDH/.prettierrc",
+		--"--config", "~/Documents/Foris/Stella/stella-new/.prettierrc.js"
 		--"--config", "~/.config/nvim/.prettierrc.js"
 	}
 end
