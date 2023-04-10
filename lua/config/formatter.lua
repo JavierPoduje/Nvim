@@ -65,6 +65,12 @@ local rust_args = {
 	"--edition=2021",
 }
 
+local python_args = {
+	"-t",
+	"py310",
+	current_file,
+}
+
 -- Actual formatter definition
 require("formatter").setup({
 	logging = false,
@@ -82,6 +88,7 @@ require("formatter").setup({
 		sql = { formatter("sql-formatter", sql_args, true) },
 		typescript = { formatter("prettier", prettier_args("typescript"), true) },
 		typescriptreact = { formatter("prettier", prettier_args("typescript"), true) },
+		python = { formatter("black", python_args, true) },
 	},
 })
 

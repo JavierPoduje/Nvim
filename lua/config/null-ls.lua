@@ -8,9 +8,8 @@ local sources = {}
 if
 	not g.on_deno()
 	and (
-		vim.fn.filereadable(vim.fn.getcwd() .. "/.eslintrc") == 1 or vim.fn.filereadable(
-			vim.fn.getcwd() .. "./.eslintrc.js"
-		)
+		vim.fn.filereadable(vim.fn.getcwd() .. "/.eslintrc") == 1
+		or vim.fn.filereadable(vim.fn.getcwd() .. "./.eslintrc.js")
 	)
 then
 	table.insert(sources, null_ls.builtins.diagnostics.eslint)
