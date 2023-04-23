@@ -19,14 +19,17 @@ require("nvim-tree").setup({
 	},
 	on_attach = function(bufnr)
 		local api = require("nvim-tree.api")
-		vim.keymap.set("n", "s", api.node.open.vertical, opts("Open: Vertical Split", bufnr))
-		vim.keymap.set("n", "v", api.node.open.vertical, opts("Open: Horizontal Split", bufnr))
 		vim.keymap.set("n", "<CR>", api.node.open.edit, opts("Open", bufnr))
 		vim.keymap.set("n", "<ESC>", api.tree.close, opts("Close", bufnr))
-		vim.keymap.set("n", "g?", api.tree.toggle_help, opts("Help", bufnr))
-		vim.keymap.set("n", "gy", api.fs.copy.absolute_path, opts("Copy Absolute Path", bufnr))
 		vim.keymap.set("n", "P", api.node.navigate.parent, opts("Parent Directory", bufnr))
 		vim.keymap.set("n", "Y", api.fs.copy.relative_path, opts("Copy Relative Path", bufnr))
+		vim.keymap.set("n", "a", api.fs.create, opts("Create", bufnr))
+		vim.keymap.set("n", "d", api.fs.remove, opts("Delete", bufnr))
+		vim.keymap.set("n", "g?", api.tree.toggle_help, opts("Help", bufnr))
+		vim.keymap.set("n", "gy", api.fs.copy.absolute_path, opts("Copy Absolute Path", bufnr))
+		vim.keymap.set("n", "r", api.fs.rename, opts("Rename", bufnr))
+		vim.keymap.set("n", "s", api.node.open.vertical, opts("Open: Vertical Split", bufnr))
+		vim.keymap.set("n", "v", api.node.open.vertical, opts("Open: Horizontal Split", bufnr))
 	end,
 	view = {
 		side = "right",

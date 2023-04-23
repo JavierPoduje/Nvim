@@ -9,6 +9,9 @@ return require("packer").startup(function(use)
 	use("airblade/vim-gitgutter")
 	use("kdheepak/lazygit.nvim")
 
+	-- Co-pilot
+	use("github/copilot.vim")
+
 	-- LSP
 	use("jose-elias-alvarez/null-ls.nvim")
 	use({
