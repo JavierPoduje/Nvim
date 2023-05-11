@@ -10,6 +10,11 @@ vim.g.NERDCustomDelimiters = {
 		leftAlt = "/* ",
 		rightAlt = " */",
 	},
+	vue = {
+		left = "// ",
+		leftAlt = "<!-- ",
+		rightAlt = " -->",
+	},
 	typescriptreact = {
 		left = "// ",
 		leftAlt = "{/* ",

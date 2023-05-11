@@ -22,6 +22,7 @@ local prettier_args = function(parser)
 		-- Personal preferences
 		"--config",
 		"~/Documents/Foris/EDH/.prettierrc",
+		--"~/Documents/Foris/gpt/athena-foris/.prettierrc",
 		--"--config", "~/Documents/Foris/Stella/stella-new/.prettierrc.js"
 		--"--config", "~/.config/nvim/.prettierrc.js"
 	}
@@ -79,6 +80,7 @@ require("formatter").setup({
 		javascript = { formatter("prettier", prettier_args("typescript"), true) },
 		javascriptreact = { formatter("prettier", prettier_args("typescript"), true) },
 		json = { formatter("prettier", prettier_args("json"), true) },
+		vue = { formatter("prettier", prettier_args("vue"), true) },
 		lua = { formatter("stylua", lua_args, false) },
 		php = { formatter("prettier", php_args, true) },
 		rust = { formatter("rustfmt", rust_args, true) },

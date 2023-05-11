@@ -4,7 +4,7 @@ local g = require("g")
 -- Initialize null_ls setup
 local sources = {}
 
--- Only use `eslint` if isn't a `deno` project
+-- Only use `eslint` if the project isn't a Deno one
 if
 	not g.on_deno()
 	and (
