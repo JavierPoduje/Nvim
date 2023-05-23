@@ -30,6 +30,10 @@ require("nvim-tree").setup({
 		vim.keymap.set("n", "r", api.fs.rename, opts("Rename", bufnr))
 		vim.keymap.set("n", "s", api.node.open.vertical, opts("Open: Vertical Split", bufnr))
 		vim.keymap.set("n", "v", api.node.open.vertical, opts("Open: Horizontal Split", bufnr))
+		vim.keymap.set("n", "c", api.fs.copy.node, opts("Copy", bufnr))
+		vim.keymap.set("n", "x", api.fs.cut, opts("Cut", bufnr))
+		vim.keymap.set("n", "p", api.fs.paste, opts("Paste", bufnr))
+		vim.keymap.set("n", "<C-t>", api.node.open.tab, opts("Open: New Tab", bufnr))
 	end,
 	view = {
 		side = "right",

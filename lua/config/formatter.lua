@@ -22,6 +22,9 @@ local prettier_args = function(parser)
 		-- Personal preferences
 		"--config",
 		"~/Documents/Foris/EDH/.prettierrc",
+		--"~/Documents/projects/chess/frontendtest/.prettierrc",
+		--"--vue-indent-script-and-style",
+		--"~/Documents/projects/vue/product-and-cart/.prettierrc",
 		--"~/Documents/Foris/gpt/athena-foris/.prettierrc",
 		--"--config", "~/Documents/Foris/Stella/stella-new/.prettierrc.js"
 		--"--config", "~/.config/nvim/.prettierrc.js"
