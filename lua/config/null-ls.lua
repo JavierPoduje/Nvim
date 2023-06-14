@@ -10,6 +10,7 @@ if
 	and (
 		vim.fn.filereadable(vim.fn.getcwd() .. "/.eslintrc") == 1
 		or vim.fn.filereadable(vim.fn.getcwd() .. "./.eslintrc.js")
+		or vim.fn.filereadable(vim.fn.getcwd() .. "./.eslintrc.cjs")
 	)
 then
 	table.insert(sources, null_ls.builtins.diagnostics.eslint)
