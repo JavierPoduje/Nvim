@@ -20,10 +20,10 @@ g.n_silent_map("<Leader>yt", ":lua require('harpoon.ui').toggle_quick_menu()<CR>
 
 -- navigate
 g.n_silent_map("<Leader>yn", ":lua require('harpoon.ui').nav_next()<CR>")
-g.n_silent_map("<C-l>", ":lua require('harpoon.ui').nav_next()<CR>")
+g.n_silent_map("<C-PageDown>", ":lua require('harpoon.ui').nav_next()<CR>")
 
 g.n_silent_map("<Leader>yp", ":lua require('harpoon.ui').nav_prev()<CR>")
-g.n_silent_map("<C-h>", ":lua require('harpoon.ui').nav_prev()<CR>")
+g.n_silent_map("<C-PageUp>", ":lua require('harpoon.ui').nav_prev()<CR>")
 
 for char, num in pairs(g.left_num_by_char) do
 	g.n_silent_map("<Leader>y" .. char, ":lua require('harpoon.ui').nav_file(" .. tostring(num) .. ")<CR>")
