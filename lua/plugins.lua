@@ -4,6 +4,10 @@ return require("packer").startup(function(use)
 	-- Packer manager itself
 	use("wbthomason/packer.nvim")
 
+	-- Beautification
+	use("ryanoasis/vim-devicons")
+	use("kyazdani42/nvim-web-devicons")
+
 	-- Git management
 	use("tpope/vim-fugitive")
 	use("airblade/vim-gitgutter")
@@ -31,10 +35,6 @@ return require("packer").startup(function(use)
 	})
 	use("nvim-treesitter/nvim-treesitter-context")
 	use("norcalli/nvim-colorizer.lua")
-
-	-- Beautification
-	use("ryanoasis/vim-devicons")
-	use("kyazdani42/nvim-web-devicons")
 
 	-- Files management
 	use("akinsho/nvim-bufferline.lua")

@@ -13,7 +13,7 @@ if
 		or vim.fn.filereadable(vim.fn.getcwd() .. "./.eslintrc.cjs")
 	)
 then
-	table.insert(sources, null_ls.builtins.diagnostics.eslint)
+	--table.insert(sources, null_ls.builtins.diagnostics.eslint)
 end
 
 null_ls.setup({

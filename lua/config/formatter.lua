@@ -21,7 +21,8 @@ local prettier_args = function(parser)
 		parser,
 		-- Personal preferences
 		"--config",
-		"~/Documents/Foris/EDH/.prettierrc",
+		"~/Documents/Foris/avocado-ui/.prettierrc",
+		--"~/Documents/Foris/EDH/.prettierrc",
 		--"~/Documents/projects/chess/frontendtest/.prettierrc",
 		--"--vue-indent-script-and-style",
 		--"~/Documents/projects/vue/product-and-cart/.prettierrc",
