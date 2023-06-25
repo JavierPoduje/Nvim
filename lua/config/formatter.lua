@@ -20,17 +20,25 @@ local prettier_args = function(parser)
 		"--parser",
 		parser,
 		-- Personal preferences
-		"--config",
-		"~/Documents/Foris/avocado-ui/.prettierrc",
+		--"--config",
+		--"~/Documents/Foris/avocado-ui/.prettierrc",
 		--"~/Documents/Foris/EDH/.prettierrc",
 		--"~/Documents/projects/chess/frontendtest/.prettierrc",
-		--"--vue-indent-script-and-style",
-		--"~/Documents/projects/vue/product-and-cart/.prettierrc",
-		--"~/Documents/Foris/gpt/athena-foris/.prettierrc",
 		--"--config", "~/Documents/Foris/Stella/stella-new/.prettierrc.js"
-		--"--config", "~/.config/nvim/.prettierrc.js"
+		"--config",
+		"~/.config/nvim/.prettierrc.js",
 	}
 end
+
+local vue_args = {
+	"--write",
+	current_file,
+	"--parser",
+	"vue",
+	"--vue-indent-script-and-style",
+	"--config",
+	"~/Documents/projects/vue/pinia-tasks/.prettierrc.json",
+}
 
 local php_args = {
 	"--stdin-filepath",
@@ -84,7 +92,7 @@ require("formatter").setup({
 		javascript = { formatter("prettier", prettier_args("typescript"), false) },
 		javascriptreact = { formatter("prettier", prettier_args("typescript"), false) },
 		json = { formatter("prettier", prettier_args("json"), true) },
-		vue = { formatter("prettier", prettier_args("vue"), true) },
+		vue = { formatter("prettier", vue_args, true) },
 		lua = { formatter("stylua", lua_args, false) },
 		php = { formatter("prettier", php_args, true) },
 		rust = { formatter("rustfmt", rust_args, true) },

@@ -26,7 +26,7 @@ g.n_noisy_map("<Leader>r", ":%s/\\<<C-r><C-w>\\>/")
 vim.keymap.set("x", "<Leader>fp", '"_dP')
 
 -- go to the end of the line on insert mode
-g.i_noisy_map("<A-l>", "<Esc>A")
+--g.i_noisy_map("<A-l>", "<Esc>A")
 
 -- Format one long line into multiple short lines
 g.n_silent_map("Q", "gq<CR>")

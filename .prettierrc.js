@@ -1,5 +1,5 @@
 module.exports = {
-  semi: true,
+  semi: false,
   trailingComma: 'none',
   singleQuote: true,
   printWidth: 80,
@@ -9,5 +9,5 @@ module.exports = {
   insertPragma: false,
   useTabs: false,
   proseWrap: 'always',
-  brackerSameLine: true
+  brackerSameLine: false,
 };

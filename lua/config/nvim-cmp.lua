@@ -6,7 +6,7 @@ cmp.setup({
 		["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
 		["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
 		["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-		["<C-u>"] = cmp.mapping.scroll_docs( -4),
+		["<C-u>"] = cmp.mapping.scroll_docs(-4),
 		["<C-d>"] = cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.close(),
@@ -23,7 +23,7 @@ cmp.setup({
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "ultisnips" },
-		{ name = "buffer",   keyword_length = 2 },
+		{ name = "buffer", keyword_length = 2 },
 		{ name = "path" },
 	},
 	snippet = {

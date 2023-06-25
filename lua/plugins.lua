@@ -22,16 +22,18 @@ return require("packer").startup(function(use)
 		"williamboman/mason.nvim",
 		requires = {
 			"williamboman/mason-lspconfig.nvim",
+			"neovim/nvim-lspconfig",
 		},
 	})
-	use("neovim/nvim-lspconfig")
 
 	-- Syntax highlight
 	use("neoclide/jsonc.vim")
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		requires = "nvim-treesitter/playground",
-		run = ":TSUpdate",
+		run = function()
+			require("nvim-treesitter.install").update({ with_sync = true })
+		end,
 	})
 	use("nvim-treesitter/nvim-treesitter-context")
 	use("norcalli/nvim-colorizer.lua")
