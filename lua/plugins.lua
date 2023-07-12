@@ -67,6 +67,7 @@ return require("packer").startup(function(use)
 	use({ "SirVer/ultisnips", requires = { "honza/vim-snippets" } })
 	use("mattn/emmet-vim")
 	use("mhartington/formatter.nvim")
+
 	-- Searchers
 	use({
 		"junegunn/fzf",
@@ -95,6 +96,5 @@ return require("packer").startup(function(use)
 	use("michaeljsmith/vim-indent-object")
 	use("vuciv/vim-bujo")
 	use("dstein64/vim-startuptime")
-
 	use("nvim-lua/plenary.nvim")
 end)

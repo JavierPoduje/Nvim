@@ -25,8 +25,8 @@ local prettier_args = function(parser)
 		--"~/Documents/Foris/EDH/.prettierrc",
 		--"~/Documents/projects/chess/frontendtest/.prettierrc",
 		--"--config", "~/Documents/Foris/Stella/stella-new/.prettierrc.js"
-		"--config",
-		"~/.config/nvim/.prettierrc.js",
+		--"--config",
+		--"~/.config/nvim/.prettierrc.js",
 	}
 end
 
@@ -36,8 +36,8 @@ local vue_args = {
 	"--parser",
 	"vue",
 	"--vue-indent-script-and-style",
-	"--config",
-	"~/Documents/projects/vue/pinia-tasks/.prettierrc.json",
+	--"--config",
+	--"~/Documents/projects/vue/pinia-tasks/.prettierrc.json",
 }
 
 local php_args = {

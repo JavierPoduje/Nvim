@@ -13,5 +13,5 @@ require("mason").setup({
 })
 
 require("mason-lspconfig").setup({
-	ensure_installed = { "rust_analyzer", "tsserver", "eslint", "html", "cssls", "vetur-vls" },
+	ensure_installed = { "rust_analyzer", "tsserver", "eslint", "html", "cssls" },
 })

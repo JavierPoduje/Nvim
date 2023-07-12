@@ -17,6 +17,7 @@ require("nvim-treesitter.configs").setup({
 		"tsx",
 		"typescript",
 		"vue",
+		"twig",
 		"yaml",
 	},
 })

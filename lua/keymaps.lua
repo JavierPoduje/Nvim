@@ -79,10 +79,10 @@ g.n_silent_map("<Leader>u", ":UndotreeShow<CR>")
 g.n_noisy_map("<Leader><CR>", ":so %<CR>")
 
 -- Resize windows
-g.n_silent_map("<M-k>", ":resize +5<CR>")
-g.n_silent_map("<M-j>", ":resize -5<CR>")
-g.n_silent_map("<M-h>", ":vertical resize -5<CR>")
-g.n_silent_map("<M-l>", ":vertical resize +5<CR>")
+g.n_silent_map("<S-Up>", ":resize +5<CR>")
+g.n_silent_map("<S-Down>", ":resize -5<CR>")
+g.n_silent_map("<S-Right>", ":vertical resize -5<CR>")
+g.n_silent_map("<S-Left>", ":vertical resize +5<CR>")
 
 -- Better saving
 g.n_silent_map("<Leader>s", ":write<CR>")
