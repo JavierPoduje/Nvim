@@ -23,6 +23,7 @@ require("config.taboo")
 require("config.telescope")
 require("config.treesitter")
 require("config.ultisnips")
+require("config.vim-gitgutter")
 
 -- Deactive GitGutter commands to avoid slow <leader>+h execution
 vim.g.gitgutter_map_keys = 0

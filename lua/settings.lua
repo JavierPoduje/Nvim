@@ -53,9 +53,9 @@ v.nvim_command("set cmdheight=1")
 
 -- Don't pass messages to |ins-completion-menu|.
 v.nvim_command("set shortmess+=c")
+
 -- <Space> as leader key
 vim.g.mapleader = " "
---v.nvim_command('let mapleader = " "')
 
 -- Having longer update time (default is 4000 ms = 4 sec) leads to noticeable
 -- delays and poor user experience.

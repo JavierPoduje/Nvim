@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/Users/puje/.local/share/nvim/site/pack/packer/start/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
   },
+  fd = {
+    loaded = true,
+    path = "/Users/puje/.local/share/nvim/site/pack/packer/start/fd",
+    url = "https://github.com/sharkdp/fd"
+  },
   ["formatter.nvim"] = {
     loaded = true,
     path = "/Users/puje/.local/share/nvim/site/pack/packer/start/formatter.nvim",

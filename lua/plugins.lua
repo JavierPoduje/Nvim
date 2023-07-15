@@ -82,8 +82,9 @@ return require("packer").startup(function(use)
 		"nvim-telescope/telescope.nvim",
 		requires = {
 			{ "nvim-lua/popup.nvim" },
-			{ "romgrk/fzy-lua-native" },
 			{ "nvim-telescope/telescope-fzy-native.nvim" },
+			{ "romgrk/fzy-lua-native" },
+			{ "sharkdp/fd" },
 		},
 	})
 	use("ThePrimeagen/harpoon")
