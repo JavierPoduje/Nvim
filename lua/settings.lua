@@ -71,10 +71,11 @@ v.nvim_command("let &t_ut=''")
 -- I don't know what this things are...
 v.nvim_command("set t_Co=256")
 vim.g.loaded_matchparen = 1
-vim.g.netrw_browse_split = 2
+--vim.g.netrw_browse_split = 2
 vim.g.vrfr_rg = "true"
-vim.g.netrw_banner = 1
-vim.g.netrw_winsize = 15
+vim.g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
+--vim.g.netrw_banner = 1
+--vim.g.netrw_winsize = 15
 
 -- Remove white spaces on save
 v.nvim_command([[

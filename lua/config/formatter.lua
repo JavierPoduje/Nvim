@@ -14,36 +14,25 @@ end
 -- Args definitions
 local prettier_args = function(parser)
 	return {
-		--"--stdin-filepath",
 		"--write",
 		current_file,
 		"--parser",
 		parser,
-		-- Personal preferences
-		--"--config",
-		--"~/Documents/Foris/avocado-ui/.prettierrc",
-		--"~/Documents/Foris/EDH/.prettierrc",
-		--"~/Documents/projects/chess/frontendtest/.prettierrc",
-		--"--config", "~/Documents/Foris/Stella/stella-new/.prettierrc.js"
-		--"--config",
-		--"~/.config/nvim/.prettierrc.js",
 	}
 end
 
 local vue_args = {
+	"--vue-indent-script-and-style",
 	"--write",
 	current_file,
 	"--parser",
 	"vue",
-	"--vue-indent-script-and-style",
-	--"--config",
-	--"~/Documents/projects/vue/pinia-tasks/.prettierrc.json",
 }
 
 local php_args = {
+	"--single-quote",
 	"--stdin-filepath",
 	current_file,
-	"--single-quote",
 	"--print-width",
 	80,
 	"--parser",
@@ -82,19 +71,26 @@ local python_args = {
 	"%",
 }
 
+local prisma_args = {
+	"prisma",
+	"format",
+	"--schema=" .. current_file,
+}
+
 -- Actual formatter definition
 require("formatter").setup({
 	logging = false,
 	filetype = {
 		elixir = { formatter("mix format", { current_file }, false) },
 		graphql = { formatter("prettier", prettier_args("graphql"), true) },
-		html = { formatter("prettier", prettier_args("html"), true) },
+		html = { formatter("prettier", prettier_args("html"), false) },
 		javascript = { formatter("prettier", prettier_args("typescript"), false) },
 		javascriptreact = { formatter("prettier", prettier_args("typescript"), false) },
 		json = { formatter("prettier", prettier_args("json"), true) },
 		vue = { formatter("prettier", vue_args, true) },
 		lua = { formatter("stylua", lua_args, false) },
 		php = { formatter("prettier", php_args, true) },
+		prisma = { formatter("npx", prisma_args, false) },
 		rust = { formatter("rustfmt", rust_args, true) },
 		scss = { formatter("prettier", prettier_args("scss"), true) },
 		sql = { formatter("sql-formatter", sql_args, true) },

@@ -97,3 +97,6 @@ g.v_silent_map("K", ":m '<-2<CR>gv=gv")
 
 -- By default `W` this calls the fzf's windows preview. I just want to save my file...
 v.nvim_command("command! W  write")
+
+-- Netrw
+g.n_silent_map("<Leader>pe", ":Vex<CR>")

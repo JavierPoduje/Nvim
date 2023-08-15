@@ -63,6 +63,8 @@ for _, protocol in ipairs({
 	"rust_analyzer",
 	"tsserver",
 	"vimls",
+	"prismals",
+	"eslint"
 }) do
 	config[protocol].setup({
 		on_attach = on_attach,
