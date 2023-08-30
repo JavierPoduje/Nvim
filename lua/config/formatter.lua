@@ -22,11 +22,12 @@ local prettier_args = function(parser)
 end
 
 local vue_args = {
-	"--vue-indent-script-and-style",
 	"--write",
 	current_file,
-	"--parser",
-	"vue",
+	"--single-quote",
+	"--single-attribute-per-line",
+	"--bracket-same-line",
+	"--parser", "vue",
 }
 
 local php_args = {

@@ -26,6 +26,7 @@ telescope.setup({
 			i = {
 				["<ESC>"] = actions.close,
 				["<C-q>"] = actions.delete_buffer,
+				["<Tab>"] = actions.send_to_qflist,
 				["<CR>"] = custom_actions.fzf_multi_select,
 			},
 		},
@@ -97,11 +98,11 @@ g.n_silent_map("<Leader>pf", ":Telescope find_files<CR>")
 g.n_silent_map("<Leader>pb", ":Telescope buffers<CR>")
 g.n_silent_map("<Leader>ps", ":Telescope live_grep<CR>")
 g.n_silent_map("<Leader>pa", ":Telescope grep_string<CR>")
+g.n_silent_map("<Leader>p<Tab>", ":Telescope quickfix<CR>")
 
 -- Customs
 local F = "require'config.telescope.finders'"
 g.n_silent_map("<Leader>pu", ":lua " .. F .. ".browse_utils()<CR>")
 g.n_silent_map("<Leader>pn", ":lua " .. F .. ".browse_nvim()<CR>")
-g.n_silent_map("<Leader>pm", ":lua " .. F .. ".browse_snippets()<CR>")
 g.n_silent_map("<Leader>ph", ":lua " .. F .. ".browse_marks()<CR>")
 g.n_silent_map("<Leader>pt", ":tabs<CR>")

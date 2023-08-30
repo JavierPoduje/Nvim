@@ -9,6 +9,10 @@ g.n_silent_map("<C-c>", ":call multiple_cursors#quit()<CR>")
 -- CTRL+C for esc
 g.i_silent_map("<C-c>", "<ESC><ESC>")
 
+-- better yanking
+g.n_silent_map("<Leader>y", "\"+y")
+g.v_silent_map("<Leader>y", "\"+y")
+
 -- move forward in insert mode
 g.i_silent_map("<C-l>", "<Right>")
 g.i_silent_map("<C-j>", "<C-o>h")

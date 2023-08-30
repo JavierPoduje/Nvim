@@ -13,8 +13,8 @@ end
 require("nvim-tree").setup({
 	sort_by = "case_sensitive",
 	update_focused_file = {
-		enable = false,
-		update_cwd = false,
+		--enable = false,
+		--update_cwd = false,
 		ignore_list = { "*.pyc" },
 	},
 	on_attach = function(bufnr)

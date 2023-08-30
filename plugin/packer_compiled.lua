@@ -319,11 +319,6 @@ _G.packer_plugins = {
     path = "/Users/puje/.local/share/nvim/site/pack/packer/start/vim-ripgrep",
     url = "https://github.com/jremmen/vim-ripgrep"
   },
-  ["vim-rooter"] = {
-    loaded = true,
-    path = "/Users/puje/.local/share/nvim/site/pack/packer/start/vim-rooter",
-    url = "https://github.com/airblade/vim-rooter"
-  },
   ["vim-snippets"] = {
     loaded = true,
     path = "/Users/puje/.local/share/nvim/site/pack/packer/start/vim-snippets",

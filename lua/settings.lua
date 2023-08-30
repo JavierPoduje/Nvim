@@ -99,4 +99,6 @@ v.nvim_command([[
 	autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 ]])
 
-vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.lua", command = "setlocal noexpandtab", })
+vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.lua", command = "setlocal noexpandtab" })
+
+vim.g.markdown_fenced_languages = { "html", "python", "lua", "vim", "typescript", "javascript" }

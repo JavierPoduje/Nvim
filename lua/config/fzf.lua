@@ -1,10 +1,10 @@
 local g = require('g')
 
-v.nvim_command([[
-if executable('rg')
-    let g:rg_derive_root='true'
-endif
-]])
+--v.nvim_command([[
+--if executable('rg')
+--    let g:rg_derive_root='true'
+--endif
+--]])
 
 vim.g.fzf_layout = { window = { width = 0.8, height = 0.8 } }
 vim.g.fzf_colors = {
@@ -41,7 +41,7 @@ g.n_noisy_map(
 --g.n_silent_map("<leader>ps", ":RG<CR>")
 
 -- Files search
-v.nvim_command("let $FZF_DEFAULT_OPTS='--reverse'")
-v.nvim_command([[
-let $FZF_DEFAULT_COMMAND = 'rg --files --follow --no-ignore-vcs --hidden -g "!{.git/*}"'
-]])
+--v.nvim_command("let $FZF_DEFAULT_OPTS='--reverse'")
+--v.nvim_command([[
+--let $FZF_DEFAULT_COMMAND = 'rg --files --follow --no-ignore-vcs --hidden -g "!{.git/*}"'
+--]])
