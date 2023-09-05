@@ -99,6 +99,7 @@ g.n_silent_map("<Leader>pb", ":Telescope buffers<CR>")
 g.n_silent_map("<Leader>ps", ":Telescope live_grep<CR>")
 g.n_silent_map("<Leader>pa", ":Telescope grep_string<CR>")
 g.n_silent_map("<Leader>p<Tab>", ":Telescope quickfix<CR>")
+g.n_noisy_map("<Leader>pgs", ":Telescope live_grep search_dirs=")
 
 -- Customs
 local F = "require'config.telescope.finders'"
