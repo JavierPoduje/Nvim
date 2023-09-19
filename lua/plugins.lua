@@ -40,8 +40,6 @@ return require("packer").startup(function(use)
 
 	-- Files management
 	use("akinsho/nvim-bufferline.lua")
-	use("javierpoduje/buffero")
-	--use("airblade/vim-rooter")
 	use("nvim-lualine/lualine.nvim")
 	use("mbbill/undotree")
 	use("mhinz/vim-startify")
@@ -96,6 +94,5 @@ return require("packer").startup(function(use)
 	-- Others
 	use("michaeljsmith/vim-indent-object")
 	use("vuciv/vim-bujo")
-	use("dstein64/vim-startuptime")
 	use("nvim-lua/plenary.nvim")
 end)

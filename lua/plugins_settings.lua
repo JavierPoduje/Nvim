@@ -2,7 +2,6 @@
 
 require("config.autopair")
 require("config.bufferline")
-require("config.buffero")
 require("config.bujo")
 require("config.colorizer")
 require("config.emmet")

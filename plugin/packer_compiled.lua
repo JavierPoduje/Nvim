@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/Users/puje/.local/share/nvim/site/pack/packer/start/auto-pairs",
     url = "https://github.com/jiangmiao/auto-pairs"
   },
-  buffero = {
-    loaded = true,
-    path = "/Users/puje/.local/share/nvim/site/pack/packer/start/buffero",
-    url = "https://github.com/javierpoduje/buffero"
-  },
   catppuccin = {
     loaded = true,
     path = "/Users/puje/.local/share/nvim/site/pack/packer/start/catppuccin",
@@ -328,11 +323,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/puje/.local/share/nvim/site/pack/packer/start/vim-startify",
     url = "https://github.com/mhinz/vim-startify"
-  },
-  ["vim-startuptime"] = {
-    loaded = true,
-    path = "/Users/puje/.local/share/nvim/site/pack/packer/start/vim-startuptime",
-    url = "https://github.com/dstein64/vim-startuptime"
   },
   ["vim-surround"] = {
     loaded = true,

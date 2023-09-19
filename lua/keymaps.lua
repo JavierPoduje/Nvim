@@ -66,12 +66,6 @@ for char, buff_num in pairs(g.num_by_char) do
 	g.n_silent_map("<Leader>t" .. char, ":tabn" .. buff_num .. "<CR>")
 end
 
--- Better marks
-for char, _ in pairs(g.left_num_by_char) do
-	g.n_silent_map("m" .. char, "m" .. char:upper())
-	g.n_silent_map("<Leader>m" .. char, "`" .. char:upper() .. "<CR>")
-end
-
 -- More options for paste
 g.n_silent_map("<Leader>po", "o<Esc>p")
 g.n_silent_map("<Leader>PO", "O<Esc>P")
