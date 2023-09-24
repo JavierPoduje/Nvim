@@ -37,11 +37,11 @@ require("nvim-tree").setup({
 		vim.keymap.set("n", "x", api.fs.cut, opts("Cut", bufnr))
 	end,
 	view = {
-		side = "right",
+		side = "left",
 		width = 50,
 		number = true,
 		relativenumber = true,
-		hide_root_folder = false,
+		--hide_root_folder = false,
 		float = {
 			enable = true,
 			open_win_config = {

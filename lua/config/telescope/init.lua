@@ -12,6 +12,8 @@ function custom_actions.fzf_multi_select(prompt_bufnr)
 	local picker = action_state.get_current_picker(prompt_bufnr)
 	local num_selections = #picker:get_multi_selection()
 
+	print(num_selections)
+
 	if num_selections > 1 then
 		actions.send_selected_to_qflist(prompt_bufnr)
 		actions.open_qflist()
@@ -38,7 +40,6 @@ telescope.setup({
 			"--column",
 			"--smart-case",
 		},
-		borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 		prompt_prefix = "  ",
 		selection_caret = " ",
 		entry_prefix = "  ",
@@ -91,6 +92,7 @@ telescope.setup({
 	},
 })
 
+telescope.load_extension("fzy_native")
 telescope.load_extension("fzy_native")
 
 -- Native
