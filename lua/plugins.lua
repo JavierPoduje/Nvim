@@ -1,64 +1,68 @@
-vim.cmd([[packadd packer.nvim]])
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
-return require("packer").startup(function(use)
-	-- Packer manager itself
-	use("wbthomason/packer.nvim")
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
+end
 
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
 	-- Beautification
-	use("ryanoasis/vim-devicons")
-	use("kyazdani42/nvim-web-devicons")
+	"ryanoasis/vim-devicons",
+	"kyazdani42/nvim-web-devicons",
 
 	-- Git management
-	use("tpope/vim-fugitive")
-	use("airblade/vim-gitgutter")
-	use("kdheepak/lazygit.nvim")
-
-	-- Debugger
-	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
-	use("theHamsta/nvim-dap-virtual-text")
-	use("mxsdev/nvim-dap-vscode-js")
-	use({
-		"microsoft/vscode-js-debug",
-		opt = true,
-		run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
-	})
+	"tpope/vim-fugitive",
+	"airblade/vim-gitgutter",
+	"kdheepak/lazygit.nvim",
+	"theHamsta/nvim-dap-virtual-text",
+	"mxsdev/nvim-dap-vscode-js",
+	"microsoft/vscode-js-debug",
+	{ "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap" } },
 
 	-- Co-pilot
-	use("github/copilot.vim")
+	"github/copilot.vim",
 
 	-- LSP
-	use("jose-elias-alvarez/null-ls.nvim")
-	use({
+	"jose-elias-alvarez/null-ls.nvim",
+	{
 		"williamboman/mason.nvim",
-		requires = {
+		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
 			"neovim/nvim-lspconfig",
 		},
-	})
+	},
 
 	-- Syntax highlight
-	use("neoclide/jsonc.vim")
-	use({
+	"neoclide/jsonc.vim",
+	"nvim-treesitter/nvim-treesitter-context",
+	"norcalli/nvim-colorizer.lua",
+	{
 		"nvim-treesitter/nvim-treesitter",
-		requires = "nvim-treesitter/playground",
-		run = function()
+		dependencies = { "nvim-treesitter/playground" },
+		cmd = function()
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
-	})
-	use("nvim-treesitter/nvim-treesitter-context")
-	use("norcalli/nvim-colorizer.lua")
+	},
 
 	-- Files management
-	use("akinsho/nvim-bufferline.lua")
-	use("nvim-lualine/lualine.nvim")
-	use("mbbill/undotree")
-	use("mhinz/vim-startify")
-	use("javierpoduje/taboo")
+	"akinsho/nvim-bufferline.lua",
+	"nvim-lualine/lualine.nvim",
+	"mbbill/undotree",
+	"mhinz/vim-startify",
+	"javierpoduje/taboo",
 
 	-- Text management
-	use({
+	{
 		"hrsh7th/nvim-cmp",
-		requires = {
+		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
@@ -66,43 +70,35 @@ return require("packer").startup(function(use)
 			"onsails/lspkind-nvim",
 			"quangnguyen30192/cmp-nvim-ultisnips",
 		},
-	})
-	use("jiangmiao/auto-pairs")
-	use("tpope/vim-surround")
-	use("terryma/vim-multiple-cursors")
-	use("nelstrom/vim-visual-star-search")
-	use("preservim/nerdcommenter")
-	use({ "SirVer/ultisnips", requires = { "honza/vim-snippets" } })
-	use("mattn/emmet-vim")
-	use("mhartington/formatter.nvim")
+	},
+	"jiangmiao/auto-pairs",
+	"tpope/vim-surround",
+	"terryma/vim-multiple-cursors",
+	"nelstrom/vim-visual-star-search",
+	"preservim/nerdcommenter",
+	"mattn/emmet-vim",
+	"mhartington/formatter.nvim",
+	{ "SirVer/ultisnips", dependencies = { "honza/vim-snippets" } },
 
 	-- Searchers
-	use({
-		"junegunn/fzf",
-		requires = { "junegunn/fzf.vim" },
-		run = function()
-			vim.fn["fzf#install()"](0)
-		end,
-	})
-	use("jremmen/vim-ripgrep")
-	use({ "kyazdani42/nvim-tree.lua", branch = "master" })
-	use({
+	"jremmen/vim-ripgrep",
+	"kyazdani42/nvim-tree.lua",
+	"ThePrimeagen/harpoon",
+	{
 		"nvim-telescope/telescope.nvim",
-		requires = {
+		dependencies = {
 			{ "nvim-lua/popup.nvim" },
 			{ "nvim-telescope/telescope-fzy-native.nvim" },
 			{ "romgrk/fzy-lua-native" },
 			{ "sharkdp/fd" },
 		},
-	})
-	use("ThePrimeagen/harpoon")
+	},
 
-	-- Themes
-	use("sainnhe/gruvbox-material")
-	use({ "catppuccin/nvim", as = "catppuccin" })
+	-- colorschemes
+	"sainnhe/gruvbox-material",
+	{ "catppuccin/nvim", name = "catppuccin" },
 
 	-- Others
-	use("michaeljsmith/vim-indent-object")
-	use("vuciv/vim-bujo")
-	use("nvim-lua/plenary.nvim")
-end)
+	"vuciv/vim-bujo",
+	"nvim-lua/plenary.nvim",
+})
