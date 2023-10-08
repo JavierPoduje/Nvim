@@ -46,10 +46,8 @@ require("lazy").setup({
 	"norcalli/nvim-colorizer.lua",
 	{
 		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
 		dependencies = { "nvim-treesitter/playground" },
-		--cmd = function()
-		--  require("nvim-treesitter.install").update({ with_sync = true })
-		--end,
 	},
 
 	-- Files management

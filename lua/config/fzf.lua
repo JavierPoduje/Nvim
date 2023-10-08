@@ -1,10 +1,4 @@
-local g = require('g')
-
---v.nvim_command([[
---if executable('rg')
---    let g:rg_derive_root='true'
---endif
---]])
+local g = require("g")
 
 vim.g.fzf_layout = { window = { width = 0.8, height = 0.8 } }
 vim.g.fzf_colors = {
@@ -33,15 +27,4 @@ function! RipgrepFzf(query, fullscreen)
 endfunction
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 ]])
-g.n_noisy_map(
-	"<Leader>pS",
-	":Rg --fixed-strings --ignore-case '' **/*." .. string.rep('<Left>', 7)
-)
--- NOTE: this 'ps' command is use with telescope
---g.n_silent_map("<leader>ps", ":RG<CR>")
-
--- Files search
---v.nvim_command("let $FZF_DEFAULT_OPTS='--reverse'")
---v.nvim_command([[
---let $FZF_DEFAULT_COMMAND = 'rg --files --follow --no-ignore-vcs --hidden -g "!{.git/*}"'
---]])
+g.n_noisy_map("<Leader>pS", ":Rg --fixed-strings --ignore-case '' **/*." .. string.rep("<Left>", 7))
