@@ -1,4 +1,4 @@
 local g = require("g")
 
 require("taboo")
-g.n_silent_map("<Leader>tt", ":TabooOpen<CR>")
+vim.api.nvim_set_keymap("n", "<Leader>tt", ":TabooOpen<CR>", g.silent_opts())

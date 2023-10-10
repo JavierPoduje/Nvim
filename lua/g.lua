@@ -33,23 +33,11 @@ M.set_transparent_background = function(is_transparent)
   end
 end
 
-M.i_noisy_map = function(key, action)
-	v.nvim_set_keymap("i", key, action, { noremap = true, silent = false })
+M.silent_opts = function()
+	return { noremap = true, silent = true }
 end
-M.i_silent_map = function(key, action)
-	v.nvim_set_keymap("i", key, action, { noremap = true, silent = true })
-end
-M.n_noisy_map = function(key, action)
-	v.nvim_set_keymap("n", key, action, { noremap = true, silent = false })
-end
-M.n_silent_map = function(key, action)
-	v.nvim_set_keymap("n", key, action, { noremap = true, silent = true })
-end
-M.v_noisy_map = function(key, action)
-	v.nvim_set_keymap("v", key, action, { noremap = true, silent = false })
-end
-M.v_silent_map = function(key, action)
-	v.nvim_set_keymap("v", key, action, { noremap = true, silent = true })
+M.noisy_opts = function()
+	return { noremap = true, silent = false }
 end
 
 return M

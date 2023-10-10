@@ -27,3 +27,6 @@ require("config.vim-gitgutter")
 
 -- Deactive GitGutter commands to avoid slow <leader>+h execution
 vim.g.gitgutter_map_keys = 0
+
+-- Some plugin messes with the tab key, so we need to reset it
+vim.api.nvim_set_keymap('i', '<Tab>', '<Tab>', { noremap = true })

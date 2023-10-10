@@ -1,8 +1,8 @@
 local g = require("g")
 
 -- Git management
-g.n_silent_map("<Leader>gl", ":diffget //3<CR>")
-g.n_silent_map("<Leader>gh", ":diffget //2<CR>")
-g.n_silent_map("<Leader>gs", ":G<CR>")
-g.n_silent_map("<Leader>gb", ":Git blame<CR>")
-g.n_silent_map("<Leader>gp", ":GitGutterPreviewHunk<CR>")
+vim.api.nvim_set_keymap("n", "<Leader>gl", ":diffget //3<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<Leader>gh", ":diffget //2<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<Leader>gs", ":G<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<Leader>gb", ":Git blame<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<Leader>gp", ":GitGutterPreviewHunk<CR>", g.silent_opts())

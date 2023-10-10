@@ -96,16 +96,16 @@ telescope.load_extension("fzy_native")
 telescope.load_extension("fzy_native")
 
 -- Native
-g.n_silent_map("<Leader>pf", ":Telescope find_files<CR>")
-g.n_silent_map("<Leader>pb", ":Telescope buffers<CR>")
-g.n_silent_map("<Leader>ps", ":Telescope live_grep<CR>")
-g.n_silent_map("<Leader>pa", ":Telescope grep_string<CR>")
-g.n_silent_map("<Leader>p<Tab>", ":Telescope quickfix<CR>")
-g.n_noisy_map("<Leader>pgs", ":Telescope live_grep search_dirs=")
+vim.api.nvim_set_keymap("n", "<Leader>pf", ":Telescope find_files<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<Leader>pb", ":Telescope buffers<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<Leader>ps", ":Telescope live_grep<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<Leader>pa", ":Telescope grep_string<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<Leader>p<Tab>", ":Telescope quickfix<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<Leader>pgs", ":Telescope live_grep search_dirs=", g.noisy_opts())
 
 -- Customs
 local F = "require'config.telescope.finders'"
-g.n_silent_map("<Leader>pu", ":lua " .. F .. ".browse_utils()<CR>")
-g.n_silent_map("<Leader>pn", ":lua " .. F .. ".browse_nvim()<CR>")
-g.n_silent_map("<Leader>ph", ":lua " .. F .. ".browse_marks()<CR>")
-g.n_silent_map("<Leader>pt", ":tabs<CR>")
+vim.api.nvim_set_keymap("n", "<Leader>pu", ":lua " .. F .. ".browse_utils()<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<Leader>pn", ":lua " .. F .. ".browse_nvim()<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<Leader>ph", ":lua " .. F .. ".browse_marks()<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<Leader>pt", ":tabs<CR>", g.silent_opts())

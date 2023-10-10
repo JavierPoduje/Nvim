@@ -8,3 +8,4 @@ bundle
 cache/bujo
 node_modules
 .netrwhist
+openai-key-secret.txt

@@ -5,93 +5,93 @@ vim.g.python3_host_prog = "/usr/bin/python3"
 
 -- Multi-cursor exit all cursors by default
 vim.g.multi_cursor_quit_key = "<C-c>"
-g.n_silent_map("<C-c>", ":call multiple_cursors#quit()<CR>")
+vim.api.nvim_set_keymap("n", "<C-c>", ":call multiple_cursors#quit()<CR>", g.silent_opts())
 -- CTRL+C for esc
-g.i_silent_map("<C-c>", "<ESC><ESC>")
+vim.api.nvim_set_keymap("i", "<C-c>", "<ESC><ESC>", g.silent_opts())
 
 -- better yanking
-g.n_silent_map("<Leader>y", "\"+y")
-g.v_silent_map("<Leader>y", "\"+y")
+vim.api.nvim_set_keymap("n", "<Leader>y", "\"+y", g.silent_opts())
+vim.api.nvim_set_keymap("v", "<Leader>y", "\"+y", g.silent_opts())
 
 -- move forward in insert mode
-g.i_silent_map("<C-l>", "<Right>")
-g.i_silent_map("<C-j>", "<C-o>h")
+vim.api.nvim_set_keymap("i", "<C-l>", "<Right>", g.silent_opts())
+vim.api.nvim_set_keymap("i", "<C-j>", "<C-o>h", g.silent_opts())
 
 -- Set space as leader key
-g.n_silent_map("<Space>", "<NOP><CR>")
+vim.api.nvim_set_keymap("n", "<Space>", "<NOP><CR>", g.silent_opts())
 
 -- Delete front word in insert mode with CTRL+d
-g.i_silent_map("<C-D>", "X<Esc>ce")
+vim.api.nvim_set_keymap("i", "<C-D>", "X<Esc>ce", g.silent_opts())
 
 -- Replace all instances of the word under cursor
-g.n_noisy_map("<Leader>r", ":%s/\\<<C-r><C-w>\\>/")
+vim.api.nvim_set_keymap("n", "<Leader>r", ":%s/\\<<C-r><C-w>\\>/", g.noisy_opts())
 
 -- Paste but remember
 vim.keymap.set("x", "<Leader>fp", '"_dP')
 
 -- Format one long line into multiple short lines
-g.n_silent_map("Q", "gq<CR>")
+vim.api.nvim_set_keymap("n", "Q", "gq<CR>", g.silent_opts())
 
 vim.keymap.set("n", "J", "mzJ`z")
 
 -- Toggle wrap
-g.n_silent_map("<Leader>ww", ":set wrap! linebreak<CR>")
+vim.api.nvim_set_keymap("n", "<Leader>ww", ":set wrap! linebreak<CR>", g.silent_opts())
 
 -- More options for transit from normal to insert mode
-g.n_silent_map("<Leader>O", "O<Esc>O")
-g.n_silent_map("<Leader>o", "o<CR>")
+vim.api.nvim_set_keymap("n", "<Leader>O", "O<Esc>O", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<Leader>o", "o<CR>", g.silent_opts())
 
 -- for JS/Typescript, set all "." to "?." in VISUAL MODE
-g.v_silent_map("<Leader>?", "<ESC><cmd>'<,'>substitute/\\./?./g<CR>")
+vim.api.nvim_set_keymap("v", "<Leader>?", "<ESC><cmd>'<,'>substitute/\\./?./g<CR>", g.silent_opts())
 
 -- Better navigation
-g.n_silent_map("<Leader>k", ":wincmd k<CR>")
-g.n_silent_map("<Leader>l", ":wincmd l<CR>")
-g.n_silent_map("<Leader>j", ":wincmd j<CR>")
-g.n_silent_map("<Leader>h", ":wincmd h<CR>")
+vim.api.nvim_set_keymap("n", "<Leader>k", ":wincmd k<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<Leader>l", ":wincmd l<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<Leader>j", ":wincmd j<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<Leader>h", ":wincmd h<CR>", g.silent_opts())
 
 -- Keep it centered
-g.n_silent_map("<C-u>", "<C-u>zz")
-g.n_silent_map("<C-d>", "<C-d>zz")
+vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", g.silent_opts())
 
 -- Tab handlers
-g.n_silent_map("<Leader>tx", ":tabclose<CR>")
-g.n_silent_map("<Leader>tn", ":tabn<CR>")
-g.n_silent_map("<Leader>tp", ":tabp<CR>")
+vim.api.nvim_set_keymap("n", "<Leader>tx", ":tabclose<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<Leader>tn", ":tabn<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<Leader>tp", ":tabp<CR>", g.silent_opts())
 -- go to tab by number
 for char, buff_num in pairs(g.num_by_char) do
-	g.n_silent_map("<Leader>t" .. char, ":tabn" .. buff_num .. "<CR>")
+	vim.api.nvim_set_keymap("n", "<Leader>t" .. char, ":tabn" .. buff_num .. "<CR>", g.silent_opts())
 end
 
 -- More options for paste
-g.n_silent_map("<Leader>po", "o<Esc>p")
-g.n_silent_map("<Leader>PO", "O<Esc>P")
+vim.api.nvim_set_keymap("n", "<Leader>po", "o<Esc>p", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<Leader>PO", "O<Esc>P", g.silent_opts())
 
 -- Show undo tree
-g.n_silent_map("<Leader>u", ":UndotreeShow<CR>")
+vim.api.nvim_set_keymap("n", "<Leader>u", ":UndotreeShow<CR>", g.silent_opts())
 
 -- Source configuration
-g.n_noisy_map("<Leader><CR>", ":so %<CR>")
+vim.api.nvim_set_keymap("n", "<Leader><CR>", ":so %<CR>", g.noisy_opts())
 
 -- Resize windows
-g.n_silent_map("<S-Up>", ":resize +5<CR>")
-g.n_silent_map("<S-Down>", ":resize -5<CR>")
-g.n_silent_map("<S-Right>", ":vertical resize -5<CR>")
-g.n_silent_map("<S-Left>", ":vertical resize +5<CR>")
+vim.api.nvim_set_keymap("n", "<S-Up>", ":resize +5<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<S-Down>", ":resize -5<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<S-Right>", ":vertical resize -5<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<S-Left>", ":vertical resize +5<CR>", g.silent_opts())
 
 -- Better saving
-g.n_silent_map("<Leader>s", ":write<CR>")
+vim.api.nvim_set_keymap("n", "<Leader>s", ":write<CR>", g.silent_opts())
 
 -- Better tabbing
-g.v_silent_map("<S-Tab>", "<gv")
-g.v_silent_map("<Tab>", ">gv")
+vim.api.nvim_set_keymap("v", "<S-Tab>", "<gv", g.silent_opts())
+vim.api.nvim_set_keymap("v", "<Tab>", ">gv", g.silent_opts())
 
 -- Move visual block up and down
-g.v_silent_map("J", ":m '>+1<CR>gv=gv")
-g.v_silent_map("K", ":m '<-2<CR>gv=gv")
+vim.api.nvim_set_keymap("v", "J", ":m '>+1<CR>gv=gv", g.silent_opts())
+vim.api.nvim_set_keymap("v", "K", ":m '<-2<CR>gv=gv", g.silent_opts())
 
 -- By default `W` this calls the fzf's windows preview. I just want to save my file...
 v.nvim_command("command! W  write")
 
 -- Netrw
-g.n_silent_map("<Leader>pe", ":Vex<CR>")
+vim.api.nvim_set_keymap("n", "<Leader>pe", ":Vex<CR>", g.silent_opts())

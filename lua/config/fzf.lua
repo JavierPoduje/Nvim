@@ -27,4 +27,4 @@ function! RipgrepFzf(query, fullscreen)
 endfunction
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 ]])
-g.n_noisy_map("<Leader>pS", ":Rg --fixed-strings --ignore-case '' **/*." .. string.rep("<Left>", 7))
+vim.api.nvim_set_keymap("n", "<Leader>pS", ":Rg --fixed-strings --ignore-case '' **/*." .. string.rep("<Left>", 7), g.noisy_opts())
