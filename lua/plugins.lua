@@ -66,7 +66,7 @@ require("lazy").setup({
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
 			"onsails/lspkind-nvim",
-			"quangnguyen30192/cmp-nvim-ultisnips",
+			"saadparwaiz1/cmp_luasnip",
 		},
 	},
 	"jiangmiao/auto-pairs",
@@ -76,7 +76,11 @@ require("lazy").setup({
 	"preservim/nerdcommenter",
 	"mattn/emmet-vim",
 	"mhartington/formatter.nvim",
-	{ "SirVer/ultisnips", dependencies = { "honza/vim-snippets" } },
+	{
+		"L3MON4D3/LuaSnip",
+		build = "make install_jsregexp",
+		dependencies = { "honza/vim-snippets" },
+	},
 
 	-- Searchers
 	"jremmen/vim-ripgrep",

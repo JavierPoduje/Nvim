@@ -22,13 +22,13 @@ cmp.setup({
 	},
 	sources = {
 		{ name = "nvim_lsp" },
-		{ name = "ultisnips" },
+		{ name = "luasnip" },
 		{ name = "buffer", keyword_length = 2 },
 		{ name = "path" },
 	},
 	snippet = {
 		expand = function(args)
-			vim.fn["UltiSnips#Anon"](args.body)
+			require("luasnip").lsp_expand(args.body)
 		end,
 	},
 	formatting = {
@@ -39,7 +39,7 @@ cmp.setup({
 				nvim_lsp = "[lsp]",
 				nvim_lua = "[api]",
 				path = "[path]",
-				ultisnips = "[snips]",
+				luasnip = "[lua snips]",
 			},
 		}),
 	},
