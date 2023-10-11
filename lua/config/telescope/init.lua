@@ -100,8 +100,17 @@ vim.api.nvim_set_keymap("n", "<Leader>pf", ":Telescope find_files<CR>", g.silent
 vim.api.nvim_set_keymap("n", "<Leader>pb", ":Telescope buffers<CR>", g.silent_opts())
 vim.api.nvim_set_keymap("n", "<Leader>ps", ":Telescope live_grep<CR>", g.silent_opts())
 vim.api.nvim_set_keymap("n", "<Leader>pa", ":Telescope grep_string<CR>", g.silent_opts())
-vim.api.nvim_set_keymap("n", "<Leader>p<Tab>", ":Telescope quickfix<CR>", g.silent_opts())
 vim.api.nvim_set_keymap("n", "<Leader>pgs", ":Telescope live_grep search_dirs=", g.noisy_opts())
+
+ShowQuickfixList = function()
+	local quickfixList = vim.fn.getqflist()
+	if #quickfixList > 0 then
+		vim.cmd("Telescope quickfix")
+	else
+		print("Empty quickfix list...")
+	end
+end
+vim.api.nvim_set_keymap("n", "<Leader>p<Tab>", ":lua ShowQuickfixList()<CR>", g.silent_opts())
 
 -- Customs
 local F = "require'config.telescope.finders'"
