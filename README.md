@@ -1,5 +1,3 @@
-# My Neovim
-
 ## Description
 
 My personal neovim configuration.
@@ -12,7 +10,7 @@ My personal neovim configuration.
 5. [Bat](https://github.com/sharkdp/bat)
 6. [Kitty (optional)](https://sw.kovidgoyal.net/kitty/)
 
-## Get started
+## Remember
 
 Create folder to handle sessions:
 
