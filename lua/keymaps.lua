@@ -9,9 +9,9 @@ vim.api.nvim_set_keymap("n", "<C-c>", ":call multiple_cursors#quit()<CR>", g.sil
 -- CTRL+C for esc
 vim.api.nvim_set_keymap("i", "<C-c>", "<ESC><ESC>", g.silent_opts())
 
--- better yanking
-vim.api.nvim_set_keymap("n", "<Leader>y", "\"+y", g.silent_opts())
-vim.api.nvim_set_keymap("v", "<Leader>y", "\"+y", g.silent_opts())
+-- more comfortable yanking
+vim.api.nvim_set_keymap("n", "<Leader>yy", 'V"+y', g.silent_opts())
+vim.api.nvim_set_keymap("v", "<Leader>yy", '"+y', g.silent_opts())
 
 -- move forward in insert mode
 vim.api.nvim_set_keymap("i", "<C-l>", "<Right>", g.silent_opts())
@@ -61,6 +61,12 @@ vim.api.nvim_set_keymap("n", "<Leader>tp", ":tabp<CR>", g.silent_opts())
 -- go to tab by number
 for char, buff_num in pairs(g.num_by_char) do
 	vim.api.nvim_set_keymap("n", "<Leader>t" .. char, ":tabn" .. buff_num .. "<CR>", g.silent_opts())
+end
+
+-- Better marks
+for char, _ in pairs(g.left_num_by_char) do
+	vim.api.nvim_set_keymap("n", "m" .. char, "m" .. char:upper(), g.silent_opts())
+	vim.api.nvim_set_keymap("n", "<Leader>m" .. char, "`" .. char:upper() .. "<CR>", g.silent_opts())
 end
 
 -- More options for paste
