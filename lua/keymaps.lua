@@ -69,6 +69,10 @@ for char, _ in pairs(g.left_num_by_char) do
 	vim.api.nvim_set_keymap("n", "<Leader>m" .. char, "`" .. char:upper() .. "<CR>", g.silent_opts())
 end
 
+-- Navigate quickfix list
+vim.api.nvim_set_keymap("n", "<Leader>cl", ":cnext<CR>", g.silent_opts())
+vim.api.nvim_set_keymap("n", "<Leader>ch", ":cprev<CR>", g.silent_opts())
+
 -- More options for paste
 vim.api.nvim_set_keymap("n", "<Leader>po", "o<Esc>p", g.silent_opts())
 vim.api.nvim_set_keymap("n", "<Leader>PO", "O<Esc>P", g.silent_opts())
