@@ -1,4 +1,4 @@
-local config = require("lspconfig")
+local lspconfig = require("lspconfig")
 local cmp = require("cmp_nvim_lsp")
 
 local opts = { noremap = true, silent = true }
@@ -57,16 +57,18 @@ end
 -- iterate over the lsp protocols attaching the commands and the completions
 for _, protocol in ipairs({
 	"cssls",
+	"eslint",
 	"intelephense",
 	"lua_ls",
+	"prismals",
 	"pyright",
 	"rust_analyzer",
+	"tailwindcss",
 	"tsserver",
 	"vimls",
-	"prismals",
-	"eslint"
+	"volar",
 }) do
-	config[protocol].setup({
+	lspconfig[protocol].setup({
 		on_attach = on_attach,
 		flags = { debounce_text_changes = 150 },
 		capabilities = cmp.default_capabilities(vim.lsp.protocol.make_client_capabilities()),

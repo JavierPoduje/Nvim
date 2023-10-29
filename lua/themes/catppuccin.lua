@@ -1,4 +1,4 @@
-local flavour = "macchiato" -- macchiato, mocha, frappe, latte
+local flavour = "mocha" -- macchiato, mocha, frappe, latte
 local colors = require("catppuccin.palettes").get_palette(flavour)
 
 require("catppuccin").setup({
@@ -13,7 +13,7 @@ require("catppuccin").setup({
 		treesitter = true,
 		treesitter_context = true,
 	},
-	transparent_background = true,
+	transparent_background = false,
 	custom_highlights = {
 		Comment = { fg = colors.overlay1 },
 		TreesitterContextLineNumber = { fg = colors.sky },
