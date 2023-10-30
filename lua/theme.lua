@@ -1,1 +1,1 @@
-require("themes.gruvbox") -- gruvbox, catppuccin
+require("themes.catppuccin") -- gruvbox, catppuccin

@@ -1,7 +1,7 @@
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
-		theme = "gruvbox-material", -- gruvbox-material, catppuccin
+		theme = "catppuccin", -- gruvbox-material, catppuccin
 		component_separators = "",
 		section_separators = "",
 		always_divide_middle = true,

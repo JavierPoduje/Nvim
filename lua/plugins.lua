@@ -31,7 +31,6 @@ require("lazy").setup({
 	"github/copilot.vim",
 
 	-- LSP
-	"jose-elias-alvarez/null-ls.nvim",
 	{
 		"williamboman/mason.nvim",
 		dependencies = {

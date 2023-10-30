@@ -1,5 +1,3 @@
--- Source plugins confugurations
-
 require("config.autopair")
 require("config.bufferline")
 require("config.bujo")
@@ -16,7 +14,6 @@ require("config.lualine")
 require("config.luasnips")
 require("config.mason")
 require("config.nerd-commenter")
-require("config.null-ls")
 require("config.nvim-cmp")
 require("config.nvim-tree")
 require("config.startify")
