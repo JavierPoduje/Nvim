@@ -22,10 +22,7 @@ require("lazy").setup({
 	"tpope/vim-fugitive",
 	"airblade/vim-gitgutter",
 	"kdheepak/lazygit.nvim",
-	"theHamsta/nvim-dap-virtual-text",
-	"mxsdev/nvim-dap-vscode-js",
 	"microsoft/vscode-js-debug",
-	{ "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap" } },
 
 	-- Co-pilot
 	"github/copilot.vim",
