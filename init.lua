@@ -8,7 +8,7 @@ require("settings")
 require("plugins")
 
 -- Pluggins configuration
-require("plugins_settings")
+require("config")
 
 -- Keymaps definitions
 require("keymaps")
