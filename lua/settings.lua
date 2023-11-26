@@ -43,10 +43,10 @@ autocmd WinLeave * setlocal nocursorline
 v.nvim_command("set spelllang=en_us,es")
 
 -- Handle backup files
-v.nvim_command("set noswapfile")
-v.nvim_command("set nobackup")
+vim.opt.swapfile = false
+vim.opt.backup = false
 v.nvim_command("set undodir=~/.config/nvim/undodir")
-v.nvim_command("set undofile")
+vim.opt.undofile = true
 
 -- More space for displaying messages.
 v.nvim_command("set cmdheight=1")
