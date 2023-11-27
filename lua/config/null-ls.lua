@@ -12,6 +12,6 @@ then
 	table.insert(sources, null_ls.builtins.diagnostics.eslint)
 end
 
-null_ls.setup({
-	sources = sources,
-})
+--null_ls.setup({
+--  sources = sources,
+--})
