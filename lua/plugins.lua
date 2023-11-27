@@ -22,18 +22,17 @@ require("lazy").setup({
 	"tpope/vim-fugitive",
 	"airblade/vim-gitgutter",
 	"kdheepak/lazygit.nvim",
-	"microsoft/vscode-js-debug",
 
 	-- Co-pilot
 	"github/copilot.vim",
 
 	-- LSP
 	"jose-elias-alvarez/null-ls.nvim",
+	"neovim/nvim-lspconfig",
 	{
 		"williamboman/mason.nvim",
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
-			"neovim/nvim-lspconfig",
 		},
 	},
 
@@ -68,8 +67,6 @@ require("lazy").setup({
 	},
 	"jiangmiao/auto-pairs",
 	"tpope/vim-surround",
-	"terryma/vim-multiple-cursors",
-	"nelstrom/vim-visual-star-search",
 	"preservim/nerdcommenter",
 	"mattn/emmet-vim",
 	"mhartington/formatter.nvim",
