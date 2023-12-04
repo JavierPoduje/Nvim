@@ -44,15 +44,15 @@ require("bufferline").setup({
 })
 
 -- Move buffers tabs
-vim.api.nvim_set_keymap("n", "<Leader>bn", ":BufferLineMoveNext<CR>", g.silent_opts())
-vim.api.nvim_set_keymap("n", "<Leader>bp", ":BufferLineMovePrev<CR>", g.silent_opts())
+vim.keymap.set("n", "<Leader>bn", ":BufferLineMoveNext<CR>")
+vim.keymap.set("n", "<Leader>bp", ":BufferLineMovePrev<CR>")
 
 -- Move between buffers
-vim.api.nvim_set_keymap("n", "<C-l>", ":BufferLineCycleNext<CR>", g.silent_opts())
-vim.api.nvim_set_keymap("n", "<C-h>", ":BufferLineCyclePrev<CR>", g.silent_opts())
+vim.keymap.set("n", "<C-l>", ":BufferLineCycleNext<CR>")
+vim.keymap.set("n", "<C-h>", ":BufferLineCyclePrev<CR>")
 
 -- Move to last buffer
-vim.api.nvim_set_keymap("n", "<Leader>#", ":e#<CR>", g.silent_opts())
+vim.keymap.set("n", "<Leader>#", ":e#<CR>")
 
 -- Open next/previous buffer on the right using vertical split
 local B = "require'config.bufferline.customization'"
@@ -60,12 +60,12 @@ local B = "require'config.bufferline.customization'"
 v.nvim_command("command! Vs :lua " .. B .. ".split_and_move('next')")
 v.nvim_command("command! VS :lua " .. B .. ".split_and_move('prev')")
 
-vim.api.nvim_set_keymap("n", "<Leader>xd", ":bd!<CR>", g.silent_opts())
-vim.api.nvim_set_keymap("n", "<Leader>bd", ":lua " .. B .. ".sweep()<CR>", g.silent_opts())
+vim.keymap.set("n", "<Leader>xd", ":bd!<CR>")
+vim.keymap.set("n", "<Leader>bd", ":lua " .. B .. ".sweep()<CR>")
 
 for char, buff_num in pairs(g.num_by_char) do
 	-- go to specific buffer
-	vim.api.nvim_set_keymap("n", "<Leader>b" .. char, ":BufferLineGoToBuffer " .. buff_num .. "<CR>", g.silent_opts())
+	vim.keymap.set("n", "<Leader>b" .. char, ":BufferLineGoToBuffer " .. buff_num .. "<CR>")
 	-- close specific buffer
-	vim.api.nvim_set_keymap("n", "<Leader>x" .. char, ":lua " .. B .. ".close_buff_by_num(" .. buff_num .. ")<CR>", g.silent_opts())
+	vim.keymap.set("n", "<Leader>x" .. char, ":lua " .. B .. ".close_buff_by_num(" .. buff_num .. ")<CR>")
 end

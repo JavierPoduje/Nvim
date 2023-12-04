@@ -23,11 +23,4 @@ M = {
 	},
 }
 
-M.silent_opts = function()
-	return { noremap = true, silent = true }
-end
-M.noisy_opts = function()
-	return { noremap = true, silent = false }
-end
-
 return M

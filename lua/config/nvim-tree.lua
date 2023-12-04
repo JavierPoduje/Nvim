@@ -1,5 +1,3 @@
-local g = require("g")
-
 local COLS = vim.o.columns
 local ROWS = vim.o.lines
 
@@ -58,6 +56,6 @@ require("nvim-tree").setup({
 
 vim.g.nvim_tree_indent_markers = 1
 
-vim.api.nvim_set_keymap("n", "<leader>pv", ":NvimTreeToggle<CR>", g.silent_opts())
-vim.api.nvim_set_keymap("n", "<leader>R", ":NvimTreeRefresh<CR>", g.silent_opts())
-vim.api.nvim_set_keymap("n", "<leader>pp", ":NvimTreeFindFileToggle<CR>", g.silent_opts())
+vim.keymap.set("n", "<leader>pv", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>R", ":NvimTreeRefresh<CR>")
+vim.keymap.set("n", "<leader>pp", ":NvimTreeFindFileToggle<CR>")

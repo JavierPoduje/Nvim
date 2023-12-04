@@ -1,5 +1,3 @@
-local g = require("g")
-
 vim.g.fzf_layout = { window = { width = 0.8, height = 0.8 } }
 vim.g.fzf_colors = {
 	fg = { "fg", "Normal" },
@@ -27,4 +25,4 @@ function! RipgrepFzf(query, fullscreen)
 endfunction
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 ]])
-vim.api.nvim_set_keymap("n", "<Leader>pS", ":Rg --fixed-strings --ignore-case '' **/*." .. string.rep("<Left>", 7), g.noisy_opts())
+vim.keymap.set("n", "<Leader>pS", ":Rg --fixed-strings --ignore-case '' **/*." .. string.rep("<Left>", 7), { noremap = true, silent = false })

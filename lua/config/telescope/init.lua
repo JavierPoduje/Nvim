@@ -96,11 +96,11 @@ telescope.load_extension("fzy_native")
 telescope.load_extension("fzy_native")
 
 -- Native
-vim.api.nvim_set_keymap("n", "<Leader>pf", ":Telescope find_files<CR>", g.silent_opts())
-vim.api.nvim_set_keymap("n", "<Leader>pb", ":Telescope buffers<CR>", g.silent_opts())
-vim.api.nvim_set_keymap("n", "<Leader>ps", ":Telescope live_grep<CR>", g.silent_opts())
-vim.api.nvim_set_keymap("n", "<Leader>pa", ":Telescope grep_string<CR>", g.silent_opts())
-vim.api.nvim_set_keymap("n", "<Leader>pgs", ":Telescope live_grep search_dirs=", g.noisy_opts())
+vim.keymap.set("n", "<Leader>pf", ":Telescope find_files<CR>")
+vim.keymap.set("n", "<Leader>pb", ":Telescope buffers<CR>")
+vim.keymap.set("n", "<Leader>ps", ":Telescope live_grep<CR>")
+vim.keymap.set("n", "<Leader>pa", ":Telescope grep_string<CR>")
+vim.keymap.set("n", "<Leader>pgs", ":Telescope live_grep search_dirs=", { noremap = true, silent = false })
 
 ShowQuickfixList = function()
 	local quickfixList = vim.fn.getqflist()
@@ -110,11 +110,11 @@ ShowQuickfixList = function()
 		print("Empty quickfix list...")
 	end
 end
-vim.api.nvim_set_keymap("n", "<Leader>p<Tab>", ":lua ShowQuickfixList()<CR>", g.silent_opts())
+vim.keymap.set("n", "<Leader>p<Tab>", ":lua ShowQuickfixList()<CR>")
 
 -- Customs
 local F = "require'config.telescope.finders'"
-vim.api.nvim_set_keymap("n", "<Leader>pu", ":lua " .. F .. ".browse_utils()<CR>", g.silent_opts())
-vim.api.nvim_set_keymap("n", "<Leader>pn", ":lua " .. F .. ".browse_nvim()<CR>", g.silent_opts())
-vim.api.nvim_set_keymap("n", "<Leader>ph", ":lua " .. F .. ".browse_marks()<CR>", g.silent_opts())
-vim.api.nvim_set_keymap("n", "<Leader>pt", ":tabs<CR>", g.silent_opts())
+vim.keymap.set("n", "<Leader>pu", ":lua " .. F .. ".browse_utils()<CR>")
+vim.keymap.set("n", "<Leader>pn", ":lua " .. F .. ".browse_nvim()<CR>")
+vim.keymap.set("n", "<Leader>ph", ":lua " .. F .. ".browse_marks()<CR>")
+vim.keymap.set("n", "<Leader>pt", ":tabs<CR>")
