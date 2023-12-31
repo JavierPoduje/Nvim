@@ -37,15 +37,29 @@ for _, protocol in ipairs({
 	"lua_ls",
 	"prismals",
 	"pyright",
-	"rust_analyzer",
 	"tailwindcss",
 	"tsserver",
 	"vimls",
 	"volar",
 }) do
-	lspconfig[protocol].setup({
-		on_attach = on_attach,
-		flags = { debounce_text_changes = 150 },
-		capabilities = cmp.default_capabilities(vim.lsp.protocol.make_client_capabilities()),
-	})
+	if protocol == "cssls" then
+		lspconfig[protocol].setup({
+			on_attach = on_attach,
+			flags = { debounce_text_changes = 150 },
+			capabilities = cmp.default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+			settings = {
+				css = {
+					lint = {
+						unknownAtRules = "ignore",
+					},
+				},
+			},
+		})
+	else
+		lspconfig[protocol].setup({
+			on_attach = on_attach,
+			flags = { debounce_text_changes = 150 },
+			capabilities = cmp.default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+		})
+	end
 end

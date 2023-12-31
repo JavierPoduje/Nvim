@@ -118,3 +118,6 @@ vim.keymap.set("n", "<Leader>pu", ":lua " .. F .. ".browse_utils()<CR>")
 vim.keymap.set("n", "<Leader>pn", ":lua " .. F .. ".browse_nvim()<CR>")
 vim.keymap.set("n", "<Leader>ph", ":lua " .. F .. ".browse_marks()<CR>")
 vim.keymap.set("n", "<Leader>pt", ":tabs<CR>")
+
+-- search yanked string
+vim.keymap.set("v", "<Leader>py", ":lua require'telescope.builtin'.grep_string({ search = " .. F .. ".get_visual_selection() })<cr>")

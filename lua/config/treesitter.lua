@@ -12,7 +12,6 @@ require("nvim-treesitter.configs").setup({
 		"php",
 		"prisma",
 		"python",
-		"rust",
 		"scss",
 		"tsx",
 		"twig",

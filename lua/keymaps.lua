@@ -13,6 +13,9 @@ vim.keymap.set("i", "<C-c>", "<ESC><ESC>")
 vim.keymap.set("n", "<Leader>yy", 'V"+y')
 vim.keymap.set("v", "<Leader>yy", '"+y')
 
+-- sort selected lines
+vim.keymap.set("v", "<Leader>s", ':sort<cr>')
+
 -- move forward in insert mode
 vim.keymap.set("i", "<C-l>", "<Right>")
 vim.keymap.set("i", "<C-j>", "<C-o>h")

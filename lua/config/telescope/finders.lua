@@ -34,4 +34,17 @@ F.browse_marks = function()
 	})
 end
 
+F.get_visual_selection = function()
+    local _, start_line, start_col, _ = unpack(vim.fn.getpos("'<"))
+    local _, end_line, end_col, _ = unpack(vim.fn.getpos("'>"))
+    local lines = vim.fn.getline(start_line, end_line)
+    if start_line ~= end_line then
+        lines[#lines] = string.sub(lines[#lines], 1, end_col - 1)
+        lines[1] = string.sub(lines[1], start_col)
+    else
+        lines[1] = string.sub(lines[1], start_col, end_col - 1)
+    end
+    return table.concat(lines, '\n')
+end
+
 return F

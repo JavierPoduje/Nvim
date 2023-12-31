@@ -26,7 +26,8 @@ local vue_args = {
 	"--single-quote",
 	"--single-attribute-per-line",
 	"--bracket-same-line",
-	"--parser", "vue",
+	"--parser",
+	"vue",
 }
 
 local php_args = {
@@ -102,7 +103,7 @@ require("formatter").setup({
 
 -- TODO: all formats should use the same command, the file type shouldn't matter...
 -- format `deno` files
-vim.keymap.set("n", "<Leader>fd", ":! deno fmt % -q<CR>")
+vim.keymap.set("n", "<Leader>fd", ":! deno fmt % -q<CR>", { silent = true })
 
 -- format every other file
-vim.keymap.set("n", "<leader>ff", ":Format<CR>")
+vim.keymap.set("n", "<leader>ff", ":Format<CR>", { silent = true })
