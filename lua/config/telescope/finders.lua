@@ -46,7 +46,11 @@ F.get_visual_selection = function()
 		lines[1] = string.sub(lines[1], start_col, end_col)
 	end
 
-	return table.concat(lines, "\n")
+	local selection = table.concat(lines, "\n")
+
+	require("telescope.builtin").grep_string({
+		search = selection,
+	})
 end
 
 return F
