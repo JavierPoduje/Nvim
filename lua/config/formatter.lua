@@ -94,6 +94,7 @@ require("formatter").setup({
 		prisma = { formatter("npx", prisma_args, false) },
 		rust = { formatter("rustfmt", rust_args, true) },
 		scss = { formatter("prettier", prettier_args("scss"), true) },
+		css = { formatter("prettier", prettier_args("css"), true) },
 		sql = { formatter("sql-formatter", sql_args, true) },
 		typescript = { formatter("prettier", prettier_args("typescript"), false) },
 		typescriptreact = { formatter("prettier", prettier_args("typescript"), false) },
