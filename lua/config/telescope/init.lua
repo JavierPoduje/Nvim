@@ -10,8 +10,6 @@ function custom_actions.fzf_multi_select(prompt_bufnr)
 	local picker = action_state.get_current_picker(prompt_bufnr)
 	local num_selections = #picker:get_multi_selection()
 
-	print(num_selections)
-
 	if num_selections > 1 then
 		actions.send_selected_to_qflist(prompt_bufnr)
 		actions.open_qflist()
@@ -96,7 +94,7 @@ telescope.load_extension("fzy_native")
 -- Native
 vim.keymap.set("n", "<Leader>pf", ":Telescope find_files<CR>")
 vim.keymap.set("n", "<Leader>pb", ":Telescope buffers<CR>")
-vim.keymap.set("n", "<Leader>ps", ":Telescope live_grep<CR>")
+vim.keymap.set("n", "<Leader>ps", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 vim.keymap.set("n", "<Leader>pa", ":Telescope grep_string<CR>")
 vim.keymap.set("n", "<Leader>pgs", ":Telescope live_grep search_dirs=", { noremap = true, silent = false })
 
@@ -115,5 +113,5 @@ local F = "require'config.telescope.finders'"
 vim.keymap.set("n", "<Leader>pu", ":lua " .. F .. ".browse_utils()<CR>")
 vim.keymap.set("n", "<Leader>pn", ":lua " .. F .. ".browse_nvim()<CR>")
 vim.keymap.set("n", "<Leader>ph", ":lua " .. F .. ".browse_marks()<CR>")
-vim.keymap.set("n", "<Leader>pt", ":tabs<CR>")
 vim.keymap.set("v", "<Leader>py", ":lua " .. F .. ".get_visual_selection()<CR>")
+vim.keymap.set("n", "<Leader>pt", ":tabs<CR>")

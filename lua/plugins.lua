@@ -85,6 +85,7 @@ require("lazy").setup({
 		dependencies = {
 			{ "nvim-lua/popup.nvim" },
 			{ "nvim-telescope/telescope-fzy-native.nvim" },
+			{ "nvim-telescope/telescope-live-grep-args.nvim" },
 			{ "romgrk/fzy-lua-native" },
 			{ "sharkdp/fd" },
 		},

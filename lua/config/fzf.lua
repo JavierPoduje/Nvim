@@ -14,15 +14,3 @@ vim.g.fzf_colors = {
 vim.g.fzf_colors["fg+"] = { "fg", "CursorLine" }
 vim.g.fzf_colors["bg+"] = { "bg", "CursorLine", "CursorColumn" }
 vim.g.fzf_colors["hl+"] = { "fg", "Statement" }
-
-v.nvim_command([[
-function! RipgrepFzf(query, fullscreen)
-  let command_fmt = 'rg --hidden --column --line-number --no-heading --color=always --smart-case %s || true'
-  let initial_command = printf(command_fmt, shellescape(a:query))
-  let reload_command = printf(command_fmt, '{q}')
-  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
-endfunction
-command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
-]])
-vim.keymap.set("n", "<Leader>pS", ":Rg --fixed-strings --ignore-case '' **/*." .. string.rep("<Left>", 7), { noremap = true, silent = false })
