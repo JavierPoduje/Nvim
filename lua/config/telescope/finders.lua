@@ -53,4 +53,13 @@ F.get_visual_selection = function()
 	})
 end
 
+F.browse_quickfix_list = function()
+	local quickfixList = vim.fn.getqflist()
+	if #quickfixList > 0 then
+		vim.cmd("Telescope quickfix")
+	else
+		print("Empty quickfix list...")
+	end
+end
+
 return F
