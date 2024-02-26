@@ -1,6 +1,6 @@
 local M = {}
 
--- Delete all buffers but the focus one
+-- Delete all buffers but the focused one
 -- @return void
 M.sweep = function()
 	v.nvim_exec(":BufferLineCloseRight", true)

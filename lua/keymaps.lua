@@ -14,7 +14,7 @@ vim.keymap.set("n", "<Leader>yy", 'V"+y')
 vim.keymap.set("v", "<Leader>yy", '"+y')
 
 -- sort selected lines
-vim.keymap.set("v", "<Leader>s", ':sort<cr>')
+vim.keymap.set("v", "<Leader>s", ":sort<cr>")
 
 -- move forward in insert mode
 vim.keymap.set("i", "<C-l>", "<Right>")
@@ -27,7 +27,9 @@ vim.keymap.set("n", "<Space>", "<NOP><CR>")
 vim.keymap.set("i", "<C-D>", "X<Esc>ce")
 
 -- Replace all instances of the word under cursor
-vim.keymap.set("n", "<Leader>r", ":%s/\\<<C-r><C-w>\\>/")
+vim.keymap.set("n", "<Leader>r", ":%s/<C-r><C-w>//g<Left><Left>")
+-- Replace all instances of the word under cursor in visual mode
+vim.keymap.set("v", "<Leader>r", ":s/<C-r><C-w>//g<Left><Left>")
 
 -- Paste but remember
 vim.keymap.set("x", "<Leader>fp", '"_dP')
