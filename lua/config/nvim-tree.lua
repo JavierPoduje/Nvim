@@ -11,8 +11,6 @@ end
 require("nvim-tree").setup({
 	sort_by = "case_sensitive",
 	update_focused_file = {
-		--enable = false,
-		--update_cwd = false,
 		ignore_list = { "*.pyc" },
 	},
 	on_attach = function(bufnr)
@@ -39,9 +37,8 @@ require("nvim-tree").setup({
 		width = 50,
 		number = true,
 		relativenumber = true,
-		--hide_root_folder = false,
 		float = {
-			enable = true,
+			enable = false,
 			open_win_config = {
 				relative = "editor",
 				border = "rounded",
