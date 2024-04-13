@@ -4,6 +4,7 @@ v.nvim_command("filetype plugin on")
 v.nvim_command("set nocompatible")
 v.nvim_command("set exrc")
 
+vim.o.exrc = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.smartindent = true

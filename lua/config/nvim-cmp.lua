@@ -22,6 +22,7 @@ cmp.setup({
 	},
 	sources = {
 		{ name = "nvim_lsp" },
+		{ name = "css-variables" },
 		{ name = "luasnip" },
 		{ name = "buffer", keyword_length = 2 },
 		{ name = "path" },
