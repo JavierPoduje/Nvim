@@ -18,6 +18,12 @@ require("lazy").setup({
 	"ryanoasis/vim-devicons",
 	"kyazdani42/nvim-web-devicons",
 
+	-- Terminal
+	{
+		"christoomey/vim-tmux-navigator",
+		lazy = false,
+	},
+
 	-- Git management
 	"tpope/vim-fugitive",
 	"airblade/vim-gitgutter",
