@@ -1,3 +1,7 @@
+# DEPRECATED
+
+See [dotfiles](https://github.com/JavierPoduje/dotfiles) instead.
+
 ## Description
 
 My personal neovim configuration.
